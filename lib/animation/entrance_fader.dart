@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of evolum;
 
 class EntranceFader extends StatefulWidget {
   /// Child to be animated on entrance

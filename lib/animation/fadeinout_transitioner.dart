@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of evolum;
 
 class FadeInOutTransitionner extends StatelessWidget {
   final Widget child;

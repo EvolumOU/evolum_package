@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'color.dart';
-export 'dark.dart';
+part of evolum;
 
 final ThemeData lightTheme = ThemeData(
   backgroundColor: EvoColors.white,

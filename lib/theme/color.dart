@@ -1,8 +1,5 @@
-import 'dart:math';
-import 'dart:ui';
-import 'package:flutter/material.dart';
+part of evolum;
 
-// ignore: avoid_classes_with_only_static_members
 class EvoColors {
   static Color sunsetBottom = Color(0xffFFD19D); // #FFD19D
   static Color black = Color(0xff241F37); //  #241F37

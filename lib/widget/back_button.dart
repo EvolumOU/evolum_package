@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../theme/color.dart';
+part of evolum;
 
 class EvoBackButton extends StatelessWidget {
   final void Function() onPress;

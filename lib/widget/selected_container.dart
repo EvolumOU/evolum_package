@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'border_gradient_container.dart';
-import '../theme/color.dart';
+part of evolum;
 
 class SelectedContainer extends StatelessWidget {
   final Widget child;

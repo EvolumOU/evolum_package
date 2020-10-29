@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of evolum;
 
 class BorderRadiusContainer extends StatelessWidget {
   final Widget child;

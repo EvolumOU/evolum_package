@@ -20,6 +20,7 @@ dev_dependencies:
   equatable: ^1.2.5
   splash_tap: ^0.1.2
   flutter_hooks: ^0.14.1
+  intl: ^0.16.1
 
 
 flutter:

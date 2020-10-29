@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:splash_tap/splash_tap.dart';
-
-import '../theme/color.dart';
+part of evolum;
 
 class RandomSplashColor extends HookWidget {
   final Widget child;

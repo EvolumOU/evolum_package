@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of evolum;
 
 class RoundedGradientContainer extends StatelessWidget {
   final List<Color> colors;
