@@ -45,6 +45,4 @@ ios/Podfile.lock
 
 *.lock
 
-*.g.dart
-
 ios/Flutter/.last_build_id
