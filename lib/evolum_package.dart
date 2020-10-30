@@ -1,8 +1,8 @@
-library evolum;
+library evolum_package;
 
 import 'dart:math';
 import 'dart:ui';
-import 'package:evolum/model/user.dart';
+import 'package:evolum_package/model/user.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

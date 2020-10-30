@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 extension EvoExtensionDuration on Duration {
   String minuteSecondFormatted() {

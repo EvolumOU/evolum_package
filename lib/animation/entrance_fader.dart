@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 class EntranceFader extends StatefulWidget {
   /// Child to be animated on entrance

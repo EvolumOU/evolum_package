@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 class EvoBackButton extends StatelessWidget {
   final void Function() onPress;

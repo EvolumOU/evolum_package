@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 class ScaleInOut extends StatefulWidget {
   final Widget child;

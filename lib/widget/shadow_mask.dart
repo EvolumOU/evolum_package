@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 class ShadowMaskContainer extends StatelessWidget {
   final Widget child;

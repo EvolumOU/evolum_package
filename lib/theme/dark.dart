@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 final ThemeData darkTheme = ThemeData(
   backgroundColor: EvoColors.black,

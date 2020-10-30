@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 class BorderGradientContainer extends StatelessWidget {
   final Widget child;

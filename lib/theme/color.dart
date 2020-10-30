@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 class EvoColors {
   static Color sunsetBottom = Color(0xffFFD19D); // #FFD19D

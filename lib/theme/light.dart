@@ -1,4 +1,4 @@
-part of evolum;
+part of evolum_package;
 
 final ThemeData lightTheme = ThemeData(
   backgroundColor: EvoColors.white,
