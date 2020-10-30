@@ -8,6 +8,14 @@ final ThemeData darkTheme = ThemeData(
   dividerColor: EvoColors.grey.withOpacity(0.6),
   highlightColor: Colors.transparent,
   splashColor: Colors.transparent,
+  inputDecorationTheme: InputDecorationTheme(
+    labelStyle: TextStyle(
+      color: EvoColors.white,
+      fontWeight: FontWeight.w300,
+    ),
+    border: InputBorder.none,
+    focusedBorder: InputBorder.none,
+  ),
   textTheme: TextTheme(
     button: TextStyle(
       fontSize: 23,
@@ -54,15 +62,6 @@ final ThemeData darkTheme = ThemeData(
     ),
   ),
   unselectedWidgetColor: EvoColors.white,
-  cursorColor: EvoColors.white,
-  inputDecorationTheme: InputDecorationTheme(
-    labelStyle: TextStyle(
-      color: EvoColors.electric,
-      fontSize: 24,
-    ),
-    border: InputBorder.none,
-    focusedBorder: InputBorder.none,
-  ),
   fontFamily: 'AirbnbCereal',
   cardTheme: CardTheme(
     margin: const EdgeInsets.all(10),
@@ -76,4 +75,5 @@ final ThemeData darkTheme = ThemeData(
       borderRadius: BorderRadius.circular(15.0),
     ),
   ),
+  appBarTheme: AppBarTheme(elevation: 0, color: Colors.transparent),
 );
