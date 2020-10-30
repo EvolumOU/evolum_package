@@ -1,5 +1,5 @@
 name: evolum_package
-description: Packages for Evolum Apps
+description: A new Flutter package project.
 version: 0.0.1
 author:
 homepage:
@@ -12,9 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
   json_serializable: ^3.5.0
   cloud_firestore: ^0.14.2
   equatable: ^1.2.5
@@ -23,5 +20,6 @@ dev_dependencies:
   intl: ^0.16.1
   build_runner: ^1.10.4
 
-
-flutter:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
