@@ -28,6 +28,12 @@ extension EvoExtensionString on String {
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));
 }
 
+extension EvoExtensionColor on Color {
+  bool isDark(context) {
+    return Theme.of(context).textTheme.bodyText1.color == EvoColors.black;
+  }
+}
+
 extension EvoExtensionInt on int {
   /// Give the Time value of a DateTime
   String get timeFromDuration {
