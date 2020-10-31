@@ -3,15 +3,26 @@ part of evolum_package;
 class EvoBackButton extends StatelessWidget {
   final void Function() onPress;
   final bool rounded;
-  const EvoBackButton({Key key, this.onPress, this.rounded = false})
-      : super(key: key);
+  final Color color;
+  final double size;
+  const EvoBackButton({
+    Key key,
+    this.onPress,
+    this.rounded = false,
+    this.size = 30,
+    this.color,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final img = Theme.of(context).textTheme.bodyText1.color.isDark(context)
-        ? "black"
-        : "white";
-    final backAssets = "assets/image/icon/back_$img.png";
+    final isDark = Theme.of(context).textTheme.bodyText1.color.isDark(context);
+    String backAssets = "back_black.png";
+
+    if (isDark) backAssets = 'back_white.png';
+
+    if (color != null) {
+      if (color == EvoColors.greyblue) backAssets = "back_greyblue.png";
+    }
 
     return WillPopScope(
       onWillPop: () async {
@@ -27,12 +38,12 @@ class EvoBackButton extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Container(
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
+                    shape: rounded ? BoxShape.circle : BoxShape.rectangle,
                     color: rounded ? EvoColors.white : Colors.transparent,
                   ),
-                  height: 30,
-                  width: 30,
-                  child: Image.asset(backAssets)),
+                  height: size,
+                  width: size,
+                  child: Image.asset("assets/image/icon/$backAssets")),
             ),
           ),
         ),

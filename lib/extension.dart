@@ -30,7 +30,7 @@ extension EvoExtensionString on String {
 
 extension EvoExtensionColor on Color {
   bool isDark(context) {
-    return Theme.of(context).textTheme.bodyText1.color == EvoColors.black;
+    return Theme.of(context).textTheme.bodyText1.color == EvoColors.white;
   }
 }
 
