@@ -1,3 +1,5 @@
+part of evolum_package;
+
 enum ReminderType {
   wisdom,
   night,

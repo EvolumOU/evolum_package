@@ -10,6 +10,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:splash_tap/splash_tap.dart';
 
 part 'extension.dart';
+part 'enum.dart';
 part 'widget/shadow_mask.dart';
 part 'widget/selected_container.dart';
 part 'widget/rounded_gradient.dart';
