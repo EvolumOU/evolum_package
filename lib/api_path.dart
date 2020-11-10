@@ -10,6 +10,5 @@ class APIPath {
   static String allUser() => 'user/';
   static String allEvo() => 'evo/';
   static String allSub() => 'subscription/';
-  static String allUnSub() => 'unsub/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
