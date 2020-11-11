@@ -26,6 +26,13 @@ extension EvoExtensionString on String {
   }
 
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));
+
+  bool get isNumeric {
+    if (this == null) {
+      return false;
+    }
+    return double.tryParse(this) != null;
+  }
 }
 
 extension EvoExtensionColor on Color {
