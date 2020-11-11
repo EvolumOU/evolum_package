@@ -33,6 +33,11 @@ extension EvoExtensionString on String {
     }
     return double.tryParse(this) != null;
   }
+
+  String get prefix {
+    final indexOfDot = this.indexOf('.');
+    return this.substring(0, indexOfDot);
+  }
 }
 
 extension EvoExtensionColor on Color {
