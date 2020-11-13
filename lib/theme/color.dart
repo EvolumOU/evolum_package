@@ -11,6 +11,8 @@ class EvoColors {
   static Color fullWhite = Color(0xffFFFFFF); // #FFFFFF
 
   static Color greyblue = Color(0xffD6E6E4); //  #D6E6E4
+  static Color secondaryBlack = Color(0xff342F4C); //  #342F4C
+  static Color secondaryWhite = Color(0xffF3EAE0); //  #F3EAE0
 
   static Color violet = Color(0xffC89FE3); //  #C89FE3
   static Color electric = Color(0xff9EE0FD); //  #9EE0FD

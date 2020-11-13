@@ -68,13 +68,6 @@ final ThemeData lightTheme = ThemeData(
     margin: const EdgeInsets.all(10),
     color: EvoColors.white,
     elevation: 0,
-    shape: RoundedRectangleBorder(
-      side: BorderSide(
-        color: EvoColors.grey,
-        width: 2,
-      ),
-      borderRadius: BorderRadius.circular(15.0),
-    ),
   ),
   appBarTheme: AppBarTheme(elevation: 0, color: Colors.transparent),
 );

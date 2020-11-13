@@ -12,12 +12,14 @@ class History {
   final String review;
   @JsonKey(toJson: _toJson, fromJson: _fromJson)
   final DateTime date;
+  final int secondsRead;
 
   History({
     this.id,
     this.evo,
     this.review,
     this.date,
+    this.secondsRead,
   });
 
   factory History.fromJson(Map<String, dynamic> data) {

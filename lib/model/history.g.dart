@@ -12,6 +12,7 @@ History _$HistoryFromJson(Map<String, dynamic> json) {
     evo: Evo.fromJson(json['evo'] as Map<String, dynamic>),
     review: json['review'] as String,
     date: History._fromJson(json['date'] as Timestamp),
+    secondsRead: json['secondsRead'] as int,
   );
 }
 
@@ -20,4 +21,5 @@ Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'evo': instance.evo.toJson(),
       'review': instance.review,
       'date': History._toJson(instance.date),
+      'secondsRead': instance.secondsRead,
     };
