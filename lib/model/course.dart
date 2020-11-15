@@ -1,3 +1,5 @@
+import 'package:evolum_package/model/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'evo.dart';
@@ -19,12 +21,14 @@ class Course {
   List<Playlist> playlist;
   List<Evo> list;
   int position;
+  @JsonKey(toJson: listDateTimetoJson, fromJson: listDateTimefromJson)
+  List<DateTime> dates;
 
   Course({
     this.id,
     this.name,
     this.type,
-    this.tag,
+    this.tag = 'error',
     this.descr = "Erreur",
     this.color1 = "#FFFFFF",
     this.color2 = "#FFFFFF",
@@ -33,10 +37,14 @@ class Course {
     this.playlist = const [],
     this.list = const [],
     this.position = 0,
+    this.dates,
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
-    return _$CourseFromJson(data);
+    return _$CourseFromJson({
+      ...data,
+      "dates": data["dates"] ?? [],
+    });
   }
 
   Map<String, dynamic> toMap() => _$CourseToJson(this);

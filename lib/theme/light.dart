@@ -3,7 +3,6 @@ part of evolum_package;
 final ThemeData lightTheme = ThemeData(
   backgroundColor: EvoColors.white,
   scaffoldBackgroundColor: EvoColors.white,
-  primaryColor: EvoColors.belge,
   accentColor: EvoColors.orange,
   dividerColor: EvoColors.grey,
   dialogBackgroundColor: EvoColors.white,
@@ -64,6 +63,7 @@ final ThemeData lightTheme = ThemeData(
   ),
   unselectedWidgetColor: EvoColors.black,
   fontFamily: 'AirbnbCereal',
+  cursorColor: EvoColors.black,
   cardTheme: CardTheme(
     margin: const EdgeInsets.all(10),
     color: EvoColors.white,

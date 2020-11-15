@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'user.g.dart';
 
@@ -14,6 +16,8 @@ class User {
   List<dynamic> goal;
   int nbDone;
   int noReview;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  DateTime createdDate;
 
   User({
     this.uid,
@@ -27,6 +31,7 @@ class User {
     this.goal,
     this.nbDone = 0,
     this.noReview = 0,
+    this.createdDate,
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {

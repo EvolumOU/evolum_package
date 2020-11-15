@@ -24,28 +24,23 @@ class EvoBackButton extends StatelessWidget {
       if (color == EvoColors.greyblue) backAssets = "back_greyblue.png";
     }
 
-    return WillPopScope(
-      onWillPop: () async {
-        onPress != null ? onPress() : Navigator.of(context).pop();
-        return true;
-      },
-      child: SafeArea(
-        child: Align(
-          alignment: Alignment.topLeft,
+    return SafeArea(
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: InkResponse(
+          onTap: onPress ?? Navigator.of(context).maybePop,
           child: Container(
-            color: Colors.transparent,
-            child: GestureDetector(
-              onTap: onPress ?? Navigator.of(context).pop,
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Container(
-                    decoration: BoxDecoration(
-                      shape: rounded ? BoxShape.circle : BoxShape.rectangle,
-                      color: rounded ? EvoColors.white : Colors.transparent,
-                    ),
-                    height: size,
-                    width: size,
-                    child: Image.asset("assets/image/icon/$backAssets")),
+            height: 56,
+            width: 56,
+            child: Center(
+              child: Container(
+                height: size,
+                width: size,
+                decoration: BoxDecoration(
+                  shape: rounded ? BoxShape.circle : BoxShape.rectangle,
+                  color: rounded ? EvoColors.white : Colors.transparent,
+                ),
+                child: Image.asset("assets/image/icon/$backAssets"),
               ),
             ),
           ),

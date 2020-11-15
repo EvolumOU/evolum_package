@@ -20,6 +20,8 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     timings: (json['timings'] as List)
         .map((e) => Timing.fromJson(e as Map<String, dynamic>))
         .toList(),
+    recent: json['recent'] as bool,
+    text: json['text'] as String,
   );
 }
 
@@ -34,4 +36,6 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'points': instance.points,
       'loop': instance.loop,
       'timings': instance.timings.map((e) => e.toJson()).toList(),
+      'recent': instance.recent,
+      'text': instance.text,
     };

@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:evolum_package/model/timing.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+
 part 'evo.g.dart';
 
 @JsonSerializable(nullable: false, explicitToJson: true)
@@ -10,9 +11,9 @@ class Evo extends Equatable {
   String id;
   @required
   String filename;
-  //@required
+  @required
   String name;
-  //@required
+  @required
   String type;
   bool splited;
   int duration;
@@ -20,6 +21,8 @@ class Evo extends Equatable {
   List<dynamic> points;
   bool loop;
   List<Timing> timings;
+  bool recent;
+  String text;
 
   Evo({
     this.id,
@@ -32,7 +35,10 @@ class Evo extends Equatable {
     this.points,
     this.loop = false,
     this.timings,
+    this.recent = false,
+    this.text,
   });
+
   @override
   List<Object> get props => [id, name, type, filename, tag];
 
@@ -41,6 +47,7 @@ class Evo extends Equatable {
         "loop": data["loop"] ?? false,
         "points": data["points"] ?? [],
         "timings": data["timings"] ?? [],
+        "recent": data["recent"] ?? false,
       });
 
   Map<String, dynamic> toJson() => _$EvoToJson(this);

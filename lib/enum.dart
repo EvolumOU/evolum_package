@@ -1,63 +1,25 @@
 part of evolum_package;
 
-enum ReminderType {
-  wisdom,
-  night,
-  morning,
-}
+enum ReminderType { wisdom, night, morning }
 
 enum OnBoardingError { invalidName, none }
-enum LoginStep {
-  loading,
-  pwd,
-  name,
-  email,
-}
+
+enum LoginStep { loading, pwd, name, email }
+
 enum AppState { splash, home, onboarding }
 
-enum LoginError {
-  invalidCode,
-  invalidFormatEmail,
-  emailHasBeenSend,
-  none,
-}
-enum ReviewStep {
-  init,
-  askReview,
-  getFeedBack,
-  thanks,
-}
+enum LoginError { invalidCode, invalidFormatEmail, emailHasBeenSend, none }
 
-enum PaymentStep {
-  start,
-  form,
-  end,
-}
+enum ReviewStep { init, askReview, getFeedBack, thanks }
 
-enum UserStatus {
-  free,
-  abo,
-}
+enum PaymentStep { start, form, end }
 
-enum PlayState {
-  none,
-  playing,
-  paused,
-  buffering,
-  noInternet,
-}
+enum UserStatus { free, abo }
 
-enum ShareType {
-  instastory,
-  fbstory,
-  sms,
-  whatsapp,
-  other,
-}
+enum PlayState { none, playing, paused, buffering, noInternet }
 
-enum CourseType {
-  adventure,
-  mood,
-}
+enum ShareType { instastory, fbstory, sms, whatsapp, other }
+
+enum CourseType { adventure, mood }
 
 enum PlayerType { audio, video }

@@ -62,6 +62,7 @@ final ThemeData darkTheme = ThemeData(
     ),
   ),
   unselectedWidgetColor: EvoColors.white,
+  cursorColor: EvoColors.white,
   fontFamily: 'AirbnbCereal',
   cardTheme: CardTheme(
     margin: const EdgeInsets.all(10),

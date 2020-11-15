@@ -16,6 +16,21 @@ extension EvoExtensionList<T> on List<T> {
   T get oneRandom => this[Random().nextInt(length - 1)];
 }
 
+extension EvoExtensionEvo on Evo {
+  bool get isYoga => type == 'yoga';
+  bool get isMusic => type == 'musique';
+  bool get isMeditation => type == 'méditation';
+  bool get isDaily => type == 'quotidien';
+  bool get isMoon => type == 'lune';
+  bool get isOracle => type == 'oracle';
+  bool get isAffirmation => type == 'affirmation';
+}
+
+extension EvoExtensionCourse on Course {
+  bool get isAdventure => type == 'adventure';
+  bool get isMood => type == 'mood';
+}
+
 extension EvoExtensionUser on User {
   bool get isFree => status == 'free';
 }

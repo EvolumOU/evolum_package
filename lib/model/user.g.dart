@@ -19,6 +19,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
     goal: json['goal'] as List,
     nbDone: json['nbDone'] as int,
     noReview: json['noReview'] as int,
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
   );
 }
 
@@ -34,4 +35,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'goal': instance.goal,
       'nbDone': instance.nbDone,
       'noReview': instance.noReview,
+      'createdDate': dateTimetoJson(instance.createdDate),
     };
