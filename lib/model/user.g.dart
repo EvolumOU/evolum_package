@@ -3,6 +3,42 @@
 part of 'user.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension UserCopyWith on User {
+  User copyWith({
+    bool bgmusic,
+    DateTime createdDate,
+    String email,
+    List<dynamic> goal,
+    String name,
+    int nbDone,
+    int noReview,
+    bool notification,
+    String reminderMorning,
+    String reminderNight,
+    String status,
+    String uid,
+  }) {
+    return User(
+      bgmusic: bgmusic ?? this.bgmusic,
+      createdDate: createdDate ?? this.createdDate,
+      email: email ?? this.email,
+      goal: goal ?? this.goal,
+      name: name ?? this.name,
+      nbDone: nbDone ?? this.nbDone,
+      noReview: noReview ?? this.noReview,
+      notification: notification ?? this.notification,
+      reminderMorning: reminderMorning ?? this.reminderMorning,
+      reminderNight: reminderNight ?? this.reminderNight,
+      status: status ?? this.status,
+      uid: uid ?? this.uid,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

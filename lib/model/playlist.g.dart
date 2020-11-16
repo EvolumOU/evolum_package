@@ -3,6 +3,24 @@
 part of 'playlist.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension PlaylistCopyWith on Playlist {
+  Playlist copyWith({
+    List<dynamic> list,
+    String name,
+    int position,
+  }) {
+    return Playlist(
+      list: list ?? this.list,
+      name: name ?? this.name,
+      position: position ?? this.position,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

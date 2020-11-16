@@ -3,6 +3,44 @@
 part of 'course.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension CourseCopyWith on Course {
+  Course copyWith({
+    String color1,
+    String color2,
+    String descr,
+    String id,
+    List<Evo> list,
+    String name,
+    List<Playlist> playlist,
+    int position,
+    List<Scheduled> scheduled,
+    String specolor1,
+    String specolor2,
+    String tag,
+    String type,
+  }) {
+    return Course(
+      color1: color1 ?? this.color1,
+      color2: color2 ?? this.color2,
+      descr: descr ?? this.descr,
+      id: id ?? this.id,
+      list: list ?? this.list,
+      name: name ?? this.name,
+      playlist: playlist ?? this.playlist,
+      position: position ?? this.position,
+      scheduled: scheduled ?? this.scheduled,
+      specolor1: specolor1 ?? this.specolor1,
+      specolor2: specolor2 ?? this.specolor2,
+      tag: tag ?? this.tag,
+      type: type ?? this.type,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

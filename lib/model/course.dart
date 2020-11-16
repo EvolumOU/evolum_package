@@ -1,6 +1,5 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/scheduled.dart';
-import 'package:evolum_package/model/utils.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'evo.dart';
@@ -8,6 +7,7 @@ import 'playlist.dart';
 
 part 'course.g.dart';
 
+@CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Course {
   String id;

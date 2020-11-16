@@ -3,6 +3,42 @@
 part of 'evo.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension EvoCopyWith on Evo {
+  Evo copyWith({
+    int duration,
+    String filename,
+    String id,
+    bool loop,
+    String name,
+    List<dynamic> points,
+    bool recent,
+    bool splited,
+    String tag,
+    String text,
+    List<Timing> timings,
+    String type,
+  }) {
+    return Evo(
+      duration: duration ?? this.duration,
+      filename: filename ?? this.filename,
+      id: id ?? this.id,
+      loop: loop ?? this.loop,
+      name: name ?? this.name,
+      points: points ?? this.points,
+      recent: recent ?? this.recent,
+      splited: splited ?? this.splited,
+      tag: tag ?? this.tag,
+      text: text ?? this.text,
+      timings: timings ?? this.timings,
+      type: type ?? this.type,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

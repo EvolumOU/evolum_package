@@ -3,6 +3,22 @@
 part of 'scheduled.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension ScheduledCopyWith on Scheduled {
+  Scheduled copyWith({
+    DateTime date,
+    String type,
+  }) {
+    return Scheduled(
+      date: date ?? this.date,
+      type: type ?? this.type,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

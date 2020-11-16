@@ -3,6 +3,28 @@
 part of 'history.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension HistoryCopyWith on History {
+  History copyWith({
+    DateTime date,
+    Evo evo,
+    String id,
+    String review,
+    int secondsRead,
+  }) {
+    return History(
+      date: date ?? this.date,
+      evo: evo ?? this.evo,
+      id: id ?? this.id,
+      review: review ?? this.review,
+      secondsRead: secondsRead ?? this.secondsRead,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

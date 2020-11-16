@@ -1,7 +1,9 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'playlist.g.dart';
 
+@CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Playlist {
   final String name;

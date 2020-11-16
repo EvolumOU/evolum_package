@@ -3,6 +3,24 @@
 part of 'timing.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension TimingCopyWith on Timing {
+  Timing copyWith({
+    int begin,
+    int end,
+    String text,
+  }) {
+    return Timing(
+      begin: begin ?? this.begin,
+      end: end ?? this.end,
+      text: text ?? this.text,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
