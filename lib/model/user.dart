@@ -31,7 +31,7 @@ class User {
     this.status = "free",
     this.reminderMorning,
     this.reminderNight,
-    this.goal,
+    this.goal = const [],
     this.nbDone = 0,
     this.noReview = 0,
     this.createdDate,

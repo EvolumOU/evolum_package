@@ -61,6 +61,7 @@ final ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.normal,
     ),
   ),
+  iconTheme: IconThemeData(color: EvoColors.black),
   unselectedWidgetColor: EvoColors.black,
   fontFamily: 'AirbnbCereal',
   cursorColor: EvoColors.black,

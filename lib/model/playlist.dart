@@ -12,7 +12,7 @@ class Playlist {
 
   Playlist({
     this.name,
-    this.list,
+    this.list = const [],
     this.position = 0,
   });
 

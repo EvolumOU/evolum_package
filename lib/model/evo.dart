@@ -35,9 +35,9 @@ class Evo extends Equatable {
     this.splited = false,
     this.duration,
     this.tag,
-    this.points,
+    this.points = const [],
     this.loop = false,
-    this.timings,
+    this.timings = const [],
     this.recent = false,
     this.text,
   });

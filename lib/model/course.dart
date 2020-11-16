@@ -37,7 +37,7 @@ class Course {
     this.playlist = const [],
     this.list = const [],
     this.position = 0,
-    this.scheduled,
+    this.scheduled = const [],
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
