@@ -9,11 +9,3 @@ Timestamp dateTimetoJson(DateTime date) {
   if (date == null) return Timestamp.now();
   return Timestamp.fromMicrosecondsSinceEpoch(date.microsecondsSinceEpoch);
 }
-
-List<DateTime> listDateTimefromJson(List<Timestamp> dates) {
-  return dates.map((date) => dateTimefromJson(date)).toList();
-}
-
-List<Timestamp> listDateTimetoJson(List<DateTime> dates) {
-  return dates.map((date) => dateTimetoJson(date)).toList();
-}

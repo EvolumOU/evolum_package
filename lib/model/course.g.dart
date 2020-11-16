@@ -25,7 +25,10 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
         ?.map((e) => e == null ? null : Evo.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     position: json['position'] as int,
-    dates: listDateTimefromJson(json['dates'] as List<Timestamp>),
+    scheduled: (json['scheduled'] as List)
+        ?.map((e) =>
+            e == null ? null : Scheduled.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -42,5 +45,5 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'playlist': instance.playlist?.map((e) => e?.toJson())?.toList(),
       'list': instance.list?.map((e) => e?.toJson())?.toList(),
       'position': instance.position,
-      'dates': listDateTimetoJson(instance.dates),
+      'scheduled': instance.scheduled?.map((e) => e?.toJson())?.toList(),
     };

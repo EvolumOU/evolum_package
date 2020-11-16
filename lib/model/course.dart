@@ -1,3 +1,4 @@
+import 'package:evolum_package/model/scheduled.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -21,8 +22,7 @@ class Course {
   List<Playlist> playlist;
   List<Evo> list;
   int position;
-  @JsonKey(toJson: listDateTimetoJson, fromJson: listDateTimefromJson)
-  List<DateTime> dates;
+  List<Scheduled> scheduled;
 
   Course({
     this.id,
@@ -37,13 +37,13 @@ class Course {
     this.playlist = const [],
     this.list = const [],
     this.position = 0,
-    this.dates,
+    this.scheduled,
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
     return _$CourseFromJson({
       ...data,
-      "dates": data["dates"] ?? [],
+      "scheduled": data["scheduled"] ?? [],
     });
   }
 
