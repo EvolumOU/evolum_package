@@ -17,18 +17,28 @@ extension EvoExtensionList<T> on List<T> {
 }
 
 extension EvoExtensionEvo on Evo {
+  bool get needAudio =>
+      type == 'parole' ||
+      type == 'musique' ||
+      type == 'méditation' ||
+      type == 'affirmation';
+  bool get needVideo => type == 'yoga';
+  bool get needSinglePage => type == 'texte';
+
+  bool get isTalk => type == 'parole';
   bool get isYoga => type == 'yoga';
   bool get isMusic => type == 'musique';
   bool get isMeditation => type == 'méditation';
-  bool get isDaily => type == 'quotidien';
-  bool get isMoon => type == 'lune';
-  bool get isOracle => type == 'oracle';
-  bool get isAffirmation => type == 'affirmation';
+  bool get isText => type == 'texte';
+  bool get isAff => type == 'affirmation';
 }
 
 extension EvoExtensionCourse on Course {
-  bool get isAdventure => type == 'adventure';
+  bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
+  bool get isDaily => type == 'quotidien';
+  bool get isRandom => type == 'aléatoire';
+  bool get isScheduled => type == 'programmé';
 }
 
 extension EvoExtensionUser on User {
