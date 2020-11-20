@@ -31,6 +31,10 @@ extension EvoExtensionEvo on Evo {
   bool get isMeditation => type == 'méditation';
   bool get isText => type == 'texte';
   bool get isAff => type == 'affirmation';
+
+  String get remoteUrl => "$evoRemoteBaseURL$filename";
+  String get remoteUrl1 => "${evoRemoteBaseURL}meditation/${id}_voice.mp3";
+  String get remoteUrl2 => "${evoRemoteBaseURL}meditation/${id}_bg.mp3";
 }
 
 extension EvoExtensionCourse on Course {
@@ -39,6 +43,26 @@ extension EvoExtensionCourse on Course {
   bool get isDaily => type == 'quotidien';
   bool get isRandom => type == 'aléatoire';
   bool get isScheduled => type == 'programmé';
+
+  String get drawingFilename {
+    const Map<String, String> tagToId = {
+      "concentration": "focus",
+      "dormir": "sleep",
+      "intuition": "intuition",
+      "réveil": "morning",
+      "sos": "sos",
+      "lâcher-prise": "letgo",
+      "enfants": "kids",
+      "voyage": "travel",
+      "chakras": "chakras",
+      "découverte": "discovery",
+      "création de réalité": "reality-creation",
+      "libération": "liberation",
+      "mission de vie": "life-mission",
+      "motivation": "motivation"
+    };
+    return tagToId[tag];
+  }
 }
 
 extension EvoExtensionUser on User {
