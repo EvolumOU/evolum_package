@@ -44,25 +44,7 @@ extension EvoExtensionCourse on Course {
   bool get isRandom => type == 'aléatoire';
   bool get isScheduled => type == 'programmé';
 
-  String get drawingFilename {
-    const Map<String, String> tagToId = {
-      "concentration": "focus",
-      "dormir": "sleep",
-      "intuition": "intuition",
-      "réveil": "morning",
-      "sos": "sos",
-      "lâcher-prise": "letgo",
-      "enfants": "kids",
-      "voyage": "travel",
-      "chakras": "chakras",
-      "découverte": "discovery",
-      "création de réalité": "reality-creation",
-      "libération": "liberation",
-      "mission de vie": "life-mission",
-      "motivation": "motivation"
-    };
-    return tagToId[tag];
-  }
+  String get drawingFilename => tagToId[tag];
 }
 
 extension EvoExtensionUser on User {
