@@ -5,6 +5,7 @@ class APIPath {
   static String user(String uid) => 'user/$uid';
   static String userFav(String uid) => 'user/$uid/info/fav';
   static String userHistory(String uid, String id) => 'user/$uid/history/$id';
+  static String userReco(String uid) => 'user/$uid/info/reco';
 
   static String allCourse() => 'course/';
   static String allUser() => 'user/';
