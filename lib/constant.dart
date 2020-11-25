@@ -16,5 +16,7 @@ const Map<String, String> tagToId = {
   "création de réalité": "reality-creation",
   "libération": "liberation",
   "mission de vie": "life-mission",
-  "motivation": "motivation"
+  "motivation": "motivation",
+  "oracle": "oracle",
+  "prise de conscience": "awareness"
 };
