@@ -110,4 +110,11 @@ extension EvoExtentionDateTime on DateTime {
     final endTime = DateTime(year, month, day, 24, 01);
     return !(isAfter(startTime) && isBefore(endTime));
   }
+
+  bool get isToday {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final aDate = DateTime(year, month, day);
+    return aDate == today;
+  }
 }
