@@ -9,11 +9,13 @@ part of 'reco.dart';
 extension RecoCopyWith on Reco {
   Reco copyWith({
     Evo awareness,
+    DateTime date,
     Evo firstRow,
     Evo oracle,
   }) {
     return Reco(
       awareness: awareness ?? this.awareness,
+      date: date ?? this.date,
       firstRow: firstRow ?? this.firstRow,
       oracle: oracle ?? this.oracle,
     );
@@ -26,6 +28,7 @@ extension RecoCopyWith on Reco {
 
 Reco _$RecoFromJson(Map<String, dynamic> json) {
   return Reco(
+    date: dateTimefromJson(json['date'] as Timestamp),
     firstRow: json['firstRow'] == null
         ? null
         : Evo.fromJson(json['firstRow'] as Map<String, dynamic>),
@@ -39,6 +42,7 @@ Reco _$RecoFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$RecoToJson(Reco instance) => <String, dynamic>{
+      'date': dateTimetoJson(instance.date),
       'firstRow': instance.firstRow?.toJson(),
       'oracle': instance.oracle?.toJson(),
       'awareness': instance.awareness?.toJson(),
