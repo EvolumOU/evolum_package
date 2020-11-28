@@ -11,12 +11,14 @@ extension RecoCopyWith on Reco {
     Evo awareness,
     DateTime date,
     Evo firstRow,
+    Evo moon,
     Evo oracle,
   }) {
     return Reco(
       awareness: awareness ?? this.awareness,
       date: date ?? this.date,
       firstRow: firstRow ?? this.firstRow,
+      moon: moon ?? this.moon,
       oracle: oracle ?? this.oracle,
     );
   }
@@ -38,6 +40,9 @@ Reco _$RecoFromJson(Map<String, dynamic> json) {
     awareness: json['awareness'] == null
         ? null
         : Evo.fromJson(json['awareness'] as Map<String, dynamic>),
+    moon: json['moon'] == null
+        ? null
+        : Evo.fromJson(json['moon'] as Map<String, dynamic>),
   );
 }
 
@@ -46,4 +51,5 @@ Map<String, dynamic> _$RecoToJson(Reco instance) => <String, dynamic>{
       'firstRow': instance.firstRow?.toJson(),
       'oracle': instance.oracle?.toJson(),
       'awareness': instance.awareness?.toJson(),
+      'moon': instance.moon?.toJson(),
     };

@@ -15,12 +15,14 @@ class Reco {
   Evo firstRow;
   Evo oracle;
   Evo awareness;
+  Evo moon;
 
   Reco({
     this.date,
     this.firstRow,
     this.oracle,
     this.awareness,
+    this.moon,
   });
 
   factory Reco.fromJson(Map<String, dynamic> data) => _$RecoFromJson({
@@ -31,5 +33,5 @@ class Reco {
 
   @override
   String toString() =>
-      'Reco{date: $date firstRow: $firstRow awareness: $awareness }';
+      'Reco{date: $date firstRow: $firstRow oracle: $oracle awareness: $awareness moon: $moon  }';
 }
