@@ -9,7 +9,7 @@ part of 'scheduled.dart';
 extension ScheduledCopyWith on Scheduled {
   Scheduled copyWith({
     DateTime date,
-    String nbOfday,
+    int nbOfday,
     String type,
   }) {
     return Scheduled(
@@ -28,7 +28,7 @@ Scheduled _$ScheduledFromJson(Map<String, dynamic> json) {
   return Scheduled(
     date: dateTimefromJson(json['date'] as Timestamp),
     type: json['type'] as String,
-    nbOfday: json['nbOfday'] as String,
+    nbOfday: json['nbOfday'] as int,
   );
 }
 

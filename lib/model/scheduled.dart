@@ -12,7 +12,7 @@ class Scheduled {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime date;
   final String type;
-  final String nbOfday;
+  final int nbOfday;
 
   Scheduled({
     this.date,
