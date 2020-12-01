@@ -82,7 +82,7 @@ class FirestoreService {
 
     final Stream<QuerySnapshot> snapshots = query.snapshots();
     return snapshots.map((snapshot) {
-      lastUserDocument = snapshot.docs.last;
+      if (snapshot.docs.isNotEmpty) lastUserDocument = snapshot.docs.last;
       final result = snapshot.docs
           .map((snapshot) => builder(snapshot.data(), snapshot.id))
           .where((value) => value != null)
