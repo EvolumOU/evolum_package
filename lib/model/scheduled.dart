@@ -13,11 +13,13 @@ class Scheduled {
   final DateTime date;
   final String type;
   final int nbOfday;
+  final String name;
 
   Scheduled({
     this.date,
     this.type,
     this.nbOfday,
+    this.name,
   });
 
   factory Scheduled.fromJson(Map<String, dynamic> data) =>
