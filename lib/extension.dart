@@ -117,4 +117,8 @@ extension EvoExtentionDateTime on DateTime {
     final aDate = DateTime(year, month, day);
     return aDate == today;
   }
+
+  String get toDayMonth {
+    return DateFormat('d MMMM', 'fr_FR').format(this);
+  }
 }
