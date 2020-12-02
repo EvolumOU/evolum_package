@@ -44,7 +44,7 @@ extension EvoExtensionCourse on Course {
   bool get isRandom => type == 'aléatoire';
   bool get isScheduled => type == 'programmé';
 
-  String get drawingFilename => tagToId[tag];
+  String get drawingFilename => strToId[tag];
 }
 
 extension EvoExtensionUser on User {
