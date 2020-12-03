@@ -112,6 +112,7 @@ extension EvoExtentionDateTime on DateTime {
   }
 
   bool get isToday {
+    if (this == null) return false;
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
     final aDate = DateTime(year, month, day);

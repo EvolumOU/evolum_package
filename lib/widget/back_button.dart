@@ -27,21 +27,18 @@ class EvoBackButton extends StatelessWidget {
     return SafeArea(
       child: Align(
         alignment: Alignment.topLeft,
-        child: InkResponse(
-          onTap: onPress ?? Navigator.of(context).maybePop,
-          child: Container(
-            height: 56,
-            width: 56,
-            child: Center(
-              child: Container(
-                height: size,
-                width: size,
-                decoration: BoxDecoration(
-                  shape: rounded ? BoxShape.circle : BoxShape.rectangle,
-                  color: rounded ? EvoColors.white : Colors.transparent,
-                ),
-                child: Image.asset("assets/image/icon/$backAssets"),
+        child: RawMaterialButton(
+          onPressed: onPress ?? Navigator.of(context).maybePop,
+          constraints: BoxConstraints.expand(height: 56, width: 56),
+          child: Center(
+            child: Container(
+              height: size,
+              width: size,
+              decoration: BoxDecoration(
+                shape: rounded ? BoxShape.circle : BoxShape.rectangle,
+                color: rounded ? EvoColors.white : Colors.transparent,
               ),
+              child: Image.asset("assets/image/icon/$backAssets"),
             ),
           ),
         ),
