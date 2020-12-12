@@ -21,6 +21,8 @@ dependencies:
   flutter_hooks: ^0.14.1
   intl: ^0.16.1
   copy_with_extension: ^1.4.0
+  simple_animations: ^2.2.2
+
 
 dev_dependencies:
   flutter_test:

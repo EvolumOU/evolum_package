@@ -40,6 +40,7 @@ extension EvoExtensionEvo on Evo {
 extension EvoExtensionCourse on Course {
   bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
+  bool get isCategorized => type == 'mood' || type == 'suggestion';
   bool get isDaily => type == 'quotidien';
   bool get isRandom => type == 'aléatoire';
   bool get isScheduled => type == 'programmé';

@@ -70,5 +70,9 @@ final ThemeData darkTheme = ThemeData(
     color: EvoColors.secondaryBlack,
     elevation: 0,
   ),
-  appBarTheme: AppBarTheme(elevation: 0, color: Colors.transparent),
+  appBarTheme: AppBarTheme(
+    elevation: 0,
+    color: Colors.transparent,
+    iconTheme: IconThemeData(color: EvoColors.white),
+  ),
 );
