@@ -15,6 +15,7 @@ extension UserCopyWith on User {
     List<dynamic> goal,
     DateTime leadDate,
     String name,
+    int nbChallengeDone,
     int nbDone,
     int noReview,
     bool notification,
@@ -31,6 +32,7 @@ extension UserCopyWith on User {
       goal: goal ?? this.goal,
       leadDate: leadDate ?? this.leadDate,
       name: name ?? this.name,
+      nbChallengeDone: nbChallengeDone ?? this.nbChallengeDone,
       nbDone: nbDone ?? this.nbDone,
       noReview: noReview ?? this.noReview,
       notification: notification ?? this.notification,
@@ -59,10 +61,11 @@ User _$UserFromJson(Map<String, dynamic> json) {
     goal: json['goal'] as List,
     nbDone: json['nbDone'] as int,
     noReview: json['noReview'] as int,
+    nbChallengeDone: json['nbChallengeDone'] as int,
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
     leadDate: dateTimefromJson(json['leadDate'] as Timestamp),
     challengeDate: dateTimefromJson(json['challengeDate'] as Timestamp),
-  )..nbChallengeDone = json['nbChallengeDone'] as int;
+  );
 }
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{

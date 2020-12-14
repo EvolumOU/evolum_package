@@ -39,6 +39,7 @@ class User {
     this.goal = const [],
     this.nbDone = 0,
     this.noReview = 0,
+    this.nbChallengeDone,
     this.createdDate,
     this.leadDate,
     this.challengeDate,
@@ -53,6 +54,7 @@ class User {
       "uid": uid,
       "nbDone": data["nbDone"] ?? 0,
       "noReview": data["noReview"] ?? 0,
+      "nbChallengeDone": data["nbChallengeDone"] ?? 0,
     });
   }
 
