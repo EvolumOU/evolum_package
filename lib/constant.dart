@@ -24,5 +24,5 @@ const Map<String, String> strToId = {
   "affirmation": "affirmation",
   "prise de conscience": "awareness",
   "lune": "moon",
-  "welcome": "mail"
+  "bienvenue": "welcome"
 };
