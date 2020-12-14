@@ -49,10 +49,27 @@ extension EvoExtensionCourse on Course {
 }
 
 extension EvoExtensionUser on User {
-  bool get isFree => status == 'free';
+  bool get isBlock =>
+      status == 'cancel' ||
+      status == 'free' ||
+      status == 'challenger' ||
+      status == 'lead';
+  bool get isFull => status == 'abo' || status == 'trial';
+  bool get isCancel => status == 'cancel';
+  bool get isLead => status == 'lead';
+  bool get isChallenger => status == 'challenger';
+  bool get isFree => status == 'challenger';
 }
 
 extension EvoExtensionString on String {
+  bool get isUserStatusValid =>
+      this == 'cancel' ||
+      this == 'free' ||
+      this == 'challenger' ||
+      this == 'lead' ||
+      this == 'abo' ||
+      this == "trial";
+
   String spaceRemoved() {
     return replaceFirst(" ", "");
   }

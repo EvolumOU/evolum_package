@@ -9,9 +9,11 @@ part of 'user.dart';
 extension UserCopyWith on User {
   User copyWith({
     bool bgmusic,
+    DateTime challengeDate,
     DateTime createdDate,
     String email,
     List<dynamic> goal,
+    DateTime leadDate,
     String name,
     int nbDone,
     int noReview,
@@ -23,9 +25,11 @@ extension UserCopyWith on User {
   }) {
     return User(
       bgmusic: bgmusic ?? this.bgmusic,
+      challengeDate: challengeDate ?? this.challengeDate,
       createdDate: createdDate ?? this.createdDate,
       email: email ?? this.email,
       goal: goal ?? this.goal,
+      leadDate: leadDate ?? this.leadDate,
       name: name ?? this.name,
       nbDone: nbDone ?? this.nbDone,
       noReview: noReview ?? this.noReview,
@@ -56,7 +60,9 @@ User _$UserFromJson(Map<String, dynamic> json) {
     nbDone: json['nbDone'] as int,
     noReview: json['noReview'] as int,
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
-  );
+    leadDate: dateTimefromJson(json['leadDate'] as Timestamp),
+    challengeDate: dateTimefromJson(json['challengeDate'] as Timestamp),
+  )..nbChallengeDone = json['nbChallengeDone'] as int;
 }
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -70,6 +76,9 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'status': instance.status,
       'goal': instance.goal,
       'nbDone': instance.nbDone,
+      'nbChallengeDone': instance.nbChallengeDone,
       'noReview': instance.noReview,
+      'leadDate': dateTimetoJson(instance.leadDate),
+      'challengeDate': dateTimetoJson(instance.challengeDate),
       'createdDate': dateTimetoJson(instance.createdDate),
     };

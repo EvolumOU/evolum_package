@@ -14,7 +14,7 @@ enum ReviewStep { init, askReview, getFeedBack, thanks }
 
 enum PaymentStep { start, form, end }
 
-enum UserStatus { free, abo }
+enum UserStatus { free, challenger, lead, trial, abo, cancel }
 
 enum PlayState { none, playing, paused, buffering, noInternet }
 

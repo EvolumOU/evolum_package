@@ -18,7 +18,12 @@ class User {
   String status;
   List<dynamic> goal;
   int nbDone;
+  int nbChallengeDone;
   int noReview;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  DateTime leadDate;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  DateTime challengeDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
 
@@ -35,6 +40,8 @@ class User {
     this.nbDone = 0,
     this.noReview = 0,
     this.createdDate,
+    this.leadDate,
+    this.challengeDate,
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {
