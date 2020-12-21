@@ -21,6 +21,7 @@ class Playlist {
   factory Playlist.fromJson(Map<String, dynamic> data) => _$PlaylistFromJson({
         ...data,
         "position": data["position"] ?? 0,
+        "hide": data["hide"] ?? false,
       });
 
   Map<String, dynamic> toJson() => _$PlaylistToJson(this);
