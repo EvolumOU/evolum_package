@@ -9,11 +9,13 @@ class Playlist {
   final String name;
   final List<dynamic> list;
   final int position;
+  final bool hide;
 
   Playlist({
     this.name,
     this.list = const [],
     this.position = 0,
+    this.hide = false,
   });
 
   factory Playlist.fromJson(Map<String, dynamic> data) => _$PlaylistFromJson({
@@ -24,5 +26,6 @@ class Playlist {
   Map<String, dynamic> toJson() => _$PlaylistToJson(this);
 
   @override
-  String toString() => 'Playlist[name:$name, list:$list]';
+  String toString() =>
+      'Playlist[position:$position, name:$name, list:$list, hide:$hide]';
 }
