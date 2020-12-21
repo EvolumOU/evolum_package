@@ -13,7 +13,10 @@ extension EvoExtensionDuration on Duration {
 }
 
 extension EvoExtensionList<T> on List<T> {
-  T get oneRandom => this[Random().nextInt(length - 1)];
+  T get oneRandom {
+    if (length == 1) return this[0];
+    return this[Random().nextInt(length - 1)];
+  }
 }
 
 extension EvoExtensionEvo on Evo {
@@ -118,6 +121,8 @@ extension EvoExtensionInt on int {
   }
 
   String get minFormatFromSecondes => "${(this / 60).round().toString()} min";
+
+  bool get pourcentageOfChance => Random().nextInt(99) + 1 <= this;
 }
 
 extension EvoExtentionDateTime on DateTime {

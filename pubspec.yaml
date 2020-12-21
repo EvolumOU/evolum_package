@@ -30,3 +30,51 @@ dev_dependencies:
     
   build_runner: ^1.10.4
   copy_with_extension_gen: ^1.4.0
+
+flutter:
+  uses-material-design: true
+  assets:
+   - assets/image/background/
+   - assets/image/icon/
+   - assets/image/player/
+   - assets/image/tab/
+   - assets/image/download/
+   - assets/image/gift/
+   - assets/image/gift/white/
+   - assets/image/gift/black/
+   - assets/image/background/afternoon/
+   - assets/image/background/sunset/
+   - assets/image/background/daybreak/
+   - assets/image/background/deepnight/
+   - assets/image/background/earlynight/
+   - assets/image/background/morning/
+   - assets/image/background/noon/
+   - assets/image/background/evening/
+   - assets/image/share/
+   - assets/image/drawing/big/white/
+   - assets/image/drawing/big/black/
+   - assets/image/drawing/small/white/
+   - assets/image/drawing/small/black/
+   - assets/image/sales/
+   - assets/image/chakras/
+   - assets/lottie/
+   - assets/audio/
+   - assets/video/
+   - assets/video/background/
+
+
+  fonts:
+    - family: AirbnbCereal
+      fonts:
+        - asset: assets/fonts/AirbnbCerealLight.ttf
+          weight: 300
+        - asset: assets/fonts/AirbnbCerealBook.ttf
+          weight: 400
+        - asset: assets/fonts/AirbnbCerealMedium.ttf
+          weight: 600
+        - asset: assets/fonts/AirbnbCerealBold.ttf
+          weight: 700
+        - asset: assets/fonts/AirbnbCerealExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/AirbnbCerealBlack.ttf
+          weight: 900
