@@ -23,11 +23,17 @@ class EvoColors {
 
   static Color get oneRandomColor {
     final List<String> array = [
-      '#F6C383',
-      "#9AFFB1",
-      "#FFB48C",
+      '#C5B7FD',
+      "#B5FFC6",
+      "#FFD191",
       "#C0CDE7",
-      "#FE654B"
+      "#68D5FB",
+      "#FE6D51",
+      "#9AFFB1",
+      "#FCE8C3",
+      "#FF8E60",
+      "#8AD0FC",
+      "#F6C383",
     ];
 
     final randomStrColor = array[Random().nextInt(array.length - 1)];

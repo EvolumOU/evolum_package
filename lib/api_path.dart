@@ -1,6 +1,7 @@
 class APIPath {
   static String evo(String id) => 'evo/$id';
   static String course(String id) => 'course/$id';
+  static String challenge(String id) => 'challenge/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFav(String uid) => 'user/$uid/info/fav';
