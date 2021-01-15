@@ -10,12 +10,12 @@ part 'history.g.dart';
 @CopyWith()
 @JsonSerializable(nullable: false, explicitToJson: true)
 class History {
-  final String id;
-  final Evo evo;
-  final String review;
+  String id;
+  Evo evo;
+  String review;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  final DateTime date;
-  final int secondsRead;
+  DateTime date;
+  int secondsRead;
 
   History({
     this.id,

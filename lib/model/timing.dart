@@ -6,9 +6,9 @@ part 'timing.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Timing {
-  final int begin;
-  final int end;
-  final String text;
+  int begin;
+  int end;
+  String text;
 
   Timing({
     this.begin,

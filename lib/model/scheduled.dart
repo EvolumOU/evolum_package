@@ -10,10 +10,10 @@ part 'scheduled.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Scheduled {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  final DateTime date;
-  final String type;
-  final int nbOfday;
-  final String name;
+  DateTime date;
+  String type;
+  int nbOfday;
+  String name;
 
   Scheduled({
     this.date,

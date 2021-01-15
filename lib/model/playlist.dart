@@ -6,10 +6,10 @@ part 'playlist.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Playlist {
-  final String name;
-  final List<dynamic> list;
-  final int position;
-  final bool hide;
+  String name;
+  List<dynamic> list;
+  int position;
+  bool hide;
 
   Playlist({
     this.name,

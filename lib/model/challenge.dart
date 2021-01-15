@@ -8,13 +8,11 @@ part 'challenge.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Challenge {
   String id;
-  double day;
   String name;
   List<Playlist> playlist;
 
   Challenge({
     this.id,
-    this.day,
     this.name,
     this.playlist = const [],
   });

@@ -62,14 +62,6 @@ extension EvoExtensionUser on User {
   bool get isLead => status == 'lead';
   bool get isChallenger => status == 'challenger';
   bool get isFree => status == 'free';
-
-  bool get isOffer {
-    if (status == "lead") {
-      final fiveDayMoreLeadDate = leadDate.add(Duration(days: 5));
-      return DateTime.now().isBefore(fiveDayMoreLeadDate);
-    }
-    return false;
-  }
 }
 
 extension EvoExtensionString on String {
