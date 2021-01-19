@@ -12,6 +12,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:meta/meta.dart';
 import 'package:simple_animations/simple_animations.dart';
+import 'package:lottie/lottie.dart';
 
 part 'extension.dart';
 part 'enum.dart';
@@ -31,3 +32,5 @@ part 'animation/fadeinout_transitioner.dart';
 part 'animation/random_splash.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_container.dart';
+part 'animation/loading_animated.dart';
+part 'animation/lottie_animated.dart';
