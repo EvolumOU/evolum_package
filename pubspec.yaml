@@ -18,7 +18,7 @@ dependencies:
   json_serializable: ^3.5.0
   equatable: ^1.2.5
   splash_tap: ^0.1.2
-  flutter_hooks: ^0.14.1
+  flutter_hooks: ^0.15.0
   intl: ^0.16.1
   copy_with_extension: ^1.4.0
   simple_animations: ^2.2.2
