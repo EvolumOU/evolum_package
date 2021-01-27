@@ -8,7 +8,6 @@ part of 'challenge.dart';
 
 extension ChallengeCopyWith on Challenge {
   Challenge copyWith({
-    double day,
     String id,
     String name,
     List<Playlist> playlist,

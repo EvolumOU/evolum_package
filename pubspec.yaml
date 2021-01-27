@@ -2,10 +2,9 @@ name: evolum_package
 description: A new Flutter package project.
 version: 0.0.1
 author:
-homepage:
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.9.0 <3.18.1"
   flutter: ">=1.17.0 <2.0.0"
 
 dependencies:

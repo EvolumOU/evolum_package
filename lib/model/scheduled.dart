@@ -18,7 +18,7 @@ class Scheduled {
   Scheduled({
     this.date,
     this.type,
-    this.nbOfday,
+    this.nbOfday = 1,
     this.name,
   });
 

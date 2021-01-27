@@ -12,12 +12,14 @@ extension PlaylistCopyWith on Playlist {
     List<dynamic> list,
     String name,
     int position,
+    String type,
   }) {
     return Playlist(
       hide: hide ?? this.hide,
       list: list ?? this.list,
       name: name ?? this.name,
       position: position ?? this.position,
+      type: type ?? this.type,
     );
   }
 }
@@ -32,6 +34,7 @@ Playlist _$PlaylistFromJson(Map<String, dynamic> json) {
     list: json['list'] as List,
     position: json['position'] as int,
     hide: json['hide'] as bool,
+    type: json['type'] as String,
   );
 }
 
@@ -40,4 +43,5 @@ Map<String, dynamic> _$PlaylistToJson(Playlist instance) => <String, dynamic>{
       'list': instance.list,
       'position': instance.position,
       'hide': instance.hide,
+      'type': instance.type,
     };
