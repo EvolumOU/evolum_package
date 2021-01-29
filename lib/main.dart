@@ -15,7 +15,6 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 
 part 'extension.dart';
-part 'enum.dart';
 part 'firestore.dart';
 part 'constant.dart';
 part 'widget/shadow_mask.dart';
