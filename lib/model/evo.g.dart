@@ -58,7 +58,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
         .toList(),
     recent: json['recent'] as bool,
     text: json['text'] as String,
-  );
+  )..createdDate = dateTimefromJson(json['createdDate'] as Timestamp);
 }
 
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
@@ -74,4 +74,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'timings': instance.timings.map((e) => e.toJson()).toList(),
       'recent': instance.recent,
       'text': instance.text,
+      'createdDate': dateTimetoJson(instance.createdDate),
     };
