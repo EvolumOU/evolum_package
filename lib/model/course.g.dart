@@ -21,6 +21,7 @@ extension CourseCopyWith on Course {
     String specolor2,
     String tag,
     String type,
+    DateTime updatedDate,
   }) {
     return Course(
       color1: color1 ?? this.color1,
@@ -36,6 +37,7 @@ extension CourseCopyWith on Course {
       specolor2: specolor2 ?? this.specolor2,
       tag: tag ?? this.tag,
       type: type ?? this.type,
+      updatedDate: updatedDate ?? this.updatedDate,
     );
   }
 }
@@ -67,6 +69,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
         ?.map((e) =>
             e == null ? null : Scheduled.fromJson(e as Map<String, dynamic>))
         ?.toList(),
+    updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp),
   );
 }
 
@@ -84,4 +87,5 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'list': instance.list?.map((e) => e?.toJson())?.toList(),
       'position': instance.position,
       'scheduled': instance.scheduled?.map((e) => e?.toJson())?.toList(),
+      'updatedDate': dateTimetoJson(instance.updatedDate),
     };

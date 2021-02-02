@@ -8,6 +8,7 @@ part of 'evo.dart';
 
 extension EvoCopyWith on Evo {
   Evo copyWith({
+    DateTime createdDate,
     int duration,
     String filename,
     String id,
@@ -22,6 +23,7 @@ extension EvoCopyWith on Evo {
     String type,
   }) {
     return Evo(
+      createdDate: createdDate ?? this.createdDate,
       duration: duration ?? this.duration,
       filename: filename ?? this.filename,
       id: id ?? this.id,
@@ -58,7 +60,8 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
         .toList(),
     recent: json['recent'] as bool,
     text: json['text'] as String,
-  )..createdDate = dateTimefromJson(json['createdDate'] as Timestamp);
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
+  );
 }
 
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{

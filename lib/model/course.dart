@@ -4,6 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'evo.dart';
 import 'playlist.dart';
+import 'utils.dart';
 
 part 'course.g.dart';
 
@@ -23,6 +24,8 @@ class Course {
   List<Evo> list;
   int position;
   List<Scheduled> scheduled;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  DateTime updatedDate;
 
   Course({
     this.id,
@@ -38,6 +41,7 @@ class Course {
     this.list = const [],
     this.position = 0,
     this.scheduled = const [],
+    this.updatedDate,
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
