@@ -38,6 +38,9 @@ extension EvoExtensionEvo on Evo {
   String get remoteUrl => "$evoRemoteBaseURL$filename";
   String get remoteUrl1 => "${evoRemoteBaseURL}meditation/${id}_voice.mp3";
   String get remoteUrl2 => "${evoRemoteBaseURL}meditation/${id}_bg.mp3";
+
+  bool get isNew =>
+      DateTime.now().isBefore(createdDate.add(Duration(days: 20)));
 }
 
 extension EvoExtensionCourse on Course {
@@ -49,6 +52,9 @@ extension EvoExtensionCourse on Course {
   bool get isScheduled => type == 'programmé';
 
   String get drawingFilename => strToId[tag];
+
+  bool get isNew =>
+      DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));
 }
 
 extension EvoExtensionUser on User {
