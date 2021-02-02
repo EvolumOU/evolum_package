@@ -76,7 +76,7 @@ class AnimatedGradientContainer extends StatelessWidget {
           child: child,
         );
       },
-      child: Center(child: child),
+      child: child,
     );
   }
 }
