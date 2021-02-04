@@ -7,10 +7,10 @@ part 'salesplan.g.dart';
 @JsonSerializable(explicitToJson: true)
 class SalesPlan {
   String id;
-  double fullprice;
-  double price;
+  String fullprice;
+  String price;
   String promo;
-  double priceByMonth;
+  String priceByMonth;
 
   SalesPlan({
     this.id,

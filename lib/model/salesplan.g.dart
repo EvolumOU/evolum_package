@@ -31,10 +31,10 @@ extension SalesPlanCopyWith on SalesPlan {
 SalesPlan _$SalesPlanFromJson(Map<String, dynamic> json) {
   return SalesPlan(
     id: json['id'] as String,
-    fullprice: (json['fullprice'] as num)?.toDouble(),
-    price: (json['price'] as num)?.toDouble(),
+    fullprice: json['fullprice'] as String,
+    price: json['price'] as String,
     promo: json['promo'] as String,
-    priceByMonth: (json['priceByMonth'] as num)?.toDouble(),
+    priceByMonth: json['priceByMonth'] as String,
   );
 }
 
