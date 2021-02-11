@@ -50,6 +50,7 @@ extension EvoExtensionCourse on Course {
   bool get isDaily => type == 'quotidien';
   bool get isRandom => type == 'aléatoire';
   bool get isScheduled => type == 'programmé';
+  bool get isNoPath => type == 'nopath';
 
   String get drawingFilename => strToId[tag];
 
