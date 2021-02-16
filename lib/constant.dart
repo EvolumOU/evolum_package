@@ -25,5 +25,5 @@ const Map<String, String> strToId = {
   "prise de conscience": "awareness",
   "lune": "moon",
   "bienvenue": "welcome",
-  "cycle féminin": "feminity"
+  "féminin": "feminity"
 };
