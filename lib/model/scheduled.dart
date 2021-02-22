@@ -13,13 +13,11 @@ class Scheduled {
   DateTime date;
   String type;
   int nbOfday;
-  String name;
 
   Scheduled({
     this.date,
     this.type,
     this.nbOfday = 1,
-    this.name,
   });
 
   factory Scheduled.fromJson(Map<String, dynamic> data) =>
@@ -28,5 +26,5 @@ class Scheduled {
   Map<String, dynamic> toJson() => _$ScheduledToJson(this);
 
   @override
-  String toString() => 'Scheduled[text:$date, list:$type, nbOfday:$nbOfday]';
+  String toString() => 'Scheduled[date:$date, type:$type, nbOfday:$nbOfday]';
 }
