@@ -32,8 +32,8 @@ class Course {
     this.id,
     this.name,
     this.type,
-    this.tag = 'error',
-    this.descr = "Erreur",
+    this.tag,
+    this.descr,
     this.color1 = "#FFFFFF",
     this.color2 = "#FFFFFF",
     this.specolor1 = "#FFFFFF",
@@ -56,5 +56,5 @@ class Course {
 
   @override
   String toString() =>
-      'Course{name:$name, tag:$tag, type:$type, playlist:$playlist}';
+      'Course{id:$id, name:$name, tag:$tag, type:$type, playlist:$playlist}';
 }
