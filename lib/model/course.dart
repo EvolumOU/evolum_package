@@ -38,10 +38,10 @@ class Course {
     this.color2 = "#FFFFFF",
     this.specolor1 = "#FFFFFF",
     this.specolor2 = "#FFFFFF",
-    this.playlist = const [],
-    this.list = const [],
+    this.playlist = const <Playlist>[],
+    this.list = const <Evo>[],
     this.position = 0,
-    this.scheduled = const [],
+    this.scheduled = const <Scheduled>[],
     this.updatedDate,
   });
 
