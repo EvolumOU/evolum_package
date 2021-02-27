@@ -8,10 +8,10 @@ part of 'salesplan.dart';
 
 extension SalesPlanCopyWith on SalesPlan {
   SalesPlan copyWith({
-    double fullprice,
+    String fullprice,
     String id,
-    double price,
-    double priceByMonth,
+    String price,
+    String priceByMonth,
     String promo,
   }) {
     return SalesPlan(
