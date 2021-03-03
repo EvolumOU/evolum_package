@@ -16,6 +16,7 @@ class Reco {
   Evo oracle;
   Evo awareness;
   Evo moon;
+  Scheduled moonScheduled;
 
   Reco({
     this.date,
@@ -23,6 +24,7 @@ class Reco {
     this.oracle,
     this.awareness,
     this.moon,
+    this.moonScheduled,
   });
 
   factory Reco.fromJson(Map<String, dynamic> data) => _$RecoFromJson({
