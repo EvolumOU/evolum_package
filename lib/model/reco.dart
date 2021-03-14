@@ -12,19 +12,19 @@ part 'reco.g.dart';
 class Reco {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
-  Evo firstRow;
+  List<Evo> list;
+  List<Scheduled> schedule;
+  Evo first;
   Evo oracle;
-  Evo awareness;
-  Evo moon;
-  Scheduled moonScheduled;
+  Evo free;
 
   Reco({
     this.date,
-    this.firstRow,
+    this.list,
+    this.schedule,
     this.oracle,
-    this.awareness,
-    this.moon,
-    this.moonScheduled,
+    this.free,
+    this.first,
   });
 
   factory Reco.fromJson(Map<String, dynamic> data) => _$RecoFromJson({
@@ -35,5 +35,5 @@ class Reco {
 
   @override
   String toString() =>
-      'Reco{date: $date firstRow: $firstRow oracle: $oracle awareness: $awareness moon: $moon  }';
+      'Reco{date: $date first:$first, list: $list schedule: $schedule oracle: $oracle free=$free }';
 }

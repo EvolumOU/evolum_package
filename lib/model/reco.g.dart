@@ -8,20 +8,18 @@ part of 'reco.dart';
 
 extension RecoCopyWith on Reco {
   Reco copyWith({
-    Evo awareness,
     DateTime date,
-    Evo firstRow,
-    Evo moon,
-    Scheduled moonScheduled,
+    Evo free,
+    List<Evo> list,
     Evo oracle,
+    List<Scheduled> schedule,
   }) {
     return Reco(
-      awareness: awareness ?? this.awareness,
       date: date ?? this.date,
-      firstRow: firstRow ?? this.firstRow,
-      moon: moon ?? this.moon,
-      moonScheduled: moonScheduled ?? this.moonScheduled,
+      free: free ?? this.free,
+      list: list ?? this.list,
       oracle: oracle ?? this.oracle,
+      schedule: schedule ?? this.schedule,
     );
   }
 }
@@ -33,29 +31,26 @@ extension RecoCopyWith on Reco {
 Reco _$RecoFromJson(Map<String, dynamic> json) {
   return Reco(
     date: dateTimefromJson(json['date'] as Timestamp),
-    firstRow: json['firstRow'] == null
-        ? null
-        : Evo.fromJson(json['firstRow'] as Map<String, dynamic>),
+    list: (json['list'] as List)
+        ?.map((e) => e == null ? null : Evo.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    schedule: (json['schedule'] as List)
+        ?.map((e) =>
+            e == null ? null : Scheduled.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
     oracle: json['oracle'] == null
         ? null
         : Evo.fromJson(json['oracle'] as Map<String, dynamic>),
-    awareness: json['awareness'] == null
+    free: json['free'] == null
         ? null
-        : Evo.fromJson(json['awareness'] as Map<String, dynamic>),
-    moon: json['moon'] == null
-        ? null
-        : Evo.fromJson(json['moon'] as Map<String, dynamic>),
-    moonScheduled: json['moonScheduled'] == null
-        ? null
-        : Scheduled.fromJson(json['moonScheduled'] as Map<String, dynamic>),
+        : Evo.fromJson(json['free'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$RecoToJson(Reco instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
-      'firstRow': instance.firstRow?.toJson(),
+      'list': instance.list?.map((e) => e?.toJson())?.toList(),
+      'schedule': instance.schedule?.map((e) => e?.toJson())?.toList(),
       'oracle': instance.oracle?.toJson(),
-      'awareness': instance.awareness?.toJson(),
-      'moon': instance.moon?.toJson(),
-      'moonScheduled': instance.moonScheduled?.toJson(),
+      'free': instance.free?.toJson(),
     };
