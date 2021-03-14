@@ -13,7 +13,7 @@ class Reco {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   List<Evo> list;
-  List<Scheduled> schedule;
+  List<Scheduled> scheduled;
   Evo first;
   Evo oracle;
   Evo free;
@@ -21,7 +21,7 @@ class Reco {
   Reco({
     this.date,
     this.list,
-    this.schedule,
+    this.scheduled,
     this.oracle,
     this.free,
     this.first,
@@ -35,5 +35,5 @@ class Reco {
 
   @override
   String toString() =>
-      'Reco{date: $date first:$first, list: $list schedule: $schedule oracle: $oracle free=$free }';
+      'Reco{date: $date first:$first, list: $list scheduled: $scheduled oracle: $oracle free=$free }';
 }

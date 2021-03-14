@@ -13,7 +13,7 @@ extension RecoCopyWith on Reco {
     Evo free,
     List<Evo> list,
     Evo oracle,
-    List<Scheduled> schedule,
+    List<Scheduled> scheduled,
   }) {
     return Reco(
       date: date ?? this.date,
@@ -21,7 +21,7 @@ extension RecoCopyWith on Reco {
       free: free ?? this.free,
       list: list ?? this.list,
       oracle: oracle ?? this.oracle,
-      schedule: schedule ?? this.schedule,
+      scheduled: scheduled ?? this.scheduled,
     );
   }
 }
@@ -36,7 +36,7 @@ Reco _$RecoFromJson(Map<String, dynamic> json) {
     list: (json['list'] as List)
         ?.map((e) => e == null ? null : Evo.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    schedule: (json['schedule'] as List)
+    scheduled: (json['scheduled'] as List)
         ?.map((e) =>
             e == null ? null : Scheduled.fromJson(e as Map<String, dynamic>))
         ?.toList(),
@@ -55,7 +55,7 @@ Reco _$RecoFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$RecoToJson(Reco instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
       'list': instance.list?.map((e) => e?.toJson())?.toList(),
-      'schedule': instance.schedule?.map((e) => e?.toJson())?.toList(),
+      'scheduled': instance.scheduled?.map((e) => e?.toJson())?.toList(),
       'first': instance.first?.toJson(),
       'oracle': instance.oracle?.toJson(),
       'free': instance.free?.toJson(),
