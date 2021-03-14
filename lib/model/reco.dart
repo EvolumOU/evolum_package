@@ -20,16 +20,20 @@ class Reco {
 
   Reco({
     this.date,
-    this.list,
-    this.scheduled,
+    this.list = const <Evo>[],
+    this.scheduled = const <Scheduled>[],
     this.oracle,
     this.free,
     this.first,
   });
 
-  factory Reco.fromJson(Map<String, dynamic> data) => _$RecoFromJson({
-        ...data,
-      });
+  factory Reco.fromJson(Map<String, dynamic> data) {
+    return _$RecoFromJson({
+      ...data,
+      "list": data["list"] ?? [],
+      "scheduled": data["scheduled"] ?? [],
+    });
+  }
 
   Map<String, dynamic> toJson() => _$RecoToJson(this);
 
