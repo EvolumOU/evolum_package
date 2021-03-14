@@ -70,7 +70,9 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
             e == null ? null : Scheduled.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp),
-  );
+  )..salesWeb = json['salesWeb'] == null
+      ? null
+      : SalesWeb.fromJson(json['salesWeb'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
@@ -88,4 +90,5 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'position': instance.position,
       'scheduled': instance.scheduled?.map((e) => e?.toJson())?.toList(),
       'updatedDate': dateTimetoJson(instance.updatedDate),
+      'salesWeb': instance.salesWeb?.toJson(),
     };

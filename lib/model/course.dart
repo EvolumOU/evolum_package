@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:evolum_package/model/salesweb.dart';
 import 'package:evolum_package/model/scheduled.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -27,6 +28,7 @@ class Course {
   List<Scheduled> scheduled;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime updatedDate;
+  SalesWeb salesWeb;
 
   Course({
     this.id,
