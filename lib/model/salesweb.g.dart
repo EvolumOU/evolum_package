@@ -8,12 +8,16 @@ part of 'salesweb.dart';
 
 extension SalesWebCopyWith on SalesWeb {
   SalesWeb copyWith({
+    DateTime date,
+    String id,
+    int nb,
     String sellUrl,
-    String successUrl,
   }) {
     return SalesWeb(
+      date: date ?? this.date,
+      id: id ?? this.id,
+      nb: nb ?? this.nb,
       sellUrl: sellUrl ?? this.sellUrl,
-      successUrl: successUrl ?? this.successUrl,
     );
   }
 }
@@ -24,12 +28,16 @@ extension SalesWebCopyWith on SalesWeb {
 
 SalesWeb _$SalesWebFromJson(Map<String, dynamic> json) {
   return SalesWeb(
+    id: json['id'] as String,
     sellUrl: json['sellUrl'] as String,
-    successUrl: json['successUrl'] as String,
+    nb: json['nb'] as int,
+    date: dateTimefromJson(json['date'] as Timestamp),
   );
 }
 
 Map<String, dynamic> _$SalesWebToJson(SalesWeb instance) => <String, dynamic>{
+      'id': instance.id,
       'sellUrl': instance.sellUrl,
-      'successUrl': instance.successUrl,
+      'date': dateTimetoJson(instance.date),
+      'nb': instance.nb,
     };

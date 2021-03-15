@@ -26,6 +26,7 @@ class User {
   DateTime challengeDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
+  List<String> unlocked;
 
   User({
     this.uid,
@@ -36,13 +37,14 @@ class User {
     this.status = "free",
     this.reminderMorning,
     this.reminderNight,
-    this.goal = const [],
+    this.goal = const <String>[],
     this.nbDone = 0,
     this.noReview = 0,
     this.nbChallengeDone,
     this.createdDate,
     this.leadDate,
     this.challengeDate,
+    this.unlocked = const <String>[],
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {
@@ -55,6 +57,7 @@ class User {
       "nbDone": data["nbDone"] ?? 0,
       "noReview": data["noReview"] ?? 0,
       "nbChallengeDone": data["nbChallengeDone"] ?? 0,
+      "unlocked": data["unlocked"] ?? <String>[],
     });
   }
 
