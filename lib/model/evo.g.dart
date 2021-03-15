@@ -12,11 +12,12 @@ extension EvoCopyWith on Evo {
     int duration,
     String filename,
     String id,
+    String intro,
     bool loop,
     String name,
     List<dynamic> points,
-    bool recent,
     bool splited,
+    String summarize,
     String tag,
     String text,
     List<Timing> timings,
@@ -27,11 +28,12 @@ extension EvoCopyWith on Evo {
       duration: duration ?? this.duration,
       filename: filename ?? this.filename,
       id: id ?? this.id,
+      intro: intro ?? this.intro,
       loop: loop ?? this.loop,
       name: name ?? this.name,
       points: points ?? this.points,
-      recent: recent ?? this.recent,
       splited: splited ?? this.splited,
+      summarize: summarize ?? this.summarize,
       tag: tag ?? this.tag,
       text: text ?? this.text,
       timings: timings ?? this.timings,
@@ -58,9 +60,10 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     timings: (json['timings'] as List)
         .map((e) => Timing.fromJson(e as Map<String, dynamic>))
         .toList(),
-    recent: json['recent'] as bool,
     text: json['text'] as String,
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
+    summarize: json['summarize'] as String,
+    intro: json['intro'] as String,
   );
 }
 
@@ -75,7 +78,8 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'points': instance.points,
       'loop': instance.loop,
       'timings': instance.timings.map((e) => e.toJson()).toList(),
-      'recent': instance.recent,
       'text': instance.text,
       'createdDate': dateTimetoJson(instance.createdDate),
+      'summarize': instance.summarize,
+      'intro': instance.intro,
     };
