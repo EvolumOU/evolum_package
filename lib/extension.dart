@@ -52,8 +52,6 @@ extension EvoExtensionCourse on Course {
   bool get isScheduled => type == 'programmé';
   bool get isNoPath => type == 'nopath';
 
-  String get drawingFilename => strToId[tag];
-
   bool get isNew =>
       DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));
 }

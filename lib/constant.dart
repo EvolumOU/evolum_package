@@ -1,7 +1,7 @@
 part of evolum_package;
 
 const String evoRemoteBaseURL = "https://evolum.s3.eu-west-3.amazonaws.com/";
-
+/*
 const Map<String, String> strToId = {
   "concentration": "focus",
   "dormir": "sleep",
@@ -29,3 +29,4 @@ const Map<String, String> strToId = {
   "nouvelle lune": "new-moon",
   "pleine lune": "full-moon",
 };
+*/
