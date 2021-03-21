@@ -40,6 +40,7 @@ extension EvoExtensionEvo on Evo {
   String get remoteUrl2 => "${evoRemoteBaseURL}meditation/${id}_bg.mp3";
 
   bool get isNew =>
+      createdDate != null &&
       DateTime.now().isBefore(createdDate.add(Duration(days: 20)));
 }
 
