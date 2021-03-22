@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'salesweb.dart';
+part of 'addons.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-extension SalesWebCopyWith on SalesWeb {
-  SalesWeb copyWith({
+extension AddonsCopyWith on Addons {
+  Addons copyWith({
     DateTime date,
     String id,
     int nb,
     String sellUrl,
   }) {
-    return SalesWeb(
+    return Addons(
       date: date ?? this.date,
       id: id ?? this.id,
       nb: nb ?? this.nb,
@@ -26,8 +26,8 @@ extension SalesWebCopyWith on SalesWeb {
 // JsonSerializableGenerator
 // **************************************************************************
 
-SalesWeb _$SalesWebFromJson(Map<String, dynamic> json) {
-  return SalesWeb(
+Addons _$AddonsFromJson(Map<String, dynamic> json) {
+  return Addons(
     id: json['id'] as String,
     sellUrl: json['sellUrl'] as String,
     nb: json['nb'] as int,
@@ -35,7 +35,7 @@ SalesWeb _$SalesWebFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$SalesWebToJson(SalesWeb instance) => <String, dynamic>{
+Map<String, dynamic> _$AddonsToJson(Addons instance) => <String, dynamic>{
       'id': instance.id,
       'sellUrl': instance.sellUrl,
       'date': dateTimetoJson(instance.date),
