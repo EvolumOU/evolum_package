@@ -10,16 +10,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cloud_firestore: ^0.14.3+1
-  cloud_firestore_web: ^0.2.0+5
+  cloud_firestore: ^1.0.1
+  cloud_firestore_web: ^1.0.1
   
-  json_serializable: ^3.5.0
+  json_serializable: ^4.1.0
   splash_tap: ^0.1.2
-  flutter_hooks: ^0.15.0
-  intl: ^0.16.1
-  copy_with_extension: ^1.4.0
-  simple_animations: ^2.2.2
-  lottie: ^0.7.0+1
+  flutter_hooks: ^0.16.0
+  intl: ^0.17.0
+  copy_with_extension: ^2.0.0
+  simple_animations: ^3.0.3
+  lottie: ^1.0.1
 
 
 dev_dependencies:
@@ -27,7 +27,7 @@ dev_dependencies:
     sdk: flutter
     
   build_runner: ^1.10.4
-  copy_with_extension_gen: ^1.4.0
+  copy_with_extension_gen: ^2.0.1
 
 flutter:
   uses-material-design: true
