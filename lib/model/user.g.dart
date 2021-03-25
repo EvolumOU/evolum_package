@@ -24,6 +24,7 @@ extension UserCopyWith on User {
     String status,
     String uid,
     List<String> unlocked,
+    String subId,
   }) {
     return User(
       bgmusic: bgmusic ?? this.bgmusic,
@@ -42,6 +43,7 @@ extension UserCopyWith on User {
       status: status ?? this.status,
       uid: uid ?? this.uid,
       unlocked: unlocked ?? this.unlocked,
+      subId: subId ?? this.subId,
     );
   }
 }
@@ -68,6 +70,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
     leadDate: dateTimefromJson(json['leadDate'] as Timestamp),
     challengeDate: dateTimefromJson(json['challengeDate'] as Timestamp),
     unlocked: (json['unlocked'] as List).map((e) => e as String).toList(),
+    subId: json['subId'] as String,
   );
 }
 
@@ -88,4 +91,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'challengeDate': dateTimetoJson(instance.challengeDate),
       'createdDate': dateTimetoJson(instance.createdDate),
       'unlocked': instance.unlocked,
+      'subId': instance.subId,
     };

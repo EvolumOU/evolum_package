@@ -27,6 +27,7 @@ class User {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
   List<String> unlocked;
+  String subId;
 
   User({
     this.uid,
@@ -45,6 +46,7 @@ class User {
     this.leadDate,
     this.challengeDate,
     this.unlocked = const <String>[],
+    this.subId,
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {
