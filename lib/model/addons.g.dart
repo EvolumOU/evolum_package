@@ -17,7 +17,8 @@ extension AddonsCopyWith on Addons {
       date: date ?? this.date,
       id: id ?? this.id,
       nb: nb ?? this.nb,
-      sellUrl: sellUrl ?? this.sellUrl,
+      lightUrl: lightUrl ?? this.lightUrl,
+      darkUrl: darkUrl ?? this.darkUrl,
     );
   }
 }
@@ -29,7 +30,8 @@ extension AddonsCopyWith on Addons {
 Addons _$AddonsFromJson(Map<String, dynamic> json) {
   return Addons(
     id: json['id'] as String,
-    sellUrl: json['sellUrl'] as String,
+    lightUrl: json['lightUrl'] as String,
+    darkUrl: json['darkUrl'] as String,
     nb: json['nb'] as int,
     date: dateTimefromJson(json['date'] as Timestamp),
   );
@@ -37,7 +39,8 @@ Addons _$AddonsFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$AddonsToJson(Addons instance) => <String, dynamic>{
       'id': instance.id,
-      'sellUrl': instance.sellUrl,
+      'lightUrl': instance.lightUrl,
+      'darkUrl': instance.darkUrl,
       'date': dateTimetoJson(instance.date),
       'nb': instance.nb,
     };
