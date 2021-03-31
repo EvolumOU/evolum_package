@@ -54,6 +54,7 @@ class Course {
     return _$CourseFromJson({
       ...data,
       "scheduled": data["scheduled"] ?? [],
+      "route": data["route"] ?? false,
     });
   }
 
