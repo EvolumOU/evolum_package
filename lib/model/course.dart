@@ -29,6 +29,7 @@ class Course {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime updatedDate;
   Addons addons;
+  bool route;
 
   Course({
     this.id,
@@ -46,6 +47,7 @@ class Course {
     this.scheduled = const <Scheduled>[],
     this.updatedDate,
     this.addons,
+    this.route,
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
