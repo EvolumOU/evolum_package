@@ -9,7 +9,6 @@ part 'addons.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Addons {
-  String id;
   String lightUrl;
   String darkUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
@@ -17,7 +16,6 @@ class Addons {
   int nb;
 
   Addons({
-    this.id,
     this.lightUrl,
     this.darkUrl,
     this.nb,
@@ -29,6 +27,5 @@ class Addons {
   Map<String, dynamic> toJson() => _$AddonsToJson(this);
 
   @override
-  String toString() =>
-      'Addons[ id:$id, lightUrl:$lightUrl, nb:$nb, date:$date]';
+  String toString() => 'Addons[lightUrl:$lightUrl, nb:$nb, date:$date]';
 }
