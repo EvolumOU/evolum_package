@@ -30,6 +30,7 @@ class Course {
   DateTime updatedDate;
   Addons addons;
   bool route;
+  bool hide;
 
   Course({
     this.id,
@@ -48,6 +49,7 @@ class Course {
     this.updatedDate,
     this.addons,
     this.route,
+    this.hide,
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
@@ -55,6 +57,7 @@ class Course {
       ...data,
       "scheduled": data["scheduled"] ?? [],
       "route": data["route"] ?? false,
+      "hide": data["hide"] ?? false,
     });
   }
 

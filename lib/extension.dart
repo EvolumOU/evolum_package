@@ -68,6 +68,7 @@ extension EvoExtensionUser on User {
   bool get isLead => status == 'lead';
   bool get isChallenger => status == 'challenger';
   bool get isFree => status == 'free';
+  bool get isTrial => status == 'trial';
 }
 
 extension EvoExtensionString on String {

@@ -24,6 +24,7 @@ extension CourseCopyWith on Course {
     String type,
     DateTime updatedDate,
     bool route,
+    bool hide,
   }) {
     return Course(
       addons: addons ?? this.addons,
@@ -42,6 +43,7 @@ extension CourseCopyWith on Course {
       type: type ?? this.type,
       updatedDate: updatedDate ?? this.updatedDate,
       route: route ?? this.route,
+      hide: hide ?? this.hide,
     );
   }
 }
@@ -78,6 +80,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
         ? null
         : Addons.fromJson(json['addons'] as Map<String, dynamic>),
     route: json['route'] as bool,
+    hide: json['hide'] as bool,
   );
 }
 
@@ -98,4 +101,5 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'updatedDate': dateTimetoJson(instance.updatedDate),
       'addons': instance.addons?.toJson(),
       'route': instance.route,
+      'hide': instance.hide,
     };
