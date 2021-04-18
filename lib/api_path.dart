@@ -2,6 +2,7 @@ class APIPath {
   static String evo(String id) => 'evo/$id';
   static String course(String id) => 'course/$id';
   static String challenge(String id) => 'challenge/$id';
+  static String cancellation(String id) => 'cancellation/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFav(String uid) => 'user/$uid/info/fav';
@@ -10,6 +11,7 @@ class APIPath {
 
   static String userReco(String uid) => 'user/$uid/info/reco';
 
+  static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
   static String allUser() => 'user/';
   static String allEvo() => 'evo/';
