@@ -20,6 +20,7 @@ extension HistoryCopyWith on History {
       id: id ?? this.id,
       review: review ?? this.review,
       secondsRead: secondsRead ?? this.secondsRead,
+      checked: checked ?? this.checked,
     );
   }
 }
@@ -35,6 +36,7 @@ History _$HistoryFromJson(Map<String, dynamic> json) {
     review: json['review'] as String,
     date: dateTimefromJson(json['date'] as Timestamp),
     secondsRead: json['secondsRead'] as int,
+    checked: json['checked'] as bool,
   );
 }
 
@@ -44,4 +46,5 @@ Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'review': instance.review,
       'date': dateTimetoJson(instance.date),
       'secondsRead': instance.secondsRead,
+      'checked': instance.checked,
     };

@@ -16,6 +16,7 @@ class History {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   int secondsRead;
+  bool checked;
 
   History({
     this.id,
@@ -23,10 +24,14 @@ class History {
     this.review,
     this.date,
     this.secondsRead,
+    this.checked,
   });
 
   factory History.fromJson(Map<String, dynamic> data) {
-    return _$HistoryFromJson(data);
+    return _$HistoryFromJson({
+      ...data,
+      "checked": data["checked"] ?? false,
+    });
   }
 
   Map<String, dynamic> toMap() => _$HistoryToJson(this);
