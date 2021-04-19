@@ -6,3 +6,7 @@ export 'user.dart';
 export 'reco.dart';
 export 'timing.dart';
 export 'scheduled.dart';
+export 'cancellation.dart';
+export 'addons.dart';
+export 'salesplan.dart';
+export 'challenge.dart';
