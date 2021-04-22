@@ -52,6 +52,7 @@ extension EvoExtensionCourse on Course {
   bool get isRandom => type == 'aléatoire';
   bool get isScheduled => type == 'programmé';
   bool get isNoPath => type == 'nopath';
+  bool get isAddons => addons != null;
 
   bool get isNew =>
       DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));

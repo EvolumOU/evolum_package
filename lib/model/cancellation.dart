@@ -9,6 +9,7 @@ part 'cancellation.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Cancellation {
   String id;
+  String uid;
   String email;
   String type;
   String status;
@@ -19,6 +20,7 @@ class Cancellation {
 
   Cancellation({
     this.id,
+    this.uid,
     this.email,
     this.type = "addons",
     this.status = "todo",

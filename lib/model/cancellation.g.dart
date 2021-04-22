@@ -9,6 +9,7 @@ part of 'cancellation.dart';
 Cancellation _$CancellationFromJson(Map<String, dynamic> json) {
   return Cancellation(
     id: json['id'] as String,
+    uid: json['uid'] as String,
     email: json['email'] as String,
     courseId: json['courseId'] as String,
     type: json['type'] as String,
@@ -21,6 +22,7 @@ Cancellation _$CancellationFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$CancellationToJson(Cancellation instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'uid': instance.uid,
       'email': instance.email,
       'type': instance.type,
       'courseId': instance.courseId,
