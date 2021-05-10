@@ -3,6 +3,7 @@ part of evolum_package;
 final ThemeData darkTheme = ThemeData(
   backgroundColor: EvoColors.black,
   scaffoldBackgroundColor: EvoColors.black,
+  dialogBackgroundColor: EvoColors.black,
   primaryColor: EvoColors.belge,
   accentColor: EvoColors.orange,
   dividerColor: EvoColors.grey.withOpacity(0.6),
@@ -19,7 +20,7 @@ final ThemeData darkTheme = ThemeData(
   textTheme: TextTheme(
     button: TextStyle(
       fontSize: 23,
-      color: EvoColors.white,
+      color: EvoColors.orange,
       fontWeight: FontWeight.w800,
       letterSpacing: 1.65,
     ),
