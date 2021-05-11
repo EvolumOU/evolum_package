@@ -48,8 +48,8 @@ class Course {
     this.scheduled = const <Scheduled>[],
     this.updatedDate,
     this.addons,
-    this.route,
-    this.hide,
+    this.route = false,
+    this.hide = false,
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {

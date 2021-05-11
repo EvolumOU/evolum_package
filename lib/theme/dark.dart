@@ -20,7 +20,7 @@ final ThemeData darkTheme = ThemeData(
   textTheme: TextTheme(
     button: TextStyle(
       fontSize: 23,
-      color: EvoColors.orange,
+      color: EvoColors.white,
       fontWeight: FontWeight.w800,
       letterSpacing: 1.65,
     ),
