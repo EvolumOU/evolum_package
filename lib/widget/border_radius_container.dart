@@ -6,7 +6,11 @@ class BorderRadiusContainer extends StatelessWidget {
   final String from;
   final double radius;
   const BorderRadiusContainer(
-      {Key key, this.child, this.color, this.from = "top", this.radius = 30})
+      {Key? key,
+      required this.child,
+      required this.color,
+      this.from = "top",
+      this.radius = 30})
       : super(key: key);
 
   @override

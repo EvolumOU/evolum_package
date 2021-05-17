@@ -8,32 +8,34 @@ part of 'history.dart';
 
 extension HistoryCopyWith on History {
   History copyWith({
-    DateTime date,
-    Evo evo,
-    String id,
-    String review,
-    int secondsRead,
+    bool? checked,
+    DateTime? date,
+    Evo? evo,
+    String? id,
+    String? review,
+    int? secondsRead,
   }) {
     return History(
+      checked: checked ?? this.checked,
       date: date ?? this.date,
       evo: evo ?? this.evo,
       id: id ?? this.id,
       review: review ?? this.review,
       secondsRead: secondsRead ?? this.secondsRead,
-      checked: checked ?? this.checked,
     );
   }
 }
+
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
 History _$HistoryFromJson(Map<String, dynamic> json) {
   return History(
-    id: json['id'] as String,
+    id: json['id'] as String?,
     evo: Evo.fromJson(json['evo'] as Map<String, dynamic>),
-    review: json['review'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp),
+    review: json['review'] as String?,
+    date: dateTimefromJson(json['date'] as Timestamp?),
     secondsRead: json['secondsRead'] as int,
     checked: json['checked'] as bool,
   );

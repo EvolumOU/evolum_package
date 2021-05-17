@@ -9,16 +9,16 @@ part 'addons.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Addons {
-  String lightUrl;
-  String darkUrl;
+  String? lightUrl;
+  String? darkUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime date;
+  DateTime? date;
   int nb;
 
   Addons({
     this.lightUrl,
     this.darkUrl,
-    this.nb,
+    this.nb = 0,
     this.date,
   });
 

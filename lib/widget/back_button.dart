@@ -1,12 +1,12 @@
 part of evolum_package;
 
 class EvoBackButton extends StatelessWidget {
-  final void Function() onPress;
+  final void Function()? onPress;
   final bool rounded;
-  final Color color;
+  final Color? color;
   final double size;
   const EvoBackButton({
-    Key key,
+    Key? key,
     this.onPress,
     this.rounded = false,
     this.size = 30,
@@ -15,7 +15,8 @@ class EvoBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).textTheme.bodyText1.color.isDark(context);
+    final bool isDark =
+        Theme.of(context).textTheme.bodyText1!.color!.isDark(context);
     String backAssets = "back_black.png";
 
     if (isDark) backAssets = 'back_white.png';

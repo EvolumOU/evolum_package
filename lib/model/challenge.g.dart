@@ -8,9 +8,9 @@ part of 'challenge.dart';
 
 extension ChallengeCopyWith on Challenge {
   Challenge copyWith({
-    String id,
-    String name,
-    List<Playlist> playlist,
+    String? id,
+    String? name,
+    List<Playlist>? playlist,
   }) {
     return Challenge(
       id: id ?? this.id,
@@ -28,15 +28,14 @@ Challenge _$ChallengeFromJson(Map<String, dynamic> json) {
   return Challenge(
     id: json['id'] as String,
     name: json['name'] as String,
-    playlist: (json['playlist'] as List)
-        ?.map((e) =>
-            e == null ? null : Playlist.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    playlist: (json['playlist'] as List<dynamic>)
+        .map((e) => Playlist.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
 Map<String, dynamic> _$ChallengeToJson(Challenge instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'playlist': instance.playlist?.map((e) => e?.toJson())?.toList(),
+      'playlist': instance.playlist.map((e) => e.toJson()).toList(),
     };

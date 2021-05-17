@@ -2,11 +2,11 @@ part of evolum_package;
 
 class ShadowMaskContainer extends StatelessWidget {
   final Widget child;
-  final Color color;
+  final Color? color;
   final String from;
   const ShadowMaskContainer({
-    Key key,
-    this.child,
+    Key? key,
+    required this.child,
     this.color,
     this.from = 'top',
   }) : super(key: key);

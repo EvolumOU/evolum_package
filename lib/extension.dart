@@ -40,8 +40,7 @@ extension EvoExtensionEvo on Evo {
   String get remoteUrl2 => "${evoRemoteBaseURL}meditation/${id}_bg.mp3";
 
   bool get isNew =>
-      createdDate != null &&
-      DateTime.now().isBefore(createdDate.add(Duration(days: 20)));
+      DateTime.now().isBefore(createdDate!.add(Duration(days: 20)));
 }
 
 extension EvoExtensionCourse on Course {
@@ -55,7 +54,7 @@ extension EvoExtensionCourse on Course {
   bool get isAddons => addons != null;
 
   bool get isNew =>
-      DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));
+      DateTime.now().isBefore(updatedDate!.add(Duration(days: 30)));
 }
 
 extension EvoExtensionUser on User {
@@ -102,7 +101,7 @@ extension EvoExtensionString on String {
 
 extension EvoExtensionColor on Color {
   bool isDark(context) {
-    return Theme.of(context).textTheme.bodyText1.color == EvoColors.white;
+    return Theme.of(context).textTheme.bodyText1!.color == EvoColors.white;
   }
 }
 

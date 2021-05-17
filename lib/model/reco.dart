@@ -11,12 +11,12 @@ part 'reco.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Reco {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime date;
+  DateTime? date;
   List<Evo> list;
   List<Scheduled> scheduled;
-  Evo first;
-  Evo oracle;
-  Evo free;
+  Evo? first;
+  Evo? oracle;
+  Evo? free;
 
   Reco({
     this.date,

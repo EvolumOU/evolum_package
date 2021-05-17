@@ -5,10 +5,10 @@ class RoundedGradientContainer extends StatelessWidget {
   final Widget child;
   final double size;
   const RoundedGradientContainer({
-    Key key,
-    this.colors,
-    this.child,
-    this.size,
+    Key? key,
+    required this.colors,
+    required this.child,
+    required this.size,
   }) : super(key: key);
 
   @override

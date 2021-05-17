@@ -8,16 +8,16 @@ part of 'addons.dart';
 
 extension AddonsCopyWith on Addons {
   Addons copyWith({
-    DateTime date,
-    String id,
-    int nb,
-    String sellUrl,
+    String? darkUrl,
+    DateTime? date,
+    String? lightUrl,
+    int? nb,
   }) {
     return Addons(
-      date: date ?? this.date,
-      nb: nb ?? this.nb,
-      lightUrl: lightUrl ?? this.lightUrl,
       darkUrl: darkUrl ?? this.darkUrl,
+      date: date ?? this.date,
+      lightUrl: lightUrl ?? this.lightUrl,
+      nb: nb ?? this.nb,
     );
   }
 }
@@ -28,10 +28,10 @@ extension AddonsCopyWith on Addons {
 
 Addons _$AddonsFromJson(Map<String, dynamic> json) {
   return Addons(
-    lightUrl: json['lightUrl'] as String,
-    darkUrl: json['darkUrl'] as String,
+    lightUrl: json['lightUrl'] as String?,
+    darkUrl: json['darkUrl'] as String?,
     nb: json['nb'] as int,
-    date: dateTimefromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp?),
   );
 }
 

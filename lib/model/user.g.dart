@@ -8,23 +8,23 @@ part of 'user.dart';
 
 extension UserCopyWith on User {
   User copyWith({
-    bool bgmusic,
-    DateTime challengeDate,
-    DateTime createdDate,
-    String email,
-    List<dynamic> goal,
-    DateTime leadDate,
-    String name,
-    int nbChallengeDone,
-    int nbDone,
-    int noReview,
-    bool notification,
-    String reminderMorning,
-    String reminderNight,
-    String status,
-    String uid,
-    List<String> unlocked,
-    String subId,
+    bool? bgmusic,
+    DateTime? challengeDate,
+    DateTime? createdDate,
+    String? email,
+    List<dynamic>? goal,
+    DateTime? leadDate,
+    String? name,
+    int? nbChallengeDone,
+    int? nbDone,
+    int? noReview,
+    bool? notification,
+    String? reminderMorning,
+    String? reminderNight,
+    String? status,
+    String? subId,
+    String? uid,
+    List<String>? unlocked,
   }) {
     return User(
       bgmusic: bgmusic ?? this.bgmusic,
@@ -41,9 +41,9 @@ extension UserCopyWith on User {
       reminderMorning: reminderMorning ?? this.reminderMorning,
       reminderNight: reminderNight ?? this.reminderNight,
       status: status ?? this.status,
+      subId: subId ?? this.subId,
       uid: uid ?? this.uid,
       unlocked: unlocked ?? this.unlocked,
-      subId: subId ?? this.subId,
     );
   }
 }
@@ -54,23 +54,24 @@ extension UserCopyWith on User {
 
 User _$UserFromJson(Map<String, dynamic> json) {
   return User(
-    uid: json['uid'] as String,
-    email: json['email'] as String,
-    name: json['name'] as String,
+    uid: json['uid'] as String?,
+    email: json['email'] as String?,
+    name: json['name'] as String?,
     notification: json['notification'] as bool,
     bgmusic: json['bgmusic'] as bool,
     status: json['status'] as String,
-    reminderMorning: json['reminderMorning'] as String,
-    reminderNight: json['reminderNight'] as String,
-    goal: json['goal'] as List,
+    reminderMorning: json['reminderMorning'] as String?,
+    reminderNight: json['reminderNight'] as String?,
+    goal: json['goal'] as List<dynamic>,
     nbDone: json['nbDone'] as int,
     noReview: json['noReview'] as int,
     nbChallengeDone: json['nbChallengeDone'] as int,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
-    leadDate: dateTimefromJson(json['leadDate'] as Timestamp),
-    challengeDate: dateTimefromJson(json['challengeDate'] as Timestamp),
-    unlocked: (json['unlocked'] as List).map((e) => e as String).toList(),
-    subId: json['subId'] as String,
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+    leadDate: dateTimefromJson(json['leadDate'] as Timestamp?),
+    challengeDate: dateTimefromJson(json['challengeDate'] as Timestamp?),
+    unlocked:
+        (json['unlocked'] as List<dynamic>).map((e) => e as String).toList(),
+    subId: json['subId'] as String?,
   );
 }
 

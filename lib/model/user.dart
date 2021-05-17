@@ -6,14 +6,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'user.g.dart';
 
 @CopyWith()
-@JsonSerializable(nullable: false)
+@JsonSerializable()
 class User {
-  String uid;
-  String email;
-  String name;
+  String? uid;
+  String? email;
+  String? name;
   bool notification;
-  String reminderNight;
-  String reminderMorning;
+  String? reminderNight;
+  String? reminderMorning;
   bool bgmusic;
   String status;
   List<dynamic> goal;
@@ -21,13 +21,13 @@ class User {
   int nbChallengeDone;
   int noReview;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime leadDate;
+  DateTime? leadDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime challengeDate;
+  DateTime? challengeDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime createdDate;
+  DateTime? createdDate;
   List<String> unlocked;
-  String subId;
+  String? subId;
 
   User({
     this.uid,
@@ -41,7 +41,7 @@ class User {
     this.goal = const <String>[],
     this.nbDone = 0,
     this.noReview = 0,
-    this.nbChallengeDone,
+    this.nbChallengeDone = 0,
     this.createdDate,
     this.leadDate,
     this.challengeDate,
@@ -50,9 +50,6 @@ class User {
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {
-    if (data == null) {
-      return null;
-    }
     return _$UserFromJson({
       ...data,
       "uid": uid,

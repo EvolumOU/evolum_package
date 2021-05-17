@@ -14,8 +14,8 @@ class EntranceFader extends StatefulWidget {
   final Offset offset;
 
   const EntranceFader({
-    Key key,
-    this.child,
+    Key? key,
+    required this.child,
     this.delay = const Duration(),
     this.duration = const Duration(milliseconds: 400),
     this.offset = const Offset(0.0, 32.0),
@@ -29,9 +29,9 @@ class EntranceFader extends StatefulWidget {
 
 class EntranceFaderState extends State<EntranceFader>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation _dxAnimation;
-  Animation _dyAnimation;
+  late AnimationController _controller;
+  late Animation _dxAnimation;
+  late Animation _dyAnimation;
 
   @override
   void initState() {

@@ -7,9 +7,9 @@ class LottieAnimated extends StatefulWidget {
   final bool repeat;
 
   const LottieAnimated({
-    Key key,
+    Key? key,
     this.delay = Duration.zero,
-    this.url,
+    required this.url,
     this.fit = BoxFit.cover,
     this.repeat = false,
   }) : super(key: key);
@@ -20,7 +20,7 @@ class LottieAnimated extends StatefulWidget {
 
 class _LottieAnimatedState extends State<LottieAnimated>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   bool loading = true;
   bool error = false;

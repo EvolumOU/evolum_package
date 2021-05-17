@@ -6,11 +6,11 @@ part 'salesplan.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class SalesPlan {
-  String id;
-  String fullprice;
-  String price;
-  String promo;
-  String priceByMonth;
+  String? id;
+  String? fullprice;
+  String? price;
+  String? promo;
+  String? priceByMonth;
 
   SalesPlan({
     this.id,

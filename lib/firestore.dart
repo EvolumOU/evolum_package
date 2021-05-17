@@ -4,11 +4,11 @@ class FirestoreService {
   FirestoreService._();
   static final instance = FirestoreService._();
 
-  DocumentSnapshot lastUserDocument;
+  DocumentSnapshot? lastUserDocument;
 
   Future<void> setData({
-    @required String path,
-    @required Map<String, dynamic> data,
+    required String path,
+    required Map<String, dynamic> data,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
     debugPrint('==> Add: $path: $data');
@@ -16,33 +16,33 @@ class FirestoreService {
   }
 
   Future<void> updateData({
-    @required String path,
-    @required Map<String, dynamic> data,
+    required String path,
+    required Map<String, dynamic> data,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
     debugPrint('==> Update: $path: $data');
     await reference.update(data);
   }
 
-  Future<void> deleteData({@required String path}) async {
+  Future<void> deleteData({required String path}) async {
     final reference = FirebaseFirestore.instance.doc(path);
     debugPrint('==> delete: $path');
     await reference.delete();
   }
 
   Future<T> getDocument<T>({
-    @required String path,
-    @required T builder(Map<String, dynamic> data, String documentID),
+    required String path,
+    required T builder(Map<String, dynamic> data, String documentID),
   }) async {
     final fireStoreItem = await FirebaseFirestore.instance.doc(path).get();
-    return builder(fireStoreItem.data(), fireStoreItem.id);
+    return builder(fireStoreItem.data()!, fireStoreItem.id);
   }
 
   Future<List<T>> getCollection<T>({
-    @required String path,
-    @required T builder(Map<String, dynamic> data, String documentID),
-    Query queryBuilder(Query query),
-    int sort(T lhs, T rhs),
+    required String path,
+    required T builder(Map<String, dynamic> data, String documentID),
+    Query queryBuilder(Query query)?,
+    int sort(T lhs, T rhs)?,
   }) async {
     Query query = FirebaseFirestore.instance.collection(path);
 
@@ -60,11 +60,11 @@ class FirestoreService {
   }
 
   Stream<List<T>> collectionStream<T>({
-    @required String path,
-    @required T builder(Map<String, dynamic> data, String documentID),
-    Query queryBuilder(Query query),
-    int sort(T lhs, T rhs),
-    int limit,
+    required String path,
+    required T builder(Map<String, dynamic> data, String documentID),
+    Query queryBuilder(Query query)?,
+    int sort(T lhs, T rhs)?,
+    int? limit,
   }) {
     Query query = FirebaseFirestore.instance.collection(path);
 
@@ -72,7 +72,7 @@ class FirestoreService {
       query = query.limit(limit);
 
       if (lastUserDocument != null) {
-        query = query.orderBy("email").startAfterDocument(lastUserDocument);
+        query = query.orderBy("email").startAfterDocument(lastUserDocument!);
       }
     }
 
@@ -95,11 +95,11 @@ class FirestoreService {
   }
 
   Stream<T> documentStream<T>({
-    @required String path,
-    @required T builder(Map<String, dynamic> data, String documentID),
+    required String path,
+    required T builder(Map<String, dynamic> data, String documentID),
   }) {
     final DocumentReference reference = FirebaseFirestore.instance.doc(path);
     final Stream<DocumentSnapshot> snapshots = reference.snapshots();
-    return snapshots.map((snapshot) => builder(snapshot.data(), snapshot.id));
+    return snapshots.map((snapshot) => builder(snapshot.data()!, snapshot.id));
   }
 }

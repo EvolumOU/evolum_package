@@ -10,13 +10,12 @@ class AnimatedGradientContainer extends StatelessWidget {
   final BoxShape boxShape;
   final AlignmentGeometry begin;
   final AlignmentGeometry end;
-
-  final BorderRadius borderRadius;
+  final BorderRadius? borderRadius;
 
   const AnimatedGradientContainer({
-    this.colors,
+    required this.colors,
     this.curve = Curves.linear,
-    this.child,
+    required this.child,
     this.duration = const Duration(seconds: 3),
     this.boxShape = BoxShape.circle,
     this.borderRadius,

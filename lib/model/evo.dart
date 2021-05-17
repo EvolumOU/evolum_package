@@ -9,7 +9,7 @@ import 'utils.dart';
 part 'evo.g.dart';
 
 @CopyWith()
-@JsonSerializable(nullable: false, explicitToJson: true)
+@JsonSerializable(explicitToJson: true)
 class Evo {
   @required
   String id;
@@ -19,26 +19,26 @@ class Evo {
   String name;
   @required
   String type;
+  String tag;
   bool splited;
   int duration;
-  String tag;
   List<dynamic> points;
   bool loop;
   List<Timing> timings;
-  String text;
+  String? text;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime createdDate;
-  String summarize;
-  String intro;
+  DateTime? createdDate;
+  String? summarize;
+  String? intro;
 
   Evo({
-    this.id,
-    this.filename,
-    this.name,
-    this.type,
+    required this.id,
+    required this.filename,
+    required this.name,
+    required this.type,
+    required this.tag,
     this.splited = false,
-    this.duration,
-    this.tag,
+    this.duration = 0,
     this.points = const <dynamic>[],
     this.loop = false,
     this.timings = const <Timing>[],

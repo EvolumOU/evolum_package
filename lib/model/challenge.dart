@@ -7,8 +7,8 @@ part 'challenge.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Challenge {
-  String id;
-  String name;
+  String? id;
+  String? name;
   List<Playlist> playlist;
 
   Challenge({

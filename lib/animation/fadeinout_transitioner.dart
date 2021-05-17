@@ -6,8 +6,8 @@ class FadeInOutTransitionner extends StatelessWidget {
   final Duration duration;
 
   const FadeInOutTransitionner({
-    Key key,
-    this.child,
+    Key? key,
+    required this.child,
     this.hasScale = false,
     this.duration = const Duration(milliseconds: 500),
   }) : super(key: key);

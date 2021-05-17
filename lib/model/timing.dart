@@ -4,15 +4,15 @@ import 'package:json_annotation/json_annotation.dart';
 part 'timing.g.dart';
 
 @CopyWith()
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable()
 class Timing {
   int begin;
   int end;
   String text;
 
   Timing({
-    this.begin,
-    this.end,
+    this.begin = 0,
+    this.end = 0,
     this.text = "",
   });
 

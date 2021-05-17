@@ -26,7 +26,6 @@ part 'theme/dark.dart';
 part 'theme/light.dart';
 part 'animation/entrance_fader.dart';
 part 'animation/fadeinout_transitioner.dart';
-part 'animation/random_splash.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_container.dart';
 part 'animation/loading_animated.dart';

@@ -6,8 +6,8 @@ class MaskedTextInputFormatter extends TextInputFormatter {
   final String separator;
 
   MaskedTextInputFormatter({
-    @required this.mask,
-    @required this.separator,
+    required this.mask,
+    required this.separator,
   });
 
   @override

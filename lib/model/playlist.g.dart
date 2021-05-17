@@ -8,12 +8,12 @@ part of 'playlist.dart';
 
 extension PlaylistCopyWith on Playlist {
   Playlist copyWith({
-    bool hide,
-    List<dynamic> list,
-    String name,
-    int position,
-    String text,
-    String type,
+    bool? hide,
+    List<dynamic>? list,
+    String? name,
+    int? position,
+    String? text,
+    String? type,
   }) {
     return Playlist(
       hide: hide ?? this.hide,
@@ -32,12 +32,12 @@ extension PlaylistCopyWith on Playlist {
 
 Playlist _$PlaylistFromJson(Map<String, dynamic> json) {
   return Playlist(
-    name: json['name'] as String,
-    list: json['list'] as List,
+    name: json['name'] as String?,
+    list: json['list'] as List<dynamic>,
     position: json['position'] as int,
     hide: json['hide'] as bool,
-    type: json['type'] as String,
-    text: json['text'] as String,
+    type: json['type'] as String?,
+    text: json['text'] as String?,
   );
 }
 

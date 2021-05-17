@@ -3,26 +3,25 @@ part of evolum_package;
 class ScaleInOut extends StatefulWidget {
   final Widget child;
   final Tween<double> tween;
-
   final Duration inDuration;
   final Duration outDuration;
   final Duration pauseDuration;
-  final Function onReachMax;
-  final Function onGoMin;
-  final Function onFinish;
+  final Function? onReachMax;
+  final Function? onGoMin;
+  final Function? onFinish;
   final bool repeat;
   final bool mirroir;
 
   const ScaleInOut({
-    Key key,
-    this.child,
+    Key? key,
+    required this.tween,
+    required this.child,
     this.pauseDuration = const Duration(milliseconds: 1000),
     this.inDuration = const Duration(milliseconds: 2300),
     this.outDuration = const Duration(milliseconds: 1700),
     this.onReachMax,
     this.onGoMin,
     this.onFinish,
-    this.tween,
     this.mirroir = true,
     this.repeat = false,
   }) : super(key: key);
@@ -32,8 +31,8 @@ class ScaleInOut extends StatefulWidget {
 }
 
 class _ScaleInOutState extends State<ScaleInOut> with TickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
+  late AnimationController controller;
+  late Animation<double> animation;
 
   @override
   void initState() {
@@ -53,13 +52,13 @@ class _ScaleInOutState extends State<ScaleInOut> with TickerProviderStateMixin {
     animation = widget.tween.animate(controller)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          widget.onReachMax();
+          widget.onReachMax ?? widget.onReachMax!();
           Future.delayed(widget.pauseDuration, () {
             controller.reverse();
-            widget.onGoMin();
+            widget.onGoMin ?? widget.onGoMin!();
           });
         } else if (status == AnimationStatus.dismissed) {
-          widget.onFinish();
+          widget.onFinish ?? widget.onFinish!();
         }
       });
 

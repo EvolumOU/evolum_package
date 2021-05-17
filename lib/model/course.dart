@@ -15,9 +15,9 @@ part 'course.g.dart';
 class Course {
   String id;
   String name;
-  String tag;
   String type;
-  String descr;
+  String? tag;
+  String? descr;
   String specolor1;
   String specolor2;
   String color1;
@@ -27,15 +27,15 @@ class Course {
   int position;
   List<Scheduled> scheduled;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime updatedDate;
-  Addons addons;
+  DateTime? updatedDate;
+  Addons? addons;
   bool route;
   bool hide;
 
   Course({
-    this.id,
-    this.name,
-    this.type,
+    required this.id,
+    required this.name,
+    required this.type,
     this.tag,
     this.descr,
     this.color1 = "#FFFFFF",

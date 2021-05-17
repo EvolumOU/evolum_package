@@ -7,10 +7,10 @@ class BorderGradientContainer extends StatelessWidget {
   final double radius;
   final double height;
   const BorderGradientContainer({
-    Key key,
-    this.child,
-    this.colors,
-    this.backgroundColor,
+    Key? key,
+    required this.child,
+    required this.colors,
+    required this.backgroundColor,
     this.radius = 30.0,
     this.height = 70,
   }) : super(key: key);

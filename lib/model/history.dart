@@ -8,23 +8,23 @@ import 'evo.dart';
 part 'history.g.dart';
 
 @CopyWith()
-@JsonSerializable(nullable: false, explicitToJson: true)
+@JsonSerializable(explicitToJson: true)
 class History {
-  String id;
+  String? id;
   Evo evo;
-  String review;
+  String? review;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime date;
+  DateTime? date;
   int secondsRead;
   bool checked;
 
   History({
     this.id,
-    this.evo,
+    required this.evo,
     this.review,
     this.date,
-    this.secondsRead,
-    this.checked,
+    this.secondsRead = 0,
+    this.checked = false,
   });
 
   factory History.fromJson(Map<String, dynamic> data) {

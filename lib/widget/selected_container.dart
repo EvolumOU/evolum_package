@@ -6,9 +6,9 @@ class SelectedContainer extends StatelessWidget {
   final List<Color> colors;
   final double radius;
   const SelectedContainer(
-      {Key key,
-      this.child,
-      this.selected,
+      {Key? key,
+      required this.child,
+      required this.selected,
       this.radius = 25,
       this.colors = const [
         Color(0xffFFCA7F),

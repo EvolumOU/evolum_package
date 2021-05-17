@@ -8,11 +8,11 @@ part of 'salesplan.dart';
 
 extension SalesPlanCopyWith on SalesPlan {
   SalesPlan copyWith({
-    String fullprice,
-    String id,
-    String price,
-    String priceByMonth,
-    String promo,
+    String? fullprice,
+    String? id,
+    String? price,
+    String? priceByMonth,
+    String? promo,
   }) {
     return SalesPlan(
       fullprice: fullprice ?? this.fullprice,
@@ -30,11 +30,11 @@ extension SalesPlanCopyWith on SalesPlan {
 
 SalesPlan _$SalesPlanFromJson(Map<String, dynamic> json) {
   return SalesPlan(
-    id: json['id'] as String,
-    fullprice: json['fullprice'] as String,
-    price: json['price'] as String,
-    promo: json['promo'] as String,
-    priceByMonth: json['priceByMonth'] as String,
+    id: json['id'] as String?,
+    fullprice: json['fullprice'] as String?,
+    price: json['price'] as String?,
+    promo: json['promo'] as String?,
+    priceByMonth: json['priceByMonth'] as String?,
   );
 }
 

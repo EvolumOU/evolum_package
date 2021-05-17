@@ -8,20 +8,20 @@ part of 'evo.dart';
 
 extension EvoCopyWith on Evo {
   Evo copyWith({
-    DateTime createdDate,
-    int duration,
-    String filename,
-    String id,
-    String intro,
-    bool loop,
-    String name,
-    List<dynamic> points,
-    bool splited,
-    String summarize,
-    String tag,
-    String text,
-    List<Timing> timings,
-    String type,
+    DateTime? createdDate,
+    int? duration,
+    String? filename,
+    String? id,
+    String? intro,
+    bool? loop,
+    String? name,
+    List<dynamic>? points,
+    bool? splited,
+    String? summarize,
+    String? tag,
+    String? text,
+    List<Timing>? timings,
+    String? type,
   }) {
     return Evo(
       createdDate: createdDate ?? this.createdDate,
@@ -52,18 +52,18 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     filename: json['filename'] as String,
     name: json['name'] as String,
     type: json['type'] as String,
+    tag: json['tag'] as String,
     splited: json['splited'] as bool,
     duration: json['duration'] as int,
-    tag: json['tag'] as String,
-    points: json['points'] as List,
+    points: json['points'] as List<dynamic>,
     loop: json['loop'] as bool,
-    timings: (json['timings'] as List)
+    timings: (json['timings'] as List<dynamic>)
         .map((e) => Timing.fromJson(e as Map<String, dynamic>))
         .toList(),
-    text: json['text'] as String,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
-    summarize: json['summarize'] as String,
-    intro: json['intro'] as String,
+    text: json['text'] as String?,
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+    summarize: json['summarize'] as String?,
+    intro: json['intro'] as String?,
   );
 }
 
@@ -72,9 +72,9 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'filename': instance.filename,
       'name': instance.name,
       'type': instance.type,
+      'tag': instance.tag,
       'splited': instance.splited,
       'duration': instance.duration,
-      'tag': instance.tag,
       'points': instance.points,
       'loop': instance.loop,
       'timings': instance.timings.map((e) => e.toJson()).toList(),

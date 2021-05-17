@@ -8,9 +8,9 @@ part of 'timing.dart';
 
 extension TimingCopyWith on Timing {
   Timing copyWith({
-    int begin,
-    int end,
-    String text,
+    int? begin,
+    int? end,
+    String? text,
   }) {
     return Timing(
       begin: begin ?? this.begin,
