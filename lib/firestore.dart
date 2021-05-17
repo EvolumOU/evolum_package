@@ -32,10 +32,10 @@ class FirestoreService {
 
   Future<T> getDocument<T>({
     required String path,
-    required T builder(Map<String, dynamic> data, String documentID),
+    required T builder(Map<String, dynamic>? data, String documentID),
   }) async {
     final fireStoreItem = await FirebaseFirestore.instance.doc(path).get();
-    return builder(fireStoreItem.data()!, fireStoreItem.id);
+    return builder(fireStoreItem.data(), fireStoreItem.id);
   }
 
   Future<List<T>> getCollection<T>({
@@ -96,10 +96,11 @@ class FirestoreService {
 
   Stream<T> documentStream<T>({
     required String path,
-    required T builder(Map<String, dynamic> data, String documentID),
+    required T builder(Map<String, dynamic>? data, String documentID),
   }) {
     final DocumentReference reference = FirebaseFirestore.instance.doc(path);
     final Stream<DocumentSnapshot> snapshots = reference.snapshots();
-    return snapshots.map((snapshot) => builder(snapshot.data()!, snapshot.id));
+
+    return snapshots.map((snapshot) => builder(snapshot.data(), snapshot.id));
   }
 }
