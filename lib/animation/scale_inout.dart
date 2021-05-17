@@ -52,13 +52,13 @@ class _ScaleInOutState extends State<ScaleInOut> with TickerProviderStateMixin {
     animation = widget.tween.animate(controller)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          widget.onReachMax ?? widget.onReachMax!();
+          widget.onReachMax!();
           Future.delayed(widget.pauseDuration, () {
             controller.reverse();
-            widget.onGoMin ?? widget.onGoMin!();
+            widget.onGoMin!();
           });
         } else if (status == AnimationStatus.dismissed) {
-          widget.onFinish ?? widget.onFinish!();
+          widget.onFinish!();
         }
       });
 

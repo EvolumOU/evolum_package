@@ -13,9 +13,9 @@ part 'course.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Course {
-  String id;
-  String name;
-  String type;
+  String? id;
+  String? name;
+  String? type;
   String? tag;
   String? descr;
   String specolor1;
@@ -33,9 +33,9 @@ class Course {
   bool hide;
 
   Course({
-    required this.id,
-    required this.name,
-    required this.type,
+    this.id,
+    this.name,
+    this.type,
     this.tag,
     this.descr,
     this.color1 = "#FFFFFF",
@@ -56,6 +56,8 @@ class Course {
     return _$CourseFromJson({
       ...data,
       "scheduled": data["scheduled"] ?? [],
+      "playlist": data["playlist"] ?? [],
+      "list": data["list"] ?? [],
       "route": data["route"] ?? false,
       "hide": data["hide"] ?? false,
     });

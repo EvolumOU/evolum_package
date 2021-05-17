@@ -5,7 +5,7 @@ enum GradientColor { one, two, three }
 class AnimatedGradientContainer extends StatelessWidget {
   final List<Color> colors;
   final Curve curve;
-  final Widget child;
+  final Widget? child;
   final Duration duration;
   final BoxShape boxShape;
   final AlignmentGeometry begin;
@@ -15,7 +15,7 @@ class AnimatedGradientContainer extends StatelessWidget {
   const AnimatedGradientContainer({
     required this.colors,
     this.curve = Curves.linear,
-    required this.child,
+    this.child,
     this.duration = const Duration(seconds: 3),
     this.boxShape = BoxShape.circle,
     this.borderRadius,
