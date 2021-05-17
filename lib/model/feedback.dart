@@ -3,6 +3,10 @@ import 'package:evolum_package/model/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'utils.dart';
+
+part 'feedback.g.dart';
+
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Feedback {
@@ -10,17 +14,17 @@ class Feedback {
   String id;
   String courseName;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime createdDate;
-  String email;
-  String evoName;
-  String evoTag;
-  String evoType;
-  String feedback;
-  String uid;
+  DateTime? createdDate;
+  String? email;
+  String? evoName;
+  String? evoTag;
+  String? evoType;
+  String? feedback;
+  String? uid;
 
   Feedback({
-    this.id,
-    this.courseName,
+    required this.id,
+    required this.courseName,
     this.createdDate,
     this.email,
     this.evoName,
@@ -30,12 +34,12 @@ class Feedback {
     this.uid,
   });
 
-  // factory Feedback.fromJson(Map<String, dynamic> data) =>
-  //     _$FeedbackFromJson({data});
+  factory Feedback.fromJson(Map<String, dynamic> data) =>
+      _$FeedbackFromJson({...data});
 
-  // Map<String, dynamic> toJson() => _$FeedbackToJson(this);
+  Map<String, dynamic> toJson() => _$FeedbackToJson(this);
 
-  // Map<String, dynamic> toMap() => _$FeedbackFromJson(this);
+  Map<String, dynamic> toMap() => _$FeedbackToJson(this);
 
   @override
   String toString() => 'Feedback{id: $id}';

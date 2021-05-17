@@ -10,6 +10,7 @@ extension EvoCopyWith on Evo {
   Evo copyWith({
     DateTime? createdDate,
     int? duration,
+    bool? feedback,
     String? filename,
     String? id,
     String? intro,
@@ -26,6 +27,7 @@ extension EvoCopyWith on Evo {
     return Evo(
       createdDate: createdDate ?? this.createdDate,
       duration: duration ?? this.duration,
+      feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
       id: id ?? this.id,
       intro: intro ?? this.intro,
@@ -64,6 +66,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     summarize: json['summarize'] as String?,
     intro: json['intro'] as String?,
+    feedback: json['feedback'] as bool?,
   );
 }
 
@@ -82,4 +85,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'createdDate': dateTimetoJson(instance.createdDate),
       'summarize': instance.summarize,
       'intro': instance.intro,
+      'feedback': instance.feedback,
     };
