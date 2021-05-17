@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/timing.dart';
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'utils.dart';
@@ -11,15 +10,11 @@ part 'evo.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Evo {
-  @required
-  String id;
-  @required
-  String filename;
-  @required
-  String name;
-  @required
-  String type;
-  String tag;
+  String? id;
+  String? filename;
+  String? name;
+  String? type;
+  String? tag;
   bool splited;
   int duration;
   List<dynamic> points;
@@ -32,11 +27,11 @@ class Evo {
   String? intro;
 
   Evo({
-    required this.id,
-    required this.filename,
-    required this.name,
-    required this.type,
-    required this.tag,
+    this.id,
+    this.filename,
+    this.name,
+    this.type,
+    this.tag,
     this.splited = false,
     this.duration = 0,
     this.points = const <dynamic>[],
@@ -47,9 +42,6 @@ class Evo {
     this.summarize,
     this.intro,
   });
-
-  @override
-  List<Object> get props => [id, name, type, filename, tag];
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({
         ...data,
