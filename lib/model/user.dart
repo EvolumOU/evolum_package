@@ -57,6 +57,7 @@ class User {
       "noReview": data["noReview"] ?? 0,
       "nbChallengeDone": data["nbChallengeDone"] ?? 0,
       "unlocked": data["unlocked"] ?? <String>[],
+      "goal": data["goal"] ?? <String>[],
     });
   }
 
