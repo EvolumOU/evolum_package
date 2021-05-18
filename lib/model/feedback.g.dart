@@ -6,8 +6,8 @@ part of 'feedback.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension FeedbackCopyWith on Feedback {
-  Feedback copyWith({
+extension FeedBackCopyWith on FeedBack {
+  FeedBack copyWith({
     DateTime? createdDate,
     String? email,
     String? evoName,
@@ -17,7 +17,7 @@ extension FeedbackCopyWith on Feedback {
     String? id,
     String? uid,
   }) {
-    return Feedback(
+    return FeedBack(
       createdDate: createdDate ?? this.createdDate,
       email: email ?? this.email,
       evoName: evoName ?? this.evoName,
@@ -34,8 +34,8 @@ extension FeedbackCopyWith on Feedback {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Feedback _$FeedbackFromJson(Map<String, dynamic> json) {
-  return Feedback(
+FeedBack _$FeedBackFromJson(Map<String, dynamic> json) {
+  return FeedBack(
     id: json['id'] as String?,
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     email: json['email'] as String?,
@@ -47,7 +47,7 @@ Feedback _$FeedbackFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$FeedbackToJson(Feedback instance) => <String, dynamic>{
+Map<String, dynamic> _$FeedBackToJson(FeedBack instance) => <String, dynamic>{
       'id': instance.id,
       'createdDate': dateTimetoJson(instance.createdDate),
       'email': instance.email,

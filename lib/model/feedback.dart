@@ -9,7 +9,7 @@ part 'feedback.g.dart';
 
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
-class Feedback {
+class FeedBack {
   String? id;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? createdDate;
@@ -20,7 +20,7 @@ class Feedback {
   String? feedback;
   String? uid;
 
-  Feedback({
+  FeedBack({
     this.id,
     this.createdDate,
     this.email,
@@ -31,12 +31,12 @@ class Feedback {
     this.uid,
   });
 
-  factory Feedback.fromJson(Map<String, dynamic> data) =>
-      _$FeedbackFromJson({...data});
+  factory FeedBack.fromJson(Map<String, dynamic> data) =>
+      _$FeedBackFromJson({...data});
 
-  Map<String, dynamic> toJson() => _$FeedbackToJson(this);
+  Map<String, dynamic> toJson() => _$FeedBackToJson(this);
 
-  Map<String, dynamic> toMap() => _$FeedbackToJson(this);
+  Map<String, dynamic> toMap() => _$FeedBackToJson(this);
 
   @override
   String toString() => 'Feedback{id: $id}';
