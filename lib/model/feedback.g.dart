@@ -8,7 +8,6 @@ part of 'feedback.dart';
 
 extension FeedbackCopyWith on Feedback {
   Feedback copyWith({
-    String? courseName,
     DateTime? createdDate,
     String? email,
     String? evoName,
@@ -19,7 +18,6 @@ extension FeedbackCopyWith on Feedback {
     String? uid,
   }) {
     return Feedback(
-      courseName: courseName ?? this.courseName,
       createdDate: createdDate ?? this.createdDate,
       email: email ?? this.email,
       evoName: evoName ?? this.evoName,
@@ -38,8 +36,7 @@ extension FeedbackCopyWith on Feedback {
 
 Feedback _$FeedbackFromJson(Map<String, dynamic> json) {
   return Feedback(
-    id: json['id'] as String,
-    courseName: json['courseName'] as String,
+    id: json['id'] as String?,
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     email: json['email'] as String?,
     evoName: json['evoName'] as String?,
@@ -52,7 +49,6 @@ Feedback _$FeedbackFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$FeedbackToJson(Feedback instance) => <String, dynamic>{
       'id': instance.id,
-      'courseName': instance.courseName,
       'createdDate': dateTimetoJson(instance.createdDate),
       'email': instance.email,
       'evoName': instance.evoName,

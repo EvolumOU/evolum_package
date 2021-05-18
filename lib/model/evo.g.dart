@@ -50,11 +50,11 @@ extension EvoCopyWith on Evo {
 
 Evo _$EvoFromJson(Map<String, dynamic> json) {
   return Evo(
-    id: json['id'] as String,
-    filename: json['filename'] as String,
-    name: json['name'] as String,
-    type: json['type'] as String,
-    tag: json['tag'] as String,
+    id: json['id'] as String?,
+    filename: json['filename'] as String?,
+    name: json['name'] as String?,
+    type: json['type'] as String?,
+    tag: json['tag'] as String?,
     splited: json['splited'] as bool,
     duration: json['duration'] as int,
     points: json['points'] as List<dynamic>,

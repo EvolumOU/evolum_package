@@ -42,7 +42,7 @@ class Evo {
     this.createdDate,
     this.summarize,
     this.intro,
-    this.feedback = true,
+    this.feedback = false,
   });
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({

@@ -1,6 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/utils.dart';
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -11,9 +10,7 @@ part 'feedback.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Feedback {
-  @required
-  String id;
-  String courseName;
+  String? id;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? createdDate;
   String? email;
@@ -24,8 +21,7 @@ class Feedback {
   String? uid;
 
   Feedback({
-    required this.id,
-    required this.courseName,
+    this.id,
     this.createdDate,
     this.email,
     this.evoName,
