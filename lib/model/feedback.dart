@@ -17,7 +17,7 @@ class FeedBack {
   String? evoName;
   String? evoTag;
   String? evoType;
-  String? feedback;
+  String? text;
   String? uid;
 
   FeedBack({
@@ -27,7 +27,7 @@ class FeedBack {
     this.evoName,
     this.evoTag,
     this.evoType,
-    this.feedback,
+    this.text,
     this.uid,
   });
 

@@ -13,8 +13,8 @@ extension FeedBackCopyWith on FeedBack {
     String? evoName,
     String? evoTag,
     String? evoType,
-    String? feedback,
     String? id,
+    String? text,
     String? uid,
   }) {
     return FeedBack(
@@ -23,8 +23,8 @@ extension FeedBackCopyWith on FeedBack {
       evoName: evoName ?? this.evoName,
       evoTag: evoTag ?? this.evoTag,
       evoType: evoType ?? this.evoType,
-      feedback: feedback ?? this.feedback,
       id: id ?? this.id,
+      text: text ?? this.text,
       uid: uid ?? this.uid,
     );
   }
@@ -42,7 +42,7 @@ FeedBack _$FeedBackFromJson(Map<String, dynamic> json) {
     evoName: json['evoName'] as String?,
     evoTag: json['evoTag'] as String?,
     evoType: json['evoType'] as String?,
-    feedback: json['feedback'] as String?,
+    text: json['text'] as String?,
     uid: json['uid'] as String?,
   );
 }
@@ -54,6 +54,6 @@ Map<String, dynamic> _$FeedBackToJson(FeedBack instance) => <String, dynamic>{
       'evoName': instance.evoName,
       'evoTag': instance.evoTag,
       'evoType': instance.evoType,
-      'feedback': instance.feedback,
+      'text': instance.text,
       'uid': instance.uid,
     };
