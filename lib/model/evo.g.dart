@@ -10,6 +10,7 @@ extension EvoCopyWith on Evo {
   Evo copyWith({
     DateTime? createdDate,
     int? duration,
+    bool? feedback,
     String? filename,
     String? id,
     String? intro,
@@ -26,6 +27,7 @@ extension EvoCopyWith on Evo {
     return Evo(
       createdDate: createdDate ?? this.createdDate,
       duration: duration ?? this.duration,
+      feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
       id: id ?? this.id,
       intro: intro ?? this.intro,
@@ -48,11 +50,11 @@ extension EvoCopyWith on Evo {
 
 Evo _$EvoFromJson(Map<String, dynamic> json) {
   return Evo(
-    id: json['id'] as String,
-    filename: json['filename'] as String,
-    name: json['name'] as String,
-    type: json['type'] as String,
-    tag: json['tag'] as String,
+    id: json['id'] as String?,
+    filename: json['filename'] as String?,
+    name: json['name'] as String?,
+    type: json['type'] as String?,
+    tag: json['tag'] as String?,
     splited: json['splited'] as bool,
     duration: json['duration'] as int,
     points: json['points'] as List<dynamic>,
@@ -64,6 +66,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     summarize: json['summarize'] as String?,
     intro: json['intro'] as String?,
+    feedback: json['feedback'] as bool?,
   );
 }
 
@@ -82,4 +85,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'createdDate': dateTimetoJson(instance.createdDate),
       'summarize': instance.summarize,
       'intro': instance.intro,
+      'feedback': instance.feedback,
     };

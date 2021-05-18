@@ -9,3 +9,4 @@ export 'scheduled.dart';
 export 'addons.dart';
 export 'salesplan.dart';
 export 'challenge.dart';
+export 'feedback.dart';
