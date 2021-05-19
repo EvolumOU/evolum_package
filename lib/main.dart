@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:meta/meta.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 
@@ -25,6 +24,7 @@ part 'theme/color.dart';
 part 'theme/dark.dart';
 part 'theme/light.dart';
 part 'animation/entrance_fader.dart';
+part 'animation/loading_circle.dart';
 part 'animation/fadeinout_transitioner.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_container.dart';
