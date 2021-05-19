@@ -9,7 +9,6 @@ class APIPath {
   static String userFav(String uid) => 'user/$uid/info/fav';
   static String userHistory(String uid, String id) => 'user/$uid/history/$id';
   static String userEvoDone(String uid) => 'user/$uid/info/evodone';
-
   static String userReco(String uid) => 'user/$uid/info/reco';
 
   static String allCancellation() => 'cancellation/';
@@ -17,5 +16,6 @@ class APIPath {
   static String allUser() => 'user/';
   static String allEvo() => 'evo/';
   static String allSub() => 'subscription/';
+  static String allFeedback() => 'feedback/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
