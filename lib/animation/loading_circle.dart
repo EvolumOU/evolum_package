@@ -25,9 +25,8 @@ class _LoadingCircleState extends State<LoadingCircle>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: const Duration(milliseconds: 2200),
+      duration: const Duration(milliseconds: 4000),
       vsync: this,
-      reverseDuration: const Duration(milliseconds: 1700),
     );
 
     final curvedAnimation = CurvedAnimation(
@@ -44,7 +43,7 @@ class _LoadingCircleState extends State<LoadingCircle>
     animation = Tween<double>(begin: 0, end: 1.0).animate(curvedAnimation);
     animation2 = Tween<double>(begin: 1, end: 0).animate(curvedAnimation2);
 
-    controller.repeat(reverse: true);
+    controller.repeat();
   }
 
   @override
