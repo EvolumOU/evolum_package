@@ -7,8 +7,8 @@ class LoadingCircle extends StatefulWidget {
   const LoadingCircle({
     Key? key,
     this.size = 100,
-    this.color = const Color(0xff9EE0FD),
-    this.opacity = 0.7,
+    this.color = const Color(0xffFFAC73),
+    this.opacity = 0.6,
   }) : super(key: key);
 
   @override
@@ -25,25 +25,24 @@ class _LoadingCircleState extends State<LoadingCircle>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: const Duration(milliseconds: 4000),
+      duration: const Duration(milliseconds: 800),
       vsync: this,
+      reverseDuration: const Duration(milliseconds: 400),
     );
 
     final curvedAnimation = CurvedAnimation(
       parent: controller,
-      curve: Curves.easeIn,
-      reverseCurve: Curves.easeOut,
-    );
-    final curvedAnimation2 = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-      reverseCurve: Curves.easeOut,
+      curve: Curves.easeInOut,
+      reverseCurve: Curves.easeInOut,
     );
 
-    animation = Tween<double>(begin: 0, end: 1.0).animate(curvedAnimation);
-    animation2 = Tween<double>(begin: 1, end: 0).animate(curvedAnimation2);
+    animation = Tween<double>(begin: 0.6, end: 1).animate(curvedAnimation);
+    animation2 = Tween<double>(begin: 1, end: 0.7).animate(curvedAnimation);
 
-    controller.repeat();
+    controller.repeat(
+      reverse: true,
+      period: const Duration(milliseconds: 1500),
+    );
   }
 
   @override
@@ -67,7 +66,7 @@ class _LoadingCircleState extends State<LoadingCircle>
           child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: widget.color.withOpacity(widget.opacity),
+              color: widget.color.withOpacity(widget.opacity / 2),
             ),
             width: widget.size,
             height: widget.size,

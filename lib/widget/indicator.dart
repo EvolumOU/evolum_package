@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of evolum_package;
 
 class ErrorIndicator extends StatelessWidget {
   final String error;

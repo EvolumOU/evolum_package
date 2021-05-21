@@ -10,6 +10,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
+import 'package:clippy_flutter/clippy_flutter.dart';
 
 part 'extension.dart';
 part 'firestore.dart';
@@ -20,6 +21,10 @@ part 'widget/rounded_gradient.dart';
 part 'widget/border_radius_container.dart';
 part 'widget/border_gradient_container.dart';
 part 'widget/back_button.dart';
+part 'widget/evo_logo.dart';
+part 'widget/evo_loading.dart';
+part 'widget/indicator.dart';
+
 part 'theme/color.dart';
 part 'theme/dark.dart';
 part 'theme/light.dart';
@@ -28,5 +33,4 @@ part 'animation/loading_circle.dart';
 part 'animation/fadeinout_transitioner.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_container.dart';
-part 'animation/loading_animated.dart';
 part 'animation/lottie_animated.dart';
