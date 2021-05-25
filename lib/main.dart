@@ -15,6 +15,7 @@ import 'package:clippy_flutter/clippy_flutter.dart';
 part 'extension.dart';
 part 'firestore.dart';
 part 'constant.dart';
+
 part 'widget/shadow_mask.dart';
 part 'widget/selected_container.dart';
 part 'widget/rounded_gradient.dart';

@@ -88,9 +88,7 @@ extension EvoExtensionString on String {
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));
 
   bool get isNumeric {
-    if (this == null) {
-      return false;
-    }
+    if (this == null) return false;
     return double.tryParse(this) != null;
   }
 
@@ -108,7 +106,7 @@ extension EvoExtensionColor on Color {
 
 extension EvoExtensionInt on int {
   /// Give the Time value of a DateTime
-  String get timeFromDuration {
+  String get timeFormatFromSecondes {
     final Duration duration = Duration(seconds: this);
     String twoDigits(int n) => n.toString().padLeft(2, "0");
     final String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));

@@ -9,18 +9,20 @@ class FirestoreService {
   Future<void> setData({
     required String path,
     required Map<String, dynamic> data,
+    bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    debugPrint('==> Add: $path: $data');
+    if (showDebug) debugPrint('==> Firestore Add: $path: $data');
     await reference.set(data);
   }
 
   Future<void> updateData({
     required String path,
     required Map<String, dynamic> data,
+    bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    debugPrint('==> Update: $path: $data');
+    if (showDebug) debugPrint('==> Firestore Update: $path: $data');
     await reference.update(data);
   }
 
