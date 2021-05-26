@@ -54,9 +54,9 @@ extension CourseCopyWith on Course {
 
 Course _$CourseFromJson(Map<String, dynamic> json) {
   return Course(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    type: json['type'] as String,
+    id: json['id'] as String?,
+    name: json['name'] as String?,
+    type: json['type'] as String?,
     tag: json['tag'] as String?,
     descr: json['descr'] as String?,
     color1: json['color1'] as String,

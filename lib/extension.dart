@@ -24,20 +24,20 @@ extension EvoExtensionEvo on Evo {
       type == 'parole' ||
       type == 'musique' ||
       type == 'méditation' ||
-      type == 'affirmation';
+      type == 'affirmation' ||
+      type == 'ecstatic dance';
   bool get needVideo => type == 'yoga';
   bool get needSinglePage => type == 'texte';
 
   bool get isTalk => type == 'parole';
   bool get isYoga => type == 'yoga';
+  bool get isDance => type == 'ecstatic dance';
   bool get isMusic => type == 'musique';
   bool get isMeditation => type == 'méditation';
-  bool get isText => type == 'texte';
+  bool get isOracle => type == 'texte' || type == 'oracle';
   bool get isAff => type == 'affirmation';
 
   String get remoteUrl => "$evoRemoteBaseURL$filename";
-  String get remoteUrl1 => "${evoRemoteBaseURL}meditation/${id}_voice.mp3";
-  String get remoteUrl2 => "${evoRemoteBaseURL}meditation/${id}_bg.mp3";
 
   bool get isNew =>
       createdDate != null &&
@@ -48,10 +48,9 @@ extension EvoExtensionCourse on Course {
   bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
   bool get isCategorized => type == 'mood' || type == 'challenge';
-  bool get isDaily => type == 'quotidien';
   bool get isRandom => type == 'aléatoire';
-  bool get isScheduled => type == 'programmé';
-  bool get isNoPath => type == 'nopath';
+  bool get isEvent => type == 'programmé' || type == 'évenement';
+
   bool get isAddons => addons != null;
 
   bool get isNew =>

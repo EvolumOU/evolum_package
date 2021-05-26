@@ -12,6 +12,7 @@ extension EvoCopyWith on Evo {
     int? duration,
     bool? feedback,
     String? filename,
+    bool? hide,
     String? id,
     String? intro,
     bool? loop,
@@ -29,6 +30,7 @@ extension EvoCopyWith on Evo {
       duration: duration ?? this.duration,
       feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
+      hide: hide ?? this.hide,
       id: id ?? this.id,
       intro: intro ?? this.intro,
       loop: loop ?? this.loop,
@@ -66,7 +68,8 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     summarize: json['summarize'] as String?,
     intro: json['intro'] as String?,
-    feedback: json['feedback'] as bool?,
+    feedback: json['feedback'] as bool,
+    hide: json['hide'] as bool,
   );
 }
 
@@ -86,4 +89,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'summarize': instance.summarize,
       'intro': instance.intro,
       'feedback': instance.feedback,
+      'hide': instance.hide,
     };

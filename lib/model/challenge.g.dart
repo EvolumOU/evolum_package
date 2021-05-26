@@ -26,8 +26,8 @@ extension ChallengeCopyWith on Challenge {
 
 Challenge _$ChallengeFromJson(Map<String, dynamic> json) {
   return Challenge(
-    id: json['id'] as String,
-    name: json['name'] as String,
+    id: json['id'] as String?,
+    name: json['name'] as String?,
     playlist: (json['playlist'] as List<dynamic>)
         .map((e) => Playlist.fromJson(e as Map<String, dynamic>))
         .toList(),

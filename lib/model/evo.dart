@@ -25,7 +25,8 @@ class Evo {
   DateTime? createdDate;
   String? summarize;
   String? intro;
-  bool? feedback;
+  bool feedback;
+  bool hide;
 
   Evo({
     this.id,
@@ -43,13 +44,17 @@ class Evo {
     this.summarize,
     this.intro,
     this.feedback = false,
+    this.hide = false,
   });
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({
         ...data,
-        "loop": data["loop"] ?? false,
         "points": data["points"] ?? <dynamic>[],
         "timings": data["timings"] ?? <Timing>[],
+        "duration": data["duration"] ?? 0,
+        "feedback": data["feedback"] ?? false,
+        "hide": data["hide"] ?? false,
+        "splited": data["splited"] ?? false,
       });
 
   Map<String, dynamic> toJson() => _$EvoToJson(this);
