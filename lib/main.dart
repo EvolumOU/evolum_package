@@ -11,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:clippy_flutter/clippy_flutter.dart';
+import 'dart:math' as math;
 
 part 'extension.dart';
 part 'firestore.dart';

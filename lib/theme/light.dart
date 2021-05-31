@@ -1,78 +1,81 @@
 part of evolum_package;
 
 final ThemeData lightTheme = ThemeData(
-  backgroundColor: EvoColors.white,
-  scaffoldBackgroundColor: EvoColors.white,
-  accentColor: EvoColors.orange,
-  dividerColor: EvoColors.grey,
-  dialogBackgroundColor: EvoColors.white,
+  backgroundColor: kevoWhite,
+  scaffoldBackgroundColor: kevoWhite,
+  accentColor: kevoOrange,
+  dividerColor: kevoGrey,
+  dialogBackgroundColor: kevoWhite,
   highlightColor: Colors.transparent,
   splashColor: Colors.transparent,
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
-      color: EvoColors.black,
+      color: kevoBlack,
       fontWeight: FontWeight.w300,
     ),
     border: InputBorder.none,
     focusedBorder: InputBorder.none,
   ),
-  textTheme: TextTheme(
-    button: TextStyle(
-      fontSize: 23,
-      color: EvoColors.white,
-      fontWeight: FontWeight.w800,
-      letterSpacing: 1.65,
-    ),
-    bodyText2: TextStyle(
-      fontSize: 12,
-      color: EvoColors.black,
-    ),
-    bodyText1: TextStyle(
-      fontSize: 14,
-      color: EvoColors.black,
-    ),
-    subtitle2: TextStyle(
-      fontSize: 16,
-      color: EvoColors.black,
-    ),
-    subtitle1: TextStyle(
-      fontSize: 18,
-      color: EvoColors.black,
-    ),
-    headline6: TextStyle(
-      fontSize: 22,
-      color: EvoColors.black,
-    ),
-    headline5: TextStyle(
-      fontSize: 24,
-      color: EvoColors.black,
-    ),
-    headline4: TextStyle(
-      fontSize: 27,
-      color: EvoColors.black,
-    ),
-    headline3: TextStyle(
-      fontSize: 38,
-      color: EvoColors.black,
-    ),
-    headline1: TextStyle(
-      fontSize: 43,
-      color: EvoColors.black,
-      fontWeight: FontWeight.normal,
-    ),
-  ),
-  iconTheme: IconThemeData(color: EvoColors.black),
-  unselectedWidgetColor: EvoColors.black,
+  iconTheme: IconThemeData(color: kevoBlack),
+  unselectedWidgetColor: kevoBlack,
   fontFamily: 'AirbnbCereal',
-  cursorColor: EvoColors.black,
+  textSelectionTheme: TextSelectionThemeData(cursorColor: kevoBlack),
   cardTheme: CardTheme(
     margin: const EdgeInsets.all(10),
-    color: EvoColors.white,
+    color: kevoWhite,
     elevation: 0,
   ),
   appBarTheme: AppBarTheme(
     elevation: 0,
     color: Colors.transparent,
-    iconTheme: IconThemeData(color: EvoColors.black),
+    iconTheme: IconThemeData(color: kevoBlack),
+  ),
+  textTheme: TextTheme(
+    button: TextStyle(
+      fontSize: 23,
+      color: kevoWhite,
+      fontWeight: FontWeight.w800,
+      letterSpacing: 1.65,
+    ),
+
+    bodyText1: TextStyle(
+      fontSize: 14,
+      color: kevoBlack,
+    ),
+
+    // !!!!  style above is not always used:
+    bodyText2: TextStyle(
+      fontSize: 12,
+      color: kevoBlack,
+    ),
+    subtitle2: TextStyle(
+      fontSize: 16,
+      color: kevoBlack,
+    ),
+    subtitle1: TextStyle(
+      fontSize: 18,
+      color: kevoBlack,
+    ),
+    headline6: TextStyle(
+      fontSize: 22,
+      color: kevoBlack,
+    ),
+    headline5: TextStyle(
+      fontSize: 24,
+      color: kevoBlack,
+    ),
+    headline4: TextStyle(
+      fontSize: 27,
+      color: kevoBlack,
+    ),
+    headline3: TextStyle(
+      fontSize: 38,
+      color: kevoBlack,
+    ),
+    headline1: TextStyle(
+      fontSize: 43,
+      color: kevoBlack,
+      fontWeight: FontWeight.normal,
+    ),
   ),
 );

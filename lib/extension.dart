@@ -99,7 +99,7 @@ extension EvoExtensionString on String {
 
 extension EvoExtensionColor on Color {
   bool isDark(context) {
-    return Theme.of(context).textTheme.bodyText1!.color == EvoColors.white;
+    return Theme.of(context).textTheme.bodyText1!.color == kevoWhite;
   }
 }
 
