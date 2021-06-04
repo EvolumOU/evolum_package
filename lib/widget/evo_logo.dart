@@ -76,18 +76,18 @@ class _EvoLogoState extends State<EvoLogo> with SingleTickerProviderStateMixin {
         if (animate)
           FadeTransition(
             opacity: animation,
-            child: buildCrescent(widget.size - 50),
+            child: buildCrescent(widget.size),
           )
         else
-          buildCrescent(widget.size - 50),
+          buildCrescent(widget.size),
         SizedBox(height: widget.size * 0.15),
         if (animate)
           FadeTransition(
             opacity: animation,
-            child: buildCircle(widget.size - 50),
+            child: buildCircle(widget.size),
           )
         else
-          buildCircle(widget.size - 50)
+          buildCircle(widget.size)
       ],
     );
   }

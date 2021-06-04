@@ -81,7 +81,7 @@ class _EvoLoadingState extends State<EvoLoading>
           ),
           EvoLogo(
             animationController: controller,
-            size: widget.size,
+            size: widget.size - 50,
             backgroundColor: widget.backgroundColor,
             fillColor: const Color(0xffFFAC73),
           ),
