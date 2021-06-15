@@ -1,3 +1,5 @@
+part of evolum_package;
+
 class APIPath {
   static String evo(String id) => 'evo/$id';
   static String course(String id) => 'course/$id';

@@ -3,6 +3,7 @@ library evolum_package;
 import 'dart:math';
 import 'dart:ui';
 import 'package:evolum_package/model/all.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -12,10 +13,12 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
+import 'package:flutter/widgets.dart';
 
-part 'extension.dart';
-part 'firestore.dart';
-part 'constant.dart';
+part 'utils/extension.dart';
+part 'utils/firestore.dart';
+part 'utils/constant.dart';
+part 'utils/api_path.dart';
 
 part 'widget/shadow_mask.dart';
 part 'widget/selected_container.dart';
