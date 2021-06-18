@@ -27,6 +27,8 @@ class Evo {
   String? intro;
   bool feedback;
   bool hide;
+  String mode;
+  String form;
 
   Evo({
     this.id,
@@ -45,6 +47,8 @@ class Evo {
     this.intro,
     this.feedback = false,
     this.hide = false,
+    this.mode = 'horizontal',
+    this.form = 'focus',
   });
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({
@@ -55,6 +59,8 @@ class Evo {
         "feedback": data["feedback"] ?? false,
         "hide": data["hide"] ?? false,
         "splited": data["splited"] ?? false,
+        "mode": data["mode"] ?? 'horizontal',
+        "form": data["form"] ?? 'focus',
       });
 
   Map<String, dynamic> toJson() => _$EvoToJson(this);

@@ -28,6 +28,7 @@ class User {
   DateTime? createdDate;
   List<String> unlocked;
   String? subId;
+  double give;
 
   User({
     this.uid,
@@ -47,6 +48,7 @@ class User {
     this.challengeDate,
     this.unlocked = const <String>[],
     this.subId,
+    this.give = 0,
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {
@@ -58,6 +60,7 @@ class User {
       "nbChallengeDone": data["nbChallengeDone"] ?? 0,
       "unlocked": data["unlocked"] ?? <String>[],
       "goal": data["goal"] ?? <String>[],
+      "give": data["give"] ?? 0,
     });
   }
 

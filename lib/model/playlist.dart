@@ -18,7 +18,7 @@ class Playlist {
     this.list = const [],
     this.position = 0,
     this.hide = false,
-    this.type,
+    this.type = 'seat',
     this.text,
   });
 
@@ -27,6 +27,7 @@ class Playlist {
         "position": data["position"] ?? 0,
         "list": data["list"] ?? [],
         "hide": data["hide"] ?? false,
+        "type": data["type"] ?? 'seat',
       });
 
   Map<String, dynamic> toJson() => _$PlaylistToJson(this);

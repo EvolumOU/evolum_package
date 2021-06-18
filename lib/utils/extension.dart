@@ -20,24 +20,10 @@ extension EvoExtensionList<T> on List<T> {
 }
 
 extension EvoExtensionEvo on Evo {
-  bool get needAudio =>
-      type == 'parole' ||
-      type == 'musique' ||
-      type == 'méditation' ||
-      type == 'affirmation' ||
-      type == 'ecstatic dance';
-  bool get needVideo => type == 'yoga';
-  bool get needSinglePage => type == 'texte';
-
-  bool get isTalk => type == 'parole';
-  bool get isYoga => type == 'yoga';
-  bool get isDance => type == 'ecstatic dance';
-  bool get isMusic => type == 'musique';
-  bool get isMeditation => type == 'méditation';
-  bool get isOracle => type == 'texte' || type == 'oracle';
-  bool get isAff => type == 'affirmation';
-
   String get remoteUrl => "$evoRemoteBaseURL$filename";
+
+  bool get isVideo => filename != null && filename!.contains(".mp4");
+  bool get isAudio => filename != null && filename!.contains(".mp3");
 
   bool get isNew =>
       createdDate != null &&
@@ -48,8 +34,8 @@ extension EvoExtensionCourse on Course {
   bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
   bool get isCategorized => type == 'mood' || type == 'challenge';
-  bool get isRandom => type == 'aléatoire';
-  bool get isEvent => type == 'programmé' || type == 'évenement';
+  bool get isEvent =>
+      type == 'event' || type == 'programmé' || type == 'évenement';
 
   bool get isAddons => addons != null;
 
@@ -63,23 +49,23 @@ extension EvoExtensionUser on User {
       status == 'free' ||
       status == 'challenger' ||
       status == 'lead';
-  bool get isFull => status == 'abo' || status == 'trial';
+  bool get isFull =>
+      status == 'abo' || status == 'trial' || status == 'freebis';
+
   bool get isCancel => status == 'cancel';
   bool get isLead => status == 'lead';
   bool get isChallenger => status == 'challenger';
   bool get isFree => status == 'free';
   bool get isTrial => status == 'trial';
+  bool get isFreeBis => status == 'freebis';
+
+  bool get isFullBis =>
+      status == 'fullbis' || status == 'abo' || status == 'trial';
+
+  bool get isGiver => status == 'giver' || status == 'abo';
 }
 
 extension EvoExtensionString on String {
-  bool get isUserStatusValid =>
-      this == 'cancel' ||
-      this == 'free' ||
-      this == 'challenger' ||
-      this == 'lead' ||
-      this == 'abo' ||
-      this == "trial";
-
   String spaceRemoved() {
     return replaceFirst(" ", "");
   }
@@ -94,12 +80,6 @@ extension EvoExtensionString on String {
   String get prefix {
     final indexOfDot = this.indexOf('.');
     return this.substring(0, indexOfDot);
-  }
-}
-
-extension EvoExtensionColor on Color {
-  bool isDark(context) {
-    return Theme.of(context).textTheme.bodyText1!.color == kevoWhite;
   }
 }
 
