@@ -71,6 +71,10 @@ extension EvoExtensionUser on User {
   bool get isGiver => status == 'giver' || status == 'abo';
 }
 
+extension EvoExtensionPlayList on Playlist {
+  List<String> get stringList => list.map((s) => s.toString()).toList();
+}
+
 extension EvoExtensionString on String {
   String spaceRemoved() {
     return replaceFirst(" ", "");
