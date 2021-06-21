@@ -12,10 +12,12 @@ extension EvoCopyWith on Evo {
     int? duration,
     bool? feedback,
     String? filename,
+    String? form,
     bool? hide,
     String? id,
     String? intro,
     bool? loop,
+    String? mode,
     String? name,
     List<dynamic>? points,
     bool? splited,
@@ -30,10 +32,12 @@ extension EvoCopyWith on Evo {
       duration: duration ?? this.duration,
       feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
+      form: form ?? this.form,
       hide: hide ?? this.hide,
       id: id ?? this.id,
       intro: intro ?? this.intro,
       loop: loop ?? this.loop,
+      mode: mode ?? this.mode,
       name: name ?? this.name,
       points: points ?? this.points,
       splited: splited ?? this.splited,
@@ -70,6 +74,8 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     intro: json['intro'] as String?,
     feedback: json['feedback'] as bool,
     hide: json['hide'] as bool,
+    mode: json['mode'] as String,
+    form: json['form'] as String,
   );
 }
 
@@ -90,4 +96,6 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'intro': instance.intro,
       'feedback': instance.feedback,
       'hide': instance.hide,
+      'mode': instance.mode,
+      'form': instance.form,
     };
