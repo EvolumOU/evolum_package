@@ -55,8 +55,6 @@ extension EvoExtensionUser on User {
       status == 'free' ||
       status == 'challenger' ||
       status == 'lead';
-  bool get isFull =>
-      status == 'abo' || status == 'trial' || status == 'freebis';
 
   bool get isCancel => status == 'cancel';
   bool get isLead => status == 'lead';
@@ -65,8 +63,17 @@ extension EvoExtensionUser on User {
   bool get isTrial => status == 'trial';
   bool get isFreeBis => status == 'freebis';
 
+  bool get isFull =>
+      status == 'abo' || status == 'trial' || status == 'freebis';
   bool get isFullBis =>
       status == 'fullbis' || status == 'abo' || status == 'trial';
+
+  bool get isOldStatus =>
+      status == 'abo' ||
+      status == 'trial' ||
+      status == 'lead' ||
+      status == 'cancel' ||
+      status == 'challenger';
 
   bool get isGiver => status == 'giver' || status == 'abo';
 }
