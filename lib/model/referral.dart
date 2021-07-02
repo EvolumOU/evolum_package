@@ -23,12 +23,7 @@ class Referral {
   factory Referral.fromJson(Map<String, dynamic> data) =>
       _$ReferralFromJson({...data});
 
-  factory Referral.fromMap(
-      Map<String, dynamic> data, String uid, String uidRef) {
-    return _$ReferralFromJson({
-      ...data,
-      "uid": uid,
-      "uidRef": uidRef,
-    });
+  factory Referral.fromMap(Map<String, dynamic> data) {
+    return _$ReferralFromJson(data);
   }
 }
