@@ -74,8 +74,6 @@ extension EvoExtensionUser on User {
       status == 'lead' ||
       status == 'cancel' ||
       status == 'challenger';
-
-  bool get isGiver => status == 'giver' || status == 'abo';
 }
 
 extension EvoExtensionPlayList on Playlist {
