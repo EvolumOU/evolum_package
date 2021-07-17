@@ -29,6 +29,7 @@ class User {
   List<String> unlocked;
   String? subId;
   double give;
+  String? token;
 
   User({
     this.uid,
@@ -49,6 +50,7 @@ class User {
     this.unlocked = const <String>[],
     this.subId,
     this.give = 0,
+    this.token,
   });
 
   factory User.fromMap(Map<String, dynamic> data, String uid) {
