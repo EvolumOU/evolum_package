@@ -12,7 +12,7 @@ class FirestoreService {
     bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    if (showDebug) debugPrint('==> Firestore Add: $path: $data');
+    if (showDebug) debugPrint('===> [EvoPackage/Firestore] add: $path: $data');
     await reference.set(data);
   }
 
@@ -22,13 +22,14 @@ class FirestoreService {
     bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    if (showDebug) debugPrint('==> Firestore Update: $path: $data');
+    if (showDebug)
+      debugPrint('===> [EvoPackage/Firestore] update: $path: $data');
     await reference.update(data);
   }
 
   Future<void> deleteData({required String path}) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    debugPrint('==> delete: $path');
+    debugPrint('===> [EvoPackage/Firestore] delete: $path');
     await reference.delete();
   }
 
