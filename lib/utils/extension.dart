@@ -115,6 +115,8 @@ extension EvoExtensionInt on int {
   String get minFormatFromSecondes => "${(this / 60).round().toString()} min";
 
   bool get pourcentageOfChance => Random().nextInt(99) + 1 <= this;
+
+  int get fromZeroRandom => Random().nextInt(this);
 }
 
 extension EvoExtentionDateTime on DateTime {
