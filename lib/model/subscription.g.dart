@@ -13,8 +13,8 @@ extension SubscriptionCopyWith on Subscription {
     String? cardLast4,
     String? currency,
     String? id,
-    DateTime? nextBillingDate,
-    String? paymentMethod,
+    int? nextBillingDate,
+    String? paymentType,
     double? price,
   }) {
     return Subscription(
@@ -24,7 +24,7 @@ extension SubscriptionCopyWith on Subscription {
       currency: currency ?? this.currency,
       id: id ?? this.id,
       nextBillingDate: nextBillingDate ?? this.nextBillingDate,
-      paymentMethod: paymentMethod ?? this.paymentMethod,
+      paymentType: paymentType ?? this.paymentType,
       price: price ?? this.price,
     );
   }
@@ -37,24 +37,24 @@ extension SubscriptionCopyWith on Subscription {
 Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
   return Subscription(
     id: json['id'] as String?,
-    paymentMethod: json['paymentMethod'] as String,
+    paymentType: json['paymentType'] as String,
     cardLast4: json['cardLast4'] as String?,
     price: (json['price'] as num).toDouble(),
     currency: json['currency'] as String,
     billingPeriod: json['billingPeriod'] as int,
     billingPeriodUnit: json['billingPeriodUnit'] as String,
-    nextBillingDate: DateTime.parse(json['nextBillingDate'] as String),
+    nextBillingDate: json['nextBillingDate'] as int,
   );
 }
 
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'paymentMethod': instance.paymentMethod,
+      'paymentType': instance.paymentType,
       'cardLast4': instance.cardLast4,
       'price': instance.price,
       'currency': instance.currency,
       'billingPeriod': instance.billingPeriod,
       'billingPeriodUnit': instance.billingPeriodUnit,
-      'nextBillingDate': instance.nextBillingDate.toIso8601String(),
+      'nextBillingDate': instance.nextBillingDate,
     };

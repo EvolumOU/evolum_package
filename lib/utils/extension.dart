@@ -151,16 +151,16 @@ extension EvoExtentionDateTime on DateTime {
 
 extension SubscriptionExtention on Subscription {
   String? buildPaymentMethod() {
-    if (paymentMethod == 'card') {
+    if (paymentType == 'card') {
       return "**** **** **** $cardLast4  💳";
-    } else if (paymentMethod == 'apple_pay') {
+    } else if (paymentType == 'apple_pay') {
       return 'Apple Pay';
-    } else if (paymentMethod == 'paypal') {
+    } else if (paymentType == 'paypal') {
       return 'Paypal';
-    } else if (paymentMethod == 'google_pay') {
+    } else if (paymentType == 'google_pay') {
       return 'Google Pay';
     }
-    return paymentMethod;
+    return paymentType;
   }
 
   String buildSub() {
