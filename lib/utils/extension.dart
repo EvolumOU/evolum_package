@@ -148,3 +148,35 @@ extension EvoExtentionDateTime on DateTime {
     return DateFormat('d MMMM', 'fr_FR').format(this);
   }
 }
+
+extension SubscriptionExtention on Subscription {
+  String? buildPaymentMethod() {
+    if (paymentMethod == 'card') {
+      return "**** **** **** $cardLast4  💳";
+    } else if (paymentMethod == 'apple_pay') {
+      return 'Apple Pay';
+    } else if (paymentMethod == 'paypal') {
+      return 'Paypal';
+    } else if (paymentMethod == 'google_pay') {
+      return 'Google Pay';
+    }
+    return paymentMethod;
+  }
+
+  String buildSub() {
+    String period = billingPeriod.toString();
+
+    if (billingPeriodUnit == 'year') {
+      billingPeriodUnit = 'an';
+    } else if (billingPeriodUnit == 'month') {
+      billingPeriodUnit = 'mois';
+    } else {
+      billingPeriodUnit = 'jour(s)';
+    }
+
+    String price = (this.price.toDouble() / 100).toStringAsFixed(2);
+    if (currency == 'EUR') currency = '€';
+
+    return 'Accès $period $billingPeriodUnit $price$currency';
+  }
+}
