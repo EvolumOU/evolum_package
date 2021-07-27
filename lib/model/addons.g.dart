@@ -10,16 +10,16 @@ extension AddonsCopyWith on Addons {
   Addons copyWith({
     String? darkUrl,
     DateTime? date,
+    bool? disable,
     String? lightUrl,
     int? nb,
-    bool? disable,
   }) {
     return Addons(
       darkUrl: darkUrl ?? this.darkUrl,
       date: date ?? this.date,
+      disable: disable ?? this.disable,
       lightUrl: lightUrl ?? this.lightUrl,
       nb: nb ?? this.nb,
-      disable: disable ?? this.disable,
     );
   }
 }
@@ -30,10 +30,12 @@ extension AddonsCopyWith on Addons {
 
 Addons _$AddonsFromJson(Map<String, dynamic> json) {
   return Addons(
-      lightUrl: json['lightUrl'] as String?,
-      darkUrl: json['darkUrl'] as String?,
-      date: dateTimefromJson(json['date'] as Timestamp?),
-      disable: json['disable'] as bool);
+    lightUrl: json['lightUrl'] as String?,
+    darkUrl: json['darkUrl'] as String?,
+    nb: json['nb'] as int,
+    date: dateTimefromJson(json['date'] as Timestamp?),
+    disable: json['disable'] as bool,
+  );
 }
 
 Map<String, dynamic> _$AddonsToJson(Addons instance) => <String, dynamic>{
@@ -41,5 +43,5 @@ Map<String, dynamic> _$AddonsToJson(Addons instance) => <String, dynamic>{
       'darkUrl': instance.darkUrl,
       'date': dateTimetoJson(instance.date),
       'nb': instance.nb,
-      'disable': instance.disable
+      'disable': instance.disable,
     };
