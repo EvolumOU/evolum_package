@@ -16,8 +16,7 @@ class Coupon {
   String? type;
   String? email;
   String? reward;
-  String? firstname;
-  String? lastname;
+  String? name;
   String? address;
   bool cheked;
 
@@ -26,8 +25,7 @@ class Coupon {
     this.date,
     this.type,
     this.email,
-    this.firstname,
-    this.lastname,
+    this.name,
     this.address,
     this.reward,
     this.cheked = false,
