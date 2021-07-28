@@ -1,6 +1,6 @@
 part of evolum_package;
 
-extension EvoExtensionDuration on Duration {
+extension DurationExtension on Duration {
   String minuteSecondFormatted() {
     return [
       if (inSeconds > 3600) inHours.remainder(24),
@@ -12,7 +12,7 @@ extension EvoExtensionDuration on Duration {
   }
 }
 
-extension EvoExtensionList<T> on List<T> {
+extension ListExtension<T> on List<T> {
   T get oneRandom {
     if (length == 1) return this[0];
     return this[Random().nextInt(length - 1)];
@@ -33,7 +33,7 @@ extension EvoExtensionList<T> on List<T> {
   }
 }
 
-extension EvoExtensionEvo on Evo {
+extension EvoExtension on Evo {
   String get remoteUrl => "$evoRemoteBaseURL$filename";
 
   bool get isVideo => filename != null && filename!.contains(".mp4");
@@ -50,7 +50,7 @@ extension EvoExtensionEvo on Evo {
       DateTime.now().isBefore(createdDate!.add(Duration(days: 20)));
 }
 
-extension EvoExtensionCourse on Course {
+extension CourseExtension on Course {
   bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
   bool get isCategorized => type == 'mood' || type == 'challenge';
@@ -63,7 +63,7 @@ extension EvoExtensionCourse on Course {
       DateTime.now().isBefore(updatedDate!.add(Duration(days: 30)));
 }
 
-extension EvoExtensionUser on User {
+extension UserExtension on User {
   bool get isBlock =>
       status == 'cancel' ||
       status == 'free' ||
@@ -90,11 +90,11 @@ extension EvoExtensionUser on User {
       status == 'challenger';
 }
 
-extension EvoExtensionPlayList on Playlist {
+extension PlayListExtension on Playlist {
   List<String> get stringList => list.map((s) => s.toString()).toList();
 }
 
-extension EvoExtensionString on String {
+extension StringExtension on String {
   String spaceRemoved() {
     return replaceFirst(" ", "");
   }
@@ -112,7 +112,7 @@ extension EvoExtensionString on String {
   }
 }
 
-extension EvoExtensionInt on int {
+extension IntExtension on int {
   /// Give the Time value of a DateTime
   String get timeFormatFromSecondes {
     final Duration duration = Duration(seconds: this);
@@ -133,7 +133,7 @@ extension EvoExtensionInt on int {
   int get fromZeroRandom => Random().nextInt(this);
 }
 
-extension EvoExtentionDateTime on DateTime {
+extension DateTimeExtention on DateTime {
   String get timeStringFromDate {
     return DateFormat.Hm().format(this);
   }

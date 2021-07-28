@@ -20,5 +20,6 @@ class APIPath {
   static String allSub() => 'subscription/';
   static String allFeedback() => 'feedback/';
   static String allReferral() => 'referral/';
+  static String allCoupon() => 'coupon/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
