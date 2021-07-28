@@ -16,7 +16,9 @@ class Coupon {
   String? type;
   String? email;
   String? reward;
-  Shipping? shipping;
+  String? firstname;
+  String? lastname;
+  String? address;
   bool cheked;
 
   Coupon({
@@ -24,7 +26,9 @@ class Coupon {
     this.date,
     this.type,
     this.email,
-    this.shipping,
+    this.firstname,
+    this.lastname,
+    this.address,
     this.reward,
     this.cheked = false,
   });
