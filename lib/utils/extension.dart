@@ -33,6 +33,18 @@ extension ListExtension<T> on List<T> {
   }
 }
 
+extension ScrollControllerExtention on ScrollController {
+  Future<void> scrollToEnd() async {
+    await Future.delayed(Duration(milliseconds: 500));
+    animateTo(
+      position.maxScrollExtent,
+      curve: Curves.easeOut,
+      duration: const Duration(milliseconds: 500),
+    );
+  }
+}
+
+
 extension EvoExtension on Evo {
   String get remoteUrl => "$evoRemoteBaseURL$filename";
 
