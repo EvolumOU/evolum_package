@@ -9,7 +9,7 @@ part of 'coupon.dart';
 extension CouponCopyWith on Coupon {
   Coupon copyWith({
     String? address,
-    bool? cheked,
+    bool? checked,
     String? code,
     DateTime? date,
     String? email,
@@ -19,7 +19,7 @@ extension CouponCopyWith on Coupon {
   }) {
     return Coupon(
       address: address ?? this.address,
-      cheked: cheked ?? this.cheked,
+      checked: checked ?? this.checked,
       code: code ?? this.code,
       date: date ?? this.date,
       email: email ?? this.email,
@@ -43,11 +43,12 @@ Coupon _$CouponFromJson(Map<String, dynamic> json) {
     name: json['name'] as String?,
     address: json['address'] as String?,
     reward: json['reward'] as String?,
-    cheked: json['cheked'] as bool,
-  );
+    checked: json['checked'] as bool,
+  )..id = json['id'] as String?;
 }
 
 Map<String, dynamic> _$CouponToJson(Coupon instance) => <String, dynamic>{
+      'id': instance.id,
       'code': instance.code,
       'date': dateTimetoJson(instance.date),
       'type': instance.type,
@@ -55,5 +56,5 @@ Map<String, dynamic> _$CouponToJson(Coupon instance) => <String, dynamic>{
       'reward': instance.reward,
       'name': instance.name,
       'address': instance.address,
-      'cheked': instance.cheked,
+      'checked': instance.checked,
     };

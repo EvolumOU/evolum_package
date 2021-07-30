@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'all.dart';
 import 'utils.dart';
 
 part 'coupon.g.dart';
@@ -10,6 +9,7 @@ part 'coupon.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Coupon {
+  String? id;
   String? code;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
@@ -18,7 +18,7 @@ class Coupon {
   String? reward;
   String? name;
   String? address;
-  bool cheked;
+  bool checked;
 
   Coupon({
     this.code,
@@ -28,11 +28,14 @@ class Coupon {
     this.name,
     this.address,
     this.reward,
-    this.cheked = false,
+    this.checked = false,
   });
 
-  factory Coupon.fromJson(Map<String, dynamic> data) {
-    return _$CouponFromJson(data);
+  factory Coupon.fromJson(Map<String, dynamic> data, String docId) {
+    return _$CouponFromJson({
+      ...data,
+      'id': docId,
+    });
   }
 
   Map<String, dynamic> toJson() => _$CouponToJson(this);
