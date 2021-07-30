@@ -35,6 +35,7 @@ class Coupon {
     return _$CouponFromJson({
       ...data,
       'id': docId,
+      "checked": data["checked"] ?? false,
     });
   }
 
