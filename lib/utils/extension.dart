@@ -44,6 +44,10 @@ extension ScrollControllerExtention on ScrollController {
   }
 }
 
+extension CouponExtension on Coupon {
+  bool get isPhysic => type == 'physique';
+  bool get isVirtual => type == 'virtuel';
+}
 
 extension EvoExtension on Evo {
   String get remoteUrl => "$evoRemoteBaseURL$filename";
