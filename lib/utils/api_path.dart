@@ -7,6 +7,7 @@ class APIPath {
   static String cancellation(String id) => 'cancellation/$id';
   static String feedback(String id) => 'feedback/$id';
   static String brick(String id) => 'brick/$id';
+  static String coupon(String id) => 'coupon/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFav(String uid) => 'user/$uid/info/fav';
