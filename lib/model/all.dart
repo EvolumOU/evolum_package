@@ -11,3 +11,4 @@ export 'challenge.dart';
 export 'feedback.dart';
 export 'subscription.dart';
 export 'coupon.dart';
+export 'brick.dart';
