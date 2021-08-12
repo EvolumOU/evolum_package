@@ -6,6 +6,7 @@ class APIPath {
   static String challenge(String id) => 'challenge/$id';
   static String cancellation(String id) => 'cancellation/$id';
   static String feedback(String id) => 'feedback/$id';
+  static String brick(String id) => 'brick/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFav(String uid) => 'user/$uid/info/fav';
@@ -21,5 +22,6 @@ class APIPath {
   static String allFeedback() => 'feedback/';
   static String allReferral() => 'referral/';
   static String allCoupon() => 'coupon/';
+  static String allBrick() => 'brick/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
