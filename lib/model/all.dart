@@ -7,7 +7,6 @@ export 'reco.dart';
 export 'timing.dart';
 export 'scheduled.dart';
 export 'addons.dart';
-export 'challenge.dart';
 export 'feedback.dart';
 export 'subscription.dart';
 export 'coupon.dart';

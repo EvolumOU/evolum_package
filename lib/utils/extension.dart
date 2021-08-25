@@ -69,7 +69,7 @@ extension EvoExtension on Evo {
 extension CourseExtension on Course {
   bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
-  bool get isCategorized => type == 'mood' || type == 'challenge';
+  bool get isCategorized => type == 'mood';
   bool get isEvent =>
       type == 'event' || type == 'programmé' || type == 'évenement';
 
@@ -91,19 +91,8 @@ extension UserExtension on User {
   bool get isChallenger => status == 'challenger';
   bool get isFree => status == 'free';
   bool get isTrial => status == 'trial';
-  bool get isFreeBis => status == 'freebis';
 
-  bool get isFull =>
-      status == 'abo' || status == 'trial' || status == 'freebis';
-  bool get isFullBis =>
-      status == 'fullbis' || status == 'abo' || status == 'trial';
-
-  bool get isOldStatus =>
-      status == 'abo' ||
-      status == 'trial' ||
-      status == 'lead' ||
-      status == 'cancel' ||
-      status == 'challenger';
+  bool get isFull => status == 'abo' || status == 'trial';
 }
 
 extension PlayListExtension on Playlist {

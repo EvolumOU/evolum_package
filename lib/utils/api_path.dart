@@ -3,7 +3,6 @@ part of evolum_package;
 class APIPath {
   static String evo(String id) => 'evo/$id';
   static String course(String id) => 'course/$id';
-  static String challenge(String id) => 'challenge/$id';
   static String cancellation(String id) => 'cancellation/$id';
   static String feedback(String id) => 'feedback/$id';
   static String brick(String id) => 'brick/$id';
