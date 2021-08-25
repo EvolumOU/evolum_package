@@ -33,7 +33,6 @@ extension UserCopyWith on User {
       challengeDate: challengeDate ?? this.challengeDate,
       createdDate: createdDate ?? this.createdDate,
       email: email ?? this.email,
-      give: give ?? this.give,
       goal: goal ?? this.goal,
       leadDate: leadDate ?? this.leadDate,
       name: name ?? this.name,
@@ -76,7 +75,6 @@ User _$UserFromJson(Map<String, dynamic> json) {
     unlocked:
         (json['unlocked'] as List<dynamic>).map((e) => e as String).toList(),
     subId: json['subId'] as String?,
-    give: (json['give'] as num).toDouble(),
     token: json['token'] as String?,
   );
 }
@@ -99,6 +97,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'createdDate': dateTimetoJson(instance.createdDate),
       'unlocked': instance.unlocked,
       'subId': instance.subId,
-      'give': instance.give,
       'token': instance.token,
     };

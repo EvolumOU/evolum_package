@@ -28,7 +28,6 @@ class User {
   DateTime? createdDate;
   List<String> unlocked;
   String? subId;
-  double give;
   String? token;
 
   User({
@@ -49,7 +48,6 @@ class User {
     this.challengeDate,
     this.unlocked = const <String>[],
     this.subId,
-    this.give = 0,
     this.token,
   });
 
