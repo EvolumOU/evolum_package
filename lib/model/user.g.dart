@@ -12,7 +12,6 @@ extension UserCopyWith on User {
     DateTime? challengeDate,
     DateTime? createdDate,
     String? email,
-    double? give,
     List<dynamic>? goal,
     DateTime? leadDate,
     String? name,

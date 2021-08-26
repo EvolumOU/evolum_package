@@ -19,6 +19,7 @@ class Coupon {
   String? name;
   String? address;
   bool checked;
+  String? uid;
 
   Coupon({
     this.code,
@@ -29,6 +30,7 @@ class Coupon {
     this.address,
     this.reward,
     this.checked = false,
+    this.uid,
   });
 
   factory Coupon.fromJson(Map<String, dynamic> data, String docId) {
@@ -43,5 +45,5 @@ class Coupon {
 
   @override
   String toString() =>
-      'Coupon{code: $code type: $type date: $date email:$email }';
+      'Coupon{code: $code type: $type date: $date email:$email reward:$reward uid:$uid checked:$checked }';
 }

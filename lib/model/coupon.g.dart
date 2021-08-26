@@ -16,6 +16,7 @@ extension CouponCopyWith on Coupon {
     String? name,
     String? reward,
     String? type,
+    String? uid,
   }) {
     return Coupon(
       address: address ?? this.address,
@@ -26,6 +27,7 @@ extension CouponCopyWith on Coupon {
       name: name ?? this.name,
       reward: reward ?? this.reward,
       type: type ?? this.type,
+      uid: uid ?? this.uid,
     );
   }
 }
@@ -44,6 +46,7 @@ Coupon _$CouponFromJson(Map<String, dynamic> json) {
     address: json['address'] as String?,
     reward: json['reward'] as String?,
     checked: json['checked'] as bool,
+    uid: json['uid'] as String?,
   )..id = json['id'] as String?;
 }
 
@@ -57,4 +60,5 @@ Map<String, dynamic> _$CouponToJson(Coupon instance) => <String, dynamic>{
       'name': instance.name,
       'address': instance.address,
       'checked': instance.checked,
+      'uid': instance.uid,
     };
