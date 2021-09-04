@@ -36,8 +36,6 @@ class FeedBack {
 
   Map<String, dynamic> toJson() => _$FeedBackToJson(this);
 
-  Map<String, dynamic> toMap() => _$FeedBackToJson(this);
-
   @override
   String toString() => 'Feedback{id: $id}';
 }

@@ -11,3 +11,5 @@ export 'feedback.dart';
 export 'subscription.dart';
 export 'coupon.dart';
 export 'brick.dart';
+export 'box.dart';
+export 'shipping.dart';

@@ -29,5 +29,5 @@ class Shipping {
 
   @override
   String toString() =>
-      formatToString("Shipping", [fullname, address, city, postcode]);
+      formatToString("Shipping", [fullname, address, city, postcode, country]);
 }

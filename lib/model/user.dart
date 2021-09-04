@@ -51,7 +51,7 @@ class User {
     this.token,
   });
 
-  factory User.fromMap(Map<String, dynamic> data, String uid) {
+  factory User.fromJson(Map<String, dynamic> data, String uid) {
     return _$UserFromJson({
       ...data,
       "uid": uid,
@@ -64,7 +64,7 @@ class User {
     });
   }
 
-  Map<String, dynamic> toMap() => _$UserToJson(this);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 
   @override
   String toString() =>

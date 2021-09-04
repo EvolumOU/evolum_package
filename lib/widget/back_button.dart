@@ -3,11 +3,13 @@ part of evolum_package;
 class EvoBackButton extends StatelessWidget {
   final void Function()? onPress;
   final bool rounded;
+  final bool safe;
   final Color? color;
   const EvoBackButton({
     Key? key,
     this.onPress,
     this.rounded = false,
+    this.safe = true,
     this.color,
   }) : super(key: key);
 
@@ -17,6 +19,10 @@ class EvoBackButton extends StatelessWidget {
     if (color != null) iconColor = color;
 
     return SafeArea(
+      top: safe,
+      left: safe,
+      bottom: safe,
+      right: safe,
       child: Align(
         alignment: Alignment.topLeft,
         child: Container(

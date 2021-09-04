@@ -34,7 +34,7 @@ class History {
     });
   }
 
-  Map<String, dynamic> toMap() => _$HistoryToJson(this);
+  Map<String, dynamic> toJson() => _$HistoryToJson(this);
 
   @override
   String toString() => 'History{IdDateTime: $id evo: $evo}';

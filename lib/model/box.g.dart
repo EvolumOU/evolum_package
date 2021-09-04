@@ -11,6 +11,7 @@ extension BoxCopyWith on Box {
     bool? check,
     DateTime? date,
     String? email,
+    String? id,
     Shipping? shipping,
     String? uid,
   }) {
@@ -18,6 +19,7 @@ extension BoxCopyWith on Box {
       check: check ?? this.check,
       date: date ?? this.date,
       email: email ?? this.email,
+      id: id ?? this.id,
       shipping: shipping ?? this.shipping,
       uid: uid ?? this.uid,
     );
@@ -30,6 +32,7 @@ extension BoxCopyWith on Box {
 
 Box _$BoxFromJson(Map<String, dynamic> json) {
   return Box(
+    id: json['id'] as String,
     uid: json['uid'] as String?,
     email: json['email'] as String?,
     shipping: json['shipping'] == null
@@ -41,6 +44,7 @@ Box _$BoxFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$BoxToJson(Box instance) => <String, dynamic>{
+      'id': instance.id,
       'uid': instance.uid,
       'email': instance.email,
       'shipping': instance.shipping?.toJson(),

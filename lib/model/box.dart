@@ -10,6 +10,7 @@ part 'box.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Box {
+  String id;
   String? uid;
   String? email;
   Shipping? shipping;
@@ -18,6 +19,7 @@ class Box {
   bool check;
 
   Box({
+    required this.id,
     this.uid,
     this.email,
     this.shipping,
