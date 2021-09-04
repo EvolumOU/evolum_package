@@ -37,5 +37,5 @@ part 'animation/entrance_fader.dart';
 part 'animation/loading_circle.dart';
 part 'animation/fadeinout_transitioner.dart';
 part 'animation/scale_inout.dart';
-part 'animation/animated_container.dart';
+part 'animation/animated_gradient.dart';
 part 'animation/lottie_animated.dart';
