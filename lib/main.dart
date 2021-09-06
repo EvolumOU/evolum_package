@@ -15,7 +15,6 @@ import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
 import 'package:flutter/widgets.dart';
 
-part 'utils/extension.dart';
 part 'utils/firestore.dart';
 part 'utils/constant.dart';
 part 'utils/api_path.dart';
@@ -39,3 +38,16 @@ part 'animation/fadeinout_transitioner.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_gradient.dart';
 part 'animation/lottie_animated.dart';
+
+part "extension/coupon.dart";
+part "extension/course.dart";
+part "extension/datetime.dart";
+part "extension/duration.dart";
+part "extension/evo.dart";
+part "extension/int.dart";
+part "extension/list.dart";
+part "extension/playlist.dart";
+part "extension/scrollcontroller.dart";
+part "extension/string.dart";
+part "extension/subscription.dart";
+part "extension/user.dart";
