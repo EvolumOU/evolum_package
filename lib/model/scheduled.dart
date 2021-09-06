@@ -29,5 +29,5 @@ class Scheduled {
 
   @override
   String toString() =>
-      'Scheduled[evoId:$evoId, date:$date, type:$type, nbOfday:$nbOfday]';
+      formatModelToPrint("Scheduled", [date, type, nbOfday, evoId]);
 }

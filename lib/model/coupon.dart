@@ -44,6 +44,15 @@ class Coupon {
   Map<String, dynamic> toJson() => _$CouponToJson(this);
 
   @override
-  String toString() =>
-      'Coupon{code: $code type: $type date: $date email:$email reward:$reward uid:$uid checked:$checked }';
+  String toString() => formatModelToPrint("Coupon", [
+        this.code,
+        this.date,
+        this.type,
+        this.email,
+        this.name,
+        this.address,
+        this.reward,
+        this.checked,
+        this.uid,
+      ]);
 }

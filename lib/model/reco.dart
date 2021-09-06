@@ -38,6 +38,12 @@ class Reco {
   Map<String, dynamic> toJson() => _$RecoToJson(this);
 
   @override
-  String toString() =>
-      'Reco{date: $date first:$first, list: $list scheduled: $scheduled oracle: $oracle free=$free }';
+  String toString() => formatModelToPrint("Reco", [
+        date,
+        list,
+        scheduled,
+        oracle,
+        free,
+        first,
+      ]);
 }

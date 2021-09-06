@@ -1,6 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'utils.dart';
+
 part 'brick.g.dart';
 
 @CopyWith()
@@ -24,4 +26,12 @@ class Brick {
   Map<String, dynamic> toJson() => _$BrickToJson(this);
 
   Map<String, dynamic> toMap() => _$BrickToJson(this);
+
+  @override
+  String toString() => formatModelToPrint("Coupon", [
+        this.id,
+        this.name,
+        this.duration,
+        this.type,
+      ]);
 }

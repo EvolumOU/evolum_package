@@ -66,6 +66,24 @@ class Evo {
   Map<String, dynamic> toJson() => _$EvoToJson(this);
 
   @override
-  String toString() =>
-      'Evo{name: $name id: $id type: $type filename: $filename tag: $tag}';
+  String toString() => formatModelToPrint("FeedBack", [
+        this.id,
+        this.filename,
+        this.name,
+        this.type,
+        this.tag,
+        this.splited,
+        this.duration,
+        this.points,
+        this.loop,
+        this.timings,
+        this.text,
+        this.createdDate,
+        this.summarize,
+        this.intro,
+        this.feedback,
+        this.hide,
+        this.mode,
+        this.form,
+      ]);
 }

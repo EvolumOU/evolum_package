@@ -1,6 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'utils.dart';
+
 part 'playlist.g.dart';
 
 @CopyWith()
@@ -33,6 +35,12 @@ class Playlist {
   Map<String, dynamic> toJson() => _$PlaylistToJson(this);
 
   @override
-  String toString() =>
-      'Playlist[position:$position, name:$name, list:$list, hide:$hide, type:$type]';
+  String toString() => formatModelToPrint("Playlist", [
+        name,
+        list,
+        position,
+        hide,
+        type,
+        text,
+      ]);
 }

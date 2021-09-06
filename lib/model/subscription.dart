@@ -1,6 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'utils.dart';
+
 part 'subscription.g.dart';
 
 @CopyWith()
@@ -28,4 +30,16 @@ class Subscription {
 
   factory Subscription.fromJson(Map<String, dynamic> data) =>
       _$SubscriptionFromJson({...data});
+
+  @override
+  String toString() => formatModelToPrint("Subcription", [
+        id,
+        paymentType,
+        cardLast4,
+        price,
+        currency,
+        billingPeriod,
+        billingPeriodUnit,
+        nextBillingDate,
+      ]);
 }

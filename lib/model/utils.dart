@@ -10,11 +10,11 @@ Timestamp? dateTimetoJson(DateTime? date) {
   return Timestamp.fromMicrosecondsSinceEpoch(date.microsecondsSinceEpoch);
 }
 
-String formatToString(String name, List<dynamic> list) {
-  String str = '===> $name\n';
+String formatModelToPrint(String name, List<dynamic> list) {
+  String str = '===> Model: $name\n';
 
   for (final item in list) {
-    str = str + '=> $item';
+    str = str + '=> $item\n';
   }
-  return str;
+  return "$str\n";
 }

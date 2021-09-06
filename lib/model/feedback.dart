@@ -37,5 +37,14 @@ class FeedBack {
   Map<String, dynamic> toJson() => _$FeedBackToJson(this);
 
   @override
-  String toString() => 'Feedback{id: $id}';
+  String toString() => formatModelToPrint("FeedBack", [
+        id,
+        createdDate,
+        email,
+        evoName,
+        evoTag,
+        evoType,
+        text,
+        uid,
+      ]);
 }

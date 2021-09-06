@@ -1,6 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'utils.dart';
+
 part 'timing.g.dart';
 
 @CopyWith()
@@ -21,5 +23,5 @@ class Timing {
   Map<String, dynamic> toJson() => _$TimingToJson(this);
 
   @override
-  String toString() => 'Timing[text:$text, list:$begin]';
+  String toString() => formatModelToPrint("Timming", [begin, end, text]);
 }

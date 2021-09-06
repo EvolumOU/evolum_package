@@ -33,5 +33,5 @@ class Box {
 
   @override
   String toString() =>
-      formatToString("Shipping", [uid, email, shipping, date, check]);
+      formatModelToPrint("Box", [uid, email, shipping, date, check]);
 }

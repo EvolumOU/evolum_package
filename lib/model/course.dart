@@ -66,6 +66,23 @@ class Course {
   Map<String, dynamic> toMap() => _$CourseToJson(this);
 
   @override
-  String toString() =>
-      'Course{id:$id, name:$name, tag:$tag, type:$type, playlist:$playlist}';
+  String toString() => formatModelToPrint("Course", [
+        id,
+        name,
+        type,
+        tag,
+        descr,
+        color1,
+        color2,
+        specolor1,
+        specolor2,
+        playlist,
+        list,
+        position,
+        scheduled,
+        updatedDate,
+        addons,
+        route,
+        hide,
+      ]);
 }
