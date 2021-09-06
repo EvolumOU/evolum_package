@@ -14,6 +14,8 @@ extension UserExtension on User {
 
   // Full Acces
   bool get isTrial => status == 'trial';
-  bool get isAbo => status == 'abo' || status == 'trial' || status == 'full';
+  bool get isAbo => status == 'abo';
+  bool get isPrenium =>
+      status == 'abo' || status == 'trial' || status == 'full';
   bool get isFull => status == 'full';
 }
