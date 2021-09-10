@@ -17,6 +17,8 @@ class Box {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
   bool check;
+  String? customerId;
+  String? paymentSourceId;
 
   Box({
     required this.id,
@@ -25,6 +27,8 @@ class Box {
     this.shipping,
     this.date,
     this.check = false,
+    this.customerId,
+    this.paymentSourceId,
   });
 
   factory Box.fromJson(Map<String, dynamic> data) => _$BoxFromJson(data);

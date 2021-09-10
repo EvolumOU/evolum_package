@@ -9,17 +9,21 @@ part of 'box.dart';
 extension BoxCopyWith on Box {
   Box copyWith({
     bool? check,
+    String? customerId,
     DateTime? date,
     String? email,
     String? id,
+    String? paymentSourceId,
     Shipping? shipping,
     String? uid,
   }) {
     return Box(
       check: check ?? this.check,
+      customerId: customerId ?? this.customerId,
       date: date ?? this.date,
       email: email ?? this.email,
       id: id ?? this.id,
+      paymentSourceId: paymentSourceId ?? this.paymentSourceId,
       shipping: shipping ?? this.shipping,
       uid: uid ?? this.uid,
     );
@@ -40,6 +44,8 @@ Box _$BoxFromJson(Map<String, dynamic> json) {
         : Shipping.fromJson(json['shipping'] as Map<String, dynamic>),
     date: dateTimefromJson(json['date'] as Timestamp?),
     check: json['check'] as bool,
+    customerId: json['customerId'] as String?,
+    paymentSourceId: json['paymentSourceId'] as String?,
   );
 }
 
@@ -50,4 +56,6 @@ Map<String, dynamic> _$BoxToJson(Box instance) => <String, dynamic>{
       'shipping': instance.shipping?.toJson(),
       'date': dateTimetoJson(instance.date),
       'check': instance.check,
+      'customerId': instance.customerId,
+      'paymentSourceId': instance.paymentSourceId,
     };
