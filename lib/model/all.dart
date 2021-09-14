@@ -13,3 +13,4 @@ export 'coupon.dart';
 export 'brick.dart';
 export 'box.dart';
 export 'shipping.dart';
+export 'ritual.dart';

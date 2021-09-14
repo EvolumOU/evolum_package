@@ -39,15 +39,11 @@ part 'animation/scale_inout.dart';
 part 'animation/animated_gradient.dart';
 part 'animation/lottie_animated.dart';
 
-part "extension/coupon.dart";
-part "extension/course.dart";
 part "extension/datetime.dart";
 part "extension/duration.dart";
-part "extension/evo.dart";
 part "extension/int.dart";
 part "extension/list.dart";
 part "extension/playlist.dart";
 part "extension/scrollcontroller.dart";
 part "extension/string.dart";
-part "extension/subscription.dart";
-part "extension/user.dart";
+part 'extension/object.dart';
