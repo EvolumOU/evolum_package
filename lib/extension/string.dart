@@ -18,14 +18,15 @@ extension StringExtension on String {
   }
 
   String get removeDiacritics {
-    var withDia =
-        'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
-    var withoutDia =
-        'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz';
+   String res = this.replaceAll(RegExp(r'[é]'), 'e');
+    res = res.replaceAll(RegExp(r'[à]'), 'a');
+    res = res.replaceAll(RegExp(r'[À]'), 'A');
+    res = res.replaceAll(RegExp(r'[É]'), 'E');
+    res = res.replaceAll(RegExp(r'[È]'), 'E');
+    res = res.replaceAll(RegExp(r'[è]'), 'e');
+    res = res.replaceAll(RegExp(r'[Ù]'), 'U');
+    res = res.replaceAll(RegExp(r'[ù]'), 'u');
 
-    for (int i = 0; i < withDia.length; i++) {
-      this.replaceAll(withDia[i], withoutDia[i]);
-    }
-    return this;
+    return res;
   }
 }
