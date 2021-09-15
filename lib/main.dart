@@ -43,7 +43,6 @@ part "extension/datetime.dart";
 part "extension/duration.dart";
 part "extension/int.dart";
 part "extension/list.dart";
-part "extension/playlist.dart";
 part "extension/scrollcontroller.dart";
 part "extension/string.dart";
 part 'extension/object.dart';
