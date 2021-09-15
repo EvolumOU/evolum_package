@@ -1,5 +1,4 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/model/all.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -23,7 +22,7 @@ class Ritual {
     required this.date,
     required this.name,
     required this.filename,
-    this.type = "wakeUp",
+    this.type = "matin",
     this.exitPoint = 0,
   });
 
