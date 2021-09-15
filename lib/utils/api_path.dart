@@ -9,6 +9,7 @@ class APIPath {
   static String ritual(String id) => 'ritual/$id';
   static String coupon(String id) => 'coupon/$id';
   static String box(String id) => 'box/$id';
+  static String whale(String id) => 'whale/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFav(String uid) => 'user/$uid/info/fav';
@@ -26,6 +27,7 @@ class APIPath {
   static String allCoupon() => 'coupon/';
   static String allBox() => 'box/';
   static String allBrick() => 'brick/';
+  static String allWhale() => 'whale/';
   static String allRitual() => 'ritual/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
