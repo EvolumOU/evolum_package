@@ -8,14 +8,14 @@ part 'whale.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Whale {
-  String id;
-  String filename;
+  String? id;
+  String? filename;
   String source;
   String type;
 
   Whale({
-    required this.id,
-    required this.filename,
+    this.id,
+    this.filename,
     this.source = "cloud",
     this.type = "matin",
   });

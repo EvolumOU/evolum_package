@@ -28,8 +28,8 @@ extension WhaleCopyWith on Whale {
 
 Whale _$WhaleFromJson(Map<String, dynamic> json) {
   return Whale(
-    id: json['id'] as String,
-    filename: json['filename'] as String,
+    id: json['id'] as String?,
+    filename: json['filename'] as String?,
     source: json['source'] as String,
     type: json['type'] as String,
   );
