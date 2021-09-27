@@ -35,12 +35,5 @@ class Playlist {
   Map<String, dynamic> toJson() => _$PlaylistToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Playlist", [
-        name,
-        list,
-        position,
-        hide,
-        type,
-        text,
-      ]);
+  String toString() => toJson().toString();
 }

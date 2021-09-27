@@ -28,10 +28,5 @@ class Brick {
   Map<String, dynamic> toMap() => _$BrickToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Coupon", [
-        this.id,
-        this.name,
-        this.duration,
-        this.type,
-      ]);
+  String toString() => toJson().toString();
 }

@@ -31,15 +31,8 @@ class Subscription {
   factory Subscription.fromJson(Map<String, dynamic> data) =>
       _$SubscriptionFromJson({...data});
 
+  Map<String, dynamic> toJson() => _$SubscriptionToJson(this);
+
   @override
-  String toString() => formatModelToPrint("Subcription", [
-        id,
-        paymentType,
-        cardLast4,
-        price,
-        currency,
-        billingPeriod,
-        billingPeriodUnit,
-        nextBillingDate,
-      ]);
+  String toString() => toJson().toString();
 }

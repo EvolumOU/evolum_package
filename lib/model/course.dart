@@ -63,26 +63,8 @@ class Course {
     });
   }
 
-  Map<String, dynamic> toMap() => _$CourseToJson(this);
+  Map<String, dynamic> toJson() => _$CourseToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Course", [
-        id,
-        name,
-        type,
-        tag,
-        descr,
-        color1,
-        color2,
-        specolor1,
-        specolor2,
-        playlist,
-        list,
-        position,
-        scheduled,
-        updatedDate,
-        addons,
-        route,
-        hide,
-      ]);
+  String toString() => toJson().toString();
 }

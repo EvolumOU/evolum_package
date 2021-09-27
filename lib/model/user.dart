@@ -67,19 +67,5 @@ class User {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
   @override
-  String toString() => formatModelToPrint("User", [
-        uid,
-        email,
-        name,
-        status,
-        nbDone,
-        nbChallengeDone,
-        noReview,
-        notification,
-        bgmusic,
-        subId,
-        createdDate,
-        challengeDate,
-        leadDate
-      ]);
+  String toString() => toJson().toString();
 }

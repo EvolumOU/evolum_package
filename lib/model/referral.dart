@@ -21,10 +21,8 @@ class Referral {
   factory Referral.fromJson(Map<String, dynamic> data) =>
       _$ReferralFromJson({...data});
 
-  factory Referral.fromMap(Map<String, dynamic> data) {
-    return _$ReferralFromJson(data);
-  }
+  Map<String, dynamic> toJson() => _$ReferralToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Referral", [id, uid, uidRef]);
+  String toString() => toJson().toString();
 }

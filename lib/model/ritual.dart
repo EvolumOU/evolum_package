@@ -31,12 +31,5 @@ class Ritual {
   Map<String, dynamic> toJson() => _$RitualToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Ritual", [
-        this.id,
-        this.name,
-        this.filename,
-        this.date,
-        this.type,
-        this.exitPoint,
-      ]);
+  String toString() => toJson().toString();
 }

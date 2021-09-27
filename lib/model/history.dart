@@ -37,12 +37,5 @@ class History {
   Map<String, dynamic> toJson() => _$HistoryToJson(this);
 
   @override
-  String toString() => formatModelToPrint("History", [
-        id,
-        evo,
-        review,
-        date,
-        secondsRead,
-        checked,
-      ]);
+  String toString() => toJson().toString();
 }

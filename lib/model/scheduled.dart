@@ -28,6 +28,5 @@ class Scheduled {
   Map<String, dynamic> toJson() => _$ScheduledToJson(this);
 
   @override
-  String toString() =>
-      formatModelToPrint("Scheduled", [date, type, nbOfday, evoId]);
+  String toString() => toJson().toString();
 }

@@ -29,11 +29,5 @@ class Addons {
   Map<String, dynamic> toJson() => _$AddonsToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Coupon", [
-        this.lightUrl,
-        this.darkUrl,
-        this.nb,
-        this.date,
-        this.disable,
-      ]);
+  String toString() => toJson().toString();
 }

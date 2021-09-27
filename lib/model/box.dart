@@ -13,6 +13,7 @@ class Box {
   String id;
   String? uid;
   String? email;
+  String? status;
   Shipping? shipping;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
@@ -24,6 +25,7 @@ class Box {
     required this.id,
     this.uid,
     this.email,
+    this.status,
     this.shipping,
     this.date,
     this.check = false,
@@ -36,6 +38,5 @@ class Box {
   Map<String, dynamic> toJson() => _$BoxToJson(this);
 
   @override
-  String toString() =>
-      formatModelToPrint("Box", [uid, email, shipping, date, check]);
+  String toString() => toJson().toString();
 }

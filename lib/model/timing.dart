@@ -23,5 +23,5 @@ class Timing {
   Map<String, dynamic> toJson() => _$TimingToJson(this);
 
   @override
-  String toString() => formatModelToPrint("Timming", [begin, end, text]);
+  String toString() => toJson().toString();
 }

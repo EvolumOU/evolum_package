@@ -28,6 +28,5 @@ class Shipping {
   Map<String, dynamic> toJson() => _$ShippingToJson(this);
 
   @override
-  String toString() => formatModelToPrint(
-      "Shipping", [fullname, address, city, postcode, country]);
+  String toString() => toJson().toString();
 }
