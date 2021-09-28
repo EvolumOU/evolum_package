@@ -41,7 +41,7 @@ Box _$BoxFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     uid: json['uid'] as String?,
     email: json['email'] as String?,
-    status: json['status'] as String?,
+    status: json['status'] as String,
     shipping: json['shipping'] == null
         ? null
         : Shipping.fromJson(json['shipping'] as Map<String, dynamic>),

@@ -13,7 +13,7 @@ class Box {
   String id;
   String? uid;
   String? email;
-  String? status;
+  String status;
   Shipping? shipping;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
@@ -25,7 +25,7 @@ class Box {
     required this.id,
     this.uid,
     this.email,
-    this.status,
+    this.status = "nouveau",
     this.shipping,
     this.date,
     this.check = false,
@@ -33,7 +33,10 @@ class Box {
     this.paymentSourceId,
   });
 
-  factory Box.fromJson(Map<String, dynamic> data) => _$BoxFromJson(data);
+  factory Box.fromJson(Map<String, dynamic> data) => _$BoxFromJson({
+        ...data,
+        "status": data["status"] ?? "nouveau",
+      });
 
   Map<String, dynamic> toJson() => _$BoxToJson(this);
 
