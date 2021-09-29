@@ -1,9 +1,7 @@
 part of evolum_package;
 
 extension StringExtension on String {
-  String spaceRemoved() {
-    return replaceFirst(" ", "");
-  }
+  String get spaceRemoved => replaceAll(r' ', '');
 
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));
 
