@@ -18,15 +18,14 @@ extension StringExtension on String {
   }
 
   String get removeDiacritics {
-   String res = this.replaceAll(RegExp(r'[é]'), 'e');
-    res = res.replaceAll(RegExp(r'[à]'), 'a');
-    res = res.replaceAll(RegExp(r'[À]'), 'A');
-    res = res.replaceAll(RegExp(r'[É]'), 'E');
-    res = res.replaceAll(RegExp(r'[È]'), 'E');
-    res = res.replaceAll(RegExp(r'[è]'), 'e');
-    res = res.replaceAll(RegExp(r'[Ù]'), 'U');
-    res = res.replaceAll(RegExp(r'[ù]'), 'u');
+    String res = '';
 
+    for (int i = 0; i < this.length; i++) {
+      final utf8 = this.codeUnitAt(i);
+      if (utf8 < 768 || utf8 > 879) {
+        res += this[i];
+      }
+    }
     return res;
   }
 }
