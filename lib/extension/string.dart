@@ -2,6 +2,7 @@ part of evolum_package;
 
 extension StringExtension on String {
   String get spaceRemoved => replaceAll(r' ', '');
+  String get replaceSpacesWithUnderscore => replaceAll(r' ', '_');
 
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));
 
