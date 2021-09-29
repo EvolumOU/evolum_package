@@ -29,6 +29,7 @@ class Evo {
   bool hide;
   String mode;
   String form;
+  double? size;
 
   Evo({
     this.id,
@@ -49,6 +50,7 @@ class Evo {
     this.hide = false,
     this.mode = 'horizontal',
     this.form = 'focus',
+    this.size,
   });
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({

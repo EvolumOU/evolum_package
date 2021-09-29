@@ -20,6 +20,7 @@ extension EvoCopyWith on Evo {
     String? mode,
     String? name,
     List<dynamic>? points,
+    double? size,
     bool? splited,
     String? summarize,
     String? tag,
@@ -40,6 +41,7 @@ extension EvoCopyWith on Evo {
       mode: mode ?? this.mode,
       name: name ?? this.name,
       points: points ?? this.points,
+      size: size ?? this.size,
       splited: splited ?? this.splited,
       summarize: summarize ?? this.summarize,
       tag: tag ?? this.tag,
@@ -76,6 +78,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     hide: json['hide'] as bool,
     mode: json['mode'] as String,
     form: json['form'] as String,
+    size: (json['size'] as num?)?.toDouble(),
   );
 }
 
@@ -98,4 +101,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'hide': instance.hide,
       'mode': instance.mode,
       'form': instance.form,
+      'size': instance.size,
     };
