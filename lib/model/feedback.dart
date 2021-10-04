@@ -14,9 +14,9 @@ class FeedBack {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? createdDate;
   String? email;
-  String? evoName;
-  String? evoTag;
-  String? evoType;
+  String? contentName;
+  String? contentTag;
+  String? contentType;
   String? text;
   String? uid;
 
@@ -24,9 +24,9 @@ class FeedBack {
     this.id,
     this.createdDate,
     this.email,
-    this.evoName,
-    this.evoTag,
-    this.evoType,
+    this.contentName,
+    this.contentTag,
+    this.contentType,
     this.text,
     this.uid,
   });
