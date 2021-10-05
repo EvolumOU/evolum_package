@@ -3,7 +3,7 @@ part of evolum_package;
 final ThemeData lightTheme = ThemeData(
   backgroundColor: kevoWhite,
   scaffoldBackgroundColor: kevoWhite,
-  dividerColor: kevoGrey,
+  dividerColor: Colors.transparent,
   dialogBackgroundColor: kevoWhite,
   highlightColor: Colors.transparent,
   splashColor: Colors.transparent,
@@ -76,5 +76,6 @@ final ThemeData lightTheme = ThemeData(
       color: kevoBlack,
       fontWeight: FontWeight.normal,
     ),
-  ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kevoOrange),
+  ),
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kevoOrange),
 );

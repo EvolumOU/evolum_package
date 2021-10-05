@@ -5,7 +5,7 @@ final ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: kevoBlack,
   dialogBackgroundColor: kevoBlack,
   primaryColor: kevoElectric,
-  dividerColor: kevoGrey.withOpacity(0.6),
+  dividerColor: Colors.transparent,
   highlightColor: Colors.transparent,
   splashColor: Colors.transparent,
   inputDecorationTheme: InputDecorationTheme(
@@ -76,5 +76,6 @@ final ThemeData darkTheme = ThemeData(
       color: kevoWhite,
       fontWeight: FontWeight.normal,
     ),
-  ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kevoOrange),
+  ),
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kevoOrange),
 );

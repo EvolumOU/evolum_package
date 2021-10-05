@@ -1,7 +1,6 @@
 name: evolum_package
-description: A new Flutter package project.
-version: 0.0.1
-author:
+description: all tools use for evolum flutter project
+version: 3.0.0
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -17,7 +16,7 @@ dependencies:
   intl: ^0.17.0
   copy_with_extension: ^2.0.0
   simple_animations: ^3.0.3
-  lottie: ^1.0.1
+  lottie: ^1.2.1
   json_annotation: ^4.0.1
 
 
