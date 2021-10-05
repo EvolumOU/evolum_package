@@ -17,9 +17,6 @@ class FeedBack {
   String? contentName;
   String? contentTag;
   String? contentType;
-  String? evoName;
-  String? evoTag;
-  String? evoType;
   String? text;
   String? uid;
 
@@ -30,9 +27,6 @@ class FeedBack {
     this.contentName,
     this.contentTag,
     this.contentType,
-    this.evoName,
-    this.evoTag,
-    this.evoType,
     this.text,
     this.uid,
   });
