@@ -27,4 +27,7 @@ extension StringExtension on String {
     }
     return res;
   }
+
+  bool get isError => this == "error";
+  bool get isSuccess => this == "success";
 }
