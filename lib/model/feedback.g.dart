@@ -8,21 +8,21 @@ part of 'feedback.dart';
 
 extension FeedBackCopyWith on FeedBack {
   FeedBack copyWith({
-    DateTime? createdDate,
-    String? email,
     String? contentName,
     String? contentTag,
     String? contentType,
+    DateTime? createdDate,
+    String? email,
     String? id,
     String? text,
     String? uid,
   }) {
     return FeedBack(
-      createdDate: createdDate ?? this.createdDate,
-      email: email ?? this.email,
       contentName: contentName ?? this.contentName,
       contentTag: contentTag ?? this.contentTag,
       contentType: contentType ?? this.contentType,
+      createdDate: createdDate ?? this.createdDate,
+      email: email ?? this.email,
       id: id ?? this.id,
       text: text ?? this.text,
       uid: uid ?? this.uid,

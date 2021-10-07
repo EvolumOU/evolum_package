@@ -12,9 +12,9 @@ extension SubscriptionCopyWith on Subscription {
     String? billingPeriodUnit,
     String? cardLast4,
     String? currency,
-    String? id,
     int? nextBillingDate,
     String? paymentType,
+    String? planId,
     double? price,
   }) {
     return Subscription(
@@ -22,9 +22,9 @@ extension SubscriptionCopyWith on Subscription {
       billingPeriodUnit: billingPeriodUnit ?? this.billingPeriodUnit,
       cardLast4: cardLast4 ?? this.cardLast4,
       currency: currency ?? this.currency,
-      id: id ?? this.id,
       nextBillingDate: nextBillingDate ?? this.nextBillingDate,
       paymentType: paymentType ?? this.paymentType,
+      planId: planId ?? this.planId,
       price: price ?? this.price,
     );
   }
@@ -36,7 +36,7 @@ extension SubscriptionCopyWith on Subscription {
 
 Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
   return Subscription(
-    id: json['id'] as String?,
+    planId: json['planId'] as String?,
     paymentType: json['paymentType'] as String,
     cardLast4: json['cardLast4'] as String?,
     price: (json['price'] as num).toDouble(),
@@ -49,7 +49,7 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{
-      'id': instance.id,
+      'planId': instance.planId,
       'paymentType': instance.paymentType,
       'cardLast4': instance.cardLast4,
       'price': instance.price,
