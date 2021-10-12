@@ -12,6 +12,7 @@ extension EvoCopyWith on Evo {
     int? duration,
     bool? feedback,
     String? filename,
+    String? gsUrl,
     String? form,
     bool? hide,
     String? id,
@@ -33,6 +34,7 @@ extension EvoCopyWith on Evo {
       duration: duration ?? this.duration,
       feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
+      gsUrl: gsUrl ?? this.gsUrl,
       form: form ?? this.form,
       hide: hide ?? this.hide,
       id: id ?? this.id,
@@ -60,6 +62,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
   return Evo(
     id: json['id'] as String?,
     filename: json['filename'] as String?,
+    gsUrl: json['gsUrl'] as String?,
     name: json['name'] as String?,
     type: json['type'] as String?,
     tag: json['tag'] as String?,
@@ -85,6 +88,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'id': instance.id,
       'filename': instance.filename,
+      'gsUrl': instance.gsUrl,
       'name': instance.name,
       'type': instance.type,
       'tag': instance.tag,

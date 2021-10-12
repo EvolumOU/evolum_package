@@ -12,6 +12,7 @@ part 'evo.g.dart';
 class Evo {
   String? id;
   String? filename;
+  String? gsUrl;
   String? name;
   String? type;
   String? tag;
@@ -34,6 +35,7 @@ class Evo {
   Evo({
     this.id,
     this.filename,
+    this.gsUrl,
     this.name,
     this.type,
     this.tag,
