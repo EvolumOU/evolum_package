@@ -17,7 +17,8 @@ class Evo {
   String? type;
   String? tag;
   bool splited;
-  int duration;
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
+  Duration? duration;
   List<dynamic> points;
   bool loop;
   List<Timing> timings;
@@ -40,7 +41,7 @@ class Evo {
     this.type,
     this.tag,
     this.splited = false,
-    this.duration = 0,
+    this.duration = Duration.zero,
     this.points = const <dynamic>[],
     this.loop = false,
     this.timings = const <Timing>[],
@@ -59,7 +60,7 @@ class Evo {
         ...data,
         "points": data["points"] ?? <dynamic>[],
         "timings": data["timings"] ?? <Timing>[],
-        "duration": data["duration"] ?? 0,
+        "duration": data["duration"] ?? Duration.zero,
         "feedback": data["feedback"] ?? false,
         "hide": data["hide"] ?? false,
         "splited": data["splited"] ?? false,
