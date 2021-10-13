@@ -60,7 +60,7 @@ class Evo {
         ...data,
         "points": data["points"] ?? <dynamic>[],
         "timings": data["timings"] ?? <Timing>[],
-        "duration": data["duration"] ?? Duration.zero,
+        "duration": data["duration"] ?? 0,
         "feedback": data["feedback"] ?? false,
         "hide": data["hide"] ?? false,
         "splited": data["splited"] ?? false,

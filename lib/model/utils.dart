@@ -12,10 +12,10 @@ Timestamp? dateTimetoJson(DateTime? date) {
 
 Duration? durationfromJson(int? duration) {
   if (duration == null) return null;
-  return Duration(milliseconds: duration);
+  return Duration(seconds: duration);
 }
 
 int? durationtoJson(Duration? duration) {
   if (duration == null) return null;
-  return duration.inMilliseconds;
+  return duration.inSeconds;
 }
