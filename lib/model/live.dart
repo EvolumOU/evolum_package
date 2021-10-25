@@ -13,14 +13,14 @@ class Live {
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
-  String? type;
+  String? status;
   String? photoUrl;
 
   Live({
     required this.id,
     this.date,
     this.name,
-    this.type,
+    this.status,
     this.photoUrl,
   });
 
