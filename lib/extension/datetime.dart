@@ -5,10 +5,10 @@ extension DateTimeExtention on DateTime {
   String get timeStringFromDate => DateFormat.Hm().format(this);
 
   /// Heure avec ce format: 20h ou 20h01
-  String timeStringFromDateWithCroppedMin(DateTime date) =>
-      date.timeStringFromDate
-          .replaceAll(RegExp(r':'), 'h')
-          .replaceAll(RegExp(r'h00'), 'h');
+  String get timeStringFromDateWithCroppedMin => this
+      .timeStringFromDate
+      .replaceAll(RegExp(r':'), 'h')
+      .replaceAll(RegExp(r'h00'), 'h');
 
   bool get isMorningTime {
     final startTime = DateTime(year, month, day, 05, 59);
