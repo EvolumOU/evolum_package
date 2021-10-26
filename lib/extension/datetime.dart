@@ -26,11 +26,17 @@ extension DateTimeExtention on DateTime {
       year == other.year && month == other.month && day == other.day;
 
   bool get isToday {
-    if (this == null) return false;
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
     final aDate = DateTime(year, month, day);
     return aDate == today;
+  }
+
+  bool get isTomorrow {
+    final today = DateTime.now();
+    return this.year == today.year &&
+        this.month == today.month &&
+        this.day == today.day + 1;
   }
 
   /// Jour du mois + mois. Ex: 28 octobre
