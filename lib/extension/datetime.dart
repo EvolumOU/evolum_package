@@ -1,9 +1,14 @@
 part of evolum_package;
 
 extension DateTimeExtention on DateTime {
-  String get timeStringFromDate {
-    return DateFormat.Hm().format(this);
-  }
+  /// Heure avec ce format: 20:00
+  String get timeStringFromDate => DateFormat.Hm().format(this);
+
+  /// Heure avec ce format: 20h ou 20h01
+  String get timeStringFromDateWithCroppedMin => this
+      .timeStringFromDate
+      .replaceAll(RegExp(r':'), 'h')
+      .replaceAll(RegExp(r'h00'), 'h');
 
   bool get isMorningTime {
     final startTime = DateTime(year, month, day, 05, 59);
@@ -21,14 +26,24 @@ extension DateTimeExtention on DateTime {
       year == other.year && month == other.month && day == other.day;
 
   bool get isToday {
-    if (this == null) return false;
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
     final aDate = DateTime(year, month, day);
     return aDate == today;
   }
 
+  bool get isTomorrow {
+    final today = DateTime.now();
+    return this.year == today.year &&
+        this.month == today.month &&
+        this.day == today.day + 1;
+  }
+
+  /// Jour du mois + mois. Ex: 28 octobre
   String get toDayMonth {
     return DateFormat('d MMMM', 'fr_FR').format(this);
   }
+
+  /// Jour de la semaine. Ex: jeudi
+  String get dayOfWeek => DateFormat('EEEE', "fr_FR").format(this);
 }

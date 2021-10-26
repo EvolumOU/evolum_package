@@ -9,10 +9,11 @@ part of 'evo.dart';
 extension EvoCopyWith on Evo {
   Evo copyWith({
     DateTime? createdDate,
-    int? duration,
+    Duration? duration,
     bool? feedback,
     String? filename,
     String? form,
+    String? gsUrl,
     bool? hide,
     String? id,
     String? intro,
@@ -34,6 +35,7 @@ extension EvoCopyWith on Evo {
       feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
       form: form ?? this.form,
+      gsUrl: gsUrl ?? this.gsUrl,
       hide: hide ?? this.hide,
       id: id ?? this.id,
       intro: intro ?? this.intro,
@@ -60,11 +62,12 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
   return Evo(
     id: json['id'] as String?,
     filename: json['filename'] as String?,
+    gsUrl: json['gsUrl'] as String?,
     name: json['name'] as String?,
     type: json['type'] as String?,
     tag: json['tag'] as String?,
     splited: json['splited'] as bool,
-    duration: json['duration'] as int,
+    duration: durationfromJson(json['duration'] as int?),
     points: json['points'] as List<dynamic>,
     loop: json['loop'] as bool,
     timings: (json['timings'] as List<dynamic>)
@@ -85,11 +88,12 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'id': instance.id,
       'filename': instance.filename,
+      'gsUrl': instance.gsUrl,
       'name': instance.name,
       'type': instance.type,
       'tag': instance.tag,
       'splited': instance.splited,
-      'duration': instance.duration,
+      'duration': durationtoJson(instance.duration),
       'points': instance.points,
       'loop': instance.loop,
       'timings': instance.timings.map((e) => e.toJson()).toList(),

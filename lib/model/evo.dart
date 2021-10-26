@@ -12,11 +12,13 @@ part 'evo.g.dart';
 class Evo {
   String? id;
   String? filename;
+  String? gsUrl;
   String? name;
   String? type;
   String? tag;
   bool splited;
-  int duration;
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
+  Duration? duration;
   List<dynamic> points;
   bool loop;
   List<Timing> timings;
@@ -34,11 +36,12 @@ class Evo {
   Evo({
     this.id,
     this.filename,
+    this.gsUrl,
     this.name,
     this.type,
     this.tag,
     this.splited = false,
-    this.duration = 0,
+    this.duration = Duration.zero,
     this.points = const <dynamic>[],
     this.loop = false,
     this.timings = const <Timing>[],
