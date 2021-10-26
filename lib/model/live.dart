@@ -14,7 +14,7 @@ class Live {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
   String status;
-  String? photoUrl;
+  String? photoName;
   String? token;
   String? channelName;
   int nbLikes;
@@ -24,7 +24,7 @@ class Live {
     this.date,
     this.name,
     this.status = 'ongoing',
-    this.photoUrl,
+    this.photoName,
     this.token,
     this.channelName,
     this.nbLikes = 0,
