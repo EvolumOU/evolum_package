@@ -13,19 +13,21 @@ class Live {
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? date;
-  String? status;
+  String status;
   String? photoUrl;
   String? token;
-  String? appId;
+  String? channelName;
+  int nbLikes;
 
   Live({
     required this.id,
     this.date,
     this.name,
-    this.status,
+    this.status = 'ongoing',
     this.photoUrl,
     this.token,
-    this.appId,
+    this.channelName,
+    this.nbLikes = 0,
   });
 
   factory Live.fromJson(Map<String, dynamic> data) => _$LiveFromJson(data);
