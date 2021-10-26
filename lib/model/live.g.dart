@@ -13,6 +13,7 @@ extension LiveCopyWith on Live {
     String? name,
     String? photoUrl,
     String? status,
+    String? token,
   }) {
     return Live(
       date: date ?? this.date,
@@ -20,6 +21,7 @@ extension LiveCopyWith on Live {
       name: name ?? this.name,
       photoUrl: photoUrl ?? this.photoUrl,
       status: status ?? this.status,
+      token: token ?? this.token,
     );
   }
 }
@@ -35,6 +37,7 @@ Live _$LiveFromJson(Map<String, dynamic> json) {
     name: json['name'] as String?,
     status: json['status'] as String?,
     photoUrl: json['photoUrl'] as String?,
+    token: json['token'] as String?,
   );
 }
 
@@ -44,4 +47,5 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
       'status': instance.status,
       'photoUrl': instance.photoUrl,
+      'token': instance.token,
     };

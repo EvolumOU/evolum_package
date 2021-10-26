@@ -15,6 +15,7 @@ class Live {
   DateTime? date;
   String? status;
   String? photoUrl;
+  String? token;
 
   Live({
     required this.id,
@@ -22,6 +23,7 @@ class Live {
     this.name,
     this.status,
     this.photoUrl,
+    this.token,
   });
 
   factory Live.fromJson(Map<String, dynamic> data) => _$LiveFromJson(data);
