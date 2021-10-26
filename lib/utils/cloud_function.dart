@@ -2,7 +2,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/foundation.dart';
 
 class CloudFunction {
-  static Future<void> getAgoraRitualLiveToken(
+  static Future<String> getAgoraRitualLiveToken(
     String channelName,
     String uid,
   ) async {
