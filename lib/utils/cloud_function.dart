@@ -9,8 +9,9 @@ const cloudFunctionBastUrl =
 class CloudFunction {
   static Future<String?> getAgoraRitualLiveToken(
     String channelName,
-    String uid,
-  ) async {
+    String uid, {
+    String role = "audience",
+  }) async {
     try {
       const url = "$cloudFunctionBastUrl/getAgoraRitualLiveToken";
       debugPrint("===> [CloudFunction] getAgoraRitualLiveToken ");
@@ -20,6 +21,7 @@ class CloudFunction {
         body: {
           'channelName': channelName,
           'uid': uid,
+          'role': role,
         },
       );
       final jsonDecoded = json.decode(response.body);
