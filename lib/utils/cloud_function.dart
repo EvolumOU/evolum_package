@@ -10,7 +10,7 @@ class CloudFunction {
   static Future<String?> getAgoraRitualLiveToken(
     String channelName,
     String uid, {
-    String role = "audience",
+    String role = "broadcaster",
   }) async {
     try {
       const url = "$cloudFunctionBastUrl/getAgoraRitualLiveToken";
