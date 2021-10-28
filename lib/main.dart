@@ -28,6 +28,8 @@ part 'widget/back_button.dart';
 part 'widget/evo_logo.dart';
 part 'widget/evo_loading.dart';
 part 'widget/indicator.dart';
+part 'widget/text/audience_count.dart';
+part 'widget/text/colored_tag.dart';
 
 part 'theme/color.dart';
 part 'theme/dark.dart';
