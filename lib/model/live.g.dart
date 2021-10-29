@@ -11,9 +11,11 @@ extension LiveCopyWith on Live {
     String? channelName,
     DateTime? date,
     String? id,
+    int? mainAgoraUid,
     String? name,
     int? nbLikes,
     String? photoName,
+    int? secondaryAgoraUid,
     String? status,
     String? token,
   }) {
@@ -21,9 +23,11 @@ extension LiveCopyWith on Live {
       channelName: channelName ?? this.channelName,
       date: date ?? this.date,
       id: id ?? this.id,
+      mainAgoraUid: mainAgoraUid ?? this.mainAgoraUid,
       name: name ?? this.name,
       nbLikes: nbLikes ?? this.nbLikes,
       photoName: photoName ?? this.photoName,
+      secondaryAgoraUid: secondaryAgoraUid ?? this.secondaryAgoraUid,
       status: status ?? this.status,
       token: token ?? this.token,
     );
@@ -44,6 +48,8 @@ Live _$LiveFromJson(Map<String, dynamic> json) {
     token: json['token'] as String?,
     channelName: json['channelName'] as String?,
     nbLikes: json['nbLikes'] as int,
+    mainAgoraUid: json['mainAgoraUid'] as int,
+    secondaryAgoraUid: json['secondaryAgoraUid'] as int,
   );
 }
 
@@ -56,4 +62,6 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'token': instance.token,
       'channelName': instance.channelName,
       'nbLikes': instance.nbLikes,
+      'mainAgoraUid': instance.mainAgoraUid,
+      'secondaryAgoraUid': instance.secondaryAgoraUid,
     };

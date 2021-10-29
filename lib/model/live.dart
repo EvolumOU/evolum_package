@@ -18,6 +18,8 @@ class Live {
   String? token;
   String? channelName;
   int nbLikes;
+  int mainAgoraUid;
+  int secondaryAgoraUid;
 
   Live({
     required this.id,
@@ -28,6 +30,8 @@ class Live {
     this.token,
     this.channelName,
     this.nbLikes = 0,
+    this.mainAgoraUid = 0,
+    this.secondaryAgoraUid = 0,
   });
 
   factory Live.fromJson(Map<String, dynamic> data) => _$LiveFromJson(data);
