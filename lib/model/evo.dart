@@ -3,6 +3,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/timing.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../main.dart';
 import 'utils.dart';
 
 part 'evo.g.dart';
@@ -55,6 +56,21 @@ class Evo {
     this.form = 'focus',
     this.size,
   });
+
+  String get remoteUrl => "$evoRemoteBaseURL$filename";
+
+  bool get isVideo => filename != null && filename!.contains(".mp4");
+  bool get isAudio => filename != null && filename!.contains(".mp3");
+  bool get isText => filename == null && text != null;
+  bool get hasTimming => timings.isNotEmpty;
+
+  bool get isQuick => form == "quick";
+  bool get isFocus => form == "focus";
+  bool get isSmall => form == "small";
+
+  bool get isNew =>
+      createdDate != null &&
+      DateTime.now().isBefore(createdDate!.add(Duration(days: 20)));
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({
         ...data,

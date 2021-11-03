@@ -26,6 +26,9 @@ class Ritual {
     this.exitPoint = 0,
   });
 
+  bool get isToWakeUp => type == "wakeup";
+  bool get isToSleep => type == "sleep";
+
   factory Ritual.fromJson(Map<String, dynamic> data) => _$RitualFromJson(data);
 
   Map<String, dynamic> toJson() => _$RitualToJson(this);

@@ -33,6 +33,9 @@ class Coupon {
     this.uid,
   });
 
+  bool get isPhysic => type == 'physique';
+  bool get isVirtual => type == 'virtuel';
+
   factory Coupon.fromJson(Map<String, dynamic> data, String docId) {
     return _$CouponFromJson({
       ...data,

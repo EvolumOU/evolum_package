@@ -34,6 +34,11 @@ class Live {
     this.secondaryAgoraUid = 0,
   });
 
+  bool get isOnGoing => status == 'ongoing';
+  bool get isLive => status == 'live';
+  bool get isOver => status == 'over';
+  bool get isReplay => status == 'replay';
+
   factory Live.fromJson(Map<String, dynamic> data) => _$LiveFromJson(data);
 
   Map<String, dynamic> toJson() => _$LiveToJson(this);

@@ -24,6 +24,8 @@ class Playlist {
     this.text,
   });
 
+  List<String> get stringList => list.map((s) => s.toString()).toList();
+
   factory Playlist.fromJson(Map<String, dynamic> data) => _$PlaylistFromJson({
         ...data,
         "position": data["position"] ?? 0,
