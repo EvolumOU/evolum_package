@@ -16,6 +16,7 @@ class Ritual {
   String? type;
   String? filename;
   int exitPoint;
+  bool hide;
 
   Ritual({
     required this.id,
@@ -24,6 +25,7 @@ class Ritual {
     this.filename,
     this.type = "matin",
     this.exitPoint = 0,
+    this.hide = false,
   });
 
   bool get isToWakeUp => type == "wakeup";

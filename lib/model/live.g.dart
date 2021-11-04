@@ -10,6 +10,7 @@ extension LiveCopyWith on Live {
   Live copyWith({
     String? channelName,
     DateTime? date,
+    bool? hide,
     String? id,
     int? mainAgoraUid,
     String? name,
@@ -24,6 +25,7 @@ extension LiveCopyWith on Live {
     return Live(
       channelName: channelName ?? this.channelName,
       date: date ?? this.date,
+      hide: hide ?? this.hide,
       id: id ?? this.id,
       mainAgoraUid: mainAgoraUid ?? this.mainAgoraUid,
       name: name ?? this.name,
@@ -56,6 +58,7 @@ Live _$LiveFromJson(Map<String, dynamic> json) {
     nbUser: json['nbUser'] as int,
     mainAgoraUid: json['mainAgoraUid'] as int,
     secondaryAgoraUid: json['secondaryAgoraUid'] as int,
+    hide: json['hide'] as bool,
   );
 }
 
@@ -72,4 +75,5 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'nbUser': instance.nbUser,
       'mainAgoraUid': instance.mainAgoraUid,
       'secondaryAgoraUid': instance.secondaryAgoraUid,
+      'hide': instance.hide,
     };

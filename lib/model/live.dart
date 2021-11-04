@@ -22,6 +22,7 @@ class Live {
   int nbUser;
   int mainAgoraUid;
   int secondaryAgoraUid;
+  bool hide;
 
   Live({
     required this.id,
@@ -36,6 +37,7 @@ class Live {
     this.nbUser = 0,
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
+    this.hide = false,
   });
 
   bool get isOnGoing => status == 'ongoing';
