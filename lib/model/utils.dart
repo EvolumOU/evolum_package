@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 DateTime? dateTimefromJson(Timestamp? date) {
   if (date == null) return null;
-  return DateTime.fromMillisecondsSinceEpoch(date.millisecondsSinceEpoch);
+  return DateTime.fromMillisecondsSinceEpoch(date.microsecondsSinceEpoch);
 }
 
 Timestamp? dateTimetoJson(DateTime? date) {

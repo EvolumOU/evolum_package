@@ -17,7 +17,9 @@ class Live {
   String? photoName;
   String? token;
   String? channelName;
-  int nbLikes;
+  String? replayFilename;
+  int nbLike;
+  int nbUser;
   int mainAgoraUid;
   int secondaryAgoraUid;
 
@@ -29,7 +31,9 @@ class Live {
     this.photoName,
     this.token,
     this.channelName,
-    this.nbLikes = 0,
+    this.replayFilename,
+    this.nbLike = 0,
+    this.nbUser = 0,
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
   });
