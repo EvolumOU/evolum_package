@@ -28,6 +28,13 @@ extension StringExtension on String {
     return res;
   }
 
+  String get convertToId {
+    String res = this.replaceAll(' ', '_');
+    res = res.prefix;
+    res = res.removeDiacritics;
+    return res;
+  }
+
   bool get isError => this == "error";
   bool get isSuccess => this == "success";
 }
