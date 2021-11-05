@@ -20,7 +20,6 @@ extension LiveCopyWith on Live {
     String? replayFilename,
     int? secondaryAgoraUid,
     String? status,
-    String? token,
   }) {
     return Live(
       channelName: channelName ?? this.channelName,
@@ -35,7 +34,6 @@ extension LiveCopyWith on Live {
       replayFilename: replayFilename ?? this.replayFilename,
       secondaryAgoraUid: secondaryAgoraUid ?? this.secondaryAgoraUid,
       status: status ?? this.status,
-      token: token ?? this.token,
     );
   }
 }
@@ -51,7 +49,6 @@ Live _$LiveFromJson(Map<String, dynamic> json) {
     name: json['name'] as String?,
     status: json['status'] as String,
     photoName: json['photoName'] as String?,
-    token: json['token'] as String?,
     channelName: json['channelName'] as String?,
     replayFilename: json['replayFilename'] as String?,
     nbLike: json['nbLike'] as int,
@@ -68,7 +65,6 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
       'status': instance.status,
       'photoName': instance.photoName,
-      'token': instance.token,
       'channelName': instance.channelName,
       'replayFilename': instance.replayFilename,
       'nbLike': instance.nbLike,

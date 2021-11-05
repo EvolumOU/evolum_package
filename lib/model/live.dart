@@ -15,7 +15,6 @@ class Live {
   DateTime? date;
   String status;
   String? photoName;
-  String? token;
   String? channelName;
   String? replayFilename;
   int nbLike;
@@ -30,7 +29,6 @@ class Live {
     this.name,
     this.status = 'ongoing',
     this.photoName,
-    this.token,
     this.channelName,
     this.replayFilename,
     this.nbLike = 0,
