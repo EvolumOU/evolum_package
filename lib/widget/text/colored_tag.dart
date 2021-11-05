@@ -11,7 +11,7 @@ class ColoredTag extends StatelessWidget {
   Widget build(BuildContext context) {
     final buttonStyle = Theme.of(context).textTheme.bodyText1!.copyWith(
           fontSize: 13,
-          fontWeight: FontWeight.w300,
+          fontWeight: FontWeight.w700,
           color: Colors.white,
         );
 
