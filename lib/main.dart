@@ -30,6 +30,9 @@ part 'widget/evo_tchat.dart';
 part 'widget/indicator.dart';
 part 'widget/text/audience_count.dart';
 part 'widget/text/colored_tag.dart';
+part 'widget/modal/confirm_modal.dart';
+part 'widget/modal/info_modal.dart';
+part 'widget/modal/button_modal.dart';
 
 part 'theme/color.dart';
 part 'theme/dark.dart';
