@@ -7,7 +7,7 @@ part of evolum_package;
 /// if the modal return "false" that mean the left text is true.
 ///
 ///
-class ConfirmDialog extends StatelessWidget {
+class ConfirmModal extends StatelessWidget {
   /// The [leftHightLight] is to bold the left text.
   /// The [rightHightLight] is to bold the right text.
 
@@ -17,7 +17,7 @@ class ConfirmDialog extends StatelessWidget {
   final bool leftHightLight;
   final bool rightHightLight;
 
-  const ConfirmDialog(
+  const ConfirmModal(
     this.title, {
     Key? key,
     this.leftText = 'Oui',

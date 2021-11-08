@@ -1,11 +1,11 @@
 part of evolum_package;
 
-class InformationDialog extends StatelessWidget {
+class InformationModal extends StatelessWidget {
   final String title;
   final String descr;
   final String textButton;
   final Widget? child;
-  const InformationDialog({
+  const InformationModal({
     Key? key,
     this.title = "Vous y êtes presque",
     this.descr = "Cette aventure n’est disponible qu’avec evolum complet.",
