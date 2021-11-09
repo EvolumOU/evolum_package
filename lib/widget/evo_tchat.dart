@@ -148,7 +148,7 @@ class _EvoTchatState extends State<EvoTchat> {
                 );
               },
             ),
-            const Divider(color: Colors.white, thickness: 1),
+            Divider(color: Colors.white.withOpacity(0.4), thickness: 2),
             Row(
               children: [
                 Expanded(
@@ -169,13 +169,13 @@ class _EvoTchatState extends State<EvoTchat> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0, right: 15.0),
+                  padding: const EdgeInsets.only(bottom: 2),
                   child: IconButton(
                     icon: Image.asset(
                       "assets/image/icon/chat_send.png",
-                      color: kevoGrey.withOpacity(0.4),
+                      color: kevoGrey.withOpacity(0.9),
                     ),
-                    iconSize: 45,
+                    iconSize: 35,
                     onPressed: sendMessage,
                   ),
                 ),
