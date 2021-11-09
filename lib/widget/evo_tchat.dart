@@ -5,7 +5,7 @@ class EvoTchat extends StatefulWidget {
   final String? uid;
   final String? name;
   final List<Widget> actions;
-  final int nbMsgToShow;
+  final int? nbMsgToShow;
 
   const EvoTchat({
     Key? key,
@@ -13,7 +13,7 @@ class EvoTchat extends StatefulWidget {
     this.uid,
     this.name,
     this.actions = const [],
-    this.nbMsgToShow = 5,
+    this.nbMsgToShow,
   }) : super(key: key);
 
   @override
@@ -95,92 +95,95 @@ class _EvoTchatState extends State<EvoTchat> {
           color: Colors.white.withOpacity(0.4),
         );
 
-    return Padding(
-      padding: const EdgeInsets.only(left: 8, right: 8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          StreamBuilder<Map<String, dynamic>>(
-            stream: tchatStream,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData || snapshot.hasError) {
-                return const SizedBox();
-              }
+    return Listener(
+      onPointerUp: (_) => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8, right: 8),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            StreamBuilder<Map<String, dynamic>>(
+              stream: tchatStream,
+              builder: (context, snapshot) {
+                if (!snapshot.hasData || snapshot.hasError) {
+                  return const SizedBox();
+                }
 
-              final List messages = [...snapshot.data!["messages"]];
+                final List messages = [...snapshot.data!["messages"]];
 
-              if (messages.isEmpty) return const SizedBox();
+                if (messages.isEmpty) return const SizedBox();
 
-              messages.sort((a, b) => a["timestamp"].compareTo(b["timestamp"]));
+                messages
+                    .sort((a, b) => a["timestamp"].compareTo(b["timestamp"]));
 
-              while (messages.length > widget.nbMsgToShow) {
-                messages.removeAt(0);
-              }
+                if (widget.nbMsgToShow != null) {
+                  while (messages.length > widget.nbMsgToShow!) {
+                    messages.removeAt(0);
+                  }
+                }
 
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  for (int i = 0; i < messages.length; i++)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          messages[i]["name"],
-                          style: chatUserStyle.copyWith(
-                            color: Colors.white
-                                .withOpacity(getTextOpacity(i, true)),
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  child: ListView.builder(
+                    reverse: true,
+                    itemCount: messages.length,
+                    itemBuilder: (context, i) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            messages[messages.length - 1 - i]["name"],
+                            style: chatUserStyle.copyWith(color: Colors.white),
                           ),
-                        ),
-                        Text(
-                          messages[i]["text"],
-                          style: chatTextStyle.copyWith(
-                            color: Colors.white
-                                .withOpacity(getTextOpacity(i, false)),
+                          Text(
+                            messages[messages.length - 1 - i]["text"],
+                            style: chatTextStyle.copyWith(color: Colors.white),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                      ],
+                          const SizedBox(height: 10),
+                        ],
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
+            const Divider(color: Colors.white, thickness: 1),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    keyboardType: TextInputType.multiline,
+                    textInputAction: TextInputAction.send,
+                    controller: controller,
+                    cursorColor: Colors.white,
+                    maxLength: 60,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Commentaire",
+                      hintStyle: commentTextStyle,
+                      counterText: "",
                     ),
-                ],
-              );
-            },
-          ),
-          const Divider(color: Colors.white, thickness: 1),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  keyboardType: TextInputType.multiline,
-                  textInputAction: TextInputAction.send,
-                  controller: controller,
-                  cursorColor: Colors.white,
-                  maxLength: 60,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: "Commentaire",
-                    hintStyle: commentTextStyle,
-                    counterText: "",
+                    onSubmitted: (_) => sendMessage(),
+                    style: chatTextStyle,
                   ),
-                  onSubmitted: (_) => sendMessage(),
-                  style: chatTextStyle,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0, right: 15.0),
-                child: IconButton(
-                  icon: Image.asset(
-                    "assets/image/icon/chat_send.png",
-                    color: kevoGrey.withOpacity(0.4),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0, right: 15.0),
+                  child: IconButton(
+                    icon: Image.asset(
+                      "assets/image/icon/chat_send.png",
+                      color: kevoGrey.withOpacity(0.4),
+                    ),
+                    iconSize: 45,
+                    onPressed: sendMessage,
                   ),
-                  iconSize: 45,
-                  onPressed: sendMessage,
                 ),
-              ),
-              ...widget.actions,
-            ],
-          ),
-        ],
+                ...widget.actions,
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
