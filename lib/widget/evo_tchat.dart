@@ -169,11 +169,11 @@ class _EvoTchatState extends State<EvoTchat> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 10.0, right: 15.0),
                 child: IconButton(
-                  icon: Icon(
-                    Icons.send,
+                  icon: Image.asset(
+                    "assets/image/icon/chat_send.png",
                     color: kevoGrey.withOpacity(0.4),
-                    size: 45,
                   ),
+                  iconSize: 45,
                   onPressed: sendMessage,
                 ),
               ),
