@@ -2,7 +2,6 @@ library evolum_package;
 
 import 'dart:math';
 import 'dart:ui';
-import 'package:evolum_package/model/all.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -10,6 +9,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
+import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
+
 import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
 import 'package:flutter/widgets.dart';
@@ -26,7 +27,7 @@ part 'widget/border_gradient_container.dart';
 part 'widget/back_button.dart';
 part 'widget/evo_logo.dart';
 part 'widget/evo_loading.dart';
-part 'widget/evo_tchat.dart';
+part 'widget/evo_chat.dart';
 part 'widget/indicator.dart';
 part 'widget/text/audience_count.dart';
 part 'widget/text/colored_tag.dart';

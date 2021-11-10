@@ -1,13 +1,13 @@
 part of evolum_package;
 
-class EvoTchat extends StatefulWidget {
+class EvoChat extends StatefulWidget {
   final String tchatId;
   final String? uid;
   final String? name;
   final List<Widget> actions;
   final int? nbMsgToShow;
 
-  const EvoTchat({
+  const EvoChat({
     Key? key,
     required this.tchatId,
     this.uid,
@@ -17,11 +17,18 @@ class EvoTchat extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<EvoTchat> createState() => _EvoTchatState();
+  State<EvoChat> createState() => _EvoChatState();
 }
 
-class _EvoTchatState extends State<EvoTchat> {
-  late TextEditingController controller;
+class _EvoChatState extends State<EvoChat> {
+  final ScrollController scrollController = ScrollController();
+  late TextEditingController textController;
+
+  @override
+  void initState() {
+    textController = TextEditingController(text: '');
+    super.initState();
+  }
 
   Stream<Map<String, dynamic>> get tchatStream {
     return FirestoreService.instance.documentStream(
@@ -49,7 +56,7 @@ class _EvoTchatState extends State<EvoTchat> {
       );
 
   void sendMessage() {
-    final String value = controller.text.trim();
+    final String value = textController.text.trim();
 
     FocusScopeNode currentFocus = FocusScope.of(context);
 
@@ -57,8 +64,8 @@ class _EvoTchatState extends State<EvoTchat> {
       currentFocus.unfocus();
     }
     if (value.isNotEmpty) {
-      sendMessageOnTchat(controller.text);
-      controller.clear();
+      sendMessageOnTchat(textController.text);
+      textController.clear();
     }
   }
 
@@ -71,14 +78,7 @@ class _EvoTchatState extends State<EvoTchat> {
     return 1;
   }
 
-  @override
-  void initState() {
-    controller = TextEditingController(text: '');
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget buildChatRow(Map<String, dynamic> msgData) {
     final chatUserStyle = Theme.of(context).textTheme.bodyText1!.copyWith(
           fontSize: 15,
           fontWeight: FontWeight.w400,
@@ -89,12 +89,66 @@ class _EvoTchatState extends State<EvoTchat> {
           fontWeight: FontWeight.w500,
           color: Colors.white,
         );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          msgData["name"],
+          style: chatUserStyle.copyWith(color: Colors.white),
+        ),
+        Text(
+          msgData["text"],
+          style: chatTextStyle.copyWith(color: Colors.white),
+        ),
+        const SizedBox(height: 10),
+      ],
+    );
+  }
+
+  Widget buildTextInput() {
     final commentTextStyle = Theme.of(context).textTheme.bodyText1!.copyWith(
           fontSize: 17,
           fontWeight: FontWeight.w500,
           color: Colors.white.withOpacity(0.4),
         );
+    final chatTextStyle = Theme.of(context).textTheme.bodyText1!.copyWith(
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+        );
+    return Expanded(
+      child: TextField(
+        keyboardType: TextInputType.multiline,
+        textInputAction: TextInputAction.send,
+        controller: textController,
+        cursorColor: Colors.white,
+        maxLength: 60,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: "Commentaire",
+          hintStyle: commentTextStyle,
+          counterText: "",
+        ),
+        onSubmitted: (_) => sendMessage(),
+        style: chatTextStyle,
+      ),
+    );
+  }
 
+  Widget buildSendIcon() => Padding(
+        padding: const EdgeInsets.only(bottom: 2),
+        child: IconButton(
+          icon: Image.asset(
+            "assets/image/icon/chat_send.png",
+            color: kevoGrey.withOpacity(0.9),
+          ),
+          iconSize: 35,
+          onPressed: sendMessage,
+        ),
+      );
+
+  @override
+  Widget build(BuildContext context) {
     return Listener(
       onPointerUp: (_) => FocusManager.instance.primaryFocus?.unfocus(),
       child: Padding(
@@ -125,25 +179,16 @@ class _EvoTchatState extends State<EvoTchat> {
 
                 return SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4,
-                  child: ListView.builder(
-                    reverse: true,
-                    itemCount: messages.length,
-                    itemBuilder: (context, i) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            messages[messages.length - 1 - i]["name"],
-                            style: chatUserStyle.copyWith(color: Colors.white),
-                          ),
-                          Text(
-                            messages[messages.length - 1 - i]["text"],
-                            style: chatTextStyle.copyWith(color: Colors.white),
-                          ),
-                          const SizedBox(height: 10),
-                        ],
-                      );
-                    },
+                  child: FadingEdgeScrollView.fromScrollView(
+                    gradientFractionOnStart: 0,
+                    gradientFractionOnEnd: 0.9,
+                    child: ListView.builder(
+                      controller: scrollController,
+                      reverse: true,
+                      itemCount: messages.length,
+                      itemBuilder: (context, i) =>
+                          buildChatRow(messages[messages.length - 1 - i]),
+                    ),
                   ),
                 );
               },
@@ -151,34 +196,8 @@ class _EvoTchatState extends State<EvoTchat> {
             Divider(color: Colors.white.withOpacity(0.4), thickness: 2),
             Row(
               children: [
-                Expanded(
-                  child: TextField(
-                    keyboardType: TextInputType.multiline,
-                    textInputAction: TextInputAction.send,
-                    controller: controller,
-                    cursorColor: Colors.white,
-                    maxLength: 60,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Commentaire",
-                      hintStyle: commentTextStyle,
-                      counterText: "",
-                    ),
-                    onSubmitted: (_) => sendMessage(),
-                    style: chatTextStyle,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 2),
-                  child: IconButton(
-                    icon: Image.asset(
-                      "assets/image/icon/chat_send.png",
-                      color: kevoGrey.withOpacity(0.9),
-                    ),
-                    iconSize: 35,
-                    onPressed: sendMessage,
-                  ),
-                ),
+                buildTextInput(),
+                buildSendIcon(),
                 ...widget.actions,
               ],
             ),
