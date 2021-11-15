@@ -12,21 +12,18 @@ class Surprise {
   String id;
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime? startDate;
+  int? endDate;
   String? subtitle;
   String? description;
   String? photoName;
   String? filename;
   String? type;
-  // int nbLike;
-  // int nbUser;
-  // int mainAgoraUid;
-  // int secondaryAgoraUid;
-  // bool hide;
 
   Surprise({
     required this.id,
-    this.date,
+    this.startDate,
+    this.endDate,
     this.name,
     this.subtitle,
     this.description,

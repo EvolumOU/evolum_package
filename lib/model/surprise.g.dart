@@ -8,22 +8,24 @@ part of 'surprise.dart';
 
 extension SurpriseCopyWith on Surprise {
   Surprise copyWith({
-    DateTime? date,
     String? description,
+    int? endDate,
     String? filename,
     String? id,
     String? name,
     String? photoName,
+    DateTime? startDate,
     String? subtitle,
     String? type,
   }) {
     return Surprise(
-      date: date ?? this.date,
       description: description ?? this.description,
+      endDate: endDate ?? this.endDate,
       filename: filename ?? this.filename,
       id: id ?? this.id,
       name: name ?? this.name,
       photoName: photoName ?? this.photoName,
+      startDate: startDate ?? this.startDate,
       subtitle: subtitle ?? this.subtitle,
       type: type ?? this.type,
     );
@@ -37,7 +39,8 @@ extension SurpriseCopyWith on Surprise {
 Surprise _$SurpriseFromJson(Map<String, dynamic> json) {
   return Surprise(
     id: json['id'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp?),
+    startDate: dateTimefromJson(json['startDate'] as Timestamp?),
+    endDate: json['endDate'] as int?,
     name: json['name'] as String?,
     subtitle: json['subtitle'] as String?,
     description: json['description'] as String?,
@@ -50,7 +53,8 @@ Surprise _$SurpriseFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$SurpriseToJson(Surprise instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'date': dateTimetoJson(instance.date),
+      'startDate': dateTimetoJson(instance.startDate),
+      'endDate': instance.endDate,
       'subtitle': instance.subtitle,
       'description': instance.description,
       'photoName': instance.photoName,
