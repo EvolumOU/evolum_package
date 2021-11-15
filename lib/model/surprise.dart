@@ -13,7 +13,8 @@ class Surprise {
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? startDate;
-  int? endDate;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  DateTime? endDate;
   String? subtitle;
   String? description;
   String? photoName;
