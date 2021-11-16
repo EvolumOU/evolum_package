@@ -37,4 +37,5 @@ extension StringExtension on String {
 
   bool get isError => this == "error";
   bool get isSuccess => this == "success";
+  bool get isInvalid => this == "invalid";
 }
