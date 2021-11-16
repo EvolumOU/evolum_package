@@ -13,24 +13,23 @@ class Surprise {
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? startDate;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? endDate;
   String? subtitle;
   String? description;
   String? photoName;
   String? filename;
   String? type;
+  bool surprise;
 
   Surprise({
     required this.id,
     this.startDate,
-    this.endDate,
     this.name,
     this.subtitle,
     this.description,
     this.photoName,
     this.filename,
     this.type,
+    this.surprise = false,
   });
 
   bool get isEvo => type == "evo";
