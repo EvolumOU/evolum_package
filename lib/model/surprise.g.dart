@@ -9,24 +9,24 @@ part of 'surprise.dart';
 extension SurpriseCopyWith on Surprise {
   Surprise copyWith({
     String? description,
+    String? evoId,
     String? filename,
     String? id,
     String? name,
     String? photoName,
     DateTime? startDate,
     String? subtitle,
-    bool? surprise,
     String? type,
   }) {
     return Surprise(
       description: description ?? this.description,
+      evoId: evoId ?? this.evoId,
       filename: filename ?? this.filename,
       id: id ?? this.id,
       name: name ?? this.name,
       photoName: photoName ?? this.photoName,
       startDate: startDate ?? this.startDate,
       subtitle: subtitle ?? this.subtitle,
-      surprise: surprise ?? this.surprise,
       type: type ?? this.type,
     );
   }
@@ -46,7 +46,7 @@ Surprise _$SurpriseFromJson(Map<String, dynamic> json) {
     photoName: json['photoName'] as String?,
     filename: json['filename'] as String?,
     type: json['type'] as String?,
-    surprise: json['surprise'] as bool,
+    evoId: json['evoId'] as String?,
   );
 }
 
@@ -59,5 +59,5 @@ Map<String, dynamic> _$SurpriseToJson(Surprise instance) => <String, dynamic>{
       'photoName': instance.photoName,
       'filename': instance.filename,
       'type': instance.type,
-      'surprise': instance.surprise,
+      'evoId': instance.evoId,
     };

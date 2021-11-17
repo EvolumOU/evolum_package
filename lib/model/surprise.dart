@@ -18,7 +18,7 @@ class Surprise {
   String? photoName;
   String? filename;
   String? type;
-  bool surprise;
+  String? evoId;
 
   Surprise({
     required this.id,
@@ -29,7 +29,7 @@ class Surprise {
     this.photoName,
     this.filename,
     this.type,
-    this.surprise = false,
+    this.evoId,
   });
 
   bool get isEvo => type == "evo";
