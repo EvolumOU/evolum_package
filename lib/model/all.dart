@@ -16,3 +16,4 @@ export 'shipping.dart';
 export 'ritual.dart';
 export 'live.dart';
 export 'surprise.dart';
+export 'fomo.dart';

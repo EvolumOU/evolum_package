@@ -27,6 +27,7 @@ part 'widget/border_gradient_container.dart';
 part 'widget/back_button.dart';
 part 'widget/evo_logo.dart';
 part 'widget/evo_loading.dart';
+
 part 'widget/evo_chat.dart';
 part 'widget/indicator.dart';
 part 'widget/text/audience_count.dart';

@@ -10,6 +10,12 @@ Timestamp? dateTimetoJson(DateTime? date) {
   return Timestamp.fromMillisecondsSinceEpoch(date.millisecondsSinceEpoch);
 }
 
+DateTime dateTimeNotNullfromJson(Timestamp date) =>
+    DateTime.fromMillisecondsSinceEpoch(date.millisecondsSinceEpoch);
+
+Timestamp dateTimeNotNulltoJson(DateTime date) =>
+    Timestamp.fromMillisecondsSinceEpoch(date.millisecondsSinceEpoch);
+
 Duration? durationfromJson(int? duration) {
   if (duration == null) return null;
   return Duration(seconds: duration);
