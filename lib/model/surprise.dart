@@ -16,8 +16,8 @@ class Surprise {
   String? subtitle;
   String? description;
   String? photoName;
-  String? filename;
-  String? type;
+  String type;
+  String? courseId;
   String? evoId;
 
   Surprise({
@@ -27,8 +27,8 @@ class Surprise {
     this.subtitle,
     this.description,
     this.photoName,
-    this.filename,
-    this.type,
+    this.type = "evo",
+    this.courseId,
     this.evoId,
   });
 

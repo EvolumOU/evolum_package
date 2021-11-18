@@ -8,9 +8,9 @@ part of 'surprise.dart';
 
 extension SurpriseCopyWith on Surprise {
   Surprise copyWith({
+    String? courseId,
     String? description,
     String? evoId,
-    String? filename,
     String? id,
     String? name,
     String? photoName,
@@ -19,9 +19,9 @@ extension SurpriseCopyWith on Surprise {
     String? type,
   }) {
     return Surprise(
+      courseId: courseId ?? this.courseId,
       description: description ?? this.description,
       evoId: evoId ?? this.evoId,
-      filename: filename ?? this.filename,
       id: id ?? this.id,
       name: name ?? this.name,
       photoName: photoName ?? this.photoName,
@@ -44,8 +44,8 @@ Surprise _$SurpriseFromJson(Map<String, dynamic> json) {
     subtitle: json['subtitle'] as String?,
     description: json['description'] as String?,
     photoName: json['photoName'] as String?,
-    filename: json['filename'] as String?,
-    type: json['type'] as String?,
+    type: json['type'] as String,
+    courseId: json['courseId'] as String?,
     evoId: json['evoId'] as String?,
   );
 }
@@ -57,7 +57,7 @@ Map<String, dynamic> _$SurpriseToJson(Surprise instance) => <String, dynamic>{
       'subtitle': instance.subtitle,
       'description': instance.description,
       'photoName': instance.photoName,
-      'filename': instance.filename,
       'type': instance.type,
+      'courseId': instance.courseId,
       'evoId': instance.evoId,
     };
