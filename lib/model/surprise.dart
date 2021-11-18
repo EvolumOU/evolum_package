@@ -9,7 +9,7 @@ part 'surprise.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Surprise {
-  String id;
+  String? id;
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime? startDate;
@@ -21,7 +21,7 @@ class Surprise {
   String? evoId;
 
   Surprise({
-    required this.id,
+    this.id,
     this.startDate,
     this.name,
     this.subtitle,
