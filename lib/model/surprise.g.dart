@@ -38,7 +38,7 @@ extension SurpriseCopyWith on Surprise {
 
 Surprise _$SurpriseFromJson(Map<String, dynamic> json) {
   return Surprise(
-    id: json['id'] as String,
+    id: json['id'] as String?,
     startDate: dateTimefromJson(json['startDate'] as Timestamp?),
     name: json['name'] as String?,
     subtitle: json['subtitle'] as String?,
