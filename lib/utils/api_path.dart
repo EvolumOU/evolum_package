@@ -14,12 +14,13 @@ class APIPath {
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
-  static String userSurprise(String uid) => 'user/$uid/info/surprise';
   static String userFav(String uid) => 'user/$uid/info/fav';
   static String userAllHistory(String uid) => 'user/$uid/history/';
   static String userHistory(String uid, String id) => 'user/$uid/history/$id';
-  static String userEvoDone(String uid) => 'user/$uid/info/evodone';
   static String userReco(String uid) => 'user/$uid/info/reco';
+  static String userEvoFind(String uid) => 'user/$uid/info/evofind';
+  static String userEvoDone(String uid) => 'user/$uid/info/evodone';
+  static String userSurpriseDone(String uid) => 'user/$uid/info/surprisedone';
 
   static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
