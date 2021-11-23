@@ -17,19 +17,21 @@ class Ritual {
   String? filename;
   int exitPoint;
   bool hide;
+  bool feedback;
 
   Ritual({
     required this.id,
     this.date,
     this.name,
     this.filename,
-    this.type = "matin",
+    this.type = "jour",
     this.exitPoint = 0,
     this.hide = false,
+    this.feedback = false,
   });
 
-  bool get isToWakeUp => type == "wakeup";
-  bool get isToSleep => type == "sleep";
+  bool get isForDay => type == "jour";
+  bool get isForNight => type == "nuit";
 
   factory Ritual.fromJson(Map<String, dynamic> data) => _$RitualFromJson(data);
 

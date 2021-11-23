@@ -10,6 +10,7 @@ extension RitualCopyWith on Ritual {
   Ritual copyWith({
     DateTime? date,
     int? exitPoint,
+    bool? feedback,
     String? filename,
     bool? hide,
     String? id,
@@ -19,6 +20,7 @@ extension RitualCopyWith on Ritual {
     return Ritual(
       date: date ?? this.date,
       exitPoint: exitPoint ?? this.exitPoint,
+      feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
       hide: hide ?? this.hide,
       id: id ?? this.id,
@@ -41,6 +43,7 @@ Ritual _$RitualFromJson(Map<String, dynamic> json) {
     type: json['type'] as String?,
     exitPoint: json['exitPoint'] as int,
     hide: json['hide'] as bool,
+    feedback: json['feedback'] as bool,
   );
 }
 
@@ -52,4 +55,5 @@ Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
       'filename': instance.filename,
       'exitPoint': instance.exitPoint,
       'hide': instance.hide,
+      'feedback': instance.feedback,
     };
