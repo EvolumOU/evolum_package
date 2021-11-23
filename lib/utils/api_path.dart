@@ -37,5 +37,6 @@ class APIPath {
   static String allRitual() => 'ritual/';
   static String allLive() => 'live/';
   static String allSurprise() => 'surprise/';
+  static String allBreathwork() => 'breathwork';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
