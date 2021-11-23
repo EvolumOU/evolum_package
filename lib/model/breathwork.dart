@@ -9,6 +9,7 @@ part 'breathwork.g.dart';
 class BreathWork {
   @JsonKey(ignore: true)
   String? id;
+  int? nbCycles;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration? inhaleDuration;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
@@ -20,6 +21,7 @@ class BreathWork {
 
   BreathWork({
     this.id,
+    this.nbCycles,
     this.inhaleDuration,
     this.pauseTopDuration,
     this.exhaleDuration,
@@ -31,12 +33,6 @@ class BreathWork {
         ...data,
         'id': docId,
       });
-
-  Duration get totalDuration =>
-      inhaleDuration! +
-      pauseTopDuration! +
-      exhaleDuration! +
-      pauseBottomDuration!;
 
   Map<String, dynamic> toJson() => _$BreathWorkToJson(this);
 
