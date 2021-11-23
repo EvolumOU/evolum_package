@@ -24,14 +24,14 @@ class Ritual {
     this.date,
     this.name,
     this.filename,
-    this.type = "jour",
+    this.type = "matin",
     this.exitPoint = 0,
     this.hide = false,
     this.feedback = false,
   });
 
-  bool get isForDay => type == "jour";
-  bool get isForNight => type == "nuit";
+  bool get isForDay => type == "jour" || type == "matin";
+  bool get isForNight => type == "nuit" || type == "soir";
 
   factory Ritual.fromJson(Map<String, dynamic> data) => _$RitualFromJson(data);
 
