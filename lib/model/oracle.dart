@@ -18,10 +18,7 @@ class Oracle {
   });
 
   factory Oracle.fromJson(Map<String, dynamic> data, String docId) =>
-      _$OracleFromJson({
-        ...data,
-        'id': docId,
-      });
+      _$OracleFromJson({...data, 'id': docId});
 
   Map<String, dynamic> toJson() => _$OracleToJson(this);
 
