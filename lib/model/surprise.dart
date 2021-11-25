@@ -39,7 +39,7 @@ class Surprise {
   bool get isEvent => type == "event";
 
   factory Surprise.fromJson(Map<String, dynamic> data, String docId) =>
-      _$SurpriseFromJson({...data, 'id': docId});
+      _$SurpriseFromJson(data)..id = docId;
 
   Map<String, dynamic> toJson() => _$SurpriseToJson(this);
 
