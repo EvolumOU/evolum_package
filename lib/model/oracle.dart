@@ -6,7 +6,6 @@ part 'oracle.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Oracle {
-  @JsonKey(ignore: true)
   String? id;
   String name;
   String text;
@@ -17,8 +16,7 @@ class Oracle {
     required this.text,
   });
 
-  factory Oracle.fromJson(Map<String, dynamic> data, String docId) =>
-      _$OracleFromJson(data)..id = docId;
+  factory Oracle.fromJson(Map<String, dynamic> data) => _$OracleFromJson(data);
 
   Map<String, dynamic> toJson() => _$OracleToJson(this);
 

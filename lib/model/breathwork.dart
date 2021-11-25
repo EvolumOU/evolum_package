@@ -7,7 +7,6 @@ part 'breathwork.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class BreathWork {
-  @JsonKey(ignore: true)
   String? id;
   int? nbCycles;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
@@ -28,11 +27,8 @@ class BreathWork {
     this.pauseBottomDuration,
   });
 
-  factory BreathWork.fromJson(Map<String, dynamic> data, String docId) =>
-      _$BreathWorkFromJson({
-        ...data,
-        'id': docId,
-      });
+  factory BreathWork.fromJson(Map<String, dynamic> data) =>
+      _$BreathWorkFromJson(data);
 
   Map<String, dynamic> toJson() => _$BreathWorkToJson(this);
 

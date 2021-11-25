@@ -9,7 +9,6 @@ part 'surprise.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Surprise {
-  @JsonKey(ignore: true)
   String? id;
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
@@ -38,8 +37,8 @@ class Surprise {
   bool get isEvo => type == "evo";
   bool get isEvent => type == "event";
 
-  factory Surprise.fromJson(Map<String, dynamic> data, String docId) =>
-      _$SurpriseFromJson(data)..id = docId;
+  factory Surprise.fromJson(Map<String, dynamic> data) =>
+      _$SurpriseFromJson(data);
 
   Map<String, dynamic> toJson() => _$SurpriseToJson(this);
 
