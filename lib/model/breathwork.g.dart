@@ -33,11 +33,12 @@ extension BreathWorkCopyWith on BreathWork {
 BreathWork _$BreathWorkFromJson(Map<String, dynamic> json) {
   return BreathWork(
     id: json['id'] as String?,
-    nbCycles: json['nbCycles'] as int?,
-    inhaleDuration: durationfromJson(json['inhaleDuration'] as int?),
-    pauseTopDuration: durationfromJson(json['pauseTopDuration'] as int?),
-    exhaleDuration: durationfromJson(json['exhaleDuration'] as int?),
-    pauseBottomDuration: durationfromJson(json['pauseBottomDuration'] as int?),
+    nbCycles: json['nbCycles'] as int,
+    inhaleDuration: durationNotNullfromJson(json['inhaleDuration'] as int),
+    pauseTopDuration: durationNotNullfromJson(json['pauseTopDuration'] as int),
+    exhaleDuration: durationNotNullfromJson(json['exhaleDuration'] as int),
+    pauseBottomDuration:
+        durationNotNullfromJson(json['pauseBottomDuration'] as int),
   );
 }
 
@@ -45,8 +46,9 @@ Map<String, dynamic> _$BreathWorkToJson(BreathWork instance) =>
     <String, dynamic>{
       'id': instance.id,
       'nbCycles': instance.nbCycles,
-      'inhaleDuration': durationtoJson(instance.inhaleDuration),
-      'pauseTopDuration': durationtoJson(instance.pauseTopDuration),
-      'exhaleDuration': durationtoJson(instance.exhaleDuration),
-      'pauseBottomDuration': durationtoJson(instance.pauseBottomDuration),
+      'inhaleDuration': durationNotNulltoJson(instance.inhaleDuration),
+      'pauseTopDuration': durationNotNulltoJson(instance.pauseTopDuration),
+      'exhaleDuration': durationNotNulltoJson(instance.exhaleDuration),
+      'pauseBottomDuration':
+          durationNotNulltoJson(instance.pauseBottomDuration),
     };
