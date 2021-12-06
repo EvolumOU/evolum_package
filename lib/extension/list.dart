@@ -19,4 +19,12 @@ extension ListExtension<T> on List<T> {
 
     return res;
   }
+
+  void swap(T a, T b) {
+    final int index1 = this.indexOf(a);
+    final int index2 = this.indexOf(b);
+
+    this[index1] = b;
+    this[index2] = a;
+  }
 }
