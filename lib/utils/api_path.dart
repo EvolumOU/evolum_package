@@ -13,6 +13,7 @@ class APIPath {
   static String coupon(String id) => 'coupon/$id';
   static String box(String id) => 'box/$id';
   static String surprise(String id) => 'surprise/$id';
+  static String ambiance(String id) => 'ambiance/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
@@ -34,6 +35,7 @@ class APIPath {
   static String allOracle() => 'oracle/';
   static String allCoupon() => 'coupon/';
   static String allChat() => 'coupon/';
+  static String allAmbiance() => 'ambiance/';
   static String allBox() => 'box/';
   static String allBrick() => 'brick/';
   static String allRitual() => 'ritual/';

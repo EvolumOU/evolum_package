@@ -38,10 +38,10 @@ class Live {
     this.hide = false,
   });
 
-  bool get isOnGoing => status == 'ongoing';
-  bool get isLive => status == 'live';
-  bool get isOver => status == 'over';
-  bool get isReplay => status == 'replay';
+  bool get isOnGoing => status == 'ongoing' || status == "à venir";
+  bool get isLive => status == 'live' || status == "direct";
+  bool get isOver => status == 'over' || status == "fini";
+  bool get isReplay => status == 'replay' || status == "replay";
 
   factory Live.fromJson(Map<String, dynamic> data) => _$LiveFromJson(data);
 
