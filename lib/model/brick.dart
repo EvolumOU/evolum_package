@@ -12,13 +12,18 @@ class Brick {
   String? name;
   Duration? duration;
   int? type;
+  String? moment;
 
   Brick({
     this.id,
     this.name,
     this.duration,
     this.type,
+    this.moment,
   });
+
+  bool get isMorning => moment == "matin";
+  bool get isEvening => moment == "soir";
 
   factory Brick.fromJson(Map<String, dynamic> data) =>
       _$BrickFromJson({...data});
