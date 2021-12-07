@@ -20,7 +20,7 @@ class Ambiance {
     required this.id,
     this.name,
     this.agoraUid = 0,
-    this.type = "jour",
+    this.type = "matin",
     this.channelName = "evolum",
     this.hide = false,
     this.nbLike = 0,
