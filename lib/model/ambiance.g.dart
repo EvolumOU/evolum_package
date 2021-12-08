@@ -49,7 +49,7 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) {
     tileGsUrl: json['tileGsUrl'] as String?,
     videoGsUrl: json['videoGsUrl'] as String?,
     musicGsUrl: json['musicGsUrl'] as String?,
-    musicPosition: Duration(microseconds: json['musicPosition'] as int),
+    musicPosition: durationNotNullfromJson(json['musicPosition'] as int),
   );
 }
 
@@ -63,5 +63,5 @@ Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'tileGsUrl': instance.tileGsUrl,
       'videoGsUrl': instance.videoGsUrl,
       'musicGsUrl': instance.musicGsUrl,
-      'musicPosition': instance.musicPosition.inMicroseconds,
+      'musicPosition': durationNotNulltoJson(instance.musicPosition),
     };
