@@ -8,24 +8,26 @@ part 'ambiance.g.dart';
 class Ambiance {
   String id;
   String? name;
-  int agoraUid;
   String type;
-  String channelName;
   bool hide;
   int nbLike;
   int nbUser;
   String? tileGsUrl;
+  String? videoGsUrl;
+  String? musicGsUrl;
+  Duration musicPosition;
 
   Ambiance({
     required this.id,
     this.name,
-    this.agoraUid = 0,
-    this.type = "jour",
-    this.channelName = "evolum",
+    this.type = "matin",
     this.hide = false,
     this.nbLike = 0,
     this.nbUser = 0,
     this.tileGsUrl,
+    this.videoGsUrl,
+    this.musicGsUrl,
+    this.musicPosition = Duration.zero,
   });
 
   factory Ambiance.fromJson(Map<String, dynamic> data) =>
