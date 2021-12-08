@@ -1,4 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'ambiance.g.dart';
@@ -15,6 +16,7 @@ class Ambiance {
   String? tileGsUrl;
   String? videoGsUrl;
   String? musicGsUrl;
+  @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
   Duration musicPosition;
 
   Ambiance({
