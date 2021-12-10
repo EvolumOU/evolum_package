@@ -28,8 +28,9 @@ int? durationtoJson(Duration? duration) {
   return duration.inSeconds;
 }
 
-Duration durationNotNullfromJson(int duration) => Duration(seconds: duration);
-int durationNotNulltoJson(Duration duration) => duration.inSeconds;
+Duration durationNotNullfromJson(int duration) =>
+    Duration(microseconds: duration);
+int durationNotNulltoJson(Duration duration) => duration.inMicroseconds;
 
 String getRandomGeneratedId() {
   const int AUTO_ID_LENGTH = 20;

@@ -142,7 +142,7 @@ class _EvoChatState extends State<EvoChat> {
             "assets/image/icon/chat_send.png",
             color: kevoGrey.withOpacity(0.9),
           ),
-          iconSize: 35,
+          iconSize: 30,
           onPressed: sendMessage,
         ),
       );
