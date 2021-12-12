@@ -122,7 +122,7 @@ class _EvoChatState extends State<EvoChat> {
         textInputAction: TextInputAction.send,
         controller: textController,
         cursorColor: Colors.white,
-        maxLength: 60,
+        maxLength: 500,
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: "Commentaire",
