@@ -2,18 +2,10 @@ part of evolum_package;
 
 class EvoChatNbUser extends StatelessWidget {
   final String tchatId;
-  final String? uid;
-  final String? name;
-  final List<Widget> actions;
-  final int? nbMsgToShow;
 
   const EvoChatNbUser({
     Key? key,
     required this.tchatId,
-    this.uid,
-    this.name,
-    this.actions = const [],
-    this.nbMsgToShow,
   }) : super(key: key);
 
   Stream<int> get chatNbUserStream {
