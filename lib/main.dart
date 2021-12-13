@@ -29,6 +29,7 @@ part 'widget/evo_logo.dart';
 part 'widget/evo_loading.dart';
 
 part 'widget/evo_chat.dart';
+part 'widget/evo_chat_nbuser.dart';
 part 'widget/indicator.dart';
 part 'widget/text/audience_count.dart';
 part 'widget/text/colored_tag.dart';
