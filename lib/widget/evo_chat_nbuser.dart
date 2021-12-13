@@ -1,6 +1,6 @@
 part of evolum_package;
 
-class EvoChatNbUser extends StatelessWidget {
+class EvoChatNbUser extends StatefulWidget {
   final String tchatId;
 
   const EvoChatNbUser({
@@ -8,12 +8,26 @@ class EvoChatNbUser extends StatelessWidget {
     required this.tchatId,
   }) : super(key: key);
 
+  @override
+  State<EvoChatNbUser> createState() => _EvoChatNbUserState();
+}
+
+class _EvoChatNbUserState extends State<EvoChatNbUser> {
+  @override
+  void initState() {
+    super.initState();
+    FirestoreService.instance.updateData(
+      path: 'chat/${widget.tchatId}',
+      data: {"nbUser": FieldValue.increment(1)},
+    );
+  }
+
   Stream<int> get chatNbUserStream {
     return FirestoreService.instance.documentStream(
-      path: 'chat/$tchatId',
+      path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
         if (data == null) return 0;
-        return int.parse(data["nbUser"]);
+        return data["nbUser"];
       },
     );
   }
@@ -50,5 +64,14 @@ class EvoChatNbUser extends StatelessWidget {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    FirestoreService.instance.updateData(
+      path: 'chat/${widget.tchatId}',
+      data: {"nbUser": FieldValue.increment(-1)},
+    );
+    super.dispose();
   }
 }
