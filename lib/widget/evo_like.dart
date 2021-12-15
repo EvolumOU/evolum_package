@@ -36,7 +36,7 @@ class _EvoLikeState extends State<EvoLike> with TickerProviderStateMixin {
 
   Future<void> animate() async {
     setState(() => display = true);
-    TickerFuture ticker = controller.forward();
+    TickerFuture ticker = controller.forward(from: 0.5);
 
     ticker.whenComplete(() {
       controller.reset();
