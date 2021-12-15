@@ -1,12 +1,12 @@
 part of evolum_package;
 
-class HeartReactionRemote extends StatefulWidget {
+class EvoChatLikeRemote extends StatefulWidget {
   final Widget child;
   final String tchatId;
   final bool ignoreLike;
   final Function? onFinish;
 
-  const HeartReactionRemote({
+  const EvoChatLikeRemote({
     Key? key,
     required this.child,
     required this.tchatId,
@@ -15,10 +15,10 @@ class HeartReactionRemote extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<HeartReactionRemote> createState() => _HeartReactionRemoteState();
+  State<EvoChatLikeRemote> createState() => _EvoChatLikeRemoteState();
 }
 
-class _HeartReactionRemoteState extends State<HeartReactionRemote>
+class _EvoChatLikeRemoteState extends State<EvoChatLikeRemote>
     with SingleTickerProviderStateMixin {
   late StreamSubscription<int> subscription;
   late AnimationController controller;
