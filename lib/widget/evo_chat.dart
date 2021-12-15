@@ -53,7 +53,6 @@ class _EvoChatState extends State<EvoChat> {
             {
               "name": widget.name,
               "text": newMessage,
-              "timestamp": DateTime.now().microsecondsSinceEpoch,
               "uid": widget.uid,
             }
           ]),
@@ -172,15 +171,6 @@ class _EvoChatState extends State<EvoChat> {
                 final List messages = [...snapshot.data!["messages"]];
 
                 if (messages.isEmpty) return const SizedBox();
-
-                messages
-                    .sort((a, b) => a["timestamp"].compareTo(b["timestamp"]));
-
-                if (widget.nbMsgToShow != null) {
-                  while (messages.length > widget.nbMsgToShow!) {
-                    messages.removeAt(0);
-                  }
-                }
 
                 return SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4,
