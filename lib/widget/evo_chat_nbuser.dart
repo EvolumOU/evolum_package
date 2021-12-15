@@ -26,7 +26,11 @@ class _EvoChatNbUserState extends State<EvoChatNbUser> {
     return FirestoreService.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
-        if (data == null) return 0;
+        if (data == null) {
+          FirestoreService.instance
+              .setData(path: 'chat/${widget.tchatId}', data: initChatValue);
+          return 0;
+        }
         return data["nbUser"];
       },
     );

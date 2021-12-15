@@ -34,7 +34,12 @@ class _EvoChatState extends State<EvoChat> {
     return FirestoreService.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
-        if (data == null) return {"messages": []};
+        if (data == null) {
+          FirestoreService.instance
+              .setData(path: 'chat/${widget.tchatId}', data: initChatValue);
+          return {"messages": []};
+        }
+
         return data;
       },
     );
