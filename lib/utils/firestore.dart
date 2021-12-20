@@ -10,10 +10,11 @@ class FirestoreService {
     required String path,
     required Map<String, dynamic> data,
     bool showDebug = true,
+    bool merge = false,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
     if (showDebug) debugPrint('===> [EvoPackage/Firestore] set: $path: $data');
-    await reference.set(data);
+    await reference.set(data, SetOptions(merge: merge));
   }
 
   Future<void> addData({
