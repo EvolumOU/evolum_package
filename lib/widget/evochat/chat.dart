@@ -1,5 +1,17 @@
 part of evolum_package;
 
+Future<void> initChatIfNeeded(String tchatId) async {
+  try {
+    await FirestoreService.instance.getDocument(
+      path: 'chat/$tchatId',
+      builder: (data, documentId) {},
+    );
+  } catch (e) {
+    FirestoreService.instance
+        .setData(path: 'chat/$tchatId', data: initChatValue);
+  }
+}
+
 class EvoChat extends StatefulWidget {
   final String tchatId;
   final String? uid;
@@ -26,6 +38,7 @@ class _EvoChatState extends State<EvoChat> {
 
   @override
   void initState() {
+    initChatIfNeeded(widget.tchatId);
     textController = TextEditingController(text: '');
     super.initState();
   }
@@ -34,12 +47,7 @@ class _EvoChatState extends State<EvoChat> {
     return FirestoreService.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
-        if (data == null) {
-          FirestoreService.instance
-              .setData(path: 'chat/${widget.tchatId}', data: initChatValue);
-          return {"messages": []};
-        }
-
+        if (data == null) return {"messages": []};
         return data;
       },
     );

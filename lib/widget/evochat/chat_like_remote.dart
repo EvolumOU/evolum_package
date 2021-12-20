@@ -28,6 +28,7 @@ class _EvoChatLikeRemoteState extends State<EvoChatLikeRemote>
   @override
   void initState() {
     super.initState();
+    initChatIfNeeded(widget.tchatId);
     controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
@@ -58,12 +59,7 @@ class _EvoChatLikeRemoteState extends State<EvoChatLikeRemote>
     return FirestoreService.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
-        if (data == null) {
-          FirestoreService.instance
-              .setData(path: 'chat/${widget.tchatId}', data: initChatValue);
-          return 0;
-        }
-
+        if (data == null) return 0;
         return data["nbLike"];
       },
     );
