@@ -8,6 +8,7 @@ part of 'ambiance.dart';
 
 extension AmbianceCopyWith on Ambiance {
   Ambiance copyWith({
+    String? gifGsUrl,
     bool? hide,
     String? id,
     String? musicGsUrl,
@@ -15,11 +16,11 @@ extension AmbianceCopyWith on Ambiance {
     String? name,
     int? nbLike,
     int? nbUser,
-    String? tileGsUrl,
     String? type,
     String? videoGsUrl,
   }) {
     return Ambiance(
+      gifGsUrl: gifGsUrl ?? this.gifGsUrl,
       hide: hide ?? this.hide,
       id: id ?? this.id,
       musicGsUrl: musicGsUrl ?? this.musicGsUrl,
@@ -27,7 +28,6 @@ extension AmbianceCopyWith on Ambiance {
       name: name ?? this.name,
       nbLike: nbLike ?? this.nbLike,
       nbUser: nbUser ?? this.nbUser,
-      tileGsUrl: tileGsUrl ?? this.tileGsUrl,
       type: type ?? this.type,
       videoGsUrl: videoGsUrl ?? this.videoGsUrl,
     );
@@ -46,7 +46,7 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) {
     hide: json['hide'] as bool,
     nbLike: json['nbLike'] as int,
     nbUser: json['nbUser'] as int,
-    tileGsUrl: json['tileGsUrl'] as String?,
+    gifGsUrl: json['gifGsUrl'] as String?,
     videoGsUrl: json['videoGsUrl'] as String?,
     musicGsUrl: json['musicGsUrl'] as String?,
     musicPosition: durationNotNullfromJson(json['musicPosition'] as int),
@@ -60,7 +60,7 @@ Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'hide': instance.hide,
       'nbLike': instance.nbLike,
       'nbUser': instance.nbUser,
-      'tileGsUrl': instance.tileGsUrl,
+      'gifGsUrl': instance.gifGsUrl,
       'videoGsUrl': instance.videoGsUrl,
       'musicGsUrl': instance.musicGsUrl,
       'musicPosition': durationNotNulltoJson(instance.musicPosition),

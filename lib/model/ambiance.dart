@@ -13,7 +13,7 @@ class Ambiance {
   bool hide;
   int nbLike;
   int nbUser;
-  String? tileGsUrl;
+  String? gifGsUrl;
   String? videoGsUrl;
   String? musicGsUrl;
   @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
@@ -26,7 +26,7 @@ class Ambiance {
     this.hide = false,
     this.nbLike = 0,
     this.nbUser = 0,
-    this.tileGsUrl,
+    this.gifGsUrl,
     this.videoGsUrl,
     this.musicGsUrl,
     this.musicPosition = Duration.zero,
