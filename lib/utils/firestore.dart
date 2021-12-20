@@ -119,4 +119,17 @@ class FirestoreService {
     return snapshots.map((snapshot) =>
         builder(snapshot.data() as Map<String, dynamic>, snapshot.id));
   }
+
+  Future<bool> checkIfDocExists({
+    required String collectionPath,
+    required String docId,
+  }) async {
+    try {
+      var collectionRef = FirebaseFirestore.instance.collection(collectionPath);
+      var doc = await collectionRef.doc(docId).get();
+      return doc.exists;
+    } catch (e) {
+      return false;
+    }
+  }
 }

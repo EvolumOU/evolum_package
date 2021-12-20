@@ -1,14 +1,15 @@
 part of evolum_package;
 
 Future<void> initChatIfNeeded(String tchatId) async {
-  try {
-    await FirestoreService.instance.getDocument(
+  final res = await FirestoreService.instance.checkIfDocExists(
+    docId: 'tchatId',
+    collectionPath: 'chat',
+  );
+  if (!res) {
+    FirestoreService.instance.setData(
       path: 'chat/$tchatId',
-      builder: (data, documentId) {},
+      data: initChatValue,
     );
-  } catch (e) {
-    FirestoreService.instance
-        .setData(path: 'chat/$tchatId', data: initChatValue);
   }
 }
 
