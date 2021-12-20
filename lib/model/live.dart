@@ -17,8 +17,6 @@ class Live {
   String? photoName;
   String? channelName;
   String? replayFilename;
-  int nbLike;
-  int nbUser;
   int mainAgoraUid;
   int secondaryAgoraUid;
   bool hide;
@@ -31,8 +29,6 @@ class Live {
     this.photoName,
     this.channelName,
     this.replayFilename,
-    this.nbLike = 0,
-    this.nbUser = 0,
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
     this.hide = false,
