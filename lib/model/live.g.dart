@@ -14,8 +14,6 @@ extension LiveCopyWith on Live {
     String? id,
     int? mainAgoraUid,
     String? name,
-    int? nbLike,
-    int? nbUser,
     String? photoName,
     String? replayFilename,
     int? secondaryAgoraUid,

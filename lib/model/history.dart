@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:evolum_package/model/all.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -10,19 +11,21 @@ part 'history.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class History {
-  String? id;
-  Evo evo;
+  String id;
+  Ritual? ritual;
+  Evo? evo;
   String? review;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  @JsonKey(toJson: dateTimeNotNulltoJson, fromJson: dateTimeNotNullfromJson)
+  DateTime date;
   int secondsRead;
   bool checked;
 
   History({
-    this.id,
-    required this.evo,
+    required this.id,
+    this.ritual,
+    this.evo,
     this.review,
-    this.date,
+    required this.date,
     this.secondsRead = 0,
     this.checked = false,
   });
