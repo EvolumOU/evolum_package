@@ -12,7 +12,7 @@ class Coupon {
   String? id;
   String? code;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime date;
   String? type;
   String? email;
   String? reward;
@@ -23,7 +23,7 @@ class Coupon {
 
   Coupon({
     this.code,
-    this.date,
+    required this.date,
     this.type,
     this.email,
     this.name,

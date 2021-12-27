@@ -13,7 +13,7 @@ class FirestoreService {
     bool merge = false,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    if (showDebug) debugPrint('===> [EvoPackage/Firestore] set: $path: $data');
+    if (showDebug) debugPrint('===> [Firestore] set: $path: $data');
     await reference.set(data, SetOptions(merge: merge));
   }
 
@@ -23,7 +23,7 @@ class FirestoreService {
     bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.collection(path);
-    if (showDebug) debugPrint('===> [EvoPackage/Firestore] add: $path: $data');
+    if (showDebug) debugPrint('===> [Firestore] add: $path: $data');
     await reference.add(data);
   }
 
@@ -33,14 +33,13 @@ class FirestoreService {
     bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    if (showDebug)
-      debugPrint('===> [EvoPackage/Firestore] update: $path: $data');
+    if (showDebug) debugPrint('===> [Firestore] update: $path: $data');
     await reference.update(data);
   }
 
   Future<void> deleteData({required String path}) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    debugPrint('===> [EvoPackage/Firestore] delete: $path');
+    debugPrint('===> [Firestore] delete: $path');
     await reference.delete();
   }
 
@@ -128,6 +127,7 @@ class FirestoreService {
     try {
       var collectionRef = FirebaseFirestore.instance.collection(collectionPath);
       var doc = await collectionRef.doc(docId).get();
+      debugPrint('===> [Firestore] checkIfDocExists: ${doc.exists}');
       return doc.exists;
     } catch (e) {
       return false;

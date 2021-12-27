@@ -39,7 +39,7 @@ extension CouponCopyWith on Coupon {
 Coupon _$CouponFromJson(Map<String, dynamic> json) {
   return Coupon(
     code: json['code'] as String?,
-    date: dateTimefromJson(json['date'] as Timestamp?),
+    date: dateTimefromJson(json['date'] as Timestamp),
     type: json['type'] as String?,
     email: json['email'] as String?,
     name: json['name'] as String?,

@@ -73,7 +73,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
     scheduled: (json['scheduled'] as List<dynamic>)
         .map((e) => Scheduled.fromJson(e as Map<String, dynamic>))
         .toList(),
-    updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp?),
+    updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp),
     addons: json['addons'] == null
         ? null
         : Addons.fromJson(json['addons'] as Map<String, dynamic>),

@@ -20,12 +20,12 @@ class User {
   int nbDone;
   int nbChallengeDone;
   int noReview;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
   DateTime? leadDate;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
   DateTime? challengeDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? createdDate;
+  DateTime createdDate;
   List<String> unlocked;
   String? subId;
   String? token;
@@ -43,7 +43,7 @@ class User {
     this.nbDone = 0,
     this.noReview = 0,
     this.nbChallengeDone = 0,
-    this.createdDate,
+    required this.createdDate,
     this.leadDate,
     this.challengeDate,
     this.unlocked = const <String>[],

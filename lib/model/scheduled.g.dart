@@ -28,7 +28,7 @@ extension ScheduledCopyWith on Scheduled {
 
 Scheduled _$ScheduledFromJson(Map<String, dynamic> json) {
   return Scheduled(
-    date: dateTimefromJson(json['date'] as Timestamp?),
+    date: dateTimefromJson(json['date'] as Timestamp),
     type: json['type'] as String?,
     nbOfday: json['nbOfday'] as int,
     evoId: json['evoId'] as String?,

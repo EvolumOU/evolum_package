@@ -9,10 +9,10 @@ part 'surprise.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Surprise {
-  String? id;
+  String id;
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime date;
   String? subtitle;
   String? description;
   String? photoName;
@@ -22,8 +22,8 @@ class Surprise {
   bool hide;
 
   Surprise({
-    this.id,
-    this.date,
+    required this.id,
+    required this.date,
     this.name,
     this.subtitle,
     this.description,

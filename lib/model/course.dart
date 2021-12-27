@@ -27,7 +27,7 @@ class Course {
   int position;
   List<Scheduled> scheduled;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? updatedDate;
+  DateTime updatedDate;
   Addons? addons;
   bool route;
   bool hide;
@@ -46,7 +46,7 @@ class Course {
     this.list = const <Evo>[],
     this.position = 0,
     this.scheduled = const <Scheduled>[],
-    this.updatedDate,
+    required this.updatedDate,
     this.addons,
     this.route = false,
     this.hide = false,

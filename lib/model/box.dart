@@ -16,7 +16,7 @@ class Box {
   String status;
   Shipping? shipping;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime date;
   bool check;
   String? customerId;
   String? paymentSourceId;
@@ -27,7 +27,7 @@ class Box {
     this.email,
     this.status = "nouveau",
     this.shipping,
-    this.date,
+    required this.date,
     this.check = false,
     this.customerId,
     this.paymentSourceId,

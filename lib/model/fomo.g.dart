@@ -25,11 +25,11 @@ extension FomoCopyWith on Fomo {
 Fomo _$FomoFromJson(Map<String, dynamic> json) {
   return Fomo(
     id: json['id'] as String,
-    expireDate: dateTimeNotNullfromJson(json['expireDate'] as Timestamp),
+    expireDate: dateTimefromJson(json['expireDate'] as Timestamp),
   );
 }
 
 Map<String, dynamic> _$FomoToJson(Fomo instance) => <String, dynamic>{
       'id': instance.id,
-      'expireDate': dateTimeNotNulltoJson(instance.expireDate),
+      'expireDate': dateTimetoJson(instance.expireDate),
     };

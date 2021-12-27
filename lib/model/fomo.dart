@@ -11,7 +11,7 @@ part 'fomo.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Fomo {
   String id;
-  @JsonKey(toJson: dateTimeNotNulltoJson, fromJson: dateTimeNotNullfromJson)
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime expireDate;
 
   Fomo({

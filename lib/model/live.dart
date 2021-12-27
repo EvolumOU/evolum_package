@@ -12,7 +12,7 @@ class Live {
   String id;
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime date;
   String status;
   String? photoName;
   String? channelName;
@@ -23,7 +23,7 @@ class Live {
 
   Live({
     required this.id,
-    this.date,
+    required this.date,
     this.name,
     this.status = 'ongoing',
     this.photoName,

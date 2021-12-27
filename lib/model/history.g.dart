@@ -42,7 +42,7 @@ History _$HistoryFromJson(Map<String, dynamic> json) {
         ? null
         : Evo.fromJson(json['evo'] as Map<String, dynamic>),
     review: json['review'] as String?,
-    date: dateTimeNotNullfromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp),
     secondsRead: json['secondsRead'] as int,
     checked: json['checked'] as bool,
   );
@@ -53,7 +53,7 @@ Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'ritual': instance.ritual?.toJson(),
       'evo': instance.evo?.toJson(),
       'review': instance.review,
-      'date': dateTimeNotNulltoJson(instance.date),
+      'date': dateTimetoJson(instance.date),
       'secondsRead': instance.secondsRead,
       'checked': instance.checked,
     };

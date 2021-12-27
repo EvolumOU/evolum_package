@@ -41,7 +41,7 @@ extension LiveCopyWith on Live {
 Live _$LiveFromJson(Map<String, dynamic> json) {
   return Live(
     id: json['id'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp?),
+    date: dateTimefromJson(json['date'] as Timestamp),
     name: json['name'] as String?,
     status: json['status'] as String,
     photoName: json['photoName'] as String?,

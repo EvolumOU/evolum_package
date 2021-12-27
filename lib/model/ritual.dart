@@ -12,7 +12,7 @@ class Ritual {
   String id;
   String? name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime date;
   String? type;
   String? filename;
   int exitPoint;
@@ -21,7 +21,7 @@ class Ritual {
 
   Ritual({
     required this.id,
-    this.date,
+    required this.date,
     this.name,
     this.filename,
     this.type = "matin",

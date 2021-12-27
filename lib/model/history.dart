@@ -4,8 +4,6 @@ import 'package:evolum_package/model/all.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'evo.dart';
-
 part 'history.g.dart';
 
 @CopyWith()
@@ -15,7 +13,7 @@ class History {
   Ritual? ritual;
   Evo? evo;
   String? review;
-  @JsonKey(toJson: dateTimeNotNulltoJson, fromJson: dateTimeNotNullfromJson)
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   int secondsRead;
   bool checked;

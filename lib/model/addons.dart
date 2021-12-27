@@ -12,7 +12,7 @@ class Addons {
   String? lightUrl;
   String? darkUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? date;
+  DateTime date;
   int nb;
   bool disable;
 
@@ -20,7 +20,7 @@ class Addons {
     this.lightUrl,
     this.darkUrl,
     this.nb = 0,
-    this.date,
+    required this.date,
     this.disable = false,
   });
 

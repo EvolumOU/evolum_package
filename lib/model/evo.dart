@@ -25,7 +25,7 @@ class Evo {
   List<Timing> timings;
   String? text;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? createdDate;
+  DateTime createdDate;
   String? summarize;
   String? intro;
   bool feedback;
@@ -47,7 +47,7 @@ class Evo {
     this.loop = false,
     this.timings = const <Timing>[],
     this.text,
-    this.createdDate,
+    required this.createdDate,
     this.summarize,
     this.intro,
     this.feedback = false,

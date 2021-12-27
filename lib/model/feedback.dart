@@ -12,7 +12,7 @@ part 'feedback.g.dart';
 class FeedBack {
   String? id;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  DateTime? createdDate;
+  DateTime createdDate;
   String? email;
   String? contentName;
   String? contentTag;
@@ -21,8 +21,8 @@ class FeedBack {
   String? uid;
 
   FeedBack({
-    this.id,
-    this.createdDate,
+    required this.id,
+    required this.createdDate,
     this.email,
     this.contentName,
     this.contentTag,
