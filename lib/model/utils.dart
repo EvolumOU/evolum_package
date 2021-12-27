@@ -16,19 +16,11 @@ Timestamp? dateTimetoJsonWithNull(DateTime? date) => date == null
     ? null
     : Timestamp.fromMillisecondsSinceEpoch(date.millisecondsSinceEpoch);
 
-Duration? durationfromJson(int? duration) {
-  if (duration == null) return null;
-  return Duration(seconds: duration);
-}
-
-int? durationtoJson(Duration? duration) {
-  if (duration == null) return null;
-  return duration.inSeconds;
-}
-
-Duration durationNotNullfromJson(int duration) =>
-    Duration(microseconds: duration);
-int durationNotNulltoJson(Duration duration) => duration.inMicroseconds;
+// seconds = microseconds ÷ 1,000,000
+Duration durationfromJson(int duration) => duration < 100000
+    ? Duration(seconds: duration)
+    : Duration(microseconds: duration);
+int durationtoJson(Duration duration) => duration.inMicroseconds;
 
 String getRandomGeneratedId() {
   const int AUTO_ID_LENGTH = 20;

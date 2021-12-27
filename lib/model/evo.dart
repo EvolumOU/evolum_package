@@ -69,8 +69,7 @@ class Evo {
   bool get isSmall => form == "small";
 
   bool get isNew =>
-      createdDate != null &&
-      DateTime.now().isBefore(createdDate!.add(Duration(days: 20)));
+      DateTime.now().isBefore(createdDate.add(Duration(days: 20)));
 
   factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({
         ...data,

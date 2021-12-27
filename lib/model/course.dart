@@ -72,7 +72,7 @@ class Course {
   bool get isAddons => addons != null;
 
   bool get isNew =>
-      DateTime.now().isBefore(updatedDate!.add(Duration(days: 30)));
+      DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));
 
   Map<String, dynamic> toJson() => _$CourseToJson(this);
 

@@ -16,7 +16,7 @@ class Ambiance {
   String? gifGsUrl;
   String? videoGsUrl;
   String? musicGsUrl;
-  @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration musicPosition;
 
   Ambiance({

@@ -9,13 +9,13 @@ part 'breathwork.g.dart';
 class BreathWork {
   String? id;
   int nbCycles;
-  @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration inhaleDuration;
-  @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration pauseTopDuration;
-  @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration exhaleDuration;
-  @JsonKey(toJson: durationNotNulltoJson, fromJson: durationNotNullfromJson)
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration pauseBottomDuration;
 
   BreathWork({
