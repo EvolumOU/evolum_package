@@ -67,15 +67,14 @@ class User {
   // Full Acces
   bool get isTrial => status == 'trial';
   bool get isAbo => status == 'abo';
-  bool get isPrenium =>
-      status == 'abo' || status == 'trial' || status == 'full';
   bool get isFull => status == 'full';
 
-  factory User.fromJson(Map<String, dynamic> data, String uid) =>
-      _$UserFromJson(data);
   bool get isAdmin => role == 'admin';
   bool get isUser => role == 'user';
   bool get isCaster => role == 'caster';
+
+  factory User.fromJson(Map<String, dynamic> data, String uid) =>
+      _$UserFromJson(data);
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
