@@ -32,9 +32,7 @@ Brick _$BrickFromJson(Map<String, dynamic> json) {
   return Brick(
     id: json['id'] as String?,
     name: json['name'] as String?,
-    duration: json['duration'] == null
-        ? null
-        : Duration(microseconds: json['duration'] as int),
+    duration: Duration(microseconds: json['duration'] as int),
     type: json['type'] as int?,
     moment: json['moment'] as String?,
   );
@@ -43,7 +41,7 @@ Brick _$BrickFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$BrickToJson(Brick instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'duration': instance.duration?.inMicroseconds,
+      'duration': instance.duration.inMicroseconds,
       'type': instance.type,
       'moment': instance.moment,
     };

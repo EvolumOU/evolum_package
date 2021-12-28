@@ -8,14 +8,14 @@ part 'brick.g.dart';
 class Brick {
   String? id;
   String? name;
-  Duration? duration;
+  Duration duration;
   int? type;
   String? moment;
 
   Brick({
     this.id,
     this.name,
-    this.duration,
+    this.duration = Duration.zero,
     this.type,
     this.moment,
   });

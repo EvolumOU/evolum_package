@@ -19,7 +19,7 @@ class Evo {
   String? tag;
   bool splited;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
-  Duration? duration;
+  Duration duration;
   List<dynamic> points;
   bool loop;
   List<Timing> timings;
