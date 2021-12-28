@@ -21,6 +21,7 @@ extension UserCopyWith on User {
     bool? notification,
     String? reminderMorning,
     String? reminderNight,
+    String? role,
     String? status,
     String? subId,
     String? token,
@@ -41,6 +42,7 @@ extension UserCopyWith on User {
       notification: notification ?? this.notification,
       reminderMorning: reminderMorning ?? this.reminderMorning,
       reminderNight: reminderNight ?? this.reminderNight,
+      role: role ?? this.role,
       status: status ?? this.status,
       subId: subId ?? this.subId,
       token: token ?? this.token,
@@ -76,6 +78,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
         (json['unlocked'] as List<dynamic>).map((e) => e as String).toList(),
     subId: json['subId'] as String?,
     token: json['token'] as String?,
+    role: json['role'] as String?,
   );
 }
 
@@ -98,4 +101,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'unlocked': instance.unlocked,
       'subId': instance.subId,
       'token': instance.token,
+      'role': instance.role,
     };

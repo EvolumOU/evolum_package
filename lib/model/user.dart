@@ -29,6 +29,7 @@ class User {
   List<String> unlocked;
   String? subId;
   String? token;
+  String? role;
 
   User({
     this.uid,
@@ -49,6 +50,7 @@ class User {
     this.unlocked = const <String>[],
     this.subId,
     this.token,
+    this.role = "user",
   });
 
   bool get isBlock =>
@@ -71,6 +73,9 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> data, String uid) =>
       _$UserFromJson(data);
+  bool get isAdmin => role == 'admin';
+  bool get isUser => role == 'user';
+  bool get isCaster => role == 'caster';
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
