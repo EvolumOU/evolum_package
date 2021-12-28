@@ -69,18 +69,8 @@ class User {
       status == 'abo' || status == 'trial' || status == 'full';
   bool get isFull => status == 'full';
 
-  factory User.fromJson(Map<String, dynamic> data, String uid) {
-    return _$UserFromJson({
-      ...data,
-      "uid": uid,
-      "nbDone": data["nbDone"] ?? 0,
-      "noReview": data["noReview"] ?? 0,
-      "nbChallengeDone": data["nbChallengeDone"] ?? 0,
-      "unlocked": data["unlocked"] ?? <String>[],
-      "goal": data["goal"] ?? <String>[],
-      "give": data["give"] ?? 0,
-    });
-  }
+  factory User.fromJson(Map<String, dynamic> data, String uid) =>
+      _$UserFromJson(data);
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
