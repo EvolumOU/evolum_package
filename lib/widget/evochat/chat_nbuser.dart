@@ -16,6 +16,7 @@ class _EvoChatNbUserState extends State<EvoChatNbUser> {
   @override
   void initState() {
     super.initState();
+    initChatIfNeeded(widget.tchatId);
     FirestoreService.instance.updateData(
       path: 'chat/${widget.tchatId}',
       data: {"nbUser": FieldValue.increment(1)},
@@ -27,8 +28,6 @@ class _EvoChatNbUserState extends State<EvoChatNbUser> {
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
         if (data == null) {
-          FirestoreService.instance
-              .setData(path: 'chat/${widget.tchatId}', data: initChatValue);
           return 0;
         }
         return data["nbUser"];

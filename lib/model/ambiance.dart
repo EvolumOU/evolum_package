@@ -11,8 +11,6 @@ class Ambiance {
   String? name;
   String type;
   bool hide;
-  int nbLike;
-  int nbUser;
   String? gifGsUrl;
   String? videoGsUrl;
   String? musicGsUrl;
@@ -24,8 +22,6 @@ class Ambiance {
     this.name,
     this.type = "matin",
     this.hide = false,
-    this.nbLike = 0,
-    this.nbUser = 0,
     this.gifGsUrl,
     this.videoGsUrl,
     this.musicGsUrl,
