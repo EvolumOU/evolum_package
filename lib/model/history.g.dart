@@ -42,7 +42,7 @@ History _$HistoryFromJson(Map<String, dynamic> json) {
         ? null
         : Evo.fromJson(json['evo'] as Map<String, dynamic>),
     review: json['review'] as String?,
-    date: dateTimefromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp?),
     secondsRead: json['secondsRead'] as int,
     checked: json['checked'] as bool,
   );

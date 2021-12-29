@@ -32,7 +32,7 @@ extension RecoCopyWith on Reco {
 
 Reco _$RecoFromJson(Map<String, dynamic> json) {
   return Reco(
-    date: dateTimefromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp?),
     list: (json['list'] as List<dynamic>)
         .map((e) => Evo.fromJson(e as Map<String, dynamic>))
         .toList(),

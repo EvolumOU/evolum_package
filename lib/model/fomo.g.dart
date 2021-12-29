@@ -25,7 +25,7 @@ extension FomoCopyWith on Fomo {
 Fomo _$FomoFromJson(Map<String, dynamic> json) {
   return Fomo(
     id: json['id'] as String,
-    expireDate: dateTimefromJson(json['expireDate'] as Timestamp),
+    expireDate: dateTimefromJson(json['expireDate'] as Timestamp?),
   );
 }
 

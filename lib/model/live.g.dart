@@ -10,10 +10,12 @@ extension LiveCopyWith on Live {
   Live copyWith({
     String? channelName,
     DateTime? date,
+    String? descr,
     bool? hide,
     String? id,
     int? mainAgoraUid,
     String? name,
+    int? nbCaster,
     String? photoName,
     String? replayFilename,
     int? secondaryAgoraUid,
@@ -22,10 +24,12 @@ extension LiveCopyWith on Live {
     return Live(
       channelName: channelName ?? this.channelName,
       date: date ?? this.date,
+      descr: descr ?? this.descr,
       hide: hide ?? this.hide,
       id: id ?? this.id,
       mainAgoraUid: mainAgoraUid ?? this.mainAgoraUid,
       name: name ?? this.name,
+      nbCaster: nbCaster ?? this.nbCaster,
       photoName: photoName ?? this.photoName,
       replayFilename: replayFilename ?? this.replayFilename,
       secondaryAgoraUid: secondaryAgoraUid ?? this.secondaryAgoraUid,
@@ -41,7 +45,7 @@ extension LiveCopyWith on Live {
 Live _$LiveFromJson(Map<String, dynamic> json) {
   return Live(
     id: json['id'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp?),
     name: json['name'] as String?,
     status: json['status'] as String,
     photoName: json['photoName'] as String?,
@@ -50,6 +54,8 @@ Live _$LiveFromJson(Map<String, dynamic> json) {
     mainAgoraUid: json['mainAgoraUid'] as int,
     secondaryAgoraUid: json['secondaryAgoraUid'] as int,
     hide: json['hide'] as bool,
+    nbCaster: json['nbCaster'] as int,
+    descr: json['descr'] as String?,
   );
 }
 
@@ -64,4 +70,6 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'mainAgoraUid': instance.mainAgoraUid,
       'secondaryAgoraUid': instance.secondaryAgoraUid,
       'hide': instance.hide,
+      'nbCaster': instance.nbCaster,
+      'descr': instance.descr,
     };
