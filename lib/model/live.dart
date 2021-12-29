@@ -20,6 +20,8 @@ class Live {
   int mainAgoraUid;
   int secondaryAgoraUid;
   bool hide;
+  int nbCaster;
+  String? descr;
 
   Live({
     required this.id,
@@ -32,6 +34,8 @@ class Live {
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
     this.hide = false,
+    this.nbCaster = 2,
+    this.descr,
   });
 
   bool get isOnGoing => status == 'ongoing' || status == "à venir";

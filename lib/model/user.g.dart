@@ -70,7 +70,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
     nbDone: json['nbDone'] as int,
     noReview: json['noReview'] as int,
     nbChallengeDone: json['nbChallengeDone'] as int,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     leadDate: dateTimefromJsonWithNull(json['leadDate'] as Timestamp?),
     challengeDate:
         dateTimefromJsonWithNull(json['challengeDate'] as Timestamp?),
