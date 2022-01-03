@@ -3,7 +3,7 @@ part of evolum_package;
 extension ListExtension<T> on List<T> {
   T get oneRandom {
     if (length == 1) return this[0];
-    return this[Random().nextInt(length - 1)];
+    return this[Random().nextInt(length)];
   }
 
   List<T> nRandom(int n) {
