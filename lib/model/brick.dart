@@ -11,6 +11,7 @@ class Brick {
   Duration duration;
   int? type;
   String? moment;
+  String? filename;
 
   Brick({
     this.id,
@@ -18,6 +19,7 @@ class Brick {
     this.duration = Duration.zero,
     this.type,
     this.moment,
+    this.filename,
   });
 
   bool get isMorning => moment == "matin";

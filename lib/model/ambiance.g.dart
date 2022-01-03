@@ -14,8 +14,6 @@ extension AmbianceCopyWith on Ambiance {
     String? musicGsUrl,
     Duration? musicPosition,
     String? name,
-    int? nbLike,
-    int? nbUser,
     String? type,
     String? videoGsUrl,
   }) {
