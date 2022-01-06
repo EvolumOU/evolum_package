@@ -74,7 +74,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
         .map((e) => Timing.fromJson(e as Map<String, dynamic>))
         .toList(),
     text: json['text'] as String?,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     summarize: json['summarize'] as String?,
     intro: json['intro'] as String?,
     feedback: json['feedback'] as bool,

@@ -9,6 +9,7 @@ part of 'brick.dart';
 extension BrickCopyWith on Brick {
   Brick copyWith({
     Duration? duration,
+    String? filename,
     String? id,
     String? moment,
     String? name,
@@ -16,6 +17,7 @@ extension BrickCopyWith on Brick {
   }) {
     return Brick(
       duration: duration ?? this.duration,
+      filename: filename ?? this.filename,
       id: id ?? this.id,
       moment: moment ?? this.moment,
       name: name ?? this.name,
@@ -35,6 +37,7 @@ Brick _$BrickFromJson(Map<String, dynamic> json) {
     duration: Duration(microseconds: json['duration'] as int),
     type: json['type'] as int?,
     moment: json['moment'] as String?,
+    filename: json['filename'] as String?,
   );
 }
 
@@ -44,4 +47,5 @@ Map<String, dynamic> _$BrickToJson(Brick instance) => <String, dynamic>{
       'duration': instance.duration.inMicroseconds,
       'type': instance.type,
       'moment': instance.moment,
+      'filename': instance.filename,
     };
