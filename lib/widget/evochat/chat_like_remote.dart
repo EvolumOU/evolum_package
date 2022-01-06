@@ -28,7 +28,6 @@ class _EvoChatLikeRemoteState extends State<EvoChatLikeRemote>
   @override
   void initState() {
     super.initState();
-    initChatIfNeeded(widget.tchatId);
     controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,

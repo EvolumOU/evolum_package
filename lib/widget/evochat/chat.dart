@@ -1,17 +1,5 @@
 part of evolum_package;
 
-Future<void> initChatIfNeeded(String tchatId) async {
-  final resultat = await FirestoreService.instance
-      .checkIfDocExists(collectionPath: "chat", docId: tchatId);
-
-  if (!resultat) {
-    FirestoreService.instance.setData(
-      path: 'chat/$tchatId',
-      data: initChatValue,
-    );
-  }
-}
-
 class EvoChat extends StatefulWidget {
   final String tchatId;
   final String? uid;
@@ -38,7 +26,6 @@ class _EvoChatState extends State<EvoChat> {
 
   @override
   void initState() {
-    initChatIfNeeded(widget.tchatId);
     textController = TextEditingController(text: '');
     super.initState();
   }
