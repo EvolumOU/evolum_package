@@ -51,6 +51,28 @@ class FirestoreService {
     return builder(fireStoreItem.data(), fireStoreItem.id);
   }
 
+  Future<List<T>> getCollectionGroup<T>({
+    required String path,
+    required T builder(Map<String, dynamic> data, String documentID),
+    Query queryBuilder(Query query)?,
+    int sort(T lhs, T rhs)?,
+  }) async {
+    Query query = FirebaseFirestore.instance.collectionGroup(path);
+
+    if (queryBuilder != null) {
+      query = queryBuilder(query);
+    }
+
+    final QuerySnapshot queryDoc = await query.get();
+
+    final List<T> listItems = queryDoc.docs
+        .map((snapshot) =>
+            builder(snapshot.data() as Map<String, dynamic>, snapshot.id))
+        .toList();
+
+    return listItems;
+  }
+
   Future<List<T>> getCollection<T>({
     required String path,
     required T builder(Map<String, dynamic> data, String documentID),

@@ -1,15 +1,13 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'utils.dart';
-
 part 'playlist.g.dart';
 
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Playlist {
   String? name;
-  List<dynamic> list;
+  List<String> list;
   int position;
   bool hide;
   String? type;
@@ -26,13 +24,8 @@ class Playlist {
 
   List<String> get stringList => list.map((s) => s.toString()).toList();
 
-  factory Playlist.fromJson(Map<String, dynamic> data) => _$PlaylistFromJson({
-        ...data,
-        "position": data["position"] ?? 0,
-        "list": data["list"] ?? [],
-        "hide": data["hide"] ?? false,
-        "type": data["type"] ?? 'seat',
-      });
+  factory Playlist.fromJson(Map<String, dynamic> data) =>
+      _$PlaylistFromJson(data);
 
   Map<String, dynamic> toJson() => _$PlaylistToJson(this);
 

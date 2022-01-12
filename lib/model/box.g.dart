@@ -45,7 +45,7 @@ Box _$BoxFromJson(Map<String, dynamic> json) {
     shipping: json['shipping'] == null
         ? null
         : Shipping.fromJson(json['shipping'] as Map<String, dynamic>),
-    date: dateTimefromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp?),
     check: json['check'] as bool,
     customerId: json['customerId'] as String?,
     paymentSourceId: json['paymentSourceId'] as String?,

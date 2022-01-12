@@ -37,7 +37,7 @@ extension FeedBackCopyWith on FeedBack {
 FeedBack _$FeedBackFromJson(Map<String, dynamic> json) {
   return FeedBack(
     id: json['id'] as String?,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp),
+    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     email: json['email'] as String?,
     contentName: json['contentName'] as String?,
     contentTag: json['contentTag'] as String?,

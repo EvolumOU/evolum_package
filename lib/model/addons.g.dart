@@ -33,7 +33,7 @@ Addons _$AddonsFromJson(Map<String, dynamic> json) {
     lightUrl: json['lightUrl'] as String?,
     darkUrl: json['darkUrl'] as String?,
     nb: json['nb'] as int,
-    date: dateTimefromJson(json['date'] as Timestamp),
+    date: dateTimefromJson(json['date'] as Timestamp?),
     disable: json['disable'] as bool,
   );
 }

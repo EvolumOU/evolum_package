@@ -14,7 +14,6 @@ extension HistoryCopyWith on History {
     String? id,
     String? review,
     Ritual? ritual,
-    int? secondsRead,
   }) {
     return History(
       checked: checked ?? this.checked,
@@ -23,7 +22,6 @@ extension HistoryCopyWith on History {
       id: id ?? this.id,
       review: review ?? this.review,
       ritual: ritual ?? this.ritual,
-      secondsRead: secondsRead ?? this.secondsRead,
     );
   }
 }
@@ -43,7 +41,6 @@ History _$HistoryFromJson(Map<String, dynamic> json) {
         : Evo.fromJson(json['evo'] as Map<String, dynamic>),
     review: json['review'] as String?,
     date: dateTimefromJson(json['date'] as Timestamp?),
-    secondsRead: json['secondsRead'] as int,
     checked: json['checked'] as bool,
   );
 }
@@ -54,6 +51,5 @@ Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'evo': instance.evo?.toJson(),
       'review': instance.review,
       'date': dateTimetoJson(instance.date),
-      'secondsRead': instance.secondsRead,
       'checked': instance.checked,
     };
