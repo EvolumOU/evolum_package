@@ -15,7 +15,6 @@ class History {
   String? review;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
-  int secondsRead;
   bool checked;
 
   History({
@@ -24,7 +23,6 @@ class History {
     this.evo,
     this.review,
     required this.date,
-    this.secondsRead = 0,
     this.checked = false,
   });
 
