@@ -56,18 +56,19 @@ class FirestoreService {
     required T builder(Map<String, dynamic> data, String documentID),
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
+    int? limit,
   }) async {
     Query query = FirebaseFirestore.instance.collectionGroup(path);
 
-    if (queryBuilder != null) {
-      query = queryBuilder(query);
-    }
+    if (queryBuilder != null) query = queryBuilder(query);
+
+    if (limit != null) query = query.limit(limit);
 
     final QuerySnapshot queryDoc = await query.get();
 
     final List<T> listItems = queryDoc.docs
-        .map((snapshot) =>
-            builder(snapshot.data() as Map<String, dynamic>, snapshot.id))
+        .map((snapshot) => builder(
+            snapshot.data() as Map<String, dynamic>, snapshot.reference.path))
         .toList();
 
     return listItems;
@@ -78,12 +79,13 @@ class FirestoreService {
     required T builder(Map<String, dynamic> data, String documentID),
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
+    int? limit,
   }) async {
     Query query = FirebaseFirestore.instance.collection(path);
 
-    if (queryBuilder != null) {
-      query = queryBuilder(query);
-    }
+    if (queryBuilder != null) query = queryBuilder(query);
+
+    if (limit != null) query = query.limit(limit);
 
     final QuerySnapshot queryDoc = await query.get();
 
@@ -112,9 +114,7 @@ class FirestoreService {
       }
     }
 
-    if (queryBuilder != null) {
-      query = queryBuilder(query);
-    }
+    if (queryBuilder != null) query = queryBuilder(query);
 
     final Stream<QuerySnapshot> snapshots = query.snapshots();
     return snapshots.map((snapshot) {
