@@ -11,10 +11,11 @@ part 'evo.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Evo {
-  String? id;
-  String? filename;
-  String? gsUrl;
-  String? name;
+  // TODO: Make fields final
+  String id;
+  String filename;
+  String gsUrl;
+  String name;
   String? type;
   String? tag;
   bool splited;
@@ -23,22 +24,21 @@ class Evo {
   List<dynamic> points;
   bool loop;
   List<Timing> timings;
-  String? text;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
-  String? summarize;
-  String? intro;
+  String summarize;
+  String intro;
   bool feedback;
   bool hide;
   String mode;
   String form;
-  double? size;
+  double size;
 
   Evo({
-    this.id,
-    this.filename,
-    this.gsUrl,
-    this.name,
+    this.id = '',
+    this.filename = '',
+    this.gsUrl = '',
+    this.name = '',
     this.type,
     this.tag,
     this.splited = false,
@@ -46,21 +46,20 @@ class Evo {
     this.points = const <dynamic>[],
     this.loop = false,
     this.timings = const <Timing>[],
-    this.text,
     required this.createdDate,
-    this.summarize,
-    this.intro,
+    this.summarize = '',
+    this.intro = '',
     this.feedback = false,
     this.hide = true,
     this.mode = 'vertical',
     this.form = 'focus',
-    this.size,
+    this.size = 0.0,
   });
 
   String get remoteUrl => "$evoRemoteBaseURL$filename";
 
-  bool get isVideo => filename != null && filename!.contains(".mp4");
-  bool get isAudio => filename != null && filename!.contains(".mp3");
+  bool get isVideo => filename.contains(".mp4");
+  bool get isAudio => filename.contains(".mp3");
   bool get hasTimming => timings.isNotEmpty;
 
   bool get isVertical => form == "vertical";
