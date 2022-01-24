@@ -13,7 +13,7 @@ class Subscription {
   String currency;
   int billingPeriod;
   String billingPeriodUnit;
-  int nextBillingDate;
+  int? nextBillingDate;
 
   Subscription({
     this.planId,

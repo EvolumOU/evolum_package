@@ -43,7 +43,7 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
     currency: json['currency'] as String,
     billingPeriod: json['billingPeriod'] as int,
     billingPeriodUnit: json['billingPeriodUnit'] as String,
-    nextBillingDate: json['nextBillingDate'] as int,
+    nextBillingDate: json['nextBillingDate'] as int?,
   );
 }
 
