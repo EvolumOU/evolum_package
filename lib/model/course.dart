@@ -13,8 +13,8 @@ part 'course.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Course {
-  String? id;
-  String? name;
+  String id;
+  String name;
   String? type;
   String? tag;
   String? descr;
@@ -33,8 +33,8 @@ class Course {
   bool hide;
 
   Course({
-    this.id,
-    this.name,
+    this.id = '',
+    this.name = '',
     this.type,
     this.tag,
     this.descr,
