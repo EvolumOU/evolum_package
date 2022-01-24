@@ -25,7 +25,6 @@ extension EvoCopyWith on Evo {
     bool? splited,
     String? summarize,
     String? tag,
-    String? text,
     List<Timing>? timings,
     String? type,
   }) {
@@ -47,7 +46,6 @@ extension EvoCopyWith on Evo {
       splited: splited ?? this.splited,
       summarize: summarize ?? this.summarize,
       tag: tag ?? this.tag,
-      text: text ?? this.text,
       timings: timings ?? this.timings,
       type: type ?? this.type,
     );
@@ -73,15 +71,14 @@ Evo _$EvoFromJson(Map<String, dynamic> json) {
     timings: (json['timings'] as List<dynamic>)
         .map((e) => Timing.fromJson(e as Map<String, dynamic>))
         .toList(),
-    text: json['text'] as String?,
     createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-    summarize: json['summarize'] as String?,
-    intro: json['intro'] as String?,
+    summarize: json['summarize'] as String,
+    intro: json['intro'] as String,
     feedback: json['feedback'] as bool,
     hide: json['hide'] as bool,
     mode: json['mode'] as String,
     form: json['form'] as String,
-    size: (json['size'] as num?)?.toDouble(),
+    size: (json['size'] as num).toDouble(),
   );
 }
 
@@ -97,7 +94,6 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'points': instance.points,
       'loop': instance.loop,
       'timings': instance.timings.map((e) => e.toJson()).toList(),
-      'text': instance.text,
       'createdDate': dateTimetoJson(instance.createdDate),
       'summarize': instance.summarize,
       'intro': instance.intro,
