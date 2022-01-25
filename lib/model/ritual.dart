@@ -33,7 +33,11 @@ class Ritual {
   bool get isForDay => type == "jour" || type == "matin";
   bool get isForNight => type == "nuit" || type == "soir";
 
-  factory Ritual.fromJson(Map<String, dynamic> data) => _$RitualFromJson(data);
+  factory Ritual.fromJson(Map<String, dynamic> data) => _$RitualFromJson({
+        ...data,
+        "hide": data["hide"] ?? true,
+        "feedback": data["feedback"] ?? false,
+      });
 
   Map<String, dynamic> toJson() => _$RitualToJson(this);
 
