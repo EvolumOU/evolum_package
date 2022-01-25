@@ -69,7 +69,11 @@ class Evo {
   bool get isNew =>
       DateTime.now().isBefore(createdDate.add(Duration(days: 20)));
 
-  factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson(data);
+  factory Evo.fromJson(Map<String, dynamic> data) => _$EvoFromJson({
+        ...data,
+        "summarize": data["summarize"] ?? '',
+        "intro": data["intro"] ?? '',
+      });
 
   Map<String, dynamic> toJson() => _$EvoToJson(this);
 
