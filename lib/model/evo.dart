@@ -16,8 +16,8 @@ class Evo {
   String filename;
   String gsUrl;
   String name;
-  String? type;
-  String? tag;
+  String type;
+  String tag;
   bool splited;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration duration;
@@ -39,8 +39,8 @@ class Evo {
     this.filename = '',
     this.gsUrl = '',
     this.name = '',
-    this.type,
-    this.tag,
+    this.type = '',
+    this.tag = '',
     this.splited = false,
     this.duration = Duration.zero,
     this.points = const <dynamic>[],
@@ -73,6 +73,13 @@ class Evo {
         ...data,
         "summarize": data["summarize"] ?? '',
         "intro": data["intro"] ?? '',
+        "gsUrl": data["gsUrl"] ?? '',
+        "filename": data["nafilenameme"] ?? '',
+        "name": data["name"] ?? '',
+        "type": data["type"] ?? '',
+        "tag": data["tag"] ?? '',
+        "form": data["form"] ?? 'focus',
+        "mode": data["mode"] ?? 'vertical',
       });
 
   Map<String, dynamic> toJson() => _$EvoToJson(this);
