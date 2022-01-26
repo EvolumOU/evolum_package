@@ -34,18 +34,18 @@ extension AmbianceCopyWith on Ambiance {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Ambiance _$AmbianceFromJson(Map<String, dynamic> json) {
-  return Ambiance(
-    id: json['id'] as String,
-    name: json['name'] as String?,
-    type: json['type'] as String,
-    hide: json['hide'] as bool,
-    gifGsUrl: json['gifGsUrl'] as String?,
-    videoGsUrl: json['videoGsUrl'] as String?,
-    musicGsUrl: json['musicGsUrl'] as String?,
-    musicPosition: durationfromJson(json['musicPosition'] as int),
-  );
-}
+Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
+      id: json['id'] as String,
+      name: json['name'] as String?,
+      type: json['type'] as String? ?? "matin",
+      hide: json['hide'] as bool? ?? false,
+      gifGsUrl: json['gifGsUrl'] as String?,
+      videoGsUrl: json['videoGsUrl'] as String?,
+      musicGsUrl: json['musicGsUrl'] as String?,
+      musicPosition: json['musicPosition'] == null
+          ? Duration.zero
+          : durationfromJson(json['musicPosition'] as int),
+    );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'id': instance.id,

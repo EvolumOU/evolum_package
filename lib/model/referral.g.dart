@@ -24,13 +24,11 @@ extension ReferralCopyWith on Referral {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Referral _$ReferralFromJson(Map<String, dynamic> json) {
-  return Referral(
-    id: json['id'] as String?,
-    uid: json['uid'] as String?,
-    uidRef: json['uidRef'] as String?,
-  );
-}
+Referral _$ReferralFromJson(Map<String, dynamic> json) => Referral(
+      id: json['id'] as String?,
+      uid: json['uid'] as String?,
+      uidRef: json['uidRef'] as String?,
+    );
 
 Map<String, dynamic> _$ReferralToJson(Referral instance) => <String, dynamic>{
       'id': instance.id,

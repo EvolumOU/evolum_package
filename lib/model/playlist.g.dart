@@ -30,16 +30,16 @@ extension PlaylistCopyWith on Playlist {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Playlist _$PlaylistFromJson(Map<String, dynamic> json) {
-  return Playlist(
-    name: json['name'] as String?,
-    list: (json['list'] as List<dynamic>).map((e) => e as String).toList(),
-    position: json['position'] as int,
-    hide: json['hide'] as bool,
-    type: json['type'] as String?,
-    text: json['text'] as String?,
-  );
-}
+Playlist _$PlaylistFromJson(Map<String, dynamic> json) => Playlist(
+      name: json['name'] as String?,
+      list:
+          (json['list'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const [],
+      position: json['position'] as int? ?? 0,
+      hide: json['hide'] as bool? ?? false,
+      type: json['type'] as String? ?? 'seat',
+      text: json['text'] as String?,
+    );
 
 Map<String, dynamic> _$PlaylistToJson(Playlist instance) => <String, dynamic>{
       'name': instance.name,

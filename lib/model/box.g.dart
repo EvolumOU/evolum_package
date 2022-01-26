@@ -36,21 +36,19 @@ extension BoxCopyWith on Box {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Box _$BoxFromJson(Map<String, dynamic> json) {
-  return Box(
-    id: json['id'] as String,
-    uid: json['uid'] as String?,
-    email: json['email'] as String?,
-    status: json['status'] as String,
-    shipping: json['shipping'] == null
-        ? null
-        : Shipping.fromJson(json['shipping'] as Map<String, dynamic>),
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    check: json['check'] as bool,
-    customerId: json['customerId'] as String?,
-    paymentSourceId: json['paymentSourceId'] as String?,
-  );
-}
+Box _$BoxFromJson(Map<String, dynamic> json) => Box(
+      id: json['id'] as String,
+      uid: json['uid'] as String?,
+      email: json['email'] as String?,
+      status: json['status'] as String? ?? "nouveau",
+      shipping: json['shipping'] == null
+          ? null
+          : Shipping.fromJson(json['shipping'] as Map<String, dynamic>),
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      check: json['check'] as bool? ?? false,
+      customerId: json['customerId'] as String?,
+      paymentSourceId: json['paymentSourceId'] as String?,
+    );
 
 Map<String, dynamic> _$BoxToJson(Box instance) => <String, dynamic>{
       'id': instance.id,

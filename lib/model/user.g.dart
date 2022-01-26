@@ -56,31 +56,31 @@ extension UserCopyWith on User {
 // JsonSerializableGenerator
 // **************************************************************************
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return User(
-    uid: json['uid'] as String?,
-    email: json['email'] as String?,
-    name: json['name'] as String?,
-    notification: json['notification'] as bool,
-    bgmusic: json['bgmusic'] as bool,
-    status: json['status'] as String,
-    reminderMorning: json['reminderMorning'] as String?,
-    reminderNight: json['reminderNight'] as String?,
-    goal: json['goal'] as List<dynamic>,
-    nbDone: json['nbDone'] as int,
-    noReview: json['noReview'] as int,
-    nbChallengeDone: json['nbChallengeDone'] as int,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-    leadDate: dateTimefromJsonWithNull(json['leadDate'] as Timestamp?),
-    challengeDate:
-        dateTimefromJsonWithNull(json['challengeDate'] as Timestamp?),
-    unlocked:
-        (json['unlocked'] as List<dynamic>).map((e) => e as String).toList(),
-    subId: json['subId'] as String?,
-    token: json['token'] as String?,
-    role: json['role'] as String?,
-  );
-}
+User _$UserFromJson(Map<String, dynamic> json) => User(
+      uid: json['uid'] as String?,
+      email: json['email'] as String?,
+      name: json['name'] as String?,
+      notification: json['notification'] as bool? ?? true,
+      bgmusic: json['bgmusic'] as bool? ?? true,
+      status: json['status'] as String? ?? "free",
+      reminderMorning: json['reminderMorning'] as String?,
+      reminderNight: json['reminderNight'] as String?,
+      goal: json['goal'] as List<dynamic>? ?? const <String>[],
+      nbDone: json['nbDone'] as int? ?? 0,
+      noReview: json['noReview'] as int? ?? 0,
+      nbChallengeDone: json['nbChallengeDone'] as int? ?? 0,
+      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      leadDate: dateTimefromJsonWithNull(json['leadDate'] as Timestamp?),
+      challengeDate:
+          dateTimefromJsonWithNull(json['challengeDate'] as Timestamp?),
+      unlocked: (json['unlocked'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+      subId: json['subId'] as String?,
+      token: json['token'] as String?,
+      role: json['role'] as String? ?? "user",
+    );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'uid': instance.uid,

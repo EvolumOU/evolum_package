@@ -42,22 +42,20 @@ extension LiveCopyWith on Live {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Live _$LiveFromJson(Map<String, dynamic> json) {
-  return Live(
-    id: json['id'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    name: json['name'] as String?,
-    status: json['status'] as String,
-    photoName: json['photoName'] as String?,
-    channelName: json['channelName'] as String?,
-    replayFilename: json['replayFilename'] as String?,
-    mainAgoraUid: json['mainAgoraUid'] as int,
-    secondaryAgoraUid: json['secondaryAgoraUid'] as int,
-    hide: json['hide'] as bool,
-    nbCaster: json['nbCaster'] as int,
-    descr: json['descr'] as String?,
-  );
-}
+Live _$LiveFromJson(Map<String, dynamic> json) => Live(
+      id: json['id'] as String,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      name: json['name'] as String?,
+      status: json['status'] as String? ?? 'ongoing',
+      photoName: json['photoName'] as String?,
+      channelName: json['channelName'] as String?,
+      replayFilename: json['replayFilename'] as String?,
+      mainAgoraUid: json['mainAgoraUid'] as int? ?? 0,
+      secondaryAgoraUid: json['secondaryAgoraUid'] as int? ?? 0,
+      hide: json['hide'] as bool? ?? false,
+      nbCaster: json['nbCaster'] as int? ?? 2,
+      descr: json['descr'] as String?,
+    );
 
 Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'id': instance.id,

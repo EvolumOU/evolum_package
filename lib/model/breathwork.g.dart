@@ -30,16 +30,22 @@ extension BreathWorkCopyWith on BreathWork {
 // JsonSerializableGenerator
 // **************************************************************************
 
-BreathWork _$BreathWorkFromJson(Map<String, dynamic> json) {
-  return BreathWork(
-    id: json['id'] as String?,
-    nbCycles: json['nbCycles'] as int,
-    inhaleDuration: durationfromJson(json['inhaleDuration'] as int),
-    pauseTopDuration: durationfromJson(json['pauseTopDuration'] as int),
-    exhaleDuration: durationfromJson(json['exhaleDuration'] as int),
-    pauseBottomDuration: durationfromJson(json['pauseBottomDuration'] as int),
-  );
-}
+BreathWork _$BreathWorkFromJson(Map<String, dynamic> json) => BreathWork(
+      id: json['id'] as String?,
+      nbCycles: json['nbCycles'] as int? ?? 1,
+      inhaleDuration: json['inhaleDuration'] == null
+          ? Duration.zero
+          : durationfromJson(json['inhaleDuration'] as int),
+      pauseTopDuration: json['pauseTopDuration'] == null
+          ? Duration.zero
+          : durationfromJson(json['pauseTopDuration'] as int),
+      exhaleDuration: json['exhaleDuration'] == null
+          ? Duration.zero
+          : durationfromJson(json['exhaleDuration'] as int),
+      pauseBottomDuration: json['pauseBottomDuration'] == null
+          ? Duration.zero
+          : durationfromJson(json['pauseBottomDuration'] as int),
+    );
 
 Map<String, dynamic> _$BreathWorkToJson(BreathWork instance) =>
     <String, dynamic>{

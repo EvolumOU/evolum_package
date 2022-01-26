@@ -26,14 +26,12 @@ extension ScheduledCopyWith on Scheduled {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Scheduled _$ScheduledFromJson(Map<String, dynamic> json) {
-  return Scheduled(
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    type: json['type'] as String?,
-    nbOfday: json['nbOfday'] as int,
-    evoId: json['evoId'] as String?,
-  );
-}
+Scheduled _$ScheduledFromJson(Map<String, dynamic> json) => Scheduled(
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      type: json['type'] as String?,
+      nbOfday: json['nbOfday'] as int? ?? 1,
+      evoId: json['evoId'] as String?,
+    );
 
 Map<String, dynamic> _$ScheduledToJson(Scheduled instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),

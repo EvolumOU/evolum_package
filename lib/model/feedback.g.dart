@@ -34,18 +34,16 @@ extension FeedBackCopyWith on FeedBack {
 // JsonSerializableGenerator
 // **************************************************************************
 
-FeedBack _$FeedBackFromJson(Map<String, dynamic> json) {
-  return FeedBack(
-    id: json['id'] as String?,
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-    email: json['email'] as String?,
-    contentName: json['contentName'] as String?,
-    contentTag: json['contentTag'] as String?,
-    contentType: json['contentType'] as String?,
-    text: json['text'] as String?,
-    uid: json['uid'] as String?,
-  );
-}
+FeedBack _$FeedBackFromJson(Map<String, dynamic> json) => FeedBack(
+      id: json['id'] as String?,
+      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      email: json['email'] as String?,
+      contentName: json['contentName'] as String?,
+      contentTag: json['contentTag'] as String?,
+      contentType: json['contentType'] as String?,
+      text: json['text'] as String?,
+      uid: json['uid'] as String?,
+    );
 
 Map<String, dynamic> _$FeedBackToJson(FeedBack instance) => <String, dynamic>{
       'id': instance.id,

@@ -28,15 +28,13 @@ extension AddonsCopyWith on Addons {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Addons _$AddonsFromJson(Map<String, dynamic> json) {
-  return Addons(
-    lightUrl: json['lightUrl'] as String?,
-    darkUrl: json['darkUrl'] as String?,
-    nb: json['nb'] as int,
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    disable: json['disable'] as bool,
-  );
-}
+Addons _$AddonsFromJson(Map<String, dynamic> json) => Addons(
+      lightUrl: json['lightUrl'] as String?,
+      darkUrl: json['darkUrl'] as String?,
+      nb: json['nb'] as int? ?? 0,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      disable: json['disable'] as bool? ?? false,
+    );
 
 Map<String, dynamic> _$AddonsToJson(Addons instance) => <String, dynamic>{
       'lightUrl': instance.lightUrl,

@@ -22,12 +22,10 @@ extension FomoCopyWith on Fomo {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Fomo _$FomoFromJson(Map<String, dynamic> json) {
-  return Fomo(
-    id: json['id'] as String,
-    expireDate: dateTimefromJson(json['expireDate'] as Timestamp?),
-  );
-}
+Fomo _$FomoFromJson(Map<String, dynamic> json) => Fomo(
+      id: json['id'] as String,
+      expireDate: dateTimefromJson(json['expireDate'] as Timestamp?),
+    );
 
 Map<String, dynamic> _$FomoToJson(Fomo instance) => <String, dynamic>{
       'id': instance.id,

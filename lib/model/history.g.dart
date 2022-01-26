@@ -30,20 +30,18 @@ extension HistoryCopyWith on History {
 // JsonSerializableGenerator
 // **************************************************************************
 
-History _$HistoryFromJson(Map<String, dynamic> json) {
-  return History(
-    id: json['id'] as String,
-    ritual: json['ritual'] == null
-        ? null
-        : Ritual.fromJson(json['ritual'] as Map<String, dynamic>),
-    evo: json['evo'] == null
-        ? null
-        : Evo.fromJson(json['evo'] as Map<String, dynamic>),
-    review: json['review'] as String?,
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    checked: json['checked'] as bool,
-  );
-}
+History _$HistoryFromJson(Map<String, dynamic> json) => History(
+      id: json['id'] as String,
+      ritual: json['ritual'] == null
+          ? null
+          : Ritual.fromJson(json['ritual'] as Map<String, dynamic>),
+      evo: json['evo'] == null
+          ? null
+          : Evo.fromJson(json['evo'] as Map<String, dynamic>),
+      review: json['review'] as String?,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      checked: json['checked'] as bool? ?? false,
+    );
 
 Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'id': instance.id,

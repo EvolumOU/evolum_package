@@ -52,35 +52,36 @@ extension CourseCopyWith on Course {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Course _$CourseFromJson(Map<String, dynamic> json) {
-  return Course(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    type: json['type'] as String?,
-    tag: json['tag'] as String?,
-    descr: json['descr'] as String?,
-    color1: json['color1'] as String,
-    color2: json['color2'] as String,
-    specolor1: json['specolor1'] as String,
-    specolor2: json['specolor2'] as String,
-    playlist: (json['playlist'] as List<dynamic>)
-        .map((e) => Playlist.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    list: (json['list'] as List<dynamic>)
-        .map((e) => Evo.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    position: json['position'] as int,
-    scheduled: (json['scheduled'] as List<dynamic>)
-        .map((e) => Scheduled.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp?),
-    addons: json['addons'] == null
-        ? null
-        : Addons.fromJson(json['addons'] as Map<String, dynamic>),
-    route: json['route'] as bool,
-    hide: json['hide'] as bool,
-  );
-}
+Course _$CourseFromJson(Map<String, dynamic> json) => Course(
+      id: json['id'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      type: json['type'] as String?,
+      tag: json['tag'] as String?,
+      descr: json['descr'] as String?,
+      color1: json['color1'] as String? ?? "#FFFFFF",
+      color2: json['color2'] as String? ?? "#FFFFFF",
+      specolor1: json['specolor1'] as String? ?? "#FFFFFF",
+      specolor2: json['specolor2'] as String? ?? "#FFFFFF",
+      playlist: (json['playlist'] as List<dynamic>?)
+              ?.map((e) => Playlist.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Playlist>[],
+      list: (json['list'] as List<dynamic>?)
+              ?.map((e) => Evo.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Evo>[],
+      position: json['position'] as int? ?? 0,
+      scheduled: (json['scheduled'] as List<dynamic>?)
+              ?.map((e) => Scheduled.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Scheduled>[],
+      updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp?),
+      addons: json['addons'] == null
+          ? null
+          : Addons.fromJson(json['addons'] as Map<String, dynamic>),
+      route: json['route'] as bool? ?? false,
+      hide: json['hide'] as bool? ?? false,
+    );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'id': instance.id,

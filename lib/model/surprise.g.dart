@@ -38,20 +38,18 @@ extension SurpriseCopyWith on Surprise {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Surprise _$SurpriseFromJson(Map<String, dynamic> json) {
-  return Surprise(
-    id: json['id'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    name: json['name'] as String?,
-    subtitle: json['subtitle'] as String?,
-    description: json['description'] as String?,
-    photoName: json['photoName'] as String?,
-    type: json['type'] as String,
-    courseId: json['courseId'] as String?,
-    evoId: json['evoId'] as String?,
-    hide: json['hide'] as bool,
-  );
-}
+Surprise _$SurpriseFromJson(Map<String, dynamic> json) => Surprise(
+      id: json['id'] as String,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      name: json['name'] as String?,
+      subtitle: json['subtitle'] as String?,
+      description: json['description'] as String?,
+      photoName: json['photoName'] as String?,
+      type: json['type'] as String? ?? "evo",
+      courseId: json['courseId'] as String?,
+      evoId: json['evoId'] as String?,
+      hide: json['hide'] as bool? ?? false,
+    );
 
 Map<String, dynamic> _$SurpriseToJson(Surprise instance) => <String, dynamic>{
       'id': instance.id,

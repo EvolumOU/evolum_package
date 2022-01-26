@@ -24,13 +24,11 @@ extension OracleCopyWith on Oracle {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Oracle _$OracleFromJson(Map<String, dynamic> json) {
-  return Oracle(
-    id: json['id'] as String?,
-    name: json['name'] as String,
-    text: json['text'] as String,
-  );
-}
+Oracle _$OracleFromJson(Map<String, dynamic> json) => Oracle(
+      id: json['id'] as String?,
+      name: json['name'] as String,
+      text: json['text'] as String,
+    );
 
 Map<String, dynamic> _$OracleToJson(Oracle instance) => <String, dynamic>{
       'id': instance.id,

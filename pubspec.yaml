@@ -14,10 +14,10 @@ dependencies:
   cloud_firestore_web: ^2.4.5
 
   # Utils
-  json_serializable: ^4.1.0
+  json_serializable: ^6.1.4
   intl: ^0.17.0
   copy_with_extension: ^2.0.0
-  json_annotation: ^4.0.1
+  json_annotation: ^4.4.0
   http: ^0.13.4
 
   # UI/UX

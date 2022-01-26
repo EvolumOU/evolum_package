@@ -34,18 +34,16 @@ extension RitualCopyWith on Ritual {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Ritual _$RitualFromJson(Map<String, dynamic> json) {
-  return Ritual(
-    id: json['id'] as String,
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    name: json['name'] as String?,
-    filename: json['filename'] as String?,
-    type: json['type'] as String?,
-    exitPoint: json['exitPoint'] as int,
-    hide: json['hide'] as bool,
-    feedback: json['feedback'] as bool,
-  );
-}
+Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
+      id: json['id'] as String,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      name: json['name'] as String?,
+      filename: json['filename'] as String?,
+      type: json['type'] as String? ?? "matin",
+      exitPoint: json['exitPoint'] as int? ?? 0,
+      hide: json['hide'] as bool? ?? false,
+      feedback: json['feedback'] as bool? ?? false,
+    );
 
 Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
       'id': instance.id,

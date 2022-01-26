@@ -28,15 +28,13 @@ extension ShippingCopyWith on Shipping {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Shipping _$ShippingFromJson(Map<String, dynamic> json) {
-  return Shipping(
-    fullname: json['fullname'] as String?,
-    address: json['address'] as String?,
-    city: json['city'] as String?,
-    postcode: json['postcode'] as String?,
-    country: json['country'] as String?,
-  );
-}
+Shipping _$ShippingFromJson(Map<String, dynamic> json) => Shipping(
+      fullname: json['fullname'] as String?,
+      address: json['address'] as String?,
+      city: json['city'] as String?,
+      postcode: json['postcode'] as String?,
+      country: json['country'] as String?,
+    );
 
 Map<String, dynamic> _$ShippingToJson(Shipping instance) => <String, dynamic>{
       'fullname': instance.fullname,

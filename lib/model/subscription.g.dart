@@ -34,18 +34,16 @@ extension SubscriptionCopyWith on Subscription {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Subscription _$SubscriptionFromJson(Map<String, dynamic> json) {
-  return Subscription(
-    planId: json['planId'] as String?,
-    paymentType: json['paymentType'] as String,
-    cardLast4: json['cardLast4'] as String?,
-    price: (json['price'] as num).toDouble(),
-    currency: json['currency'] as String,
-    billingPeriod: json['billingPeriod'] as int,
-    billingPeriodUnit: json['billingPeriodUnit'] as String,
-    nextBillingDate: json['nextBillingDate'] as int?,
-  );
-}
+Subscription _$SubscriptionFromJson(Map<String, dynamic> json) => Subscription(
+      planId: json['planId'] as String?,
+      paymentType: json['paymentType'] as String,
+      cardLast4: json['cardLast4'] as String?,
+      price: (json['price'] as num).toDouble(),
+      currency: json['currency'] as String,
+      billingPeriod: json['billingPeriod'] as int,
+      billingPeriodUnit: json['billingPeriodUnit'] as String,
+      nextBillingDate: json['nextBillingDate'] as int?,
+    );
 
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{

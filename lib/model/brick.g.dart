@@ -30,16 +30,15 @@ extension BrickCopyWith on Brick {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Brick _$BrickFromJson(Map<String, dynamic> json) {
-  return Brick(
-    id: json['id'] as String?,
-    name: json['name'] as String?,
-    duration: Duration(microseconds: json['duration'] as int),
-    type: json['type'] as int?,
-    moment: json['moment'] as String?,
-    filename: json['filename'] as String?,
-  );
-}
+Brick _$BrickFromJson(Map<String, dynamic> json) => Brick(
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      duration:
+          Duration(microseconds: json['duration'] as int) ?? Duration.zero,
+      type: json['type'] as int?,
+      moment: json['moment'] as String?,
+      filename: json['filename'] as String?,
+    );
 
 Map<String, dynamic> _$BrickToJson(Brick instance) => <String, dynamic>{
       'id': instance.id,

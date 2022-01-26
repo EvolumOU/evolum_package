@@ -50,28 +50,29 @@ extension EvoCopyWith on Evo {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Evo _$EvoFromJson(Map<String, dynamic> json) {
-  return Evo(
-    id: json['id'] as String,
-    gsUrl: json['gsUrl'] as String,
-    name: json['name'] as String,
-    type: json['type'] as String,
-    tag: json['tag'] as String,
-    duration: durationfromJson(json['duration'] as int),
-    loop: json['loop'] as bool,
-    timings: (json['timings'] as List<dynamic>)
-        .map((e) => Timing.fromJson(e as Map<String, dynamic>))
-        .toList(),
-    createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-    summarize: json['summarize'] as String,
-    intro: json['intro'] as String,
-    feedback: json['feedback'] as bool,
-    hide: json['hide'] as bool,
-    mode: json['mode'] as String,
-    form: json['form'] as String,
-    size: (json['size'] as num).toDouble(),
-  );
-}
+Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
+      id: json['id'] as String? ?? '',
+      gsUrl: json['gsUrl'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      type: json['type'] as String? ?? '',
+      tag: json['tag'] as String? ?? '',
+      duration: json['duration'] == null
+          ? Duration.zero
+          : durationfromJson(json['duration'] as int),
+      loop: json['loop'] as bool? ?? false,
+      timings: (json['timings'] as List<dynamic>?)
+              ?.map((e) => Timing.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <Timing>[],
+      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      summarize: json['summarize'] as String? ?? '',
+      intro: json['intro'] as String? ?? '',
+      feedback: json['feedback'] as bool? ?? false,
+      hide: json['hide'] as bool? ?? true,
+      mode: json['mode'] as String? ?? 'vertical',
+      form: json['form'] as String? ?? 'focus',
+      size: (json['size'] as num?)?.toDouble() ?? 0.0,
+    );
 
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'id': instance.id,

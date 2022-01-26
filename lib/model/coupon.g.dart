@@ -36,19 +36,17 @@ extension CouponCopyWith on Coupon {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Coupon _$CouponFromJson(Map<String, dynamic> json) {
-  return Coupon(
-    code: json['code'] as String?,
-    date: dateTimefromJson(json['date'] as Timestamp?),
-    type: json['type'] as String?,
-    email: json['email'] as String?,
-    name: json['name'] as String?,
-    address: json['address'] as String?,
-    reward: json['reward'] as String?,
-    checked: json['checked'] as bool,
-    uid: json['uid'] as String?,
-  )..id = json['id'] as String?;
-}
+Coupon _$CouponFromJson(Map<String, dynamic> json) => Coupon(
+      code: json['code'] as String?,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      type: json['type'] as String?,
+      email: json['email'] as String?,
+      name: json['name'] as String?,
+      address: json['address'] as String?,
+      reward: json['reward'] as String?,
+      checked: json['checked'] as bool? ?? false,
+      uid: json['uid'] as String?,
+    )..id = json['id'] as String?;
 
 Map<String, dynamic> _$CouponToJson(Coupon instance) => <String, dynamic>{
       'id': instance.id,

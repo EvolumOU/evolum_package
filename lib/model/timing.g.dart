@@ -24,13 +24,11 @@ extension TimingCopyWith on Timing {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Timing _$TimingFromJson(Map<String, dynamic> json) {
-  return Timing(
-    begin: json['begin'] as int,
-    end: json['end'] as int,
-    text: json['text'] as String,
-  );
-}
+Timing _$TimingFromJson(Map<String, dynamic> json) => Timing(
+      begin: json['begin'] as int? ?? 0,
+      end: json['end'] as int? ?? 0,
+      text: json['text'] as String? ?? "",
+    );
 
 Map<String, dynamic> _$TimingToJson(Timing instance) => <String, dynamic>{
       'begin': instance.begin,
