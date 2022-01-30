@@ -91,4 +91,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'mode': instance.mode,
       'form': instance.form,
       'size': instance.size,
+      'filename': instance.filename,
     };
