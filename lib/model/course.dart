@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/model/addons.dart';
 import 'package:evolum_package/model/scheduled.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -28,7 +27,6 @@ class Course {
   List<Scheduled> scheduled;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime updatedDate;
-  Addons? addons;
   bool route;
   bool hide;
 
@@ -47,7 +45,6 @@ class Course {
     this.position = 0,
     this.scheduled = const <Scheduled>[],
     required this.updatedDate,
-    this.addons,
     this.route = false,
     this.hide = false,
   });
@@ -68,8 +65,6 @@ class Course {
   bool get isCategorized => type == 'mood';
   bool get isEvent =>
       type == 'event' || type == 'programmé' || type == 'évenement';
-
-  bool get isAddons => addons != null;
 
   bool get isNew =>
       DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));

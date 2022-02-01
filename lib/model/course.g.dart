@@ -8,7 +8,6 @@ part of 'course.dart';
 
 extension CourseCopyWith on Course {
   Course copyWith({
-    Addons? addons,
     String? color1,
     String? color2,
     String? descr,
@@ -27,7 +26,6 @@ extension CourseCopyWith on Course {
     DateTime? updatedDate,
   }) {
     return Course(
-      addons: addons ?? this.addons,
       color1: color1 ?? this.color1,
       color2: color2 ?? this.color2,
       descr: descr ?? this.descr,
@@ -76,9 +74,6 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
               .toList() ??
           const <Scheduled>[],
       updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp?),
-      addons: json['addons'] == null
-          ? null
-          : Addons.fromJson(json['addons'] as Map<String, dynamic>),
       route: json['route'] as bool? ?? false,
       hide: json['hide'] as bool? ?? false,
     );
@@ -98,7 +93,6 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'position': instance.position,
       'scheduled': instance.scheduled.map((e) => e.toJson()).toList(),
       'updatedDate': dateTimetoJson(instance.updatedDate),
-      'addons': instance.addons?.toJson(),
       'route': instance.route,
       'hide': instance.hide,
     };

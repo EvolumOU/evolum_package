@@ -8,23 +8,23 @@ part 'ambiance.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Ambiance {
   String id;
-  String? name;
+  String name;
   String type;
   bool hide;
-  String? gifGsUrl;
-  String? videoGsUrl;
-  String? musicGsUrl;
+  String gifGsUrl;
+  String videoGsUrl;
+  String musicGsUrl;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration musicPosition;
 
   Ambiance({
     required this.id,
-    this.name,
+    this.name = "",
     this.type = "matin",
     this.hide = false,
-    this.gifGsUrl,
-    this.videoGsUrl,
-    this.musicGsUrl,
+    this.gifGsUrl = "",
+    this.videoGsUrl = "",
+    this.musicGsUrl = "",
     this.musicPosition = Duration.zero,
   });
 
