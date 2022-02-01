@@ -57,9 +57,9 @@ extension UserCopyWith on User {
 // **************************************************************************
 
 User _$UserFromJson(Map<String, dynamic> json) => User(
-      uid: json['uid'] as String?,
-      email: json['email'] as String?,
-      name: json['name'] as String?,
+      uid: json['uid'] as String,
+      email: json['email'] as String,
+      name: json['name'] as String,
       notification: json['notification'] as bool? ?? true,
       bgmusic: json['bgmusic'] as bool? ?? true,
       status: json['status'] as String? ?? "free",

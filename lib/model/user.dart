@@ -8,9 +8,9 @@ part 'user.g.dart';
 @CopyWith()
 @JsonSerializable()
 class User {
-  String? uid;
-  String? email;
-  String? name;
+  String uid;
+  String email;
+  String name;
   bool notification;
   String? reminderNight;
   String? reminderMorning;
@@ -29,12 +29,12 @@ class User {
   List<String> unlocked;
   String? subId;
   String? token;
-  String? role;
+  String role;
 
   User({
-    this.uid,
-    this.email,
-    this.name,
+    required this.uid,
+    required this.email,
+    required this.name,
     this.notification = true,
     this.bgmusic = true,
     this.status = "free",
