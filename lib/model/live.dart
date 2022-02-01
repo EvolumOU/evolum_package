@@ -10,13 +10,13 @@ part 'live.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Live {
   String id;
-  String? name;
+  String name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   String status;
-  String? photoName;
-  String? channelName;
-  String? replayFilename;
+  String photoName;
+  String channelName;
+  String replayFilename;
   int mainAgoraUid;
   int secondaryAgoraUid;
   bool hide;
@@ -26,11 +26,11 @@ class Live {
   Live({
     required this.id,
     required this.date,
-    this.name,
+    this.name = '',
     this.status = 'ongoing',
-    this.photoName,
-    this.channelName,
-    this.replayFilename,
+    this.photoName = '',
+    this.channelName = '',
+    this.replayFilename = '',
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
     this.hide = false,

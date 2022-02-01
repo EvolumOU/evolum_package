@@ -10,27 +10,27 @@ part 'surprise.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Surprise {
   String id;
-  String? name;
+  String name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
-  String? subtitle;
-  String? description;
-  String? photoName;
+  String subtitle;
+  String description;
+  String photoName;
   String type;
-  String? courseId;
-  String? evoId;
+  String courseId;
+  String evoId;
   bool hide;
 
   Surprise({
     required this.id,
     required this.date,
-    this.name,
-    this.subtitle,
-    this.description,
-    this.photoName,
+    this.name = '',
+    this.subtitle = '',
+    this.description = '',
+    this.photoName = '',
     this.type = "evo",
-    this.courseId,
-    this.evoId,
+    this.courseId = '',
+    this.evoId = '',
     this.hide = false,
   });
 

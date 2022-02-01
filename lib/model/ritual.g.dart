@@ -37,8 +37,8 @@ extension RitualCopyWith on Ritual {
 Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
       id: json['id'] as String,
       date: dateTimefromJson(json['date'] as Timestamp?),
-      name: json['name'] as String?,
-      filename: json['filename'] as String?,
+      name: json['name'] as String? ?? '',
+      filename: json['filename'] as String? ?? '',
       type: json['type'] as String? ?? "matin",
       exitPoint: json['exitPoint'] as int? ?? 0,
       hide: json['hide'] as bool? ?? false,

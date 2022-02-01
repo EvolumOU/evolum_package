@@ -41,13 +41,13 @@ extension SurpriseCopyWith on Surprise {
 Surprise _$SurpriseFromJson(Map<String, dynamic> json) => Surprise(
       id: json['id'] as String,
       date: dateTimefromJson(json['date'] as Timestamp?),
-      name: json['name'] as String?,
-      subtitle: json['subtitle'] as String?,
-      description: json['description'] as String?,
-      photoName: json['photoName'] as String?,
+      name: json['name'] as String? ?? '',
+      subtitle: json['subtitle'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      photoName: json['photoName'] as String? ?? '',
       type: json['type'] as String? ?? "evo",
-      courseId: json['courseId'] as String?,
-      evoId: json['evoId'] as String?,
+      courseId: json['courseId'] as String? ?? '',
+      evoId: json['evoId'] as String? ?? '',
       hide: json['hide'] as bool? ?? false,
     );
 

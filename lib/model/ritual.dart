@@ -10,11 +10,11 @@ part 'ritual.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Ritual {
   String id;
-  String? name;
+  String name;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
-  String? type;
-  String? filename;
+  String type;
+  String filename;
   int exitPoint;
   bool hide;
   bool feedback;
@@ -22,8 +22,8 @@ class Ritual {
   Ritual({
     required this.id,
     required this.date,
-    this.name,
-    this.filename,
+    this.name = '',
+    this.filename = '',
     this.type = "matin",
     this.exitPoint = 0,
     this.hide = false,
