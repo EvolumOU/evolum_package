@@ -4,6 +4,12 @@ extension DateTimeExtention on DateTime {
   /// Heure avec ce format: 20:00
   String get timeStringFromDate => DateFormat.Hm().format(this);
 
+  /// Date avec ce format dd_mm_yyyy_hh_mm
+  String get dateTimeFilenameStr => '${day}_${month}_${year}_${hour}_$minute';
+
+  /// Date avec ce format dd_mm_yyyy
+  String get dateFilenameStr => '${day}_${month}_$year';
+
   /// Heure avec ce format: 20h ou 20h01
   String get timeStringFromDateWithCroppedMin => this
       .timeStringFromDate
