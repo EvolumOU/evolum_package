@@ -1,7 +1,7 @@
 part of evolum_package;
 
 extension DurationExtension on Duration {
-  String minuteSecondFormatted() {
+  String get minSecStr {
     return [
       if (inSeconds > 3600) inHours.remainder(24),
       inMinutes.remainder(60),
