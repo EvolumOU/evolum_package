@@ -11,21 +11,17 @@ class Ambiance {
   String name;
   String type;
   bool hide;
-  String gifGsUrl;
-  String videoGsUrl;
-  String musicGsUrl;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
-  Duration musicPosition;
+  Duration position;
+  Duration duration;
 
   Ambiance({
     required this.id,
     this.name = "",
     this.type = "matin",
     this.hide = false,
-    this.gifGsUrl = "",
-    this.videoGsUrl = "",
-    this.musicGsUrl = "",
-    this.musicPosition = Duration.zero,
+    this.position = Duration.zero,
+    this.duration = Duration.zero,
   });
 
   factory Ambiance.fromJson(Map<String, dynamic> data) =>

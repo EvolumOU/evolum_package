@@ -4,7 +4,7 @@ extension StringExtension on String {
   String get spaceRemoved => replaceAll(r' ', '');
   String get replaceSpacesWithUnderscore => replaceAll(r' ', '_');
 
-  // returne the file extension .mp3 .mp4 etc.
+  /// returne the file extension .mp3 .mp4 etc.
   String get fileExtension => split('.').last;
 
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));

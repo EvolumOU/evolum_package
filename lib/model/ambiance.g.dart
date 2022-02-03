@@ -8,24 +8,20 @@ part of 'ambiance.dart';
 
 extension AmbianceCopyWith on Ambiance {
   Ambiance copyWith({
-    String? gifGsUrl,
     bool? hide,
     String? id,
-    String? musicGsUrl,
-    Duration? musicPosition,
+    Duration? duration,
+    Duration? position,
     String? name,
     String? type,
-    String? videoGsUrl,
   }) {
     return Ambiance(
-      gifGsUrl: gifGsUrl ?? this.gifGsUrl,
       hide: hide ?? this.hide,
       id: id ?? this.id,
-      musicGsUrl: musicGsUrl ?? this.musicGsUrl,
-      musicPosition: musicPosition ?? this.musicPosition,
+      duration: duration ?? this.duration,
+      position: position ?? this.position,
       name: name ?? this.name,
       type: type ?? this.type,
-      videoGsUrl: videoGsUrl ?? this.videoGsUrl,
     );
   }
 }
@@ -39,12 +35,12 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       name: json['name'] as String? ?? "",
       type: json['type'] as String? ?? "matin",
       hide: json['hide'] as bool? ?? false,
-      gifGsUrl: json['gifGsUrl'] as String? ?? "",
-      videoGsUrl: json['videoGsUrl'] as String? ?? "",
-      musicGsUrl: json['musicGsUrl'] as String? ?? "",
-      musicPosition: json['musicPosition'] == null
+      position: json['position'] == null
           ? Duration.zero
-          : durationfromJson(json['musicPosition'] as int),
+          : durationfromJson(json['position'] as int),
+      duration: json['duration'] == null
+          ? Duration.zero
+          : Duration(microseconds: json['duration'] as int),
     );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
@@ -52,8 +48,6 @@ Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'name': instance.name,
       'type': instance.type,
       'hide': instance.hide,
-      'gifGsUrl': instance.gifGsUrl,
-      'videoGsUrl': instance.videoGsUrl,
-      'musicGsUrl': instance.musicGsUrl,
-      'musicPosition': durationtoJson(instance.musicPosition),
+      'position': durationtoJson(instance.position),
+      'duration': instance.duration.inMicroseconds,
     };
