@@ -53,7 +53,7 @@ class FirestoreService {
 
   Future<List<T>> getCollectionGroup<T>({
     required String path,
-    required T builder(Map<String, dynamic> data, String documentID),
+    required T builder(Map<String, dynamic>? data, String documentID),
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
     int? limit,
@@ -68,7 +68,7 @@ class FirestoreService {
 
     final List<T> listItems = queryDoc.docs
         .map((snapshot) => builder(
-            snapshot.data() as Map<String, dynamic>, snapshot.reference.path))
+            snapshot.data() as Map<String, dynamic>?, snapshot.reference.path))
         .toList();
 
     return listItems;
@@ -76,7 +76,7 @@ class FirestoreService {
 
   Future<List<T>> getCollection<T>({
     required String path,
-    required T builder(Map<String, dynamic> data, String documentID),
+    required T builder(Map<String, dynamic>? data, String documentID),
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
     int? limit,
@@ -91,7 +91,7 @@ class FirestoreService {
 
     final List<T> listItems = queryDoc.docs
         .map((snapshot) =>
-            builder(snapshot.data() as Map<String, dynamic>, snapshot.id))
+            builder(snapshot.data() as Map<String, dynamic>?, snapshot.id))
         .toList();
 
     return listItems;
@@ -99,7 +99,7 @@ class FirestoreService {
 
   Stream<List<T>> collectionStream<T>({
     required String path,
-    required T builder(Map<String, dynamic> data, String documentID),
+    required T builder(Map<String, dynamic>? data, String documentID),
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
     int? limit,
@@ -121,7 +121,7 @@ class FirestoreService {
       if (snapshot.docs.isNotEmpty) lastUserDocument = snapshot.docs.last;
       final result = snapshot.docs
           .map((snapshot) =>
-              builder(snapshot.data() as Map<String, dynamic>, snapshot.id))
+              builder(snapshot.data() as Map<String, dynamic>?, snapshot.id))
           .where((value) => value != null)
           .toList();
       if (sort != null) {
@@ -139,7 +139,7 @@ class FirestoreService {
     final Stream<DocumentSnapshot> snapshots = reference.snapshots();
 
     return snapshots.map((snapshot) =>
-        builder(snapshot.data() as Map<String, dynamic>, snapshot.id));
+        builder(snapshot.data() as Map<String, dynamic>?, snapshot.id));
   }
 
   Future<bool> checkIfDocExists({
