@@ -15,6 +15,7 @@ import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
 import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
 import 'package:flutter/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'utils/firestore.dart';
 part 'utils/constant.dart';

@@ -6,6 +6,7 @@ class EvoChat extends StatefulWidget {
   final String? name;
   final List<Widget> actions;
   final int? nbMsgToShow;
+  final Function(String)? onCopied;
 
   const EvoChat({
     Key? key,
@@ -14,6 +15,7 @@ class EvoChat extends StatefulWidget {
     this.name,
     this.actions = const [],
     this.nbMsgToShow,
+    this.onCopied,
   }) : super(key: key);
 
   @override
@@ -88,6 +90,25 @@ class _EvoChatState extends State<EvoChat> {
           fontWeight: FontWeight.w500,
           color: Colors.white,
         );
+
+    final String text = msgData["text"];
+    final words = text.split(" ");
+    String url = '';
+
+    List<TextSpan> textspans = words.map((word) {
+      if (word.contains('https')) {
+        url = word;
+        return TextSpan(
+          text: word,
+          style: TextStyle(
+            color: kevoViolet,
+            decoration: TextDecoration.underline,
+          ),
+        );
+      }
+      return TextSpan(text: word);
+    }).toList();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -95,9 +116,19 @@ class _EvoChatState extends State<EvoChat> {
           msgData["name"],
           style: chatUserStyle.copyWith(color: Colors.white),
         ),
-        Text(
-          msgData["text"],
-          style: chatTextStyle.copyWith(color: Colors.white),
+        RawMaterialButton(
+          onPressed: () {
+            if (url.isNotEmpty && Uri.parse(url).isAbsolute) {
+              launch(url);
+            }
+          },
+          onLongPress: () => widget.onCopied?.call(msgData["text"]),
+          child: RichText(
+            text: TextSpan(
+              style: chatTextStyle.copyWith(color: Colors.white),
+              children: textspans,
+            ),
+          ),
         ),
         const SizedBox(height: 10),
       ],
