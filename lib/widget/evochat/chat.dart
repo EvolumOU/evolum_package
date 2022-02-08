@@ -6,7 +6,7 @@ class EvoChat extends StatefulWidget {
   final String? name;
   final List<Widget> actions;
   final int? nbMsgToShow;
-  final Function(String)? onCopied;
+  final Function(String)? onLongPressMessage;
 
   const EvoChat({
     Key? key,
@@ -15,7 +15,7 @@ class EvoChat extends StatefulWidget {
     this.name,
     this.actions = const [],
     this.nbMsgToShow,
-    this.onCopied,
+    this.onLongPressMessage,
   }) : super(key: key);
 
   @override
@@ -100,10 +100,7 @@ class _EvoChatState extends State<EvoChat> {
         url = word;
         return TextSpan(
           text: word,
-          style: TextStyle(
-            color: kevoViolet,
-            decoration: TextDecoration.underline,
-          ),
+          style: TextStyle(color: '#1C91C4'.hexToColor),
         );
       }
       return TextSpan(text: word);
@@ -120,7 +117,7 @@ class _EvoChatState extends State<EvoChat> {
           onPressed: () {
             if (url.isNotEmpty) launch(url);
           },
-          onLongPress: () => widget.onCopied?.call(msgData["text"]),
+          onLongPress: () => widget.onLongPressMessage?.call(msgData["text"]),
           child: Align(
             alignment: Alignment.centerLeft,
             child: RichText(
