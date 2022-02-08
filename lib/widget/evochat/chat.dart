@@ -96,7 +96,7 @@ class _EvoChatState extends State<EvoChat> {
     String url = '';
 
     List<TextSpan> textspans = words.map((word) {
-      if (word.contains('https')) {
+      if (word.contains('https') && Uri.parse(word).isAbsolute) {
         url = word;
         return TextSpan(
           text: word,
@@ -118,15 +118,16 @@ class _EvoChatState extends State<EvoChat> {
         ),
         RawMaterialButton(
           onPressed: () {
-            if (url.isNotEmpty && Uri.parse(url).isAbsolute) {
-              launch(url);
-            }
+            if (url.isNotEmpty) launch(url);
           },
           onLongPress: () => widget.onCopied?.call(msgData["text"]),
-          child: RichText(
-            text: TextSpan(
-              style: chatTextStyle.copyWith(color: Colors.white),
-              children: textspans,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: RichText(
+              text: TextSpan(
+                style: chatTextStyle.copyWith(color: Colors.white),
+                children: textspans,
+              ),
             ),
           ),
         ),
