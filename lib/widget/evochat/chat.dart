@@ -145,20 +145,28 @@ class _EvoChatState extends State<EvoChat> {
           color: Colors.white,
         );
     return Expanded(
-      child: TextField(
-        keyboardType: TextInputType.multiline,
-        textInputAction: TextInputAction.send,
-        controller: textController,
-        cursorColor: Colors.white,
-        maxLength: 500,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: "Commentaire",
-          hintStyle: commentTextStyle,
-          counterText: "",
+      child: GestureDetector(
+        onTap: () {
+          print("====> saluuuuuuuut 1");
+        },
+        onLongPress: () {
+          print("====> saluuuuuuuut 2");
+        },
+        child: TextField(
+          keyboardType: TextInputType.multiline,
+          textInputAction: TextInputAction.send,
+          controller: textController,
+          cursorColor: Colors.brown,
+          maxLength: 500,
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: "Commentaire",
+            hintStyle: commentTextStyle,
+            counterText: "",
+          ),
+          onSubmitted: (_) => sendMessage(),
+          style: chatTextStyle,
         ),
-        onSubmitted: (_) => sendMessage(),
-        style: chatTextStyle,
       ),
     );
   }
