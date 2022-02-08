@@ -6,6 +6,7 @@ class EvoChat extends StatefulWidget {
   final String? name;
   final List<Widget> actions;
   final int? nbMsgToShow;
+  final Function(String)? onLongPressMessage;
 
   const EvoChat({
     Key? key,
@@ -14,6 +15,7 @@ class EvoChat extends StatefulWidget {
     this.name,
     this.actions = const [],
     this.nbMsgToShow,
+    this.onLongPressMessage,
   }) : super(key: key);
 
   @override
@@ -88,6 +90,22 @@ class _EvoChatState extends State<EvoChat> {
           fontWeight: FontWeight.w500,
           color: Colors.white,
         );
+
+    final String text = msgData["text"];
+    final words = text.split(" ");
+    String url = '';
+
+    List<TextSpan> textspans = words.map((word) {
+      if (word.contains('https') && Uri.parse(word).isAbsolute) {
+        url = word;
+        return TextSpan(
+          text: word,
+          style: TextStyle(color: '#1C91C4'.hexToColor),
+        );
+      }
+      return TextSpan(text: word);
+    }).toList();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -95,9 +113,20 @@ class _EvoChatState extends State<EvoChat> {
           msgData["name"],
           style: chatUserStyle.copyWith(color: Colors.white),
         ),
-        Text(
-          msgData["text"],
-          style: chatTextStyle.copyWith(color: Colors.white),
+        RawMaterialButton(
+          onPressed: () {
+            if (url.isNotEmpty) launch(url);
+          },
+          onLongPress: () => widget.onLongPressMessage?.call(msgData["text"]),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: RichText(
+              text: TextSpan(
+                style: chatTextStyle.copyWith(color: Colors.white),
+                children: textspans,
+              ),
+            ),
+          ),
         ),
         const SizedBox(height: 10),
       ],
