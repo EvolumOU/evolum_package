@@ -98,7 +98,7 @@ class _EvoChatState extends State<EvoChat> {
     final words = text.split(" ");
     String url = '';
 
-    List<TextSpan> textspans = words.map((word) {
+    final textspans = words.map((word) {
       if (word.contains('https') && Uri.parse(word).isAbsolute) {
         url = word;
         return TextSpan(
@@ -106,7 +106,7 @@ class _EvoChatState extends State<EvoChat> {
           style: TextStyle(color: '#1C91C4'.hexToColor),
         );
       }
-      return TextSpan(text: word);
+      return TextSpan(text: word + ' ');
     }).toList();
 
     return Column(
