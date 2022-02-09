@@ -25,6 +25,7 @@ class EvoChat extends StatefulWidget {
 class _EvoChatState extends State<EvoChat> {
   final ScrollController scrollController = ScrollController();
   late TextEditingController textController;
+  String input = '';
 
   @override
   void initState() {
@@ -51,13 +52,16 @@ class _EvoChatState extends State<EvoChat> {
               "name": widget.name,
               "text": newMessage,
               "uid": widget.uid,
+              "date": FieldValue.serverTimestamp(),
             }
           ]),
         },
       );
 
   void sendMessage() {
-    final String value = textController.text.trim();
+    final String value = input.trim();
+
+    debugPrint("====> sendMessage: $value");
 
     FocusScopeNode currentFocus = FocusScope.of(context);
 
@@ -65,8 +69,10 @@ class _EvoChatState extends State<EvoChat> {
       currentFocus.unfocus();
     }
     if (value.isNotEmpty) {
+      debugPrint("====> sendMessageOnTchat: $value");
       sendMessageOnTchat(value);
       textController.clear();
+      input = '';
     }
   }
 
@@ -149,7 +155,7 @@ class _EvoChatState extends State<EvoChat> {
         keyboardType: TextInputType.multiline,
         textInputAction: TextInputAction.send,
         controller: textController,
-        cursorColor: Colors.brown,
+        cursorColor: Colors.white,
         maxLength: 500,
         decoration: InputDecoration(
           border: InputBorder.none,
@@ -157,10 +163,12 @@ class _EvoChatState extends State<EvoChat> {
           hintStyle: commentTextStyle,
           counterText: "",
         ),
+        onChanged: (text) {
+          input = text;
+          debugPrint("====> onChanged: $input");
+        },
         onSubmitted: (_) => sendMessage(),
         style: chatTextStyle,
-        toolbarOptions:
-            ToolbarOptions(paste: true, cut: true, selectAll: true, copy: true),
       ),
     );
   }
