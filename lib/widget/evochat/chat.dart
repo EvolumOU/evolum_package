@@ -102,7 +102,7 @@ class _EvoChatState extends State<EvoChat> {
       if (word.contains('https') && Uri.parse(word).isAbsolute) {
         url = word;
         return TextSpan(
-          text: word,
+          text: word + ' ',
           style: TextStyle(color: '#1C91C4'.hexToColor),
         );
       }
