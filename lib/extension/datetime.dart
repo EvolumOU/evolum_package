@@ -16,18 +16,6 @@ extension DateTimeExtention on DateTime {
       .replaceAll(RegExp(r':'), 'h')
       .replaceAll(RegExp(r'h00'), 'h');
 
-  bool get isMorningTime {
-    final startTime = DateTime(year, month, day, 05, 59);
-    final endTime = DateTime(year, month, day, 12, 01);
-    return !(isAfter(startTime) && isBefore(endTime));
-  }
-
-  bool get isNightTime {
-    final startTime = DateTime(year, month, day, 18, 59);
-    final endTime = DateTime(year, month, day, 24, 01);
-    return !(isAfter(startTime) && isBefore(endTime));
-  }
-
   bool isSameDate(DateTime other) =>
       year == other.year && month == other.month && day == other.day;
 
