@@ -3,6 +3,7 @@ library evolum_package;
 import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
+import 'package:evolum_package/model/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
