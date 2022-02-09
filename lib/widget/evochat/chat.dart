@@ -52,7 +52,7 @@ class _EvoChatState extends State<EvoChat> {
               "name": widget.name,
               "text": newMessage,
               "uid": widget.uid,
-              "date": FieldValue.serverTimestamp(),
+              "date": dateTimetoJson(DateTime.now()),
             }
           ]),
         },
@@ -61,15 +61,12 @@ class _EvoChatState extends State<EvoChat> {
   void sendMessage() {
     final String value = input.trim();
 
-    debugPrint("====> sendMessage: $value");
-
     FocusScopeNode currentFocus = FocusScope.of(context);
 
     if (!currentFocus.hasPrimaryFocus) {
       currentFocus.unfocus();
     }
     if (value.isNotEmpty) {
-      debugPrint("====> sendMessageOnTchat: $value");
       sendMessageOnTchat(value);
       textController.clear();
       input = '';
@@ -163,10 +160,7 @@ class _EvoChatState extends State<EvoChat> {
           hintStyle: commentTextStyle,
           counterText: "",
         ),
-        onChanged: (text) {
-          input = text;
-          debugPrint("====> onChanged: $input");
-        },
+        onChanged: (text) => input = text,
         onSubmitted: (_) => sendMessage(),
         style: chatTextStyle,
       ),
