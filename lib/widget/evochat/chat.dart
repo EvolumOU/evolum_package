@@ -145,28 +145,20 @@ class _EvoChatState extends State<EvoChat> {
           color: Colors.white,
         );
     return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          print("====> saluuuuuuuut 1");
-        },
-        onLongPress: () {
-          print("====> saluuuuuuuut 2");
-        },
-        child: TextField(
-          keyboardType: TextInputType.multiline,
-          textInputAction: TextInputAction.send,
-          controller: textController,
-          cursorColor: Colors.brown,
-          maxLength: 500,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: "Commentaire",
-            hintStyle: commentTextStyle,
-            counterText: "",
-          ),
-          onSubmitted: (_) => sendMessage(),
-          style: chatTextStyle,
+      child: TextField(
+        keyboardType: TextInputType.multiline,
+        textInputAction: TextInputAction.send,
+        controller: textController,
+        cursorColor: Colors.brown,
+        maxLength: 500,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: "Commentaire",
+          hintStyle: commentTextStyle,
+          counterText: "",
         ),
+        onSubmitted: (_) => sendMessage(),
+        style: chatTextStyle,
       ),
     );
   }
@@ -185,15 +177,15 @@ class _EvoChatState extends State<EvoChat> {
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      onPointerUp: (_) => FocusManager.instance.primaryFocus?.unfocus(),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 8, right: 8),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            StreamBuilder<Map<String, dynamic>>(
+    return Padding(
+      padding: const EdgeInsets.only(left: 8, right: 8),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Listener(
+            onPointerUp: (_) => FocusManager.instance.primaryFocus?.unfocus(),
+            child: StreamBuilder<Map<String, dynamic>>(
               stream: tchatStream,
               builder: (context, snapshot) {
                 if (!snapshot.hasData || snapshot.hasError) {
@@ -220,16 +212,16 @@ class _EvoChatState extends State<EvoChat> {
                 );
               },
             ),
-            Divider(color: Colors.white.withOpacity(0.4), thickness: 2),
-            Row(
-              children: [
-                buildTextInput(),
-                buildSendIcon(),
-                ...widget.actions,
-              ],
-            ),
-          ],
-        ),
+          ),
+          Divider(color: Colors.white.withOpacity(0.4), thickness: 2),
+          Row(
+            children: [
+              buildTextInput(),
+              buildSendIcon(),
+              ...widget.actions,
+            ],
+          ),
+        ],
       ),
     );
   }
