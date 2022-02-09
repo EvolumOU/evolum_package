@@ -25,6 +25,7 @@ class EvoChat extends StatefulWidget {
 class _EvoChatState extends State<EvoChat> {
   final ScrollController scrollController = ScrollController();
   late TextEditingController textController;
+  String input = '';
 
   @override
   void initState() {
@@ -57,7 +58,7 @@ class _EvoChatState extends State<EvoChat> {
       );
 
   void sendMessage() {
-    final String value = textController.text.trim();
+    final String value = input.trim();
 
     FocusScopeNode currentFocus = FocusScope.of(context);
 
@@ -65,8 +66,9 @@ class _EvoChatState extends State<EvoChat> {
       currentFocus.unfocus();
     }
     if (value.isNotEmpty) {
-      sendMessageOnTchat(textController.text);
+      sendMessageOnTchat(value);
       textController.clear();
+      input = '';
     }
   }
 
@@ -157,6 +159,7 @@ class _EvoChatState extends State<EvoChat> {
           hintStyle: commentTextStyle,
           counterText: "",
         ),
+        onChanged: (text) => input = text,
         onSubmitted: (_) => sendMessage(),
         style: chatTextStyle,
       ),
