@@ -14,6 +14,7 @@ extension RitualCopyWith on Ritual {
     String? filename,
     bool? hide,
     String? id,
+    bool? move,
     String? name,
     String? type,
   }) {
@@ -24,6 +25,7 @@ extension RitualCopyWith on Ritual {
       filename: filename ?? this.filename,
       hide: hide ?? this.hide,
       id: id ?? this.id,
+      move: move ?? this.move,
       name: name ?? this.name,
       type: type ?? this.type,
     );
@@ -43,6 +45,7 @@ Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
       exitPoint: json['exitPoint'] as int? ?? 0,
       hide: json['hide'] as bool? ?? false,
       feedback: json['feedback'] as bool? ?? false,
+      move: json['move'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
@@ -54,4 +57,5 @@ Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
       'exitPoint': instance.exitPoint,
       'hide': instance.hide,
       'feedback': instance.feedback,
+      'move': instance.move,
     };

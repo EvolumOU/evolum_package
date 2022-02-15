@@ -8,19 +8,19 @@ part of 'ambiance.dart';
 
 extension AmbianceCopyWith on Ambiance {
   Ambiance copyWith({
+    Duration? duration,
     bool? hide,
     String? id,
-    Duration? duration,
-    Duration? position,
     String? name,
+    Duration? position,
     String? type,
   }) {
     return Ambiance(
+      duration: duration ?? this.duration,
       hide: hide ?? this.hide,
       id: id ?? this.id,
-      duration: duration ?? this.duration,
-      position: position ?? this.position,
       name: name ?? this.name,
+      position: position ?? this.position,
       type: type ?? this.type,
     );
   }
@@ -38,9 +38,8 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       position: json['position'] == null
           ? Duration.zero
           : durationfromJson(json['position'] as int),
-      duration: json['duration'] == null
-          ? Duration.zero
-          : Duration(microseconds: json['duration'] as int),
+      duration:
+          Duration(microseconds: json['duration'] as int) ?? Duration.zero,
     );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
