@@ -18,6 +18,7 @@ class Ritual {
   int exitPoint;
   bool hide;
   bool feedback;
+  bool move;
 
   Ritual({
     required this.id,
@@ -28,6 +29,7 @@ class Ritual {
     this.exitPoint = 0,
     this.hide = false,
     this.feedback = false,
+    this.move = false,
   });
 
   bool get isForDay => type == "jour" || type == "matin";
