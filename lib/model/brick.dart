@@ -1,6 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'utils.dart';
+
 part 'brick.g.dart';
 
 @CopyWith()
@@ -8,6 +10,7 @@ part 'brick.g.dart';
 class Brick {
   String? id;
   String? name;
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration duration;
   int? type;
   String? moment;

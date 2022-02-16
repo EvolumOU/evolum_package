@@ -33,7 +33,9 @@ extension BrickCopyWith on Brick {
 Brick _$BrickFromJson(Map<String, dynamic> json) => Brick(
       id: json['id'] as String?,
       name: json['name'] as String?,
-      duration: Duration(microseconds: json['duration'] as int),
+      duration: json['duration'] == null
+          ? Duration.zero
+          : durationfromJson(json['duration'] as int),
       type: json['type'] as int?,
       moment: json['moment'] as String?,
       filename: json['filename'] as String?,
@@ -42,7 +44,7 @@ Brick _$BrickFromJson(Map<String, dynamic> json) => Brick(
 Map<String, dynamic> _$BrickToJson(Brick instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'duration': instance.duration.inMicroseconds,
+      'duration': durationtoJson(instance.duration),
       'type': instance.type,
       'moment': instance.moment,
       'filename': instance.filename,

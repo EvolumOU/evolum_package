@@ -13,6 +13,7 @@ class Ambiance {
   bool hide;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration position;
+  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration duration;
 
   Ambiance({

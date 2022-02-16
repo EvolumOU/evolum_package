@@ -38,7 +38,9 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       position: json['position'] == null
           ? Duration.zero
           : durationfromJson(json['position'] as int),
-      duration: Duration(microseconds: json['duration'] as int),
+      duration: json['duration'] == null
+          ? Duration.zero
+          : durationfromJson(json['duration'] as int),
     );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
@@ -47,5 +49,5 @@ Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'type': instance.type,
       'hide': instance.hide,
       'position': durationtoJson(instance.position),
-      'duration': instance.duration.inMicroseconds,
+      'duration': durationtoJson(instance.duration),
     };
