@@ -103,7 +103,7 @@ class _EvoChatState extends State<EvoChat> {
         url = word;
         return TextSpan(
           text: word + ' ',
-          style: TextStyle(color: '#1C91C4'.hexToColor),
+          style: TextStyle(color: Color(0xff1C91C4)),
         );
       }
       return TextSpan(text: word + ' ');

@@ -106,13 +106,7 @@ class FirestoreService {
   }) {
     Query query = FirebaseFirestore.instance.collection(path);
 
-    if (limit != null) {
-      query = query.limit(limit);
-
-      if (lastUserDocument != null) {
-        query = query.orderBy("email").startAfterDocument(lastUserDocument!);
-      }
-    }
+    if (limit != null) query = query.limit(limit);
 
     if (queryBuilder != null) query = queryBuilder(query);
 
