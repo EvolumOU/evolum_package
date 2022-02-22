@@ -22,7 +22,6 @@ extension LiveCopyWith on Live {
     String? status,
   }) {
     return Live(
-      channelName: channelName ?? this.channelName,
       date: date ?? this.date,
       descr: descr ?? this.descr,
       hide: hide ?? this.hide,
@@ -48,7 +47,6 @@ Live _$LiveFromJson(Map<String, dynamic> json) => Live(
       name: json['name'] as String? ?? '',
       status: json['status'] as String? ?? 'ongoing',
       photoName: json['photoName'] as String? ?? '',
-      channelName: json['channelName'] as String? ?? '',
       replayFilename: json['replayFilename'] as String? ?? '',
       mainAgoraUid: json['mainAgoraUid'] as int? ?? 0,
       secondaryAgoraUid: json['secondaryAgoraUid'] as int? ?? 0,

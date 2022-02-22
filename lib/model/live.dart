@@ -15,7 +15,6 @@ class Live {
   DateTime date;
   String status;
   String photoName;
-  String channelName;
   String replayFilename;
   int mainAgoraUid;
   int secondaryAgoraUid;
@@ -28,8 +27,8 @@ class Live {
     required this.date,
     this.name = '',
     this.status = 'ongoing',
+    // TODO TO REMOVE WHEN PROD READY
     this.photoName = '',
-    this.channelName = '',
     this.replayFilename = '',
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
@@ -37,6 +36,8 @@ class Live {
     this.nbCaster = 2,
     this.descr,
   });
+
+  String get channelName => "channelName_$id";
 
   bool get isOnGoing => status == 'ongoing' || status == "à venir";
   bool get isLive => status == 'live' || status == "direct";
