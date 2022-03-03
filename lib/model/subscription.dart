@@ -7,7 +7,7 @@ part 'subscription.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Subscription {
   String? planId;
-  String paymentType;
+  String? paymentType;
   String? cardLast4;
   double price;
   String currency;
@@ -17,12 +17,12 @@ class Subscription {
 
   Subscription({
     this.planId,
-    required this.paymentType,
+    this.paymentType,
     this.cardLast4,
-    required this.price,
-    required this.currency,
-    required this.billingPeriod,
-    required this.billingPeriodUnit,
+    this.price = 0,
+    this.currency = "EU",
+    this.billingPeriod = 1,
+    this.billingPeriodUnit = 'month',
     required this.nextBillingDate,
   });
 

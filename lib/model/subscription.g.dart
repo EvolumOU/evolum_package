@@ -36,12 +36,12 @@ extension SubscriptionCopyWith on Subscription {
 
 Subscription _$SubscriptionFromJson(Map<String, dynamic> json) => Subscription(
       planId: json['planId'] as String?,
-      paymentType: json['paymentType'] as String,
+      paymentType: json['paymentType'] as String?,
       cardLast4: json['cardLast4'] as String?,
-      price: (json['price'] as num).toDouble(),
-      currency: json['currency'] as String,
-      billingPeriod: json['billingPeriod'] as int,
-      billingPeriodUnit: json['billingPeriodUnit'] as String,
+      price: (json['price'] as num?)?.toDouble() ?? 0,
+      currency: json['currency'] as String? ?? "EU",
+      billingPeriod: json['billingPeriod'] as int? ?? 1,
+      billingPeriodUnit: json['billingPeriodUnit'] as String? ?? 'month',
       nextBillingDate: json['nextBillingDate'] as int?,
     );
 
