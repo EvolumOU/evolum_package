@@ -21,6 +21,7 @@ class Live {
   bool hide;
   int nbCaster;
   String? descr;
+  String? contact;
 
   Live({
     required this.id,
@@ -35,6 +36,7 @@ class Live {
     this.hide = false,
     this.nbCaster = 2,
     this.descr,
+    this.contact,
   });
 
   String get channelName => "channelName_$id";
