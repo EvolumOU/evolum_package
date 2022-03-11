@@ -22,6 +22,7 @@ class Live {
   int nbCaster;
   String? descr;
   String? contact;
+  String? uid;
 
   Live({
     required this.id,
@@ -37,6 +38,7 @@ class Live {
     this.nbCaster = 2,
     this.descr,
     this.contact,
+    this.uid,
   });
 
   String get channelName => "channelName_$id";
