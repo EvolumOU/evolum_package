@@ -5,6 +5,8 @@ class LottieAnimated extends StatefulWidget {
   final String url;
   final BoxFit fit;
   final bool repeat;
+  final bool bounce;
+  final Duration bounceDelay;
 
   const LottieAnimated({
     Key? key,
@@ -12,6 +14,8 @@ class LottieAnimated extends StatefulWidget {
     required this.url,
     this.fit = BoxFit.cover,
     this.repeat = false,
+    this.bounce = false,
+    this.bounceDelay = const Duration(milliseconds: 1000),
   }) : super(key: key);
 
   @override
@@ -31,7 +35,7 @@ class _LottieAnimatedState extends State<LottieAnimated>
     _controller = AnimationController(vsync: this);
   }
 
-  void startAnimation(Duration duration) {
+  Future<void> startAnimation(Duration duration) async {
     if (!mounted) return;
 
     setState(() => loading = false);
@@ -45,6 +49,13 @@ class _LottieAnimatedState extends State<LottieAnimated>
     _controller
       ..duration = duration
       ..forward();
+
+    if (widget.bounce) {
+      await Future.delayed(widget.bounceDelay);
+      _controller
+        ..duration = duration
+        ..reverse();
+    }
   }
 
   @override
