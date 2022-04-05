@@ -35,7 +35,7 @@ class _LottieAnimatedState extends State<LottieAnimated>
     _controller = AnimationController(vsync: this);
   }
 
-  Future<void> startAnimation(Duration duration) async {
+  void startAnimation(Duration duration) {
     if (!mounted) return;
 
     setState(() => loading = false);
@@ -48,14 +48,14 @@ class _LottieAnimatedState extends State<LottieAnimated>
     }
     _controller
       ..duration = duration
-      ..forward();
-
-    if (widget.bounce) {
-      await Future.delayed(widget.bounceDelay);
-      _controller
-        ..duration = duration
-        ..reverse();
-    }
+      ..forward().then((_) async {
+        if (widget.bounce) {
+          await Future.delayed(widget.bounceDelay);
+          _controller
+            ..duration = duration
+            ..reverse();
+        }
+      });
   }
 
   @override
