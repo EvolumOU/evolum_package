@@ -8,7 +8,7 @@ part of 'live.dart';
 
 extension LiveCopyWith on Live {
   Live copyWith({
-    String? channelName,
+    String? contact,
     DateTime? date,
     String? descr,
     bool? hide,
@@ -20,8 +20,10 @@ extension LiveCopyWith on Live {
     String? replayFilename,
     int? secondaryAgoraUid,
     String? status,
+    String? uid,
   }) {
     return Live(
+      contact: contact ?? this.contact,
       date: date ?? this.date,
       descr: descr ?? this.descr,
       hide: hide ?? this.hide,
@@ -33,6 +35,7 @@ extension LiveCopyWith on Live {
       replayFilename: replayFilename ?? this.replayFilename,
       secondaryAgoraUid: secondaryAgoraUid ?? this.secondaryAgoraUid,
       status: status ?? this.status,
+      uid: uid ?? this.uid,
     );
   }
 }
@@ -53,6 +56,8 @@ Live _$LiveFromJson(Map<String, dynamic> json) => Live(
       hide: json['hide'] as bool? ?? false,
       nbCaster: json['nbCaster'] as int? ?? 2,
       descr: json['descr'] as String?,
+      contact: json['contact'] as String?,
+      uid: json['uid'] as String?,
     );
 
 Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
@@ -61,11 +66,12 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
       'status': instance.status,
       'photoName': instance.photoName,
-      'channelName': instance.channelName,
       'replayFilename': instance.replayFilename,
       'mainAgoraUid': instance.mainAgoraUid,
       'secondaryAgoraUid': instance.secondaryAgoraUid,
       'hide': instance.hide,
       'nbCaster': instance.nbCaster,
       'descr': instance.descr,
+      'contact': instance.contact,
+      'uid': instance.uid,
     };
