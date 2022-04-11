@@ -13,7 +13,7 @@ final ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w300,
     ),
     hintStyle: TextStyle(
-      color: kevoBlack,
+      color: kevoBlack.withOpacity(0.7),
       fontWeight: FontWeight.w400,
     ),
     errorStyle: TextStyle(
