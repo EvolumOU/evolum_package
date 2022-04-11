@@ -13,6 +13,14 @@ final ThemeData darkTheme = ThemeData(
       color: kevoWhite,
       fontWeight: FontWeight.w300,
     ),
+    hintStyle: TextStyle(
+      color: kevoWhite,
+      fontWeight: FontWeight.w400,
+    ),
+    errorStyle: TextStyle(
+      color: kevoOrange,
+      fontWeight: FontWeight.w400,
+    ),
     border: InputBorder.none,
     focusedBorder: InputBorder.none,
   ),

@@ -12,6 +12,14 @@ final ThemeData lightTheme = ThemeData(
       color: kevoBlack,
       fontWeight: FontWeight.w300,
     ),
+    hintStyle: TextStyle(
+      color: kevoBlack,
+      fontWeight: FontWeight.w400,
+    ),
+    errorStyle: TextStyle(
+      color: kevoOrange,
+      fontWeight: FontWeight.w400,
+    ),
     border: InputBorder.none,
     focusedBorder: InputBorder.none,
   ),
