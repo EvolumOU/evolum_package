@@ -1,6 +1,10 @@
 part of evolum_package;
 
 final ThemeData lightTheme = ThemeData(
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    secondary: kevoOrange,
+    brightness: Brightness.light,
+  ),
   backgroundColor: kevoWhite,
   scaffoldBackgroundColor: kevoWhite,
   dividerColor: Colors.transparent,
@@ -13,7 +17,7 @@ final ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.w300,
     ),
     hintStyle: TextStyle(
-      color: kevoBlack,
+      color: kevoBlack.withOpacity(0.7),
       fontWeight: FontWeight.w400,
     ),
     errorStyle: TextStyle(
@@ -85,5 +89,4 @@ final ThemeData lightTheme = ThemeData(
       fontWeight: FontWeight.normal,
     ),
   ),
-  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kevoOrange),
 );

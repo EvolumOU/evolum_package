@@ -1,6 +1,10 @@
 part of evolum_package;
 
 final ThemeData darkTheme = ThemeData(
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    secondary: kevoOrange,
+    brightness: Brightness.dark,
+  ),
   backgroundColor: kevoBlack,
   scaffoldBackgroundColor: kevoBlack,
   dialogBackgroundColor: kevoBlack,
@@ -14,7 +18,7 @@ final ThemeData darkTheme = ThemeData(
       fontWeight: FontWeight.w300,
     ),
     hintStyle: TextStyle(
-      color: kevoWhite,
+      color: kevoWhite.withOpacity(0.7),
       fontWeight: FontWeight.w400,
     ),
     errorStyle: TextStyle(
@@ -85,5 +89,4 @@ final ThemeData darkTheme = ThemeData(
       fontWeight: FontWeight.normal,
     ),
   ),
-  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: kevoOrange),
 );
