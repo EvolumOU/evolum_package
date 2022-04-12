@@ -7,6 +7,7 @@ final ThemeData lightTheme = ThemeData(
   dialogBackgroundColor: kevoWhite,
   highlightColor: Colors.transparent,
   splashColor: Colors.transparent,
+  brightness: Brightness.light,
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
       color: kevoBlack,

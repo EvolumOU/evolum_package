@@ -8,6 +8,7 @@ final ThemeData darkTheme = ThemeData(
   dividerColor: Colors.transparent,
   highlightColor: Colors.transparent,
   splashColor: Colors.transparent,
+  brightness: Brightness.dark,
   inputDecorationTheme: InputDecorationTheme(
     labelStyle: TextStyle(
       color: kevoWhite,
