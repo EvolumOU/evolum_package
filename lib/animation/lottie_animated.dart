@@ -5,7 +5,6 @@ class LottieAnimated extends StatefulWidget {
   final String url;
   final BoxFit fit;
   final bool repeat;
-  final bool bounce;
   final Duration bounceDelay;
 
   const LottieAnimated({
@@ -14,8 +13,7 @@ class LottieAnimated extends StatefulWidget {
     required this.url,
     this.fit = BoxFit.cover,
     this.repeat = false,
-    this.bounce = false,
-    this.bounceDelay = const Duration(milliseconds: 1000),
+    this.bounceDelay = Duration.zero,
   }) : super(key: key);
 
   @override
@@ -49,7 +47,7 @@ class _LottieAnimatedState extends State<LottieAnimated>
     _controller
       ..duration = duration
       ..forward().then((_) async {
-        if (widget.bounce) {
+        if (widget.bounceDelay != Duration.zero) {
           await Future.delayed(widget.bounceDelay);
           _controller
             ..duration = duration
@@ -62,7 +60,7 @@ class _LottieAnimatedState extends State<LottieAnimated>
   Widget build(BuildContext context) {
     return AnimatedOpacity(
       opacity: loading ? 0 : 1,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       child: Lottie.asset(
         widget.url,
         controller: _controller,
