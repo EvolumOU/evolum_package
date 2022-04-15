@@ -8,7 +8,6 @@ class ScaleInOut extends StatefulWidget {
   final Duration inDuration;
   final Duration outDuration;
   final Duration pauseDuration;
-  final Duration delayDuration;
   final Function? onReachMax;
   final Function? onGoMin;
   final Function? onFinish;
@@ -24,7 +23,6 @@ class ScaleInOut extends StatefulWidget {
     this.pauseDuration = const Duration(milliseconds: 1000),
     this.inDuration = const Duration(milliseconds: 2300),
     this.outDuration = const Duration(milliseconds: 1700),
-    this.delayDuration = Duration.zero,
     this.onReachMax,
     this.onGoMin,
     this.onFinish,
@@ -40,9 +38,9 @@ class _ScaleInOutState extends State<ScaleInOut> with TickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
 
-  Future<void> animate() async {
-    await Future.delayed(widget.delayDuration);
-
+  @override
+  void initState() {
+    super.initState();
     controller = AnimationController(
       duration: widget.animationDuration,
       vsync: this,
@@ -69,13 +67,6 @@ class _ScaleInOutState extends State<ScaleInOut> with TickerProviderStateMixin {
       });
 
     controller.forward();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    animate();
   }
 
   @override
