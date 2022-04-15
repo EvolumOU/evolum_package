@@ -3,6 +3,8 @@ part of evolum_package;
 class ScaleInOut extends StatefulWidget {
   final Widget child;
   final Tween<double> tween;
+  final Duration animationDuration;
+  final Duration reverseAnimationDuration;
   final Duration inDuration;
   final Duration outDuration;
   final Duration pauseDuration;
@@ -16,6 +18,8 @@ class ScaleInOut extends StatefulWidget {
     Key? key,
     required this.tween,
     required this.child,
+    this.animationDuration = const Duration(milliseconds: 2300),
+    this.reverseAnimationDuration = const Duration(milliseconds: 1700),
     this.pauseDuration = const Duration(milliseconds: 1000),
     this.inDuration = const Duration(milliseconds: 2300),
     this.outDuration = const Duration(milliseconds: 1700),
@@ -38,9 +42,9 @@ class _ScaleInOutState extends State<ScaleInOut> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: const Duration(milliseconds: 2300),
+      duration: widget.animationDuration,
       vsync: this,
-      reverseDuration: const Duration(milliseconds: 1700),
+      reverseDuration: widget.reverseAnimationDuration,
     );
 
     if (widget.repeat) {
