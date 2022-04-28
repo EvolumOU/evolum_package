@@ -6,16 +6,13 @@ import 'dart:ui';
 import 'package:evolum_package/model/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
 
 import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
-import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'utils/firestore.dart';

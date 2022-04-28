@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 enum PointTabIndicatorPosition { top, bottom }
 
@@ -45,9 +44,7 @@ class PointTabIndicator extends Decoration {
 }
 
 class _PointPainter extends BoxPainter {
-  _PointPainter(this.decoration, VoidCallback onChanged)
-      : assert(decoration != null),
-        super(onChanged);
+  _PointPainter(this.decoration, VoidCallback onChanged) : super(onChanged);
 
   final PointTabIndicator decoration;
 
@@ -59,7 +56,6 @@ class _PointPainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    assert(configuration != null);
     assert(configuration.size != null);
 
     final Rect rect = offset & configuration.size!;
