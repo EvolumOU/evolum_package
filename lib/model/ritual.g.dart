@@ -9,6 +9,7 @@ part of 'ritual.dart';
 extension RitualCopyWith on Ritual {
   Ritual copyWith({
     DateTime? date,
+    String? displayFilename,
     int? exitPoint,
     bool? feedback,
     String? filename,
@@ -20,6 +21,7 @@ extension RitualCopyWith on Ritual {
   }) {
     return Ritual(
       date: date ?? this.date,
+      displayFilename: displayFilename ?? this.displayFilename,
       exitPoint: exitPoint ?? this.exitPoint,
       feedback: feedback ?? this.feedback,
       filename: filename ?? this.filename,
@@ -46,6 +48,7 @@ Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
       hide: json['hide'] as bool? ?? false,
       feedback: json['feedback'] as bool? ?? false,
       move: json['move'] as bool? ?? false,
+      displayFilename: json['displayFilename'] as String? ?? "",
     );
 
 Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
@@ -58,4 +61,5 @@ Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
       'hide': instance.hide,
       'feedback': instance.feedback,
       'move': instance.move,
+      'displayFilename': instance.displayFilename,
     };
