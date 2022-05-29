@@ -4,8 +4,8 @@ class LottieAnimated extends StatefulWidget {
   final Duration delay;
   final String url;
   final BoxFit fit;
+  final bool reverse;
   final bool repeat;
-  final bool bounce;
   final Duration bounceDelay;
 
   const LottieAnimated({
@@ -13,9 +13,9 @@ class LottieAnimated extends StatefulWidget {
     this.delay = Duration.zero,
     required this.url,
     this.fit = BoxFit.cover,
+    this.reverse = false,
     this.repeat = false,
-    this.bounce = false,
-    this.bounceDelay = const Duration(milliseconds: 1000),
+    this.bounceDelay = Duration.zero,
   }) : super(key: key);
 
   @override
@@ -24,15 +24,25 @@ class LottieAnimated extends StatefulWidget {
 
 class _LottieAnimatedState extends State<LottieAnimated>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+  late AnimationController controller;
 
   bool loading = true;
   bool error = false;
 
   @override
+  void didUpdateWidget(covariant LottieAnimated oldWidget) {
+    if (controller.status == AnimationStatus.completed && widget.reverse) {
+      controller
+        ..duration = const Duration(milliseconds: 500)
+        ..reverse();
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    controller = AnimationController(vsync: this);
   }
 
   void startAnimation(Duration duration) {
@@ -41,17 +51,17 @@ class _LottieAnimatedState extends State<LottieAnimated>
     setState(() => loading = false);
 
     if (widget.repeat) {
-      _controller
+      controller
         ..duration = duration
         ..repeat();
       return;
     }
-    _controller
+    controller
       ..duration = duration
       ..forward().then((_) async {
-        if (widget.bounce) {
+        if (widget.bounceDelay != Duration.zero) {
           await Future.delayed(widget.bounceDelay);
-          _controller
+          controller
             ..duration = duration
             ..reverse();
         }
@@ -62,10 +72,10 @@ class _LottieAnimatedState extends State<LottieAnimated>
   Widget build(BuildContext context) {
     return AnimatedOpacity(
       opacity: loading ? 0 : 1,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       child: Lottie.asset(
         widget.url,
-        controller: _controller,
+        controller: controller,
         fit: widget.fit,
         onLoaded: (composition) {
           // Configure the AnimationController with the duration of the
@@ -79,7 +89,7 @@ class _LottieAnimatedState extends State<LottieAnimated>
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 }

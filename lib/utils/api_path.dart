@@ -31,7 +31,6 @@ class APIPath {
   static String allEvo() => 'evo/';
   static String allSub() => 'subscription/';
   static String allFeedback() => 'feedback/';
-  static String allReferral() => 'referral/';
   static String allOracle() => 'oracle/';
   static String allCoupon() => 'coupon/';
   static String allChat() => 'coupon/';

@@ -9,10 +9,7 @@ extension StringExtension on String {
 
   Color get hexToColor => Color(int.parse("0xff${replaceAll('#', '')}"));
 
-  bool get isNumeric {
-    if (this == null) return false;
-    return double.tryParse(this) != null;
-  }
+  bool get isNumeric => double.tryParse(this) != null;
 
   String get prefix {
     final indexOfDot = this.indexOf('.');
