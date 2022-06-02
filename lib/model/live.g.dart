@@ -16,11 +16,9 @@ extension LiveCopyWith on Live {
     int? mainAgoraUid,
     String? name,
     int? nbCaster,
-    String? photoName,
     String? replayFilename,
     int? secondaryAgoraUid,
     String? status,
-    String? uid,
   }) {
     return Live(
       contact: contact ?? this.contact,
@@ -31,11 +29,9 @@ extension LiveCopyWith on Live {
       mainAgoraUid: mainAgoraUid ?? this.mainAgoraUid,
       name: name ?? this.name,
       nbCaster: nbCaster ?? this.nbCaster,
-      photoName: photoName ?? this.photoName,
       replayFilename: replayFilename ?? this.replayFilename,
       secondaryAgoraUid: secondaryAgoraUid ?? this.secondaryAgoraUid,
       status: status ?? this.status,
-      uid: uid ?? this.uid,
     );
   }
 }
@@ -49,7 +45,6 @@ Live _$LiveFromJson(Map<String, dynamic> json) => Live(
       date: dateTimefromJson(json['date'] as Timestamp?),
       name: json['name'] as String? ?? '',
       status: json['status'] as String? ?? 'ongoing',
-      photoName: json['photoName'] as String? ?? '',
       replayFilename: json['replayFilename'] as String? ?? '',
       mainAgoraUid: json['mainAgoraUid'] as int? ?? 0,
       secondaryAgoraUid: json['secondaryAgoraUid'] as int? ?? 0,
@@ -57,7 +52,6 @@ Live _$LiveFromJson(Map<String, dynamic> json) => Live(
       nbCaster: json['nbCaster'] as int? ?? 2,
       descr: json['descr'] as String?,
       contact: json['contact'] as String?,
-      uid: json['uid'] as String?,
     );
 
 Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
@@ -65,7 +59,6 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'name': instance.name,
       'date': dateTimetoJson(instance.date),
       'status': instance.status,
-      'photoName': instance.photoName,
       'replayFilename': instance.replayFilename,
       'mainAgoraUid': instance.mainAgoraUid,
       'secondaryAgoraUid': instance.secondaryAgoraUid,
@@ -73,5 +66,4 @@ Map<String, dynamic> _$LiveToJson(Live instance) => <String, dynamic>{
       'nbCaster': instance.nbCaster,
       'descr': instance.descr,
       'contact': instance.contact,
-      'uid': instance.uid,
     };

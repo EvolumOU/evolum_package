@@ -14,7 +14,6 @@ class Live {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   String status;
-  String photoName;
   String replayFilename;
   int mainAgoraUid;
   int secondaryAgoraUid;
@@ -22,15 +21,12 @@ class Live {
   int nbCaster;
   String? descr;
   String? contact;
-  String? uid;
 
   Live({
     required this.id,
     required this.date,
     this.name = '',
     this.status = 'ongoing',
-    // TODO TO REMOVE WHEN PROD READY
-    this.photoName = '',
     this.replayFilename = '',
     this.mainAgoraUid = 0,
     this.secondaryAgoraUid = 0,
@@ -38,7 +34,6 @@ class Live {
     this.nbCaster = 2,
     this.descr,
     this.contact,
-    this.uid,
   });
 
   String get channelName => "channelName_$id";
