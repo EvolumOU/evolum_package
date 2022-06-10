@@ -11,31 +11,28 @@ part 'box.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Box {
   String id;
-  String? uid;
   String? email;
   String status;
   Shipping? shipping;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   bool check;
-  String? customerId;
-  String? paymentSourceId;
+  String boxName;
 
   Box({
     required this.id,
-    this.uid,
     this.email,
     this.status = "nouveau",
     this.shipping,
     required this.date,
     this.check = false,
-    this.customerId,
-    this.paymentSourceId,
+    this.boxName = "box in app",
   });
 
   factory Box.fromJson(Map<String, dynamic> data) => _$BoxFromJson({
         ...data,
         "status": data["status"] ?? "nouveau",
+        "boxName": data["boxName"] ?? "Box App",
       });
 
   Map<String, dynamic> toJson() => _$BoxToJson(this);
