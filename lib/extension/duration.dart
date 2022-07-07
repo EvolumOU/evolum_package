@@ -11,5 +11,8 @@ extension DurationExtension on Duration {
     }).join(':');
   }
 
-  double operator /(Duration other) => inMicroseconds / other.inMicroseconds;
+  Duration operator *(Duration other) =>
+      Duration(milliseconds: inMilliseconds * other.inMilliseconds);
+  Duration operator /(Duration other) =>
+      Duration(milliseconds: inMilliseconds ~/ other.inMilliseconds);
 }
