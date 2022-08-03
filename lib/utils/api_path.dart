@@ -14,6 +14,7 @@ class APIPath {
   static String box(String id) => 'box/$id';
   static String surprise(String id) => 'surprise/$id';
   static String ambiance(String id) => 'ambiance/$id';
+  static String background(String id) => 'background/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
