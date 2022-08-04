@@ -7,13 +7,11 @@ part 'background.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Background {
   String id;
-  String filename;
   bool hide;
   String type;
 
   Background({
     required this.id,
-    required this.filename,
     this.hide = true,
     this.type = 'matin',
   });
