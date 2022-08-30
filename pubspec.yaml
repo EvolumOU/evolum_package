@@ -25,7 +25,7 @@ dependencies:
   clippy_flutter: ^2.0.0-nullsafety.1
   simple_animations: ^3.0.3
   lottie: ^1.2.1
-  fading_edge_scrollview: ^2.0.1
+  fading_edge_scrollview: ^3.0.0
 
 dev_dependencies:
   flutter_test:
