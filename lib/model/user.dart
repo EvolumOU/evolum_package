@@ -72,7 +72,7 @@ class User {
   bool get isAdmin => role == 'admin';
   bool get isUser => role == 'user';
   bool get isCaster => role == 'caster';
-  bool get isReviewer => role == 'reviewer';
+  bool get isInvited => role == 'invited';
 
   factory User.fromJson(Map<String, dynamic> data, String uid) =>
       _$UserFromJson(data);
