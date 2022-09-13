@@ -12,7 +12,7 @@ class AlarmTime {
 
   AlarmTime({required this.hour, required this.minute});
 
-  String get timeFormat => Duration(minutes: minute, hours: hour).minSecStr;
+  String get timeFormat => Duration(minutes: minute, hours: hour).hourMinStr;
 
   bool get isRinging =>
       DateTime.now().hour == hour && DateTime.now().minute == minute;
