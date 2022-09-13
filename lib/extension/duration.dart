@@ -10,4 +10,9 @@ extension DurationExtension on Duration {
       return seg.toString().padLeft(2, '0');
     }).join(':');
   }
+
+  Duration operator *(Duration other) =>
+      Duration(milliseconds: inMilliseconds * other.inMilliseconds);
+  Duration operator /(Duration other) =>
+      Duration(milliseconds: inMilliseconds ~/ other.inMilliseconds);
 }
