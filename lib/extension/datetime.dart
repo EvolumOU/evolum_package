@@ -21,16 +21,23 @@ extension DateTimeExtention on DateTime {
 
   bool get isToday {
     final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    final aDate = DateTime(year, month, day);
-    return aDate == today;
+    return now.day == this.day &&
+        now.month == this.month &&
+        now.year == this.year;
   }
 
   bool get isTomorrow {
-    final today = DateTime.now();
-    return this.year == today.year &&
-        this.month == today.month &&
-        this.day == today.day + 1;
+    final tomorrow = DateTime.now().add(Duration(days: 1));
+    return tomorrow.day == this.day &&
+        tomorrow.month == this.month &&
+        tomorrow.year == this.year;
+  }
+
+  bool get isYesterday {
+    final yesterday = DateTime.now().subtract(Duration(days: 1));
+    return yesterday.day == this.day &&
+        yesterday.month == this.month &&
+        yesterday.year == this.year;
   }
 
   /// Jour du mois + mois. Ex: 28 octobre
