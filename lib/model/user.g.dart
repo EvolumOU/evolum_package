@@ -23,6 +23,7 @@ extension UserCopyWith on User {
     String? reminderNight,
     String? role,
     String? status,
+    List<DateTime>? strikes,
     String? subId,
     String? token,
     String? uid,
@@ -44,6 +45,7 @@ extension UserCopyWith on User {
       reminderNight: reminderNight ?? this.reminderNight,
       role: role ?? this.role,
       status: status ?? this.status,
+      strikes: strikes ?? this.strikes,
       subId: subId ?? this.subId,
       token: token ?? this.token,
       uid: uid ?? this.uid,
@@ -80,6 +82,9 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       subId: json['subId'] as String?,
       token: json['token'] as String?,
       role: json['role'] as String? ?? "user",
+      strikes: json['strikes'] == null
+          ? const <DateTime>[]
+          : listDateTimefromJson(json['strikes'] as List<Timestamp>),
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -102,4 +107,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'subId': instance.subId,
       'token': instance.token,
       'role': instance.role,
+      'strikes': listDateTimetoJson(instance.strikes),
     };

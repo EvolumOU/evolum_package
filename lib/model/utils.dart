@@ -2,6 +2,14 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+List<DateTime> listDateTimefromJson(List<Timestamp> lists) => lists
+    .map((e) => DateTime.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch))
+    .toList();
+
+List<Timestamp> listDateTimetoJson(List<DateTime> listDate) => listDate
+    .map((e) => Timestamp.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch))
+    .toList();
+
 DateTime dateTimefromJson(Timestamp? date) =>
     DateTime.fromMillisecondsSinceEpoch(
         date != null ? date.millisecondsSinceEpoch : 0);

@@ -36,35 +36,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/image/background/
-    - assets/image/icon/
-    - assets/image/player/
-    - assets/image/tab/
-    - assets/image/download/
-    - assets/image/gift/
-    - assets/image/gift/white/
-    - assets/image/gift/black/
-    - assets/image/background/afternoon/
-    - assets/image/background/sunset/
-    - assets/image/background/daybreak/
-    - assets/image/background/deepnight/
-    - assets/image/background/earlynight/
-    - assets/image/background/morning/
-    - assets/image/background/noon/
-    - assets/image/background/evening/
-    - assets/image/share/
-    - assets/image/drawing/big/white/
-    - assets/image/drawing/big/black/
-    - assets/image/drawing/small/white/
-    - assets/image/drawing/small/black/
-    - assets/image/sales/
-    - assets/image/chakras/
-    - assets/lottie/
-    - assets/audio/
-    - assets/video/
-    - assets/video/background/
-
   fonts:
     - family: AirbnbCereal
       fonts:

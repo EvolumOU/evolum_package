@@ -30,6 +30,8 @@ class User {
   String? subId;
   String? token;
   String role;
+  @JsonKey(toJson: listDateTimetoJson, fromJson: listDateTimefromJson)
+  List<DateTime> strikes;
 
   User({
     required this.uid,
@@ -51,6 +53,7 @@ class User {
     this.subId,
     this.token,
     this.role = "user",
+    this.strikes = const <DateTime>[],
   });
 
   bool get isBlock =>
