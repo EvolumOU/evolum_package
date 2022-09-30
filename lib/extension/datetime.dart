@@ -48,7 +48,9 @@ extension DateTimeExtention on DateTime {
   /// Jour de la semaine. Ex: jeudi
   String get dayOfWeek => DateFormat('EEEE', "fr_FR").format(this);
 
-  // retourner comebien de temps il reste
+  /// Temps restant.
+  /// Ex: 2h et 3min
+  /// Ex: 5j, 2h et 3min
   String get remainingTimeString {
     int days = this.difference(DateTime.now()).inDays.abs();
     String hours =
