@@ -19,13 +19,11 @@ dependencies:
   copy_with_extension: ^2.0.0
   json_annotation: ^4.4.0
   http: ^0.13.4
-  url_launcher: ^6.0.18
 
   # UI/UX
   clippy_flutter: ^2.0.0-nullsafety.1
   simple_animations: ^3.0.3
   lottie: ^1.2.1
-  fading_edge_scrollview: ^3.0.0
 
 dev_dependencies:
   flutter_test:
