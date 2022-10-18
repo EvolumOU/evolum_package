@@ -1,7 +1,7 @@
 part of evolum_package;
 
 extension StringExtension on String {
-  String get spaceRemoved => replaceAll(r' ', '');
+  String get removeSpaces => replaceAll(r' ', '');
   String get replaceSpacesWithUnderscore => replaceAll(r' ', '_');
 
   /// returne the file extension "mp3" "mp4" etc.

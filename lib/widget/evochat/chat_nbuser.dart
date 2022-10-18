@@ -16,14 +16,14 @@ class _EvoChatNbUserState extends State<EvoChatNbUser> {
   @override
   void initState() {
     super.initState();
-    FirestoreService.instance.updateData(
+    UtilsFirestore.instance.updateData(
       path: 'chat/${widget.tchatId}',
       data: {"nbUser": FieldValue.increment(1)},
     );
   }
 
   Stream<int> get chatNbUserStream {
-    return FirestoreService.instance.documentStream(
+    return UtilsFirestore.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
         if (data == null) {
@@ -70,7 +70,7 @@ class _EvoChatNbUserState extends State<EvoChatNbUser> {
 
   @override
   void dispose() {
-    FirestoreService.instance.updateData(
+    UtilsFirestore.instance.updateData(
       path: 'chat/${widget.tchatId}',
       data: {"nbUser": FieldValue.increment(-1)},
     );

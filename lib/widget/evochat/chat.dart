@@ -34,7 +34,7 @@ class _EvoChatState extends State<EvoChat> {
   }
 
   Stream<Map<String, dynamic>> get tchatStream {
-    return FirestoreService.instance.documentStream(
+    return UtilsFirestore.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
         if (data == null) return {"messages": []};
@@ -44,7 +44,7 @@ class _EvoChatState extends State<EvoChat> {
   }
 
   Future<void> sendMessageOnTchat(String newMessage) =>
-      FirestoreService.instance.updateData(
+      UtilsFirestore.instance.updateData(
         path: 'chat/${widget.tchatId}',
         data: {
           "messages": FieldValue.arrayUnion([

@@ -55,7 +55,7 @@ class _EvoChatLikeRemoteState extends State<EvoChatLikeRemote>
   }
 
   Stream<int> get tchatNbLikeStream {
-    return FirestoreService.instance.documentStream(
+    return UtilsFirestore.instance.documentStream(
       path: 'chat/${widget.tchatId}',
       builder: (data, documentId) {
         if (data == null) return 0;

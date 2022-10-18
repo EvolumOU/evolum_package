@@ -2,7 +2,7 @@ part of evolum_package;
 
 extension IntExtension on int {
   /// Give the Time value of a DateTime
-  String get timeFormatFromSecondes {
+  String get formatToTimeFromSecondes {
     final Duration duration = Duration(seconds: this);
     String twoDigits(int n) => n.toString().padLeft(2, "0");
     final String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
@@ -14,7 +14,7 @@ extension IntExtension on int {
     return "$twoDigitMinutes:$twoDigitSeconds";
   }
 
-  String get minFormatFromSecondes => "${(this / 60).round().toString()} min";
+  String get formatToMinFromSecondes => "${(this / 60).round().toString()} min";
 
   bool get pourcentageOfChance => Random().nextInt(99) + 1 <= this;
 

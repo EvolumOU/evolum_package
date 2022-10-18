@@ -10,7 +10,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
-
 import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
 import 'package:url_launcher/url_launcher.dart';

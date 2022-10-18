@@ -1,7 +1,7 @@
 part of evolum_package;
 
 extension DurationExtension on Duration {
-  String get minSecStr {
+  String get formatToMinSec {
     return [
       if (inSeconds > 3600) inHours.remainder(24),
       inMinutes.remainder(60),
@@ -11,7 +11,7 @@ extension DurationExtension on Duration {
     }).join(':');
   }
 
-  String get hourMinStr {
+  String get formatToHourMin {
     return [
       if (inSeconds > 3600) inHours.remainder(24),
       inMinutes.remainder(60),
