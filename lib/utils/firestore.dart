@@ -1,8 +1,8 @@
 part of evolum_package;
 
-class FirestoreService {
-  FirestoreService._();
-  static final instance = FirestoreService._();
+class UtilsFirestore {
+  UtilsFirestore._();
+  static final instance = UtilsFirestore._();
 
   DocumentSnapshot? lastUserDocument;
 
@@ -13,7 +13,7 @@ class FirestoreService {
     bool merge = false,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    if (showDebug) debugPrint('===> [Firestore] set: $path: $data');
+    if (showDebug) debugPrint('===> [UtilsFirestore] set: $path: $data');
     await reference.set(data, SetOptions(merge: merge));
   }
 
@@ -23,7 +23,7 @@ class FirestoreService {
     bool showDebug = true,
   }) async {
     final reference = FirebaseFirestore.instance.collection(path);
-    if (showDebug) debugPrint('===> [Firestore] add: $path: $data');
+    if (showDebug) debugPrint('===> [UtilsFirestore] add: $path: $data');
     await reference.add(data);
   }
 
@@ -31,23 +31,34 @@ class FirestoreService {
     required String path,
     required Map<String, dynamic> data,
     bool showDebug = true,
+    bool createIfNotExists = false,
   }) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    if (showDebug) debugPrint('===> [Firestore] update: $path: $data');
-    await reference.update(data);
+    if (showDebug) debugPrint('===> [UtilsFirestore] update: $path: $data');
+    await reference.update(data).catchError((e) {
+      if (showDebug) debugPrint('===> [UtilsFirestore] update error: $e');
+      if (createIfNotExists) {
+        if (showDebug)
+          debugPrint('===> [UtilsFirestore] update not existe create');
+        reference.set(data);
+      }
+    });
   }
 
   Future<void> deleteData({required String path}) async {
     final reference = FirebaseFirestore.instance.doc(path);
-    debugPrint('===> [Firestore] delete: $path');
+    debugPrint('===> [UtilsFirestore] delete: $path');
     await reference.delete();
   }
 
   Future<T> getDocument<T>({
     required String path,
     required T builder(Map<String, dynamic>? data, String documentID),
+    bool showDebug = true,
+    bool createIfNotExists = false,
   }) async {
     final fireStoreItem = await FirebaseFirestore.instance.doc(path).get();
+    if (showDebug) debugPrint('===> [UtilsFirestore] update: $path');
     return builder(fireStoreItem.data(), fireStoreItem.id);
   }
 
@@ -143,7 +154,7 @@ class FirestoreService {
     try {
       var collectionRef = FirebaseFirestore.instance.collection(collectionPath);
       var doc = await collectionRef.doc(docId).get();
-      debugPrint('===> [Firestore] checkIfDocExists: ${doc.exists}');
+      debugPrint('===> [UtilsFirestore] checkIfDocExists: ${doc.exists}');
       return doc.exists;
     } catch (e) {
       return false;
