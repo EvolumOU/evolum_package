@@ -13,7 +13,7 @@ class APIPath {
   static String surprise(String id) => 'surprise/$id';
   static String ambiance(String id) => 'ambiance/$id';
   static String background(String id) => 'background/$id';
-  static String payment(String id) => 'payment/$id';
+  static String payment(String email) => 'payment/$email';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
