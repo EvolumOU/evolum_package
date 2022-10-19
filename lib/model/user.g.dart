@@ -84,7 +84,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       role: json['role'] as String? ?? "user",
       strikes: json['strikes'] == null
           ? const <DateTime>[]
-          : listDateTimefromJson(json['strikes'] as List<dynamic>),
+          : listDateTimefromJson(json['strikes'] as List),
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{

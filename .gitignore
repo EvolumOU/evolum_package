@@ -46,3 +46,5 @@ ios/Podfile.lock
 *.lock
 
 ios/Flutter/.last_build_id
+
+.vscode/settings.json
