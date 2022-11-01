@@ -2,11 +2,11 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'energy.g.dart';
+part 'elixir.g.dart';
 
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
-class Energy {
+class Elixir {
   String id;
   String name;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
@@ -15,7 +15,7 @@ class Energy {
   String imgUrl;
   String description;
 
-  Energy({
+  Elixir({
     required this.id,
     required this.name,
     required this.duration,
@@ -24,9 +24,9 @@ class Energy {
     required this.description,
   });
 
-  factory Energy.fromJson(Map<String, dynamic> data) => _$EnergyFromJson(data);
+  factory Elixir.fromJson(Map<String, dynamic> data) => _$ElixirFromJson(data);
 
-  Map<String, dynamic> toJson() => _$EnergyToJson(this);
+  Map<String, dynamic> toJson() => _$ElixirToJson(this);
 
   @override
   String toString() => toJson().toString();

@@ -14,7 +14,7 @@ class APIPath {
   static String ambiance(String id) => 'ambiance/$id';
   static String background(String id) => 'background/$id';
   static String payment(String id) => 'payment/$id';
-  static String energyCategory(String id) => 'energiesCategories/$id';
+  static String elixirCategory(String id) => 'elixirCategories/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
@@ -41,6 +41,6 @@ class APIPath {
   static String allBackground() => 'background/';
   static String allSurprise() => 'surprise/';
   static String allPayment() => 'payment/';
-  static String allEnergyCategories() => 'energiesCategories/';
+  static String allElixirCategories() => 'elixirCategories/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }

@@ -1,28 +1,28 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/model/energy.dart';
+import 'package:evolum_package/model/elixir.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'energy_category.g.dart';
+part 'elixir_category.g.dart';
 
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
-class EnergyCategory {
+class ElixirCategory {
   String id;
   String name;
   String drawingAsset;
-  List<Energy> energies;
+  List<Elixir> elixirs;
 
-  EnergyCategory({
+  ElixirCategory({
     required this.id,
     required this.name,
     required this.drawingAsset,
-    this.energies = const [],
+    this.elixirs = const [],
   });
 
-  factory EnergyCategory.fromJson(Map<String, dynamic> data) =>
-      _$EnergyCategoryFromJson(data);
+  factory ElixirCategory.fromJson(Map<String, dynamic> data) =>
+      _$ElixirCategoryFromJson(data);
 
-  Map<String, dynamic> toJson() => _$EnergyCategoryToJson(this);
+  Map<String, dynamic> toJson() => _$ElixirCategoryToJson(this);
 
   @override
   String toString() => toJson().toString();

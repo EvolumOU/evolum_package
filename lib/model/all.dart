@@ -18,5 +18,5 @@ export 'oracle.dart';
 export 'breathwork.dart';
 export 'background.dart';
 export 'payment.dart';
-export 'energy.dart';
-export 'energy_category.dart';
+export 'elixir.dart';
+export 'elixir_category.dart';

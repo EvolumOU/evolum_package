@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'energy_category.dart';
+part of 'elixir_category.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-extension EnergyCategoryCopyWith on EnergyCategory {
-  EnergyCategory copyWith({
+extension ElixirCategoryCopyWith on ElixirCategory {
+  ElixirCategory copyWith({
     String? drawingAsset,
-    List<Energy>? energies,
+    List<Elixir>? elixirs,
     String? id,
     String? name,
   }) {
-    return EnergyCategory(
+    return ElixirCategory(
       drawingAsset: drawingAsset ?? this.drawingAsset,
-      energies: energies ?? this.energies,
+      elixirs: elixirs ?? this.elixirs,
       id: id ?? this.id,
       name: name ?? this.name,
     );
@@ -26,21 +26,21 @@ extension EnergyCategoryCopyWith on EnergyCategory {
 // JsonSerializableGenerator
 // **************************************************************************
 
-EnergyCategory _$EnergyCategoryFromJson(Map<String, dynamic> json) =>
-    EnergyCategory(
+ElixirCategory _$ElixirCategoryFromJson(Map<String, dynamic> json) =>
+    ElixirCategory(
       id: json['id'] as String,
       name: json['name'] as String,
       drawingAsset: json['drawingAsset'] as String,
-      energies: (json['energies'] as List<dynamic>?)
-              ?.map((e) => Energy.fromJson(e as Map<String, dynamic>))
+      elixirs: (json['elixirs'] as List<dynamic>?)
+              ?.map((e) => Elixir.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$EnergyCategoryToJson(EnergyCategory instance) =>
+Map<String, dynamic> _$ElixirCategoryToJson(ElixirCategory instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'drawingAsset': instance.drawingAsset,
-      'energies': instance.energies.map((e) => e.toJson()).toList(),
+      'elixirs': instance.elixirs.map((e) => e.toJson()).toList(),
     };

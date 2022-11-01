@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'energy.dart';
+part of 'elixir.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-extension EnergyCopyWith on Energy {
-  Energy copyWith({
+extension ElixirCopyWith on Elixir {
+  Elixir copyWith({
     String? description,
     Duration? duration,
     String? id,
@@ -15,7 +15,7 @@ extension EnergyCopyWith on Energy {
     bool? locked,
     String? name,
   }) {
-    return Energy(
+    return Elixir(
       description: description ?? this.description,
       duration: duration ?? this.duration,
       id: id ?? this.id,
@@ -30,7 +30,7 @@ extension EnergyCopyWith on Energy {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Energy _$EnergyFromJson(Map<String, dynamic> json) => Energy(
+Elixir _$ElixirFromJson(Map<String, dynamic> json) => Elixir(
       id: json['id'] as String,
       name: json['name'] as String,
       duration: durationfromJson(json['duration'] as int),
@@ -39,7 +39,7 @@ Energy _$EnergyFromJson(Map<String, dynamic> json) => Energy(
       description: json['description'] as String,
     );
 
-Map<String, dynamic> _$EnergyToJson(Energy instance) => <String, dynamic>{
+Map<String, dynamic> _$ElixirToJson(Elixir instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'duration': durationtoJson(instance.duration),
