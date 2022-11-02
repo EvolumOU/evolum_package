@@ -8,13 +8,15 @@ part of 'elixir_category.dart';
 
 extension ElixirCategoryCopyWith on ElixirCategory {
   ElixirCategory copyWith({
-    String? drawingAsset,
+    String? drawingAssetBlack,
+    String? drawingAssetWhite,
     List<Elixir>? elixirs,
     String? id,
     String? name,
   }) {
     return ElixirCategory(
-      drawingAsset: drawingAsset ?? this.drawingAsset,
+      drawingAssetBlack: drawingAssetBlack ?? this.drawingAssetBlack,
+      drawingAssetWhite: drawingAssetWhite ?? this.drawingAssetWhite,
       elixirs: elixirs ?? this.elixirs,
       id: id ?? this.id,
       name: name ?? this.name,
@@ -30,7 +32,8 @@ ElixirCategory _$ElixirCategoryFromJson(Map<String, dynamic> json) =>
     ElixirCategory(
       id: json['id'] as String,
       name: json['name'] as String,
-      drawingAsset: json['drawingAsset'] as String,
+      drawingAssetWhite: json['drawingAssetWhite'] as String,
+      drawingAssetBlack: json['drawingAssetBlack'] as String,
       elixirs: (json['elixirs'] as List<dynamic>?)
               ?.map((e) => Elixir.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -41,6 +44,7 @@ Map<String, dynamic> _$ElixirCategoryToJson(ElixirCategory instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'drawingAsset': instance.drawingAsset,
+      'drawingAssetWhite': instance.drawingAssetWhite,
+      'drawingAssetBlack': instance.drawingAssetBlack,
       'elixirs': instance.elixirs.map((e) => e.toJson()).toList(),
     };
