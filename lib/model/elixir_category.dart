@@ -9,15 +9,11 @@ part 'elixir_category.g.dart';
 class ElixirCategory {
   String id;
   String name;
-  String drawingAssetWhite;
-  String drawingAssetBlack;
   List<Elixir> elixirs;
 
   ElixirCategory({
     required this.id,
     required this.name,
-    required this.drawingAssetWhite,
-    required this.drawingAssetBlack,
     this.elixirs = const [],
   });
 
