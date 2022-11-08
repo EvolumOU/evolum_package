@@ -15,6 +15,8 @@ class APIPath {
   static String background(String id) => 'background/$id';
   static String payment(String id) => 'payment/$id';
   static String elixirCategory(String id) => 'elixirCategories/$id';
+  static String elixir(String categoryId, String elixirId) =>
+      'elixirCategories/$categoryId/elixirs/$elixirId';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
