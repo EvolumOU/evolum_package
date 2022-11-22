@@ -6,6 +6,7 @@ class EvoChat extends StatefulWidget {
   final String? name;
   final List<Widget> actions;
   final int? nbMsgToShow;
+  final Function(String, String, String)? onPressMessage;
   final Function(String)? onLongPressMessage;
 
   const EvoChat({
@@ -15,6 +16,7 @@ class EvoChat extends StatefulWidget {
     this.name,
     this.actions = const [],
     this.nbMsgToShow,
+    this.onPressMessage,
     this.onLongPressMessage,
   }) : super(key: key);
 
@@ -119,6 +121,11 @@ class _EvoChatState extends State<EvoChat> {
         RawMaterialButton(
           onPressed: () {
             if (url.isNotEmpty) launch(url);
+            widget.onPressMessage?.call(
+              msgData['uid'],
+              msgData['name'],
+              msgData['text'],
+            );
           },
           onLongPress: () => widget.onLongPressMessage?.call(msgData["text"]),
           child: Align(
