@@ -24,6 +24,7 @@ extension EvoCopyWith on Evo {
     String? tag,
     List<Timing>? timings,
     String? type,
+    List<String>? tools,
   }) {
     return Evo(
       createdDate: createdDate ?? this.createdDate,
@@ -42,6 +43,7 @@ extension EvoCopyWith on Evo {
       tag: tag ?? this.tag,
       timings: timings ?? this.timings,
       type: type ?? this.type,
+      tools: tools ?? this.tools,
     );
   }
 }
@@ -72,6 +74,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       mode: json['mode'] as String? ?? 'vertical',
       form: json['form'] as String? ?? 'focus',
       size: (json['size'] as num?)?.toDouble() ?? 0.0,
+      tools: json['tools'] as List<String>,
     );
 
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
@@ -91,4 +94,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'mode': instance.mode,
       'form': instance.form,
       'size': instance.size,
+      'tools': instance.tools,
     };

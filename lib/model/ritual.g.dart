@@ -18,6 +18,7 @@ extension RitualCopyWith on Ritual {
     bool? move,
     String? name,
     String? type,
+    List<String>? tools,
   }) {
     return Ritual(
       date: date ?? this.date,
@@ -30,6 +31,7 @@ extension RitualCopyWith on Ritual {
       move: move ?? this.move,
       name: name ?? this.name,
       type: type ?? this.type,
+      tools: tools ?? this.tools,
     );
   }
 }
@@ -49,6 +51,7 @@ Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
       feedback: json['feedback'] as bool? ?? false,
       move: json['move'] as bool? ?? false,
       displayFilename: json['displayFilename'] as String? ?? "",
+      tools: json['tools'] as List<String>,
     );
 
 Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
@@ -62,4 +65,5 @@ Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
       'feedback': instance.feedback,
       'move': instance.move,
       'displayFilename': instance.displayFilename,
+      'tools': instance.tools,
     };

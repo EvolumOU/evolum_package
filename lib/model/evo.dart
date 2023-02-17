@@ -29,6 +29,7 @@ class Evo {
   String mode;
   String form;
   double size;
+  final List<String> tools;
 
   Evo({
     this.id = '',
@@ -47,6 +48,7 @@ class Evo {
     this.mode = 'vertical',
     this.form = 'focus',
     this.size = 0.0,
+    this.tools = const <String>[],
   });
 
   String get filename => gsUrl.split('/').last;

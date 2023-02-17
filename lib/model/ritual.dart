@@ -20,6 +20,7 @@ class Ritual {
   bool feedback;
   bool move;
   String displayFilename;
+  final List<String> tools;
 
   Ritual({
     required this.id,
@@ -32,6 +33,7 @@ class Ritual {
     this.feedback = false,
     this.move = false,
     this.displayFilename = "",
+    this.tools = const <String>[],
   });
 
   bool get isForDay => type == "jour" || type == "matin";
@@ -42,6 +44,7 @@ class Ritual {
         "hide": data["hide"] ?? true,
         "feedback": data["feedback"] ?? false,
         "displayFilename": data["displayFilename"] ?? "",
+        "tools": data["tools"] ?? <String>[],
       });
 
   Map<String, dynamic> toJson() => _$RitualToJson(this);
