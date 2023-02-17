@@ -20,7 +20,7 @@ class Ritual {
   bool feedback;
   bool move;
   String displayFilename;
-  final List<String> tools;
+  List<String> tools;
 
   Ritual({
     required this.id,

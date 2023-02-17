@@ -29,7 +29,7 @@ class Evo {
   String mode;
   String form;
   double size;
-  final List<String> tools;
+  List<String> tools;
 
   Evo({
     this.id = '',
