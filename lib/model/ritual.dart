@@ -44,7 +44,6 @@ class Ritual {
         "hide": data["hide"] ?? true,
         "feedback": data["feedback"] ?? false,
         "displayFilename": data["displayFilename"] ?? "",
-        "tools": data["tools"] ?? <String>[],
       });
 
   Map<String, dynamic> toJson() => _$RitualToJson(this);

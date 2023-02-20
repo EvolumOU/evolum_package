@@ -51,7 +51,9 @@ Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
       feedback: json['feedback'] as bool? ?? false,
       move: json['move'] as bool? ?? false,
       displayFilename: json['displayFilename'] as String? ?? "",
-      tools: json['tools'] as List<String>,
+      tools:
+          (json['tools'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
     );
 
 Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{

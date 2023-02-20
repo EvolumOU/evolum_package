@@ -74,7 +74,9 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       mode: json['mode'] as String? ?? 'vertical',
       form: json['form'] as String? ?? 'focus',
       size: (json['size'] as num?)?.toDouble() ?? 0.0,
-      tools: json['tools'] as List<String>,
+      tools:
+          (json['tools'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
     );
 
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
