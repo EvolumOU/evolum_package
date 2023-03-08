@@ -6,26 +6,119 @@ part of 'box.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension BoxCopyWith on Box {
-  Box copyWith({
-    String? boxName,
-    bool? check,
-    DateTime? date,
-    String? email,
+abstract class _$BoxCWProxy {
+  Box id(String id);
+
+  Box email(String? email);
+
+  Box status(String status);
+
+  Box shipping(Shipping? shipping);
+
+  Box date(DateTime date);
+
+  Box check(bool check);
+
+  Box boxName(String boxName);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Box(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Box(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Box call({
     String? id,
-    Shipping? shipping,
+    String? email,
     String? status,
+    Shipping? shipping,
+    DateTime? date,
+    bool? check,
+    String? boxName,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfBox.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfBox.copyWith.fieldName(...)`
+class _$BoxCWProxyImpl implements _$BoxCWProxy {
+  const _$BoxCWProxyImpl(this._value);
+
+  final Box _value;
+
+  @override
+  Box id(String id) => this(id: id);
+
+  @override
+  Box email(String? email) => this(email: email);
+
+  @override
+  Box status(String status) => this(status: status);
+
+  @override
+  Box shipping(Shipping? shipping) => this(shipping: shipping);
+
+  @override
+  Box date(DateTime date) => this(date: date);
+
+  @override
+  Box check(bool check) => this(check: check);
+
+  @override
+  Box boxName(String boxName) => this(boxName: boxName);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Box(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Box(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Box call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? email = const $CopyWithPlaceholder(),
+    Object? status = const $CopyWithPlaceholder(),
+    Object? shipping = const $CopyWithPlaceholder(),
+    Object? date = const $CopyWithPlaceholder(),
+    Object? check = const $CopyWithPlaceholder(),
+    Object? boxName = const $CopyWithPlaceholder(),
   }) {
     return Box(
-      boxName: boxName ?? this.boxName,
-      check: check ?? this.check,
-      date: date ?? this.date,
-      email: email ?? this.email,
-      id: id ?? this.id,
-      shipping: shipping ?? this.shipping,
-      status: status ?? this.status,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      email: email == const $CopyWithPlaceholder()
+          ? _value.email
+          // ignore: cast_nullable_to_non_nullable
+          : email as String?,
+      status: status == const $CopyWithPlaceholder() || status == null
+          ? _value.status
+          // ignore: cast_nullable_to_non_nullable
+          : status as String,
+      shipping: shipping == const $CopyWithPlaceholder()
+          ? _value.shipping
+          // ignore: cast_nullable_to_non_nullable
+          : shipping as Shipping?,
+      date: date == const $CopyWithPlaceholder() || date == null
+          ? _value.date
+          // ignore: cast_nullable_to_non_nullable
+          : date as DateTime,
+      check: check == const $CopyWithPlaceholder() || check == null
+          ? _value.check
+          // ignore: cast_nullable_to_non_nullable
+          : check as bool,
+      boxName: boxName == const $CopyWithPlaceholder() || boxName == null
+          ? _value.boxName
+          // ignore: cast_nullable_to_non_nullable
+          : boxName as String,
     );
   }
+}
+
+extension $BoxCopyWith on Box {
+  /// Returns a callable class that can be used as follows: `instanceOfBox.copyWith(...)` or like so:`instanceOfBox.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$BoxCWProxy get copyWith => _$BoxCWProxyImpl(this);
 }
 
 // **************************************************************************

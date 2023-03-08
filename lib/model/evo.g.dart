@@ -6,46 +6,230 @@ part of 'evo.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension EvoCopyWith on Evo {
-  Evo copyWith({
-    DateTime? createdDate,
-    Duration? duration,
-    bool? feedback,
-    String? form,
-    String? gsUrl,
-    bool? hide,
+abstract class _$EvoCWProxy {
+  Evo id(String id);
+
+  Evo gsUrl(String gsUrl);
+
+  Evo name(String name);
+
+  Evo type(String type);
+
+  Evo tag(String tag);
+
+  Evo duration(Duration duration);
+
+  Evo loop(bool loop);
+
+  Evo timings(List<Timing> timings);
+
+  Evo createdDate(DateTime createdDate);
+
+  Evo summarize(String summarize);
+
+  Evo intro(String intro);
+
+  Evo feedback(bool feedback);
+
+  Evo hide(bool hide);
+
+  Evo mode(String mode);
+
+  Evo form(String form);
+
+  Evo size(double size);
+
+  Evo tools(List<String> tools);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Evo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Evo(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Evo call({
     String? id,
-    String? intro,
-    bool? loop,
-    String? mode,
+    String? gsUrl,
     String? name,
-    double? size,
-    String? summarize,
-    String? tag,
-    List<Timing>? timings,
     String? type,
+    String? tag,
+    Duration? duration,
+    bool? loop,
+    List<Timing>? timings,
+    DateTime? createdDate,
+    String? summarize,
+    String? intro,
+    bool? feedback,
+    bool? hide,
+    String? mode,
+    String? form,
+    double? size,
     List<String>? tools,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfEvo.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfEvo.copyWith.fieldName(...)`
+class _$EvoCWProxyImpl implements _$EvoCWProxy {
+  const _$EvoCWProxyImpl(this._value);
+
+  final Evo _value;
+
+  @override
+  Evo id(String id) => this(id: id);
+
+  @override
+  Evo gsUrl(String gsUrl) => this(gsUrl: gsUrl);
+
+  @override
+  Evo name(String name) => this(name: name);
+
+  @override
+  Evo type(String type) => this(type: type);
+
+  @override
+  Evo tag(String tag) => this(tag: tag);
+
+  @override
+  Evo duration(Duration duration) => this(duration: duration);
+
+  @override
+  Evo loop(bool loop) => this(loop: loop);
+
+  @override
+  Evo timings(List<Timing> timings) => this(timings: timings);
+
+  @override
+  Evo createdDate(DateTime createdDate) => this(createdDate: createdDate);
+
+  @override
+  Evo summarize(String summarize) => this(summarize: summarize);
+
+  @override
+  Evo intro(String intro) => this(intro: intro);
+
+  @override
+  Evo feedback(bool feedback) => this(feedback: feedback);
+
+  @override
+  Evo hide(bool hide) => this(hide: hide);
+
+  @override
+  Evo mode(String mode) => this(mode: mode);
+
+  @override
+  Evo form(String form) => this(form: form);
+
+  @override
+  Evo size(double size) => this(size: size);
+
+  @override
+  Evo tools(List<String> tools) => this(tools: tools);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Evo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Evo(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Evo call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? gsUrl = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? tag = const $CopyWithPlaceholder(),
+    Object? duration = const $CopyWithPlaceholder(),
+    Object? loop = const $CopyWithPlaceholder(),
+    Object? timings = const $CopyWithPlaceholder(),
+    Object? createdDate = const $CopyWithPlaceholder(),
+    Object? summarize = const $CopyWithPlaceholder(),
+    Object? intro = const $CopyWithPlaceholder(),
+    Object? feedback = const $CopyWithPlaceholder(),
+    Object? hide = const $CopyWithPlaceholder(),
+    Object? mode = const $CopyWithPlaceholder(),
+    Object? form = const $CopyWithPlaceholder(),
+    Object? size = const $CopyWithPlaceholder(),
+    Object? tools = const $CopyWithPlaceholder(),
   }) {
     return Evo(
-      createdDate: createdDate ?? this.createdDate,
-      duration: duration ?? this.duration,
-      feedback: feedback ?? this.feedback,
-      form: form ?? this.form,
-      gsUrl: gsUrl ?? this.gsUrl,
-      hide: hide ?? this.hide,
-      id: id ?? this.id,
-      intro: intro ?? this.intro,
-      loop: loop ?? this.loop,
-      mode: mode ?? this.mode,
-      name: name ?? this.name,
-      size: size ?? this.size,
-      summarize: summarize ?? this.summarize,
-      tag: tag ?? this.tag,
-      timings: timings ?? this.timings,
-      type: type ?? this.type,
-      tools: tools ?? this.tools,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      gsUrl: gsUrl == const $CopyWithPlaceholder() || gsUrl == null
+          ? _value.gsUrl
+          // ignore: cast_nullable_to_non_nullable
+          : gsUrl as String,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as String,
+      tag: tag == const $CopyWithPlaceholder() || tag == null
+          ? _value.tag
+          // ignore: cast_nullable_to_non_nullable
+          : tag as String,
+      duration: duration == const $CopyWithPlaceholder() || duration == null
+          ? _value.duration
+          // ignore: cast_nullable_to_non_nullable
+          : duration as Duration,
+      loop: loop == const $CopyWithPlaceholder() || loop == null
+          ? _value.loop
+          // ignore: cast_nullable_to_non_nullable
+          : loop as bool,
+      timings: timings == const $CopyWithPlaceholder() || timings == null
+          ? _value.timings
+          // ignore: cast_nullable_to_non_nullable
+          : timings as List<Timing>,
+      createdDate:
+          createdDate == const $CopyWithPlaceholder() || createdDate == null
+              ? _value.createdDate
+              // ignore: cast_nullable_to_non_nullable
+              : createdDate as DateTime,
+      summarize: summarize == const $CopyWithPlaceholder() || summarize == null
+          ? _value.summarize
+          // ignore: cast_nullable_to_non_nullable
+          : summarize as String,
+      intro: intro == const $CopyWithPlaceholder() || intro == null
+          ? _value.intro
+          // ignore: cast_nullable_to_non_nullable
+          : intro as String,
+      feedback: feedback == const $CopyWithPlaceholder() || feedback == null
+          ? _value.feedback
+          // ignore: cast_nullable_to_non_nullable
+          : feedback as bool,
+      hide: hide == const $CopyWithPlaceholder() || hide == null
+          ? _value.hide
+          // ignore: cast_nullable_to_non_nullable
+          : hide as bool,
+      mode: mode == const $CopyWithPlaceholder() || mode == null
+          ? _value.mode
+          // ignore: cast_nullable_to_non_nullable
+          : mode as String,
+      form: form == const $CopyWithPlaceholder() || form == null
+          ? _value.form
+          // ignore: cast_nullable_to_non_nullable
+          : form as String,
+      size: size == const $CopyWithPlaceholder() || size == null
+          ? _value.size
+          // ignore: cast_nullable_to_non_nullable
+          : size as double,
+      tools: tools == const $CopyWithPlaceholder() || tools == null
+          ? _value.tools
+          // ignore: cast_nullable_to_non_nullable
+          : tools as List<String>,
     );
   }
+}
+
+extension $EvoCopyWith on Evo {
+  /// Returns a callable class that can be used as follows: `instanceOfEvo.copyWith(...)` or like so:`instanceOfEvo.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$EvoCWProxy get copyWith => _$EvoCWProxyImpl(this);
 }
 
 // **************************************************************************

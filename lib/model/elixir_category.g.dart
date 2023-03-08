@@ -6,18 +6,75 @@ part of 'elixir_category.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension ElixirCategoryCopyWith on ElixirCategory {
-  ElixirCategory copyWith({
-    List<Elixir>? elixirs,
+abstract class _$ElixirCategoryCWProxy {
+  ElixirCategory id(String id);
+
+  ElixirCategory name(String name);
+
+  ElixirCategory elixirs(List<Elixir> elixirs);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ElixirCategory(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ElixirCategory(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ElixirCategory call({
     String? id,
     String? name,
+    List<Elixir>? elixirs,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfElixirCategory.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfElixirCategory.copyWith.fieldName(...)`
+class _$ElixirCategoryCWProxyImpl implements _$ElixirCategoryCWProxy {
+  const _$ElixirCategoryCWProxyImpl(this._value);
+
+  final ElixirCategory _value;
+
+  @override
+  ElixirCategory id(String id) => this(id: id);
+
+  @override
+  ElixirCategory name(String name) => this(name: name);
+
+  @override
+  ElixirCategory elixirs(List<Elixir> elixirs) => this(elixirs: elixirs);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ElixirCategory(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// ElixirCategory(...).copyWith(id: 12, name: "My name")
+  /// ````
+  ElixirCategory call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? elixirs = const $CopyWithPlaceholder(),
   }) {
     return ElixirCategory(
-      elixirs: elixirs ?? this.elixirs,
-      id: id ?? this.id,
-      name: name ?? this.name,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
+      elixirs: elixirs == const $CopyWithPlaceholder() || elixirs == null
+          ? _value.elixirs
+          // ignore: cast_nullable_to_non_nullable
+          : elixirs as List<Elixir>,
     );
   }
+}
+
+extension $ElixirCategoryCopyWith on ElixirCategory {
+  /// Returns a callable class that can be used as follows: `instanceOfElixirCategory.copyWith(...)` or like so:`instanceOfElixirCategory.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$ElixirCategoryCWProxy get copyWith => _$ElixirCategoryCWProxyImpl(this);
 }
 
 // **************************************************************************

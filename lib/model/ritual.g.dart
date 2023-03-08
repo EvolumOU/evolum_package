@@ -6,34 +6,165 @@ part of 'ritual.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension RitualCopyWith on Ritual {
-  Ritual copyWith({
-    DateTime? date,
-    String? displayFilename,
-    int? exitPoint,
-    bool? feedback,
-    String? filename,
-    bool? hide,
+abstract class _$RitualCWProxy {
+  Ritual id(String id);
+
+  Ritual date(DateTime date);
+
+  Ritual name(String name);
+
+  Ritual filename(String filename);
+
+  Ritual type(String type);
+
+  Ritual exitPoint(int exitPoint);
+
+  Ritual hide(bool hide);
+
+  Ritual feedback(bool feedback);
+
+  Ritual move(bool move);
+
+  Ritual displayFilename(String displayFilename);
+
+  Ritual tools(List<String> tools);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Ritual(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Ritual(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Ritual call({
     String? id,
-    bool? move,
+    DateTime? date,
     String? name,
+    String? filename,
     String? type,
+    int? exitPoint,
+    bool? hide,
+    bool? feedback,
+    bool? move,
+    String? displayFilename,
     List<String>? tools,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfRitual.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfRitual.copyWith.fieldName(...)`
+class _$RitualCWProxyImpl implements _$RitualCWProxy {
+  const _$RitualCWProxyImpl(this._value);
+
+  final Ritual _value;
+
+  @override
+  Ritual id(String id) => this(id: id);
+
+  @override
+  Ritual date(DateTime date) => this(date: date);
+
+  @override
+  Ritual name(String name) => this(name: name);
+
+  @override
+  Ritual filename(String filename) => this(filename: filename);
+
+  @override
+  Ritual type(String type) => this(type: type);
+
+  @override
+  Ritual exitPoint(int exitPoint) => this(exitPoint: exitPoint);
+
+  @override
+  Ritual hide(bool hide) => this(hide: hide);
+
+  @override
+  Ritual feedback(bool feedback) => this(feedback: feedback);
+
+  @override
+  Ritual move(bool move) => this(move: move);
+
+  @override
+  Ritual displayFilename(String displayFilename) =>
+      this(displayFilename: displayFilename);
+
+  @override
+  Ritual tools(List<String> tools) => this(tools: tools);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Ritual(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Ritual(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Ritual call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? date = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? filename = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+    Object? exitPoint = const $CopyWithPlaceholder(),
+    Object? hide = const $CopyWithPlaceholder(),
+    Object? feedback = const $CopyWithPlaceholder(),
+    Object? move = const $CopyWithPlaceholder(),
+    Object? displayFilename = const $CopyWithPlaceholder(),
+    Object? tools = const $CopyWithPlaceholder(),
   }) {
     return Ritual(
-      date: date ?? this.date,
-      displayFilename: displayFilename ?? this.displayFilename,
-      exitPoint: exitPoint ?? this.exitPoint,
-      feedback: feedback ?? this.feedback,
-      filename: filename ?? this.filename,
-      hide: hide ?? this.hide,
-      id: id ?? this.id,
-      move: move ?? this.move,
-      name: name ?? this.name,
-      type: type ?? this.type,
-      tools: tools ?? this.tools,
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      date: date == const $CopyWithPlaceholder() || date == null
+          ? _value.date
+          // ignore: cast_nullable_to_non_nullable
+          : date as DateTime,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
+      filename: filename == const $CopyWithPlaceholder() || filename == null
+          ? _value.filename
+          // ignore: cast_nullable_to_non_nullable
+          : filename as String,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as String,
+      exitPoint: exitPoint == const $CopyWithPlaceholder() || exitPoint == null
+          ? _value.exitPoint
+          // ignore: cast_nullable_to_non_nullable
+          : exitPoint as int,
+      hide: hide == const $CopyWithPlaceholder() || hide == null
+          ? _value.hide
+          // ignore: cast_nullable_to_non_nullable
+          : hide as bool,
+      feedback: feedback == const $CopyWithPlaceholder() || feedback == null
+          ? _value.feedback
+          // ignore: cast_nullable_to_non_nullable
+          : feedback as bool,
+      move: move == const $CopyWithPlaceholder() || move == null
+          ? _value.move
+          // ignore: cast_nullable_to_non_nullable
+          : move as bool,
+      displayFilename: displayFilename == const $CopyWithPlaceholder() ||
+              displayFilename == null
+          ? _value.displayFilename
+          // ignore: cast_nullable_to_non_nullable
+          : displayFilename as String,
+      tools: tools == const $CopyWithPlaceholder() || tools == null
+          ? _value.tools
+          // ignore: cast_nullable_to_non_nullable
+          : tools as List<String>,
     );
   }
+}
+
+extension $RitualCopyWith on Ritual {
+  /// Returns a callable class that can be used as follows: `instanceOfRitual.copyWith(...)` or like so:`instanceOfRitual.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$RitualCWProxy get copyWith => _$RitualCWProxyImpl(this);
 }
 
 // **************************************************************************

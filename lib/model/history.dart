@@ -10,28 +10,38 @@ part 'history.g.dart';
 @JsonSerializable(explicitToJson: true)
 class History {
   String id;
-  Ritual? ritual;
-  Evo? evo;
-  String? review;
+  dynamic item;
+  String emotion;
+  String gratitude;
+  String review;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   bool checked;
 
   History({
     required this.id,
-    this.ritual,
-    this.evo,
-    this.review,
+    this.item,
+    this.review = "",
     required this.date,
+    this.emotion = "",
+    this.gratitude = "",
     this.checked = false,
   });
 
   factory History.fromJson(Map<String, dynamic> data) {
+    final itemData = data["item"] ?? data["evo"] ?? data["ritual"];
     return _$HistoryFromJson({
       ...data,
       "checked": data["checked"] ?? false,
+      "review": data["review"] ?? "",
+      "item": data["tag"] != null
+          ? Evo.fromJson(itemData)
+          : Ritual.fromJson(itemData)
     });
   }
+
+  bool get isEvo => item["tag"] != null;
+  bool get isRitual => item["tag"] == null;
 
   Map<String, dynamic> toJson() => _$HistoryToJson(this);
 

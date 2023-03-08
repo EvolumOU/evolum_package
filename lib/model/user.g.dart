@@ -6,52 +6,269 @@ part of 'user.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-extension UserCopyWith on User {
-  User copyWith({
-    bool? bgmusic,
-    DateTime? challengeDate,
-    DateTime? createdDate,
+abstract class _$UserCWProxy {
+  User uid(String uid);
+
+  User email(String email);
+
+  User name(String name);
+
+  User notification(bool notification);
+
+  User bgmusic(bool bgmusic);
+
+  User status(String status);
+
+  User reminderMorning(String? reminderMorning);
+
+  User reminderNight(String? reminderNight);
+
+  User goal(List<dynamic> goal);
+
+  User nbDone(int nbDone);
+
+  User noReview(int noReview);
+
+  User nbChallengeDone(int nbChallengeDone);
+
+  User createdDate(DateTime createdDate);
+
+  User leadDate(DateTime? leadDate);
+
+  User challengeDate(DateTime? challengeDate);
+
+  User unlocked(List<String> unlocked);
+
+  User subId(String? subId);
+
+  User token(String? token);
+
+  User role(String role);
+
+  User strikes(List<DateTime> strikes);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// User(...).copyWith(id: 12, name: "My name")
+  /// ````
+  User call({
+    String? uid,
     String? email,
-    List<dynamic>? goal,
-    DateTime? leadDate,
     String? name,
-    int? nbChallengeDone,
-    int? nbDone,
-    int? noReview,
     bool? notification,
+    bool? bgmusic,
+    String? status,
     String? reminderMorning,
     String? reminderNight,
-    String? role,
-    String? status,
-    List<DateTime>? strikes,
+    List<dynamic>? goal,
+    int? nbDone,
+    int? noReview,
+    int? nbChallengeDone,
+    DateTime? createdDate,
+    DateTime? leadDate,
+    DateTime? challengeDate,
+    List<String>? unlocked,
     String? subId,
     String? token,
-    String? uid,
-    List<String>? unlocked,
+    String? role,
+    List<DateTime>? strikes,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfUser.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfUser.copyWith.fieldName(...)`
+class _$UserCWProxyImpl implements _$UserCWProxy {
+  const _$UserCWProxyImpl(this._value);
+
+  final User _value;
+
+  @override
+  User uid(String uid) => this(uid: uid);
+
+  @override
+  User email(String email) => this(email: email);
+
+  @override
+  User name(String name) => this(name: name);
+
+  @override
+  User notification(bool notification) => this(notification: notification);
+
+  @override
+  User bgmusic(bool bgmusic) => this(bgmusic: bgmusic);
+
+  @override
+  User status(String status) => this(status: status);
+
+  @override
+  User reminderMorning(String? reminderMorning) =>
+      this(reminderMorning: reminderMorning);
+
+  @override
+  User reminderNight(String? reminderNight) =>
+      this(reminderNight: reminderNight);
+
+  @override
+  User goal(List<dynamic> goal) => this(goal: goal);
+
+  @override
+  User nbDone(int nbDone) => this(nbDone: nbDone);
+
+  @override
+  User noReview(int noReview) => this(noReview: noReview);
+
+  @override
+  User nbChallengeDone(int nbChallengeDone) =>
+      this(nbChallengeDone: nbChallengeDone);
+
+  @override
+  User createdDate(DateTime createdDate) => this(createdDate: createdDate);
+
+  @override
+  User leadDate(DateTime? leadDate) => this(leadDate: leadDate);
+
+  @override
+  User challengeDate(DateTime? challengeDate) =>
+      this(challengeDate: challengeDate);
+
+  @override
+  User unlocked(List<String> unlocked) => this(unlocked: unlocked);
+
+  @override
+  User subId(String? subId) => this(subId: subId);
+
+  @override
+  User token(String? token) => this(token: token);
+
+  @override
+  User role(String role) => this(role: role);
+
+  @override
+  User strikes(List<DateTime> strikes) => this(strikes: strikes);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// User(...).copyWith(id: 12, name: "My name")
+  /// ````
+  User call({
+    Object? uid = const $CopyWithPlaceholder(),
+    Object? email = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
+    Object? notification = const $CopyWithPlaceholder(),
+    Object? bgmusic = const $CopyWithPlaceholder(),
+    Object? status = const $CopyWithPlaceholder(),
+    Object? reminderMorning = const $CopyWithPlaceholder(),
+    Object? reminderNight = const $CopyWithPlaceholder(),
+    Object? goal = const $CopyWithPlaceholder(),
+    Object? nbDone = const $CopyWithPlaceholder(),
+    Object? noReview = const $CopyWithPlaceholder(),
+    Object? nbChallengeDone = const $CopyWithPlaceholder(),
+    Object? createdDate = const $CopyWithPlaceholder(),
+    Object? leadDate = const $CopyWithPlaceholder(),
+    Object? challengeDate = const $CopyWithPlaceholder(),
+    Object? unlocked = const $CopyWithPlaceholder(),
+    Object? subId = const $CopyWithPlaceholder(),
+    Object? token = const $CopyWithPlaceholder(),
+    Object? role = const $CopyWithPlaceholder(),
+    Object? strikes = const $CopyWithPlaceholder(),
   }) {
     return User(
-      bgmusic: bgmusic ?? this.bgmusic,
-      challengeDate: challengeDate ?? this.challengeDate,
-      createdDate: createdDate ?? this.createdDate,
-      email: email ?? this.email,
-      goal: goal ?? this.goal,
-      leadDate: leadDate ?? this.leadDate,
-      name: name ?? this.name,
-      nbChallengeDone: nbChallengeDone ?? this.nbChallengeDone,
-      nbDone: nbDone ?? this.nbDone,
-      noReview: noReview ?? this.noReview,
-      notification: notification ?? this.notification,
-      reminderMorning: reminderMorning ?? this.reminderMorning,
-      reminderNight: reminderNight ?? this.reminderNight,
-      role: role ?? this.role,
-      status: status ?? this.status,
-      strikes: strikes ?? this.strikes,
-      subId: subId ?? this.subId,
-      token: token ?? this.token,
-      uid: uid ?? this.uid,
-      unlocked: unlocked ?? this.unlocked,
+      uid: uid == const $CopyWithPlaceholder() || uid == null
+          ? _value.uid
+          // ignore: cast_nullable_to_non_nullable
+          : uid as String,
+      email: email == const $CopyWithPlaceholder() || email == null
+          ? _value.email
+          // ignore: cast_nullable_to_non_nullable
+          : email as String,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
+      notification:
+          notification == const $CopyWithPlaceholder() || notification == null
+              ? _value.notification
+              // ignore: cast_nullable_to_non_nullable
+              : notification as bool,
+      bgmusic: bgmusic == const $CopyWithPlaceholder() || bgmusic == null
+          ? _value.bgmusic
+          // ignore: cast_nullable_to_non_nullable
+          : bgmusic as bool,
+      status: status == const $CopyWithPlaceholder() || status == null
+          ? _value.status
+          // ignore: cast_nullable_to_non_nullable
+          : status as String,
+      reminderMorning: reminderMorning == const $CopyWithPlaceholder()
+          ? _value.reminderMorning
+          // ignore: cast_nullable_to_non_nullable
+          : reminderMorning as String?,
+      reminderNight: reminderNight == const $CopyWithPlaceholder()
+          ? _value.reminderNight
+          // ignore: cast_nullable_to_non_nullable
+          : reminderNight as String?,
+      goal: goal == const $CopyWithPlaceholder() || goal == null
+          ? _value.goal
+          // ignore: cast_nullable_to_non_nullable
+          : goal as List<dynamic>,
+      nbDone: nbDone == const $CopyWithPlaceholder() || nbDone == null
+          ? _value.nbDone
+          // ignore: cast_nullable_to_non_nullable
+          : nbDone as int,
+      noReview: noReview == const $CopyWithPlaceholder() || noReview == null
+          ? _value.noReview
+          // ignore: cast_nullable_to_non_nullable
+          : noReview as int,
+      nbChallengeDone: nbChallengeDone == const $CopyWithPlaceholder() ||
+              nbChallengeDone == null
+          ? _value.nbChallengeDone
+          // ignore: cast_nullable_to_non_nullable
+          : nbChallengeDone as int,
+      createdDate:
+          createdDate == const $CopyWithPlaceholder() || createdDate == null
+              ? _value.createdDate
+              // ignore: cast_nullable_to_non_nullable
+              : createdDate as DateTime,
+      leadDate: leadDate == const $CopyWithPlaceholder()
+          ? _value.leadDate
+          // ignore: cast_nullable_to_non_nullable
+          : leadDate as DateTime?,
+      challengeDate: challengeDate == const $CopyWithPlaceholder()
+          ? _value.challengeDate
+          // ignore: cast_nullable_to_non_nullable
+          : challengeDate as DateTime?,
+      unlocked: unlocked == const $CopyWithPlaceholder() || unlocked == null
+          ? _value.unlocked
+          // ignore: cast_nullable_to_non_nullable
+          : unlocked as List<String>,
+      subId: subId == const $CopyWithPlaceholder()
+          ? _value.subId
+          // ignore: cast_nullable_to_non_nullable
+          : subId as String?,
+      token: token == const $CopyWithPlaceholder()
+          ? _value.token
+          // ignore: cast_nullable_to_non_nullable
+          : token as String?,
+      role: role == const $CopyWithPlaceholder() || role == null
+          ? _value.role
+          // ignore: cast_nullable_to_non_nullable
+          : role as String,
+      strikes: strikes == const $CopyWithPlaceholder() || strikes == null
+          ? _value.strikes
+          // ignore: cast_nullable_to_non_nullable
+          : strikes as List<DateTime>,
     );
   }
+}
+
+extension $UserCopyWith on User {
+  /// Returns a callable class that can be used as follows: `instanceOfUser.copyWith(...)` or like so:`instanceOfUser.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$UserCWProxy get copyWith => _$UserCWProxyImpl(this);
 }
 
 // **************************************************************************
