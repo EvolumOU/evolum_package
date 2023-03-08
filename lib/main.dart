@@ -28,8 +28,6 @@ part 'widget/evo_loading.dart';
 part 'widget/evo_like.dart';
 part 'widget/indicator.dart';
 part 'widget/modal/confirm_modal.dart';
-part 'widget/modal/info_modal.dart';
-part 'widget/modal/button_modal.dart';
 
 part 'theme/color.dart';
 part 'theme/dark.dart';
