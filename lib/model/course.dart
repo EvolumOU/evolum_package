@@ -17,6 +17,7 @@ class Course {
   String? type;
   String? tag;
   String? descr;
+  String text;
   String specolor1;
   String specolor2;
   String color1;
@@ -36,6 +37,7 @@ class Course {
     this.type,
     this.tag,
     this.descr,
+    this.text = '',
     this.color1 = "#FFFFFF",
     this.color2 = "#FFFFFF",
     this.specolor1 = "#FFFFFF",

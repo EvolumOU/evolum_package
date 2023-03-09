@@ -17,6 +17,8 @@ abstract class _$CourseCWProxy {
 
   Course descr(String? descr);
 
+  Course text(String text);
+
   Course color1(String color1);
 
   Course color2(String color2);
@@ -51,6 +53,7 @@ abstract class _$CourseCWProxy {
     String? type,
     String? tag,
     String? descr,
+    String? text,
     String? color1,
     String? color2,
     String? specolor1,
@@ -85,6 +88,9 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
 
   @override
   Course descr(String? descr) => this(descr: descr);
+
+  @override
+  Course text(String text) => this(text: text);
 
   @override
   Course color1(String color1) => this(color1: color1);
@@ -133,6 +139,7 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
     Object? type = const $CopyWithPlaceholder(),
     Object? tag = const $CopyWithPlaceholder(),
     Object? descr = const $CopyWithPlaceholder(),
+    Object? text = const $CopyWithPlaceholder(),
     Object? color1 = const $CopyWithPlaceholder(),
     Object? color2 = const $CopyWithPlaceholder(),
     Object? specolor1 = const $CopyWithPlaceholder(),
@@ -166,6 +173,10 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
           ? _value.descr
           // ignore: cast_nullable_to_non_nullable
           : descr as String?,
+      text: text == const $CopyWithPlaceholder() || text == null
+          ? _value.text
+          // ignore: cast_nullable_to_non_nullable
+          : text as String,
       color1: color1 == const $CopyWithPlaceholder() || color1 == null
           ? _value.color1
           // ignore: cast_nullable_to_non_nullable
@@ -231,6 +242,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       type: json['type'] as String?,
       tag: json['tag'] as String?,
       descr: json['descr'] as String?,
+      text: json['text'] as String? ?? '',
       color1: json['color1'] as String? ?? "#FFFFFF",
       color2: json['color2'] as String? ?? "#FFFFFF",
       specolor1: json['specolor1'] as String? ?? "#FFFFFF",
@@ -259,6 +271,7 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'type': instance.type,
       'tag': instance.tag,
       'descr': instance.descr,
+      'text': instance.text,
       'specolor1': instance.specolor1,
       'specolor2': instance.specolor2,
       'color1': instance.color1,
