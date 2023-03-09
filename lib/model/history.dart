@@ -43,7 +43,10 @@ class History {
   bool get isEvo => item["tag"] != null;
   bool get isRitual => item["tag"] == null;
 
-  Map<String, dynamic> toJson() => _$HistoryToJson(this);
+  Map<String, dynamic> toJson() => {
+        ..._$HistoryToJson(this),
+        "item": item.toJson(),
+      };
 
   @override
   String toString() => toJson().toString();
