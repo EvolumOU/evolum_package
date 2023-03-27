@@ -25,9 +25,9 @@ class EmptyIndicator extends StatelessWidget {
       child: Column(
         children: <Widget>[
           const SizedBox(height: 50),
-          Text(title, style: Theme.of(context).textTheme.headline3),
+          Text(title, style: Theme.of(context).textTheme.displaySmall),
           const SizedBox(height: 30),
-          Text(message, style: Theme.of(context).textTheme.headline4),
+          Text(message, style: Theme.of(context).textTheme.headlineMedium),
         ],
       ),
     );

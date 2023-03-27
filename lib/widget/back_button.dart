@@ -15,7 +15,7 @@ class EvoBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color? iconColor = Theme.of(context).textTheme.bodyText1!.color;
+    Color? iconColor = Theme.of(context).textTheme.bodyLarge!.color;
     if (color != null) iconColor = color;
 
     return SafeArea(

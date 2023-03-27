@@ -21,8 +21,9 @@ class SelectedContainer extends StatelessWidget {
     return BorderGradientContainer(
       colors: colors,
       radius: radius,
-      backgroundColor:
-          selected ? Colors.transparent : Theme.of(context).backgroundColor,
+      backgroundColor: selected
+          ? Colors.transparent
+          : Theme.of(context).colorScheme.background,
       child: child,
     );
   }

@@ -9,7 +9,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:lottie/lottie.dart';
 
-import 'package:clippy_flutter/clippy_flutter.dart';
 import 'dart:math' as math;
 
 part 'utils/firestore.dart';
@@ -22,9 +21,6 @@ part 'widget/rounded_gradient.dart';
 part 'widget/border_radius_container.dart';
 part 'widget/border_gradient_container.dart';
 part 'widget/back_button.dart';
-part 'widget/evo_logo.dart';
-part 'widget/evo_loading.dart';
-
 part 'widget/evo_like.dart';
 part 'widget/indicator.dart';
 part 'widget/modal/confirm_modal.dart';

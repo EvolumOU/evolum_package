@@ -1,11 +1,6 @@
 part of evolum_package;
 
 final ThemeData lightTheme = ThemeData(
-  colorScheme: ColorScheme.fromSwatch().copyWith(
-    secondary: kevoOrange,
-    brightness: Brightness.light,
-  ),
-  backgroundColor: kevoWhite,
   scaffoldBackgroundColor: kevoWhite,
   dividerColor: Colors.transparent,
   dialogBackgroundColor: kevoWhite,
@@ -43,51 +38,57 @@ final ThemeData lightTheme = ThemeData(
     iconTheme: IconThemeData(color: kevoBlack),
   ),
   textTheme: TextTheme(
-    button: TextStyle(
+    labelLarge: TextStyle(
       fontSize: 23,
       color: kevoWhite,
       fontWeight: FontWeight.w800,
       letterSpacing: 1.65,
     ),
 
-    bodyText1: TextStyle(
+    bodyLarge: TextStyle(
       fontSize: 14,
       color: kevoBlack,
     ),
 
     // !!!!  style above is not always used:
-    bodyText2: TextStyle(
+    bodyMedium: TextStyle(
       fontSize: 12,
       color: kevoBlack,
     ),
-    subtitle2: TextStyle(
+    titleSmall: TextStyle(
       fontSize: 16,
       color: kevoBlack,
     ),
-    subtitle1: TextStyle(
+    titleMedium: TextStyle(
       fontSize: 18,
       color: kevoBlack,
     ),
-    headline6: TextStyle(
+    titleLarge: TextStyle(
       fontSize: 22,
       color: kevoBlack,
     ),
-    headline5: TextStyle(
+    headlineSmall: TextStyle(
       fontSize: 24,
       color: kevoBlack,
     ),
-    headline4: TextStyle(
+    headlineMedium: TextStyle(
       fontSize: 27,
       color: kevoBlack,
     ),
-    headline3: TextStyle(
+    displaySmall: TextStyle(
       fontSize: 38,
       color: kevoBlack,
     ),
-    headline1: TextStyle(
+    displayLarge: TextStyle(
       fontSize: 43,
       color: kevoBlack,
       fontWeight: FontWeight.normal,
     ),
   ),
+  colorScheme: ColorScheme.fromSwatch()
+      .copyWith(
+        secondary: kevoOrange,
+        brightness: Brightness.light,
+      )
+      .copyWith(background: kevoWhite),
 );

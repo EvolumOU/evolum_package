@@ -23,7 +23,7 @@ class ShadowMaskContainer extends StatelessWidget {
             BoxShadow(
               offset: Offset(0.0, 0.00),
               blurRadius: 10.0,
-              color: color ?? Theme.of(context).backgroundColor,
+              color: color ?? Theme.of(context).colorScheme.background,
               spreadRadius: 12.00,
             ),
           ]),

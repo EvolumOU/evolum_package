@@ -34,7 +34,7 @@ class BorderRadiusContainer extends StatelessWidget {
             : const EdgeInsets.only(bottom: 3.0),
         child: Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
             borderRadius: BorderRadius.only(
               topLeft: from == 'top'
                   ? Radius.circular(radius + 1)

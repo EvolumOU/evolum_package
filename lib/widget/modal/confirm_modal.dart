@@ -28,13 +28,13 @@ class ConfirmModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.subtitle2!;
+    final textStyle = Theme.of(context).textTheme.titleSmall!;
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Dialog(
         elevation: 5.0,
         clipBehavior: Clip.hardEdge,
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -43,7 +43,7 @@ class ConfirmModal extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: Text(
                 title,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
             Container(
