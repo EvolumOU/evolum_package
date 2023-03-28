@@ -114,11 +114,11 @@ class UtilsFirestore {
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
     int? limit,
+    DocumentSnapshot? startAfter,
   }) {
     Query query = FirebaseFirestore.instance.collection(path);
-
     if (limit != null) query = query.limit(limit);
-
+    if (startAfter != null) query = query.startAfterDocument(startAfter);
     if (queryBuilder != null) query = queryBuilder(query);
 
     final Stream<QuerySnapshot> snapshots = query.snapshots();
