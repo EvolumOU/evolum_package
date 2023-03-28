@@ -18,6 +18,7 @@ class User {
   String status;
   List<dynamic> goal;
   int nbDone;
+  int nbRitualDone;
   int nbChallengeDone;
   int noReview;
   @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
@@ -44,6 +45,7 @@ class User {
     this.reminderNight,
     this.goal = const <String>[],
     this.nbDone = 0,
+    this.nbRitualDone = 0,
     this.noReview = 0,
     this.nbChallengeDone = 0,
     required this.createdDate,
