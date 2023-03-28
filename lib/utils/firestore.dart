@@ -85,6 +85,21 @@ class UtilsFirestore {
     return listItems;
   }
 
+  Future<List<DocumentSnapshot>> getCollectionDoc({
+    required String path,
+    Query queryBuilder(Query query)?,
+    int? limit,
+    DocumentSnapshot? startAfter,
+  }) async {
+    Query query = FirebaseFirestore.instance.collectionGroup(path);
+    if (queryBuilder != null) query = queryBuilder(query);
+    if (limit != null) query = query.limit(limit);
+    if (startAfter != null) query = query.startAfterDocument(startAfter);
+    final QuerySnapshot queryDoc = await query.get();
+    final List<DocumentSnapshot> listItems = queryDoc.docs.toList();
+    return listItems;
+  }
+
   Future<List<T>> getCollection<T>({
     required String path,
     required T builder(Map<String, dynamic>? data, String documentID),
@@ -114,11 +129,9 @@ class UtilsFirestore {
     Query queryBuilder(Query query)?,
     int sort(T lhs, T rhs)?,
     int? limit,
-    DocumentSnapshot? startAfter,
   }) {
     Query query = FirebaseFirestore.instance.collection(path);
     if (limit != null) query = query.limit(limit);
-    if (startAfter != null) query = query.startAfterDocument(startAfter);
     if (queryBuilder != null) query = queryBuilder(query);
 
     final Stream<QuerySnapshot> snapshots = query.snapshots();
