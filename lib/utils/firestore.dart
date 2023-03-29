@@ -91,7 +91,7 @@ class UtilsFirestore {
     int? limit,
     DocumentSnapshot? startAfter,
   }) async {
-    Query query = FirebaseFirestore.instance.collectionGroup(path);
+    Query query = FirebaseFirestore.instance.collection(path);
     if (queryBuilder != null) query = queryBuilder(query);
     if (limit != null) query = query.limit(limit);
     if (startAfter != null) query = query.startAfterDocument(startAfter);
