@@ -137,7 +137,7 @@ History _$HistoryFromJson(Map<String, dynamic> json) => History(
 
 Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'id': instance.id,
-      'item': instance.item.toJson(),
+      'item': instance.item,
       'emotion': instance.emotion,
       'gratitude': instance.gratitude,
       'review': instance.review,
