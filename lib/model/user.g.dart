@@ -27,17 +27,11 @@ abstract class _$UserCWProxy {
 
   User nbDone(int nbDone);
 
-  User nbRitualDone(int nbRitualDone);
-
   User noReview(int noReview);
-
-  User nbChallengeDone(int nbChallengeDone);
 
   User createdDate(DateTime createdDate);
 
   User leadDate(DateTime? leadDate);
-
-  User challengeDate(DateTime? challengeDate);
 
   User unlocked(List<String> unlocked);
 
@@ -66,12 +60,9 @@ abstract class _$UserCWProxy {
     String? reminderNight,
     List<dynamic>? goal,
     int? nbDone,
-    int? nbRitualDone,
     int? noReview,
-    int? nbChallengeDone,
     DateTime? createdDate,
     DateTime? leadDate,
-    DateTime? challengeDate,
     List<String>? unlocked,
     String? subId,
     String? token,
@@ -119,24 +110,13 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User nbDone(int nbDone) => this(nbDone: nbDone);
 
   @override
-  User nbRitualDone(int nbRitualDone) => this(nbRitualDone: nbRitualDone);
-
-  @override
   User noReview(int noReview) => this(noReview: noReview);
-
-  @override
-  User nbChallengeDone(int nbChallengeDone) =>
-      this(nbChallengeDone: nbChallengeDone);
 
   @override
   User createdDate(DateTime createdDate) => this(createdDate: createdDate);
 
   @override
   User leadDate(DateTime? leadDate) => this(leadDate: leadDate);
-
-  @override
-  User challengeDate(DateTime? challengeDate) =>
-      this(challengeDate: challengeDate);
 
   @override
   User unlocked(List<String> unlocked) => this(unlocked: unlocked);
@@ -172,12 +152,9 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? reminderNight = const $CopyWithPlaceholder(),
     Object? goal = const $CopyWithPlaceholder(),
     Object? nbDone = const $CopyWithPlaceholder(),
-    Object? nbRitualDone = const $CopyWithPlaceholder(),
     Object? noReview = const $CopyWithPlaceholder(),
-    Object? nbChallengeDone = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
     Object? leadDate = const $CopyWithPlaceholder(),
-    Object? challengeDate = const $CopyWithPlaceholder(),
     Object? unlocked = const $CopyWithPlaceholder(),
     Object? subId = const $CopyWithPlaceholder(),
     Object? token = const $CopyWithPlaceholder(),
@@ -226,20 +203,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.nbDone
           // ignore: cast_nullable_to_non_nullable
           : nbDone as int,
-      nbRitualDone:
-          nbRitualDone == const $CopyWithPlaceholder() || nbRitualDone == null
-              ? _value.nbRitualDone
-              // ignore: cast_nullable_to_non_nullable
-              : nbRitualDone as int,
       noReview: noReview == const $CopyWithPlaceholder() || noReview == null
           ? _value.noReview
           // ignore: cast_nullable_to_non_nullable
           : noReview as int,
-      nbChallengeDone: nbChallengeDone == const $CopyWithPlaceholder() ||
-              nbChallengeDone == null
-          ? _value.nbChallengeDone
-          // ignore: cast_nullable_to_non_nullable
-          : nbChallengeDone as int,
       createdDate:
           createdDate == const $CopyWithPlaceholder() || createdDate == null
               ? _value.createdDate
@@ -249,10 +216,6 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.leadDate
           // ignore: cast_nullable_to_non_nullable
           : leadDate as DateTime?,
-      challengeDate: challengeDate == const $CopyWithPlaceholder()
-          ? _value.challengeDate
-          // ignore: cast_nullable_to_non_nullable
-          : challengeDate as DateTime?,
       unlocked: unlocked == const $CopyWithPlaceholder() || unlocked == null
           ? _value.unlocked
           // ignore: cast_nullable_to_non_nullable
@@ -298,13 +261,9 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       reminderNight: json['reminderNight'] as String?,
       goal: json['goal'] as List<dynamic>? ?? const <String>[],
       nbDone: json['nbDone'] as int? ?? 0,
-      nbRitualDone: json['nbRitualDone'] as int? ?? 0,
       noReview: json['noReview'] as int? ?? 0,
-      nbChallengeDone: json['nbChallengeDone'] as int? ?? 0,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
       leadDate: dateTimefromJsonWithNull(json['leadDate'] as Timestamp?),
-      challengeDate:
-          dateTimefromJsonWithNull(json['challengeDate'] as Timestamp?),
       unlocked: (json['unlocked'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -328,11 +287,8 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'status': instance.status,
       'goal': instance.goal,
       'nbDone': instance.nbDone,
-      'nbRitualDone': instance.nbRitualDone,
-      'nbChallengeDone': instance.nbChallengeDone,
       'noReview': instance.noReview,
       'leadDate': dateTimetoJsonWithNull(instance.leadDate),
-      'challengeDate': dateTimetoJsonWithNull(instance.challengeDate),
       'createdDate': dateTimetoJson(instance.createdDate),
       'unlocked': instance.unlocked,
       'subId': instance.subId,

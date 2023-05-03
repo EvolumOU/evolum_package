@@ -18,13 +18,9 @@ class User {
   String status;
   List<dynamic> goal;
   int nbDone;
-  int nbRitualDone;
-  int nbChallengeDone;
   int noReview;
   @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
   DateTime? leadDate;
-  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
-  DateTime? challengeDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
   List<String> unlocked;
@@ -45,12 +41,9 @@ class User {
     this.reminderNight,
     this.goal = const <String>[],
     this.nbDone = 0,
-    this.nbRitualDone = 0,
     this.noReview = 0,
-    this.nbChallengeDone = 0,
     required this.createdDate,
     this.leadDate,
-    this.challengeDate,
     this.unlocked = const <String>[],
     this.subId,
     this.token,
