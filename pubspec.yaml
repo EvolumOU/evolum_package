@@ -15,7 +15,7 @@ dependencies:
 
   # Utils
   json_serializable: ^6.6.1
-  intl: ^0.17.0
+  intl: ^0.18.0
   copy_with_extension: ^5.0.2
   json_annotation: ^4.8.0
   http: ^0.13.4
