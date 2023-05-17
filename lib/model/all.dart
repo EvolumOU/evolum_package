@@ -18,6 +18,5 @@ export 'oracle.dart';
 export 'breathwork.dart';
 export 'background.dart';
 export 'payment.dart';
-export 'elixir.dart';
-export 'elixir_category.dart';
 export 'tool.dart';
+export 'oracle_generated.dart';

@@ -17,12 +17,14 @@ class History {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   bool checked;
+  String type;
 
   History({
     required this.id,
+    required this.date,
+    required this.type,
     this.item,
     this.review = "",
-    required this.date,
     this.emotion = "",
     this.gratitude = "",
     this.checked = false,
@@ -30,18 +32,34 @@ class History {
 
   factory History.fromJson(Map<String, dynamic> data) {
     final itemData = data["item"] ?? data["evo"] ?? data["ritual"];
+
     return _$HistoryFromJson({
       ...data,
       "checked": data["checked"] ?? false,
       "review": data["review"] ?? "",
-      "item": data["tag"] != null
-          ? Evo.fromJson(itemData)
-          : Ritual.fromJson(itemData)
+      "type": data["type"] ?? (data["tag"] != null ? "evo" : "ritual"),
+      "item": _parseItem(data["type"], itemData),
     });
   }
 
-  bool get isEvo => item["tag"] != null;
-  bool get isRitual => item["tag"] == null;
+  static dynamic _parseItem(String? itemType, Map<String, dynamic> itemData) {
+    switch (itemType) {
+      case 'oracle':
+        return OracleGenerated.fromJson(itemData);
+      case 'evo':
+        return Evo.fromJson(itemData);
+      case 'ritual':
+        return Ritual.fromJson(itemData);
+      default:
+        return itemType == null && itemData["tag"] != null
+            ? Evo.fromJson(itemData)
+            : Ritual.fromJson(itemData);
+    }
+  }
+
+  bool get isEvo => type == "evo";
+  bool get isRitual => type == "ritual";
+  bool get isOracle => type == "oracle";
 
   Map<String, dynamic> toJson() => {
         ..._$HistoryToJson(this),

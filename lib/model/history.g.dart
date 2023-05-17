@@ -9,11 +9,13 @@ part of 'history.dart';
 abstract class _$HistoryCWProxy {
   History id(String id);
 
+  History date(DateTime date);
+
+  History type(String type);
+
   History item(dynamic item);
 
   History review(String review);
-
-  History date(DateTime date);
 
   History emotion(String emotion);
 
@@ -29,9 +31,10 @@ abstract class _$HistoryCWProxy {
   /// ````
   History call({
     String? id,
+    DateTime? date,
+    String? type,
     dynamic item,
     String? review,
-    DateTime? date,
     String? emotion,
     String? gratitude,
     bool? checked,
@@ -48,13 +51,16 @@ class _$HistoryCWProxyImpl implements _$HistoryCWProxy {
   History id(String id) => this(id: id);
 
   @override
+  History date(DateTime date) => this(date: date);
+
+  @override
+  History type(String type) => this(type: type);
+
+  @override
   History item(dynamic item) => this(item: item);
 
   @override
   History review(String review) => this(review: review);
-
-  @override
-  History date(DateTime date) => this(date: date);
 
   @override
   History emotion(String emotion) => this(emotion: emotion);
@@ -75,9 +81,10 @@ class _$HistoryCWProxyImpl implements _$HistoryCWProxy {
   /// ````
   History call({
     Object? id = const $CopyWithPlaceholder(),
+    Object? date = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
     Object? item = const $CopyWithPlaceholder(),
     Object? review = const $CopyWithPlaceholder(),
-    Object? date = const $CopyWithPlaceholder(),
     Object? emotion = const $CopyWithPlaceholder(),
     Object? gratitude = const $CopyWithPlaceholder(),
     Object? checked = const $CopyWithPlaceholder(),
@@ -87,6 +94,14 @@ class _$HistoryCWProxyImpl implements _$HistoryCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
+      date: date == const $CopyWithPlaceholder() || date == null
+          ? _value.date
+          // ignore: cast_nullable_to_non_nullable
+          : date as DateTime,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as String,
       item: item == const $CopyWithPlaceholder() || item == null
           ? _value.item
           // ignore: cast_nullable_to_non_nullable
@@ -95,10 +110,6 @@ class _$HistoryCWProxyImpl implements _$HistoryCWProxy {
           ? _value.review
           // ignore: cast_nullable_to_non_nullable
           : review as String,
-      date: date == const $CopyWithPlaceholder() || date == null
-          ? _value.date
-          // ignore: cast_nullable_to_non_nullable
-          : date as DateTime,
       emotion: emotion == const $CopyWithPlaceholder() || emotion == null
           ? _value.emotion
           // ignore: cast_nullable_to_non_nullable
@@ -127,9 +138,10 @@ extension $HistoryCopyWith on History {
 
 History _$HistoryFromJson(Map<String, dynamic> json) => History(
       id: json['id'] as String,
+      date: dateTimefromJson(json['date'] as Timestamp?),
+      type: json['type'] as String,
       item: json['item'],
       review: json['review'] as String? ?? "",
-      date: dateTimefromJson(json['date'] as Timestamp?),
       emotion: json['emotion'] as String? ?? "",
       gratitude: json['gratitude'] as String? ?? "",
       checked: json['checked'] as bool? ?? false,
@@ -143,4 +155,5 @@ Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'review': instance.review,
       'date': dateTimetoJson(instance.date),
       'checked': instance.checked,
+      'type': instance.type,
     };
