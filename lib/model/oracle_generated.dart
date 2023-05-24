@@ -13,12 +13,14 @@ class OracleGenerated {
   DateTime date;
   String visualDescription;
   String titleOfTheCard;
+  String userInput;
   String guidancePerso;
   String significationOfTheCard;
 
   OracleGenerated({
     this.imgUrl = "",
     required this.date,
+    this.userInput = "",
     this.visualDescription = "",
     this.titleOfTheCard = "",
     this.guidancePerso = "",
@@ -26,7 +28,12 @@ class OracleGenerated {
   });
 
   factory OracleGenerated.fromJson(Map<String, dynamic> data) =>
-      _$OracleGeneratedFromJson({...data});
+      _$OracleGeneratedFromJson(
+        {
+          "userInput": "",
+          ...data,
+        },
+      );
 
   Map<String, dynamic> toJson() => _$OracleGeneratedToJson(this);
 
