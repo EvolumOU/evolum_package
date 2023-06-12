@@ -8,6 +8,7 @@ part 'oracle_generated.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class OracleGenerated {
+  final String id;
   String imgUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
@@ -18,6 +19,7 @@ class OracleGenerated {
   String significationOfTheCard;
 
   OracleGenerated({
+    required this.id,
     this.imgUrl = "",
     required this.date,
     this.userInput = "",
@@ -31,6 +33,7 @@ class OracleGenerated {
       _$OracleGeneratedFromJson(
         {
           "userInput": "",
+          "id": data["id"] ?? data["date"].toString(),
           ...data,
         },
       );

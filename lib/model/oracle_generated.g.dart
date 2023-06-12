@@ -7,6 +7,8 @@ part of 'oracle_generated.dart';
 // **************************************************************************
 
 abstract class _$OracleGeneratedCWProxy {
+  OracleGenerated id(String id);
+
   OracleGenerated imgUrl(String imgUrl);
 
   OracleGenerated date(DateTime date);
@@ -28,6 +30,7 @@ abstract class _$OracleGeneratedCWProxy {
   /// OracleGenerated(...).copyWith(id: 12, name: "My name")
   /// ````
   OracleGenerated call({
+    String? id,
     String? imgUrl,
     DateTime? date,
     String? userInput,
@@ -43,6 +46,9 @@ class _$OracleGeneratedCWProxyImpl implements _$OracleGeneratedCWProxy {
   const _$OracleGeneratedCWProxyImpl(this._value);
 
   final OracleGenerated _value;
+
+  @override
+  OracleGenerated id(String id) => this(id: id);
 
   @override
   OracleGenerated imgUrl(String imgUrl) => this(imgUrl: imgUrl);
@@ -78,6 +84,7 @@ class _$OracleGeneratedCWProxyImpl implements _$OracleGeneratedCWProxy {
   /// OracleGenerated(...).copyWith(id: 12, name: "My name")
   /// ````
   OracleGenerated call({
+    Object? id = const $CopyWithPlaceholder(),
     Object? imgUrl = const $CopyWithPlaceholder(),
     Object? date = const $CopyWithPlaceholder(),
     Object? userInput = const $CopyWithPlaceholder(),
@@ -87,6 +94,10 @@ class _$OracleGeneratedCWProxyImpl implements _$OracleGeneratedCWProxy {
     Object? significationOfTheCard = const $CopyWithPlaceholder(),
   }) {
     return OracleGenerated(
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
       imgUrl: imgUrl == const $CopyWithPlaceholder() || imgUrl == null
           ? _value.imgUrl
           // ignore: cast_nullable_to_non_nullable
@@ -136,6 +147,7 @@ extension $OracleGeneratedCopyWith on OracleGenerated {
 
 OracleGenerated _$OracleGeneratedFromJson(Map<String, dynamic> json) =>
     OracleGenerated(
+      id: json['id'] as String,
       imgUrl: json['imgUrl'] as String? ?? "",
       date: dateTimefromJson(json['date'] as Timestamp?),
       userInput: json['userInput'] as String? ?? "",
@@ -147,6 +159,7 @@ OracleGenerated _$OracleGeneratedFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$OracleGeneratedToJson(OracleGenerated instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'imgUrl': instance.imgUrl,
       'date': dateTimetoJson(instance.date),
       'visualDescription': instance.visualDescription,
