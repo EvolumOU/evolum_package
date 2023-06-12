@@ -9,6 +9,7 @@ part 'oracle_generated.g.dart';
 @JsonSerializable(explicitToJson: true)
 class OracleGenerated {
   final String id;
+  String name;
   String imgUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
@@ -23,6 +24,7 @@ class OracleGenerated {
     this.imgUrl = "",
     required this.date,
     this.userInput = "",
+    this.name = "",
     this.visualDescription = "",
     this.titleOfTheCard = "",
     this.guidancePerso = "",
