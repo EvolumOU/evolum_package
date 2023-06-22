@@ -15,6 +15,8 @@ abstract class _$OracleGeneratedCWProxy {
 
   OracleGenerated userInput(String userInput);
 
+  OracleGenerated name(String name);
+
   OracleGenerated visualDescription(String visualDescription);
 
   OracleGenerated titleOfTheCard(String titleOfTheCard);
@@ -34,6 +36,7 @@ abstract class _$OracleGeneratedCWProxy {
     String? imgUrl,
     DateTime? date,
     String? userInput,
+    String? name,
     String? visualDescription,
     String? titleOfTheCard,
     String? guidancePerso,
@@ -58,6 +61,9 @@ class _$OracleGeneratedCWProxyImpl implements _$OracleGeneratedCWProxy {
 
   @override
   OracleGenerated userInput(String userInput) => this(userInput: userInput);
+
+  @override
+  OracleGenerated name(String name) => this(name: name);
 
   @override
   OracleGenerated visualDescription(String visualDescription) =>
@@ -88,6 +94,7 @@ class _$OracleGeneratedCWProxyImpl implements _$OracleGeneratedCWProxy {
     Object? imgUrl = const $CopyWithPlaceholder(),
     Object? date = const $CopyWithPlaceholder(),
     Object? userInput = const $CopyWithPlaceholder(),
+    Object? name = const $CopyWithPlaceholder(),
     Object? visualDescription = const $CopyWithPlaceholder(),
     Object? titleOfTheCard = const $CopyWithPlaceholder(),
     Object? guidancePerso = const $CopyWithPlaceholder(),
@@ -110,6 +117,10 @@ class _$OracleGeneratedCWProxyImpl implements _$OracleGeneratedCWProxy {
           ? _value.userInput
           // ignore: cast_nullable_to_non_nullable
           : userInput as String,
+      name: name == const $CopyWithPlaceholder() || name == null
+          ? _value.name
+          // ignore: cast_nullable_to_non_nullable
+          : name as String,
       visualDescription: visualDescription == const $CopyWithPlaceholder() ||
               visualDescription == null
           ? _value.visualDescription
@@ -151,6 +162,7 @@ OracleGenerated _$OracleGeneratedFromJson(Map<String, dynamic> json) =>
       imgUrl: json['imgUrl'] as String? ?? "",
       date: dateTimefromJson(json['date'] as Timestamp?),
       userInput: json['userInput'] as String? ?? "",
+      name: json['name'] as String? ?? "",
       visualDescription: json['visualDescription'] as String? ?? "",
       titleOfTheCard: json['titleOfTheCard'] as String? ?? "",
       guidancePerso: json['guidancePerso'] as String? ?? "",
@@ -160,6 +172,7 @@ OracleGenerated _$OracleGeneratedFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$OracleGeneratedToJson(OracleGenerated instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'name': instance.name,
       'imgUrl': instance.imgUrl,
       'date': dateTimetoJson(instance.date),
       'visualDescription': instance.visualDescription,
