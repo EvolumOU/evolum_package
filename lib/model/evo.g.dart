@@ -41,6 +41,8 @@ abstract class _$EvoCWProxy {
 
   Evo tools(List<String> tools);
 
+  Evo reco(bool reco);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Evo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -65,6 +67,7 @@ abstract class _$EvoCWProxy {
     String? form,
     double? size,
     List<String>? tools,
+    bool? reco,
   });
 }
 
@@ -126,6 +129,9 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
   Evo tools(List<String> tools) => this(tools: tools);
 
   @override
+  Evo reco(bool reco) => this(reco: reco);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Evo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -151,6 +157,7 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
     Object? form = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
     Object? tools = const $CopyWithPlaceholder(),
+    Object? reco = const $CopyWithPlaceholder(),
   }) {
     return Evo(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -222,6 +229,10 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
           ? _value.tools
           // ignore: cast_nullable_to_non_nullable
           : tools as List<String>,
+      reco: reco == const $CopyWithPlaceholder() || reco == null
+          ? _value.reco
+          // ignore: cast_nullable_to_non_nullable
+          : reco as bool,
     );
   }
 }
@@ -261,6 +272,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       tools:
           (json['tools'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const <String>[],
+      reco: json['reco'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
@@ -281,4 +293,5 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'form': instance.form,
       'size': instance.size,
       'tools': instance.tools,
+      'reco': instance.reco,
     };
