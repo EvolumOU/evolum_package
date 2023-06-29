@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/all.dart';
+import 'package:evolum_package/model/message.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -48,6 +49,8 @@ class History {
         return OracleGenerated.fromJson(itemData);
       case 'evo':
         return Evo.fromJson(itemData);
+      case 'message':
+        return Message.fromJson(itemData);
       case 'ritual':
         return Ritual.fromJson(itemData);
       default:
@@ -60,6 +63,7 @@ class History {
   bool get isEvo => type == "evo";
   bool get isRitual => type == "ritual";
   bool get isOracle => type == "oracle";
+  bool get isMessage => type == "message";
 
   Map<String, dynamic> toJson() => {
         ..._$HistoryToJson(this),
