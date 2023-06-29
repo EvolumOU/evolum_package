@@ -3,6 +3,8 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'reco_item.dart';
+
 part 'message.g.dart';
 
 @CopyWith()
@@ -15,6 +17,7 @@ class Message {
   String imageUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
+  List<RecoItem> recoList = [];
 
   Message({
     required this.id,

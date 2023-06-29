@@ -122,7 +122,9 @@ Message _$MessageFromJson(Map<String, dynamic> json) => Message(
       description: json['description'] as String? ?? "",
       imageUrl: json['imageUrl'] as String? ?? "",
       date: dateTimefromJson(json['date'] as Timestamp?),
-    );
+    )..recoList = (json['recoList'] as List<dynamic>)
+        .map((e) => RecoItem.fromJson(e as Map<String, dynamic>))
+        .toList();
 
 Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'id': instance.id,
@@ -131,4 +133,5 @@ Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'type': instance.type,
       'imageUrl': instance.imageUrl,
       'date': dateTimetoJson(instance.date),
+      'recoList': instance.recoList.map((e) => e.toJson()).toList(),
     };
