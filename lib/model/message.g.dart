@@ -19,6 +19,8 @@ abstract class _$MessageCWProxy {
 
   Message date(DateTime date);
 
+  Message recoList(List<RecoItem> recoList);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Message(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -32,6 +34,7 @@ abstract class _$MessageCWProxy {
     String? description,
     String? imageUrl,
     DateTime? date,
+    List<RecoItem>? recoList,
   });
 }
 
@@ -60,6 +63,9 @@ class _$MessageCWProxyImpl implements _$MessageCWProxy {
   Message date(DateTime date) => this(date: date);
 
   @override
+  Message recoList(List<RecoItem> recoList) => this(recoList: recoList);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Message(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -74,6 +80,7 @@ class _$MessageCWProxyImpl implements _$MessageCWProxy {
     Object? description = const $CopyWithPlaceholder(),
     Object? imageUrl = const $CopyWithPlaceholder(),
     Object? date = const $CopyWithPlaceholder(),
+    Object? recoList = const $CopyWithPlaceholder(),
   }) {
     return Message(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -101,6 +108,10 @@ class _$MessageCWProxyImpl implements _$MessageCWProxy {
           ? _value.date
           // ignore: cast_nullable_to_non_nullable
           : date as DateTime,
+      recoList: recoList == const $CopyWithPlaceholder() || recoList == null
+          ? _value.recoList
+          // ignore: cast_nullable_to_non_nullable
+          : recoList as List<RecoItem>,
     );
   }
 }
@@ -122,9 +133,11 @@ Message _$MessageFromJson(Map<String, dynamic> json) => Message(
       description: json['description'] as String? ?? "",
       imageUrl: json['imageUrl'] as String? ?? "",
       date: dateTimefromJson(json['date'] as Timestamp?),
-    )..recoList = (json['recoList'] as List<dynamic>)
-        .map((e) => RecoItem.fromJson(e as Map<String, dynamic>))
-        .toList();
+      recoList: (json['recoList'] as List<dynamic>?)
+              ?.map((e) => RecoItem.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <RecoItem>[],
+    );
 
 Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'id': instance.id,

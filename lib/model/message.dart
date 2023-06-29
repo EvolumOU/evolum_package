@@ -26,6 +26,7 @@ class Message {
     this.description = "",
     this.imageUrl = "",
     required this.date,
+    this.recoList = const <RecoItem>[],
   });
 
   factory Message.fromJson(Map<String, dynamic> data) =>
