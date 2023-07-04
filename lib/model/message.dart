@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:evolum_package/main.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -13,7 +14,6 @@ class Message {
   String id;
   String title;
   String description;
-  String type;
   String imageUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
@@ -22,12 +22,13 @@ class Message {
   Message({
     required this.id,
     this.title = "",
-    this.type = "matin", // ou soir
     this.description = "",
     this.imageUrl = "",
     required this.date,
     this.recoList = const <RecoItem>[],
   });
+
+  String get type => dayHours.contains(date.hour) ? "matin" : "soir";
 
   factory Message.fromJson(Map<String, dynamic> data) =>
       _$MessageFromJson(data);

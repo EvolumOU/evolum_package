@@ -11,8 +11,6 @@ abstract class _$MessageCWProxy {
 
   Message title(String title);
 
-  Message type(String type);
-
   Message description(String description);
 
   Message imageUrl(String imageUrl);
@@ -30,7 +28,6 @@ abstract class _$MessageCWProxy {
   Message call({
     String? id,
     String? title,
-    String? type,
     String? description,
     String? imageUrl,
     DateTime? date,
@@ -49,9 +46,6 @@ class _$MessageCWProxyImpl implements _$MessageCWProxy {
 
   @override
   Message title(String title) => this(title: title);
-
-  @override
-  Message type(String type) => this(type: type);
 
   @override
   Message description(String description) => this(description: description);
@@ -76,7 +70,6 @@ class _$MessageCWProxyImpl implements _$MessageCWProxy {
   Message call({
     Object? id = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
-    Object? type = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? imageUrl = const $CopyWithPlaceholder(),
     Object? date = const $CopyWithPlaceholder(),
@@ -91,10 +84,6 @@ class _$MessageCWProxyImpl implements _$MessageCWProxy {
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
           : title as String,
-      type: type == const $CopyWithPlaceholder() || type == null
-          ? _value.type
-          // ignore: cast_nullable_to_non_nullable
-          : type as String,
       description:
           description == const $CopyWithPlaceholder() || description == null
               ? _value.description
@@ -129,7 +118,6 @@ extension $MessageCopyWith on Message {
 Message _$MessageFromJson(Map<String, dynamic> json) => Message(
       id: json['id'] as String,
       title: json['title'] as String? ?? "",
-      type: json['type'] as String? ?? "matin",
       description: json['description'] as String? ?? "",
       imageUrl: json['imageUrl'] as String? ?? "",
       date: dateTimefromJson(json['date'] as Timestamp?),
@@ -143,7 +131,6 @@ Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'description': instance.description,
-      'type': instance.type,
       'imageUrl': instance.imageUrl,
       'date': dateTimetoJson(instance.date),
       'recoList': instance.recoList.map((e) => e.toJson()).toList(),
