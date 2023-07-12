@@ -77,7 +77,8 @@ RecoItem _$RecoItemFromJson(Map<String, dynamic> json) => RecoItem(
       ..imageUrl = json['imageUrl'] as String
       ..mainColor = colorfromJson(json['mainColor'] as String)
       ..textColor = colorfromJson(json['textColor'] as String)
-      ..contendId = json['contendId'] as String;
+      ..contendId = json['contendId'] as String
+      ..name = json['name'] as String;
 
 Map<String, dynamic> _$RecoItemToJson(RecoItem instance) => <String, dynamic>{
       'type': instance.type,
@@ -86,4 +87,5 @@ Map<String, dynamic> _$RecoItemToJson(RecoItem instance) => <String, dynamic>{
       'mainColor': colortoJson(instance.mainColor),
       'textColor': colortoJson(instance.textColor),
       'contendId': instance.contendId,
+      'name': instance.name,
     };

@@ -43,7 +43,10 @@ class History {
     });
   }
 
-  static dynamic _parseItem(String? itemType, Map<String, dynamic> itemData) {
+  static dynamic _parseItem(
+    String? itemType,
+    Map<String, dynamic> itemData,
+  ) {
     switch (itemType) {
       case 'oracle':
         return OracleGenerated.fromJson(itemData);

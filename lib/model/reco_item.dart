@@ -21,6 +21,7 @@ class RecoItem {
   @JsonKey(toJson: colortoJson, fromJson: colorfromJson)
   Color textColor = Colors.black;
   String contendId = "";
+  String name = "";
   RecoItem({required this.type, required this.text});
 
   factory RecoItem.fromMap(Map<String, dynamic> data) {
