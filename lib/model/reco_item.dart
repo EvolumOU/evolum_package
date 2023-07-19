@@ -34,6 +34,7 @@ class RecoItem {
   factory RecoItem.fromJson(Map<String, dynamic> data) {
     return _$RecoItemFromJson({
       ...data,
+      "name": data["name"] ?? "",
       "list": data["list"] ?? [],
       "scheduled": data["scheduled"] ?? [],
     });
