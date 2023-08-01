@@ -52,20 +52,15 @@ class User {
   });
 
   bool get isBlock =>
-      status == 'cancel' ||
-      status == 'free' ||
-      status == 'challenger' ||
-      status == 'lead';
+      status == 'cancel' || status == 'free' || status == 'lead';
 
   bool get isCancel => status == 'cancel';
   bool get isLead => status == 'lead';
-  bool get isChallenger => status == 'challenger';
   bool get isFree => status == 'free';
 
   // Full Acces
-  bool get isTrial => status == 'trial';
-  bool get isAbo => status == 'abo';
-  bool get isFull => status == 'full';
+  bool get isFull => status == 'full' || status == 'premium' || status == 'abo';
+  bool get isPremium => status == 'premium';
 
   bool get isAdmin => role == 'admin';
   bool get isUser => role == 'user';
