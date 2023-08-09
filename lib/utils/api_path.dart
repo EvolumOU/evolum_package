@@ -11,6 +11,7 @@ class APIPath {
   static String coupon(String id) => 'coupon/$id';
   static String box(String id) => 'box/$id';
   static String surprise(String id) => 'surprise/$id';
+  static String subscription(String id) => 'subscription/$id';
   static String ambiance(String id) => 'ambiance/$id';
   static String background(String id) => 'background/$id';
   static String payment(String id) => 'payment/$id';
