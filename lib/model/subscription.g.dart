@@ -7,21 +7,19 @@ part of 'subscription.dart';
 // **************************************************************************
 
 abstract class _$SubscriptionCWProxy {
-  Subscription planId(String? planId);
+  Subscription id(String id);
 
-  Subscription paymentType(String? paymentType);
+  Subscription email(String email);
 
-  Subscription cardLast4(String? cardLast4);
+  Subscription planId(String planId);
 
-  Subscription price(double price);
+  Subscription status(String status);
 
-  Subscription currency(String currency);
+  Subscription offerBy(String offerBy);
 
-  Subscription billingPeriod(int billingPeriod);
+  Subscription date(DateTime date);
 
-  Subscription billingPeriodUnit(String billingPeriodUnit);
-
-  Subscription nextBillingDate(int? nextBillingDate);
+  Subscription updateDate(DateTime? updateDate);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Subscription(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -30,14 +28,13 @@ abstract class _$SubscriptionCWProxy {
   /// Subscription(...).copyWith(id: 12, name: "My name")
   /// ````
   Subscription call({
+    String? id,
+    String? email,
     String? planId,
-    String? paymentType,
-    String? cardLast4,
-    double? price,
-    String? currency,
-    int? billingPeriod,
-    String? billingPeriodUnit,
-    int? nextBillingDate,
+    String? status,
+    String? offerBy,
+    DateTime? date,
+    DateTime? updateDate,
   });
 }
 
@@ -48,32 +45,25 @@ class _$SubscriptionCWProxyImpl implements _$SubscriptionCWProxy {
   final Subscription _value;
 
   @override
-  Subscription planId(String? planId) => this(planId: planId);
+  Subscription id(String id) => this(id: id);
 
   @override
-  Subscription paymentType(String? paymentType) =>
-      this(paymentType: paymentType);
+  Subscription email(String email) => this(email: email);
 
   @override
-  Subscription cardLast4(String? cardLast4) => this(cardLast4: cardLast4);
+  Subscription planId(String planId) => this(planId: planId);
 
   @override
-  Subscription price(double price) => this(price: price);
+  Subscription status(String status) => this(status: status);
 
   @override
-  Subscription currency(String currency) => this(currency: currency);
+  Subscription offerBy(String offerBy) => this(offerBy: offerBy);
 
   @override
-  Subscription billingPeriod(int billingPeriod) =>
-      this(billingPeriod: billingPeriod);
+  Subscription date(DateTime date) => this(date: date);
 
   @override
-  Subscription billingPeriodUnit(String billingPeriodUnit) =>
-      this(billingPeriodUnit: billingPeriodUnit);
-
-  @override
-  Subscription nextBillingDate(int? nextBillingDate) =>
-      this(nextBillingDate: nextBillingDate);
+  Subscription updateDate(DateTime? updateDate) => this(updateDate: updateDate);
 
   @override
 
@@ -84,50 +74,43 @@ class _$SubscriptionCWProxyImpl implements _$SubscriptionCWProxy {
   /// Subscription(...).copyWith(id: 12, name: "My name")
   /// ````
   Subscription call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? email = const $CopyWithPlaceholder(),
     Object? planId = const $CopyWithPlaceholder(),
-    Object? paymentType = const $CopyWithPlaceholder(),
-    Object? cardLast4 = const $CopyWithPlaceholder(),
-    Object? price = const $CopyWithPlaceholder(),
-    Object? currency = const $CopyWithPlaceholder(),
-    Object? billingPeriod = const $CopyWithPlaceholder(),
-    Object? billingPeriodUnit = const $CopyWithPlaceholder(),
-    Object? nextBillingDate = const $CopyWithPlaceholder(),
+    Object? status = const $CopyWithPlaceholder(),
+    Object? offerBy = const $CopyWithPlaceholder(),
+    Object? date = const $CopyWithPlaceholder(),
+    Object? updateDate = const $CopyWithPlaceholder(),
   }) {
     return Subscription(
-      planId: planId == const $CopyWithPlaceholder()
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      email: email == const $CopyWithPlaceholder() || email == null
+          ? _value.email
+          // ignore: cast_nullable_to_non_nullable
+          : email as String,
+      planId: planId == const $CopyWithPlaceholder() || planId == null
           ? _value.planId
           // ignore: cast_nullable_to_non_nullable
-          : planId as String?,
-      paymentType: paymentType == const $CopyWithPlaceholder()
-          ? _value.paymentType
+          : planId as String,
+      status: status == const $CopyWithPlaceholder() || status == null
+          ? _value.status
           // ignore: cast_nullable_to_non_nullable
-          : paymentType as String?,
-      cardLast4: cardLast4 == const $CopyWithPlaceholder()
-          ? _value.cardLast4
+          : status as String,
+      offerBy: offerBy == const $CopyWithPlaceholder() || offerBy == null
+          ? _value.offerBy
           // ignore: cast_nullable_to_non_nullable
-          : cardLast4 as String?,
-      price: price == const $CopyWithPlaceholder() || price == null
-          ? _value.price
+          : offerBy as String,
+      date: date == const $CopyWithPlaceholder() || date == null
+          ? _value.date
           // ignore: cast_nullable_to_non_nullable
-          : price as double,
-      currency: currency == const $CopyWithPlaceholder() || currency == null
-          ? _value.currency
+          : date as DateTime,
+      updateDate: updateDate == const $CopyWithPlaceholder()
+          ? _value.updateDate
           // ignore: cast_nullable_to_non_nullable
-          : currency as String,
-      billingPeriod:
-          billingPeriod == const $CopyWithPlaceholder() || billingPeriod == null
-              ? _value.billingPeriod
-              // ignore: cast_nullable_to_non_nullable
-              : billingPeriod as int,
-      billingPeriodUnit: billingPeriodUnit == const $CopyWithPlaceholder() ||
-              billingPeriodUnit == null
-          ? _value.billingPeriodUnit
-          // ignore: cast_nullable_to_non_nullable
-          : billingPeriodUnit as String,
-      nextBillingDate: nextBillingDate == const $CopyWithPlaceholder()
-          ? _value.nextBillingDate
-          // ignore: cast_nullable_to_non_nullable
-          : nextBillingDate as int?,
+          : updateDate as DateTime?,
     );
   }
 }
@@ -143,24 +126,24 @@ extension $SubscriptionCopyWith on Subscription {
 // **************************************************************************
 
 Subscription _$SubscriptionFromJson(Map<String, dynamic> json) => Subscription(
-      planId: json['planId'] as String?,
-      paymentType: json['paymentType'] as String?,
-      cardLast4: json['cardLast4'] as String?,
-      price: (json['price'] as num?)?.toDouble() ?? 0,
-      currency: json['currency'] as String? ?? "EU",
-      billingPeriod: json['billingPeriod'] as int? ?? 1,
-      billingPeriodUnit: json['billingPeriodUnit'] as String? ?? 'month',
-      nextBillingDate: json['nextBillingDate'] as int?,
+      id: json['id'] as String,
+      email: json['email'] as String,
+      planId: json['planId'] as String,
+      status: json['status'] as String,
+      offerBy: json['offerBy'] as String? ?? "",
+      date: DateTime.parse(json['date'] as String),
+      updateDate: json['updateDate'] == null
+          ? null
+          : DateTime.parse(json['updateDate'] as String),
     );
 
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{
+      'id': instance.id,
+      'email': instance.email,
       'planId': instance.planId,
-      'paymentType': instance.paymentType,
-      'cardLast4': instance.cardLast4,
-      'price': instance.price,
-      'currency': instance.currency,
-      'billingPeriod': instance.billingPeriod,
-      'billingPeriodUnit': instance.billingPeriodUnit,
-      'nextBillingDate': instance.nextBillingDate,
+      'status': instance.status,
+      'offerBy': instance.offerBy,
+      'date': instance.date.toIso8601String(),
+      'updateDate': instance.updateDate?.toIso8601String(),
     };

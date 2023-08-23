@@ -6,55 +6,23 @@ part 'subscription.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Subscription {
-  String? planId;
-  String? paymentType;
-  String? cardLast4;
-  double price;
-  String currency;
-  int billingPeriod;
-  String billingPeriodUnit;
-  int? nextBillingDate;
+  final String id;
+  final String email;
+  final String planId;
+  final String status;
+  final String offerBy;
+  final DateTime date;
+  final DateTime? updateDate;
 
   Subscription({
-    this.planId,
-    this.paymentType,
-    this.cardLast4,
-    this.price = 0,
-    this.currency = "EU",
-    this.billingPeriod = 1,
-    this.billingPeriodUnit = 'month',
-    required this.nextBillingDate,
+    required this.id,
+    required this.email,
+    required this.planId,
+    required this.status,
+    this.offerBy = "",
+    required this.date,
+    this.updateDate,
   });
-
-  String? buildPaymentMethod() {
-    if (paymentType == 'card') {
-      return "**** **** **** $cardLast4  💳";
-    } else if (paymentType == 'apple_pay') {
-      return 'Apple Pay';
-    } else if (paymentType == 'paypal') {
-      return 'Paypal';
-    } else if (paymentType == 'google_pay') {
-      return 'Google Pay';
-    }
-    return paymentType;
-  }
-
-  String buildSub() {
-    String period = billingPeriod.toString();
-
-    if (billingPeriodUnit == 'year') {
-      billingPeriodUnit = 'an';
-    } else if (billingPeriodUnit == 'month') {
-      billingPeriodUnit = 'mois';
-    } else {
-      billingPeriodUnit = 'jour(s)';
-    }
-
-    String price = (this.price.toDouble() / 100).toStringAsFixed(2);
-    if (currency == 'EUR') currency = '€';
-
-    return 'Accès $period $billingPeriodUnit $price$currency';
-  }
 
   factory Subscription.fromJson(Map<String, dynamic> data) =>
       _$SubscriptionFromJson({...data});
