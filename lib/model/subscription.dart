@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'utils.dart';
 
 part 'subscription.g.dart';
 
@@ -11,7 +14,9 @@ class Subscription {
   final String planId;
   final String status;
   final String offerBy;
-  final DateTime date;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  final DateTime createdDate;
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
   final DateTime? updateDate;
 
   Subscription({
@@ -20,7 +25,7 @@ class Subscription {
     required this.planId,
     required this.status,
     this.offerBy = "",
-    required this.date,
+    required this.createdDate,
     this.updateDate,
   });
 

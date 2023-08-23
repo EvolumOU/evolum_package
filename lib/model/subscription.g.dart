@@ -17,7 +17,7 @@ abstract class _$SubscriptionCWProxy {
 
   Subscription offerBy(String offerBy);
 
-  Subscription date(DateTime date);
+  Subscription createdDate(DateTime createdDate);
 
   Subscription updateDate(DateTime? updateDate);
 
@@ -33,7 +33,7 @@ abstract class _$SubscriptionCWProxy {
     String? planId,
     String? status,
     String? offerBy,
-    DateTime? date,
+    DateTime? createdDate,
     DateTime? updateDate,
   });
 }
@@ -60,7 +60,8 @@ class _$SubscriptionCWProxyImpl implements _$SubscriptionCWProxy {
   Subscription offerBy(String offerBy) => this(offerBy: offerBy);
 
   @override
-  Subscription date(DateTime date) => this(date: date);
+  Subscription createdDate(DateTime createdDate) =>
+      this(createdDate: createdDate);
 
   @override
   Subscription updateDate(DateTime? updateDate) => this(updateDate: updateDate);
@@ -79,7 +80,7 @@ class _$SubscriptionCWProxyImpl implements _$SubscriptionCWProxy {
     Object? planId = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
     Object? offerBy = const $CopyWithPlaceholder(),
-    Object? date = const $CopyWithPlaceholder(),
+    Object? createdDate = const $CopyWithPlaceholder(),
     Object? updateDate = const $CopyWithPlaceholder(),
   }) {
     return Subscription(
@@ -103,10 +104,11 @@ class _$SubscriptionCWProxyImpl implements _$SubscriptionCWProxy {
           ? _value.offerBy
           // ignore: cast_nullable_to_non_nullable
           : offerBy as String,
-      date: date == const $CopyWithPlaceholder() || date == null
-          ? _value.date
-          // ignore: cast_nullable_to_non_nullable
-          : date as DateTime,
+      createdDate:
+          createdDate == const $CopyWithPlaceholder() || createdDate == null
+              ? _value.createdDate
+              // ignore: cast_nullable_to_non_nullable
+              : createdDate as DateTime,
       updateDate: updateDate == const $CopyWithPlaceholder()
           ? _value.updateDate
           // ignore: cast_nullable_to_non_nullable
@@ -131,10 +133,8 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) => Subscription(
       planId: json['planId'] as String,
       status: json['status'] as String,
       offerBy: json['offerBy'] as String? ?? "",
-      date: DateTime.parse(json['date'] as String),
-      updateDate: json['updateDate'] == null
-          ? null
-          : DateTime.parse(json['updateDate'] as String),
+      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      updateDate: dateTimefromJsonWithNull(json['updateDate'] as Timestamp?),
     );
 
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
@@ -144,6 +144,6 @@ Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
       'planId': instance.planId,
       'status': instance.status,
       'offerBy': instance.offerBy,
-      'date': instance.date.toIso8601String(),
-      'updateDate': instance.updateDate?.toIso8601String(),
+      'createdDate': dateTimetoJson(instance.createdDate),
+      'updateDate': dateTimetoJsonWithNull(instance.updateDate),
     };
