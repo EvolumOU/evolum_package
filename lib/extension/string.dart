@@ -35,6 +35,8 @@ extension StringExtension on String {
     return res;
   }
 
+  String get upperCaseFirst => this.replaceRange(0, 1, this[0].toUpperCase());
+
   bool get isError => this == "error";
   bool get isSuccess => this == "success";
   bool get isInvalid => this == "invalid";

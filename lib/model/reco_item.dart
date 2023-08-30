@@ -1,5 +1,6 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/extension/color.dart';
+import 'package:evolum_package/main.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -23,6 +24,16 @@ class RecoItem {
   String contendId = "";
   String name = "";
   RecoItem({required this.type, required this.text});
+
+  String get typeLabel => switch (type) {
+        "awareness" => "Pleine conscience",
+        "story" => "Histoire",
+        "trip" => "Voyage",
+        "breathwork" => "Respiration",
+        "asmr" => "ASMR",
+        "experience" => "Expérience",
+        _ => type.upperCaseFirst,
+      };
 
   factory RecoItem.fromMap(Map<String, dynamic> data) {
     return RecoItem(
