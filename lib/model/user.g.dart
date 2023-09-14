@@ -23,8 +23,6 @@ abstract class _$UserCWProxy {
 
   User reminderNight(String? reminderNight);
 
-  User goal(List<dynamic> goal);
-
   User nbDone(int nbDone);
 
   User noReview(int noReview);
@@ -60,7 +58,6 @@ abstract class _$UserCWProxy {
     String? status,
     String? reminderMorning,
     String? reminderNight,
-    List<dynamic>? goal,
     int? nbDone,
     int? noReview,
     DateTime? createdDate,
@@ -105,9 +102,6 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   @override
   User reminderNight(String? reminderNight) =>
       this(reminderNight: reminderNight);
-
-  @override
-  User goal(List<dynamic> goal) => this(goal: goal);
 
   @override
   User nbDone(int nbDone) => this(nbDone: nbDone);
@@ -156,7 +150,6 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? status = const $CopyWithPlaceholder(),
     Object? reminderMorning = const $CopyWithPlaceholder(),
     Object? reminderNight = const $CopyWithPlaceholder(),
-    Object? goal = const $CopyWithPlaceholder(),
     Object? nbDone = const $CopyWithPlaceholder(),
     Object? noReview = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
@@ -202,10 +195,6 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.reminderNight
           // ignore: cast_nullable_to_non_nullable
           : reminderNight as String?,
-      goal: goal == const $CopyWithPlaceholder() || goal == null
-          ? _value.goal
-          // ignore: cast_nullable_to_non_nullable
-          : goal as List<dynamic>,
       nbDone: nbDone == const $CopyWithPlaceholder() || nbDone == null
           ? _value.nbDone
           // ignore: cast_nullable_to_non_nullable
@@ -270,7 +259,6 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       status: json['status'] as String? ?? "free",
       reminderMorning: json['reminderMorning'] as String?,
       reminderNight: json['reminderNight'] as String?,
-      goal: json['goal'] as List<dynamic>? ?? const <String>[],
       nbDone: json['nbDone'] as int? ?? 0,
       noReview: json['noReview'] as int? ?? 0,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
@@ -299,7 +287,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'reminderMorning': instance.reminderMorning,
       'bgmusic': instance.bgmusic,
       'status': instance.status,
-      'goal': instance.goal,
       'nbDone': instance.nbDone,
       'noReview': instance.noReview,
       'leadDate': dateTimetoJsonWithNull(instance.leadDate),
