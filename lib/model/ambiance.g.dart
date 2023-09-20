@@ -15,9 +15,9 @@ abstract class _$AmbianceCWProxy {
 
   Ambiance hide(bool hide);
 
-  Ambiance position(Duration position);
-
   Ambiance duration(Duration duration);
+
+  Ambiance chapters(List<double> chapters);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Ambiance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -30,8 +30,8 @@ abstract class _$AmbianceCWProxy {
     String? name,
     String? type,
     bool? hide,
-    Duration? position,
     Duration? duration,
+    List<double>? chapters,
   });
 }
 
@@ -54,10 +54,10 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
   Ambiance hide(bool hide) => this(hide: hide);
 
   @override
-  Ambiance position(Duration position) => this(position: position);
+  Ambiance duration(Duration duration) => this(duration: duration);
 
   @override
-  Ambiance duration(Duration duration) => this(duration: duration);
+  Ambiance chapters(List<double> chapters) => this(chapters: chapters);
 
   @override
 
@@ -72,8 +72,8 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
     Object? name = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? hide = const $CopyWithPlaceholder(),
-    Object? position = const $CopyWithPlaceholder(),
     Object? duration = const $CopyWithPlaceholder(),
+    Object? chapters = const $CopyWithPlaceholder(),
   }) {
     return Ambiance(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -92,14 +92,14 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
           ? _value.hide
           // ignore: cast_nullable_to_non_nullable
           : hide as bool,
-      position: position == const $CopyWithPlaceholder() || position == null
-          ? _value.position
-          // ignore: cast_nullable_to_non_nullable
-          : position as Duration,
       duration: duration == const $CopyWithPlaceholder() || duration == null
           ? _value.duration
           // ignore: cast_nullable_to_non_nullable
           : duration as Duration,
+      chapters: chapters == const $CopyWithPlaceholder() || chapters == null
+          ? _value.chapters
+          // ignore: cast_nullable_to_non_nullable
+          : chapters as List<double>,
     );
   }
 }
@@ -119,12 +119,13 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       name: json['name'] as String? ?? "",
       type: json['type'] as String? ?? "matin",
       hide: json['hide'] as bool? ?? false,
-      position: json['position'] == null
-          ? Duration.zero
-          : durationfromJson(json['position'] as int),
       duration: json['duration'] == null
           ? Duration.zero
           : durationfromJson(json['duration'] as int),
+      chapters: (json['chapters'] as List<dynamic>?)
+              ?.map((e) => (e as num).toDouble())
+              .toList() ??
+          const <double>[0],
     );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
@@ -132,6 +133,6 @@ Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'name': instance.name,
       'type': instance.type,
       'hide': instance.hide,
-      'position': durationtoJson(instance.position),
       'duration': durationtoJson(instance.duration),
+      'chapters': instance.chapters,
     };

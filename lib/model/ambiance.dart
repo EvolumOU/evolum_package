@@ -12,17 +12,16 @@ class Ambiance {
   String type;
   bool hide;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
-  Duration position;
-  @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration duration;
+  List<double> chapters;
 
   Ambiance({
     required this.id,
     this.name = "",
     this.type = "matin",
     this.hide = false,
-    this.position = Duration.zero,
     this.duration = Duration.zero,
+    this.chapters = const <double>[0],
   });
 
   factory Ambiance.fromJson(Map<String, dynamic> data) =>
