@@ -17,7 +17,7 @@ abstract class _$AmbianceCWProxy {
 
   Ambiance duration(Duration duration);
 
-  Ambiance chapters(List<double> chapters);
+  Ambiance chapters(List<int> chapters);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Ambiance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -31,7 +31,7 @@ abstract class _$AmbianceCWProxy {
     String? type,
     bool? hide,
     Duration? duration,
-    List<double>? chapters,
+    List<int>? chapters,
   });
 }
 
@@ -57,7 +57,7 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
   Ambiance duration(Duration duration) => this(duration: duration);
 
   @override
-  Ambiance chapters(List<double> chapters) => this(chapters: chapters);
+  Ambiance chapters(List<int> chapters) => this(chapters: chapters);
 
   @override
 
@@ -99,7 +99,7 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
       chapters: chapters == const $CopyWithPlaceholder() || chapters == null
           ? _value.chapters
           // ignore: cast_nullable_to_non_nullable
-          : chapters as List<double>,
+          : chapters as List<int>,
     );
   }
 }
@@ -123,9 +123,9 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
           ? Duration.zero
           : durationfromJson(json['duration'] as int),
       chapters: (json['chapters'] as List<dynamic>?)
-              ?.map((e) => (e as num).toDouble())
+              ?.map((e) => (e as num).toInt())
               .toList() ??
-          const <double>[0],
+          const <int>[0],
     );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
