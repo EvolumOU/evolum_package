@@ -127,6 +127,15 @@ Message _$MessageFromJson(Map<String, dynamic> json) => Message(
           const <RecoItem>[],
     );
 
+const _$MessageFieldMap = <String, String>{
+  'id': 'id',
+  'title': 'title',
+  'description': 'description',
+  'imageUrl': 'imageUrl',
+  'date': 'date',
+  'recoList': 'recoList',
+};
+
 Map<String, dynamic> _$MessageToJson(Message instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

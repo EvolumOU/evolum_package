@@ -172,6 +172,19 @@ Surprise _$SurpriseFromJson(Map<String, dynamic> json) => Surprise(
       hide: json['hide'] as bool? ?? false,
     );
 
+const _$SurpriseFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'date': 'date',
+  'subtitle': 'subtitle',
+  'description': 'description',
+  'photoName': 'photoName',
+  'type': 'type',
+  'courseId': 'courseId',
+  'evoId': 'evoId',
+  'hide': 'hide',
+};
+
 Map<String, dynamic> _$SurpriseToJson(Surprise instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

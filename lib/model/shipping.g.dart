@@ -111,6 +111,14 @@ Shipping _$ShippingFromJson(Map<String, dynamic> json) => Shipping(
       country: json['country'] as String?,
     );
 
+const _$ShippingFieldMap = <String, String>{
+  'fullname': 'fullname',
+  'address': 'address',
+  'city': 'city',
+  'postcode': 'postcode',
+  'country': 'country',
+};
+
 Map<String, dynamic> _$ShippingToJson(Shipping instance) => <String, dynamic>{
       'fullname': instance.fullname,
       'address': instance.address,

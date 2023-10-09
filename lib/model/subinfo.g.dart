@@ -152,6 +152,17 @@ SubInfo _$SubInfoFromJson(Map<String, dynamic> json) => SubInfo(
       nextBillingDate: json['nextBillingDate'] as int?,
     );
 
+const _$SubInfoFieldMap = <String, String>{
+  'planId': 'planId',
+  'paymentType': 'paymentType',
+  'cardLast4': 'cardLast4',
+  'price': 'price',
+  'currency': 'currency',
+  'billingPeriod': 'billingPeriod',
+  'billingPeriodUnit': 'billingPeriodUnit',
+  'nextBillingDate': 'nextBillingDate',
+};
+
 Map<String, dynamic> _$SubInfoToJson(SubInfo instance) => <String, dynamic>{
       'planId': instance.planId,
       'paymentType': instance.paymentType,

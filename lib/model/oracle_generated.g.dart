@@ -169,6 +169,18 @@ OracleGenerated _$OracleGeneratedFromJson(Map<String, dynamic> json) =>
       significationOfTheCard: json['significationOfTheCard'] as String? ?? "",
     );
 
+const _$OracleGeneratedFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'imgUrl': 'imgUrl',
+  'date': 'date',
+  'visualDescription': 'visualDescription',
+  'titleOfTheCard': 'titleOfTheCard',
+  'userInput': 'userInput',
+  'guidancePerso': 'guidancePerso',
+  'significationOfTheCard': 'significationOfTheCard',
+};
+
 Map<String, dynamic> _$OracleGeneratedToJson(OracleGenerated instance) =>
     <String, dynamic>{
       'id': instance.id,

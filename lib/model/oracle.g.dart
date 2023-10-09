@@ -87,6 +87,12 @@ Oracle _$OracleFromJson(Map<String, dynamic> json) => Oracle(
       text: json['text'] as String,
     );
 
+const _$OracleFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'text': 'text',
+};
+
 Map<String, dynamic> _$OracleToJson(Oracle instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -87,6 +87,12 @@ Background _$BackgroundFromJson(Map<String, dynamic> json) => Background(
       type: json['type'] as String? ?? 'matin',
     );
 
+const _$BackgroundFieldMap = <String, String>{
+  'id': 'id',
+  'hide': 'hide',
+  'type': 'type',
+};
+
 Map<String, dynamic> _$BackgroundToJson(Background instance) =>
     <String, dynamic>{
       'id': instance.id,

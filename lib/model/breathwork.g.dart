@@ -140,6 +140,15 @@ BreathWork _$BreathWorkFromJson(Map<String, dynamic> json) => BreathWork(
           : durationfromJson(json['pauseBottomDuration'] as int),
     );
 
+const _$BreathWorkFieldMap = <String, String>{
+  'id': 'id',
+  'nbCycles': 'nbCycles',
+  'inhaleDuration': 'inhaleDuration',
+  'pauseTopDuration': 'pauseTopDuration',
+  'exhaleDuration': 'exhaleDuration',
+  'pauseBottomDuration': 'pauseBottomDuration',
+};
+
 Map<String, dynamic> _$BreathWorkToJson(BreathWork instance) =>
     <String, dynamic>{
       'id': instance.id,

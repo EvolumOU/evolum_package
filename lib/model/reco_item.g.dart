@@ -80,6 +80,16 @@ RecoItem _$RecoItemFromJson(Map<String, dynamic> json) => RecoItem(
       ..contendId = json['contendId'] as String
       ..name = json['name'] as String;
 
+const _$RecoItemFieldMap = <String, String>{
+  'type': 'type',
+  'text': 'text',
+  'imageUrl': 'imageUrl',
+  'mainColor': 'mainColor',
+  'textColor': 'textColor',
+  'contendId': 'contendId',
+  'name': 'name',
+};
+
 Map<String, dynamic> _$RecoItemToJson(RecoItem instance) => <String, dynamic>{
       'type': instance.type,
       'text': instance.text,

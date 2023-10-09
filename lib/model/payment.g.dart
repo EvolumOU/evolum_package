@@ -75,6 +75,11 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) => Payment(
       status: json['status'] as String?,
     );
 
+const _$PaymentFieldMap = <String, String>{
+  'email': 'email',
+  'status': 'status',
+};
+
 Map<String, dynamic> _$PaymentToJson(Payment instance) => <String, dynamic>{
       'email': instance.email,
       'status': instance.status,

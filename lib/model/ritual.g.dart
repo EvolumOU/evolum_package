@@ -187,6 +187,20 @@ Ritual _$RitualFromJson(Map<String, dynamic> json) => Ritual(
               const <String>[],
     );
 
+const _$RitualFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'date': 'date',
+  'type': 'type',
+  'filename': 'filename',
+  'exitPoint': 'exitPoint',
+  'hide': 'hide',
+  'feedback': 'feedback',
+  'move': 'move',
+  'displayFilename': 'displayFilename',
+  'tools': 'tools',
+};
+
 Map<String, dynamic> _$RitualToJson(Ritual instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

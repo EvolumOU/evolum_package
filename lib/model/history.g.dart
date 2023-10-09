@@ -147,6 +147,17 @@ History _$HistoryFromJson(Map<String, dynamic> json) => History(
       checked: json['checked'] as bool? ?? false,
     );
 
+const _$HistoryFieldMap = <String, String>{
+  'id': 'id',
+  'item': 'item',
+  'emotion': 'emotion',
+  'gratitude': 'gratitude',
+  'review': 'review',
+  'date': 'date',
+  'checked': 'checked',
+  'type': 'type',
+};
+
 Map<String, dynamic> _$HistoryToJson(History instance) => <String, dynamic>{
       'id': instance.id,
       'item': instance.item,

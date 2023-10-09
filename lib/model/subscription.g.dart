@@ -137,6 +137,16 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) => Subscription(
       updateDate: dateTimefromJsonWithNull(json['updateDate'] as Timestamp?),
     );
 
+const _$SubscriptionFieldMap = <String, String>{
+  'id': 'id',
+  'email': 'email',
+  'planId': 'planId',
+  'status': 'status',
+  'offerBy': 'offerBy',
+  'createdDate': 'createdDate',
+  'updateDate': 'updateDate',
+};
+
 Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
     <String, dynamic>{
       'id': instance.id,

@@ -99,6 +99,13 @@ Scheduled _$ScheduledFromJson(Map<String, dynamic> json) => Scheduled(
       evoId: json['evoId'] as String?,
     );
 
+const _$ScheduledFieldMap = <String, String>{
+  'date': 'date',
+  'type': 'type',
+  'evoId': 'evoId',
+  'nbOfday': 'nbOfday',
+};
+
 Map<String, dynamic> _$ScheduledToJson(Scheduled instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
       'type': instance.type,

@@ -137,6 +137,16 @@ Box _$BoxFromJson(Map<String, dynamic> json) => Box(
       boxName: json['boxName'] as String? ?? "box in app",
     );
 
+const _$BoxFieldMap = <String, String>{
+  'id': 'id',
+  'email': 'email',
+  'status': 'status',
+  'shipping': 'shipping',
+  'date': 'date',
+  'check': 'check',
+  'boxName': 'boxName',
+};
+
 Map<String, dynamic> _$BoxToJson(Box instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,

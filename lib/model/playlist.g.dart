@@ -125,6 +125,15 @@ Playlist _$PlaylistFromJson(Map<String, dynamic> json) => Playlist(
       text: json['text'] as String?,
     );
 
+const _$PlaylistFieldMap = <String, String>{
+  'name': 'name',
+  'list': 'list',
+  'position': 'position',
+  'hide': 'hide',
+  'type': 'type',
+  'text': 'text',
+};
+
 Map<String, dynamic> _$PlaylistToJson(Playlist instance) => <String, dynamic>{
       'name': instance.name,
       'list': instance.list,

@@ -275,6 +275,27 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       reco: json['reco'] as bool? ?? false,
     );
 
+const _$EvoFieldMap = <String, String>{
+  'id': 'id',
+  'gsUrl': 'gsUrl',
+  'name': 'name',
+  'type': 'type',
+  'tag': 'tag',
+  'duration': 'duration',
+  'loop': 'loop',
+  'timings': 'timings',
+  'createdDate': 'createdDate',
+  'summarize': 'summarize',
+  'intro': 'intro',
+  'feedback': 'feedback',
+  'hide': 'hide',
+  'mode': 'mode',
+  'form': 'form',
+  'size': 'size',
+  'tools': 'tools',
+  'reco': 'reco',
+};
+
 Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'id': instance.id,
       'gsUrl': instance.gsUrl,

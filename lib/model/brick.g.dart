@@ -125,6 +125,15 @@ Brick _$BrickFromJson(Map<String, dynamic> json) => Brick(
       filename: json['filename'] as String?,
     );
 
+const _$BrickFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'duration': 'duration',
+  'type': 'type',
+  'moment': 'moment',
+  'filename': 'filename',
+};
+
 Map<String, dynamic> _$BrickToJson(Brick instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

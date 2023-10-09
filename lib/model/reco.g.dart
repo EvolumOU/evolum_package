@@ -135,6 +135,15 @@ Reco _$RecoFromJson(Map<String, dynamic> json) => Reco(
           : Evo.fromJson(json['first'] as Map<String, dynamic>),
     );
 
+const _$RecoFieldMap = <String, String>{
+  'date': 'date',
+  'list': 'list',
+  'scheduled': 'scheduled',
+  'first': 'first',
+  'oracle': 'oracle',
+  'free': 'free',
+};
+
 Map<String, dynamic> _$RecoToJson(Reco instance) => <String, dynamic>{
       'date': dateTimetoJson(instance.date),
       'list': instance.list.map((e) => e.toJson()).toList(),

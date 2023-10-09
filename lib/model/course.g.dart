@@ -265,6 +265,26 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       hide: json['hide'] as bool? ?? false,
     );
 
+const _$CourseFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'type': 'type',
+  'tag': 'tag',
+  'descr': 'descr',
+  'text': 'text',
+  'specolor1': 'specolor1',
+  'specolor2': 'specolor2',
+  'color1': 'color1',
+  'color2': 'color2',
+  'playlist': 'playlist',
+  'list': 'list',
+  'position': 'position',
+  'scheduled': 'scheduled',
+  'updatedDate': 'updatedDate',
+  'route': 'route',
+  'hide': 'hide',
+};
+
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

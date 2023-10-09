@@ -278,6 +278,27 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
               const <String>[],
     );
 
+const _$UserFieldMap = <String, String>{
+  'uid': 'uid',
+  'email': 'email',
+  'name': 'name',
+  'notification': 'notification',
+  'reminderNight': 'reminderNight',
+  'reminderMorning': 'reminderMorning',
+  'bgmusic': 'bgmusic',
+  'status': 'status',
+  'nbDone': 'nbDone',
+  'noReview': 'noReview',
+  'leadDate': 'leadDate',
+  'createdDate': 'createdDate',
+  'unlocked': 'unlocked',
+  'subId': 'subId',
+  'token': 'token',
+  'role': 'role',
+  'strikes': 'strikes',
+  'goals': 'goals',
+};
+
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,

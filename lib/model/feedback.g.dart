@@ -148,6 +148,17 @@ FeedBack _$FeedBackFromJson(Map<String, dynamic> json) => FeedBack(
       uid: json['uid'] as String?,
     );
 
+const _$FeedBackFieldMap = <String, String>{
+  'id': 'id',
+  'createdDate': 'createdDate',
+  'email': 'email',
+  'contentName': 'contentName',
+  'contentTag': 'contentTag',
+  'contentType': 'contentType',
+  'text': 'text',
+  'uid': 'uid',
+};
+
 Map<String, dynamic> _$FeedBackToJson(FeedBack instance) => <String, dynamic>{
       'id': instance.id,
       'createdDate': dateTimetoJson(instance.createdDate),

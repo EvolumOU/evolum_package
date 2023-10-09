@@ -87,6 +87,12 @@ Timing _$TimingFromJson(Map<String, dynamic> json) => Timing(
       text: json['text'] as String? ?? "",
     );
 
+const _$TimingFieldMap = <String, String>{
+  'begin': 'begin',
+  'end': 'end',
+  'text': 'text',
+};
+
 Map<String, dynamic> _$TimingToJson(Timing instance) => <String, dynamic>{
       'begin': instance.begin,
       'end': instance.end,

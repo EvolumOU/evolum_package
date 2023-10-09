@@ -101,6 +101,15 @@ Tool _$ToolFromJson(Map<String, dynamic> json) => Tool(
       ..progress = (json['progress'] as num).toDouble()
       ..max = (json['max'] as num).toDouble();
 
+const _$ToolFieldMap = <String, String>{
+  'id': 'id',
+  'name': 'name',
+  'descr': 'descr',
+  'tags': 'tags',
+  'progress': 'progress',
+  'max': 'max',
+};
+
 Map<String, dynamic> _$ToolToJson(Tool instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -76,6 +76,11 @@ Fomo _$FomoFromJson(Map<String, dynamic> json) => Fomo(
       expireDate: dateTimefromJson(json['expireDate'] as Timestamp?),
     );
 
+const _$FomoFieldMap = <String, String>{
+  'id': 'id',
+  'expireDate': 'expireDate',
+};
+
 Map<String, dynamic> _$FomoToJson(Fomo instance) => <String, dynamic>{
       'id': instance.id,
       'expireDate': dateTimetoJson(instance.expireDate),
