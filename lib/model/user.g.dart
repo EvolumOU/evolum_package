@@ -4743,8 +4743,10 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       reminderNight: json['reminderNight'] as String?,
       nbDone: json['nbDone'] as int? ?? 0,
       noReview: json['noReview'] as int? ?? 0,
-      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-      leadDate: dateTimefromJsonWithNull(json['leadDate'] as Timestamp?),
+      createdDate: const FirestoreDateTimeConverter()
+          .fromJson(json['createdDate'] as Timestamp),
+      leadDate: _$JsonConverterFromJson<Timestamp, DateTime>(
+          json['leadDate'], const FirestoreDateTimeConverter().fromJson),
       unlocked: (json['unlocked'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -4754,7 +4756,8 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       role: json['role'] as String? ?? "user",
       strikes: json['strikes'] == null
           ? const <DateTime>[]
-          : listDateTimefromJson(json['strikes'] as List),
+          : const FirestoreListDateTimeConverter()
+              .fromJson(json['strikes'] as List<Timestamp>),
       goals:
           (json['goals'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const <String>[],
@@ -4792,15 +4795,30 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'status': instance.status,
       'nbDone': instance.nbDone,
       'noReview': instance.noReview,
-      'leadDate': dateTimetoJsonWithNull(instance.leadDate),
-      'createdDate': dateTimetoJson(instance.createdDate),
+      'leadDate': _$JsonConverterToJson<Timestamp, DateTime>(
+          instance.leadDate, const FirestoreDateTimeConverter().toJson),
+      'createdDate':
+          const FirestoreDateTimeConverter().toJson(instance.createdDate),
       'unlocked': instance.unlocked,
       'subId': instance.subId,
       'token': instance.token,
       'role': instance.role,
-      'strikes': listDateTimetoJson(instance.strikes),
+      'strikes':
+          const FirestoreListDateTimeConverter().toJson(instance.strikes),
       'goals': instance.goals,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 History _$HistoryFromJson(Map<String, dynamic> json) => History(
       id: json['id'] as String,

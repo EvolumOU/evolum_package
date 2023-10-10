@@ -46,7 +46,6 @@ String getRandomGeneratedId() {
 const firestoreSerializable = JsonSerializable(
   converters: [
     ...firestoreJsonConverters,
-    FirestoreDateTimeWithNullConverter(),
     FirestoreListDateTimeConverter(),
     FirestoreDurationConverter(),
   ],

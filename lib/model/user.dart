@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 import 'all.dart';
 
@@ -22,15 +21,12 @@ class User {
   String status;
   int nbDone;
   int noReview;
-  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
   DateTime? leadDate;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
   List<String> unlocked;
   String? subId;
   String? token;
   String role;
-  @JsonKey(toJson: listDateTimetoJson, fromJson: listDateTimefromJson)
   List<DateTime> strikes;
   List<String> goals;
 
