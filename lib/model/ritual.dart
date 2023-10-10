@@ -1,17 +1,17 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 
 import 'utils.dart';
 
 part 'ritual.g.dart';
 
 @CopyWith()
-@JsonSerializable(explicitToJson: true)
+@firestoreSerializable
 class Ritual {
+  @Id()
   String id;
   String name;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime date;
   String type;
   String filename;
@@ -51,3 +51,6 @@ class Ritual {
   @override
   String toString() => toJson().toString();
 }
+
+@Collection<Ritual>('ritual')
+final ritualRef = RitualCollectionReference();

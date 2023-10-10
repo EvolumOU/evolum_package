@@ -1481,7 +1481,8 @@ Box _$BoxFromJson(Map<String, dynamic> json) => Box(
       shipping: json['shipping'] == null
           ? null
           : Shipping.fromJson(json['shipping'] as Map<String, dynamic>),
-      date: dateTimefromJson(json['date'] as Timestamp?),
+      date: const FirestoreDateTimeConverter()
+          .fromJson(json['date'] as Timestamp),
       check: json['check'] as bool? ?? false,
       boxName: json['boxName'] as String? ?? "box in app",
     );
@@ -1501,7 +1502,7 @@ Map<String, dynamic> _$BoxToJson(Box instance) => <String, dynamic>{
       'email': instance.email,
       'status': instance.status,
       'shipping': instance.shipping?.toJson(),
-      'date': dateTimetoJson(instance.date),
+      'date': const FirestoreDateTimeConverter().toJson(instance.date),
       'check': instance.check,
       'boxName': instance.boxName,
     };
