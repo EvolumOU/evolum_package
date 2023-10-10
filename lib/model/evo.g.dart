@@ -21,8 +21,6 @@ abstract class _$EvoCWProxy {
 
   Evo loop(bool loop);
 
-  Evo timings(List<Timing> timings);
-
   Evo createdDate(DateTime createdDate);
 
   Evo summarize(String summarize);
@@ -57,7 +55,6 @@ abstract class _$EvoCWProxy {
     String? tag,
     Duration? duration,
     bool? loop,
-    List<Timing>? timings,
     DateTime? createdDate,
     String? summarize,
     String? intro,
@@ -97,9 +94,6 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
 
   @override
   Evo loop(bool loop) => this(loop: loop);
-
-  @override
-  Evo timings(List<Timing> timings) => this(timings: timings);
 
   @override
   Evo createdDate(DateTime createdDate) => this(createdDate: createdDate);
@@ -147,7 +141,6 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
     Object? tag = const $CopyWithPlaceholder(),
     Object? duration = const $CopyWithPlaceholder(),
     Object? loop = const $CopyWithPlaceholder(),
-    Object? timings = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
     Object? summarize = const $CopyWithPlaceholder(),
     Object? intro = const $CopyWithPlaceholder(),
@@ -188,10 +181,6 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
           ? _value.loop
           // ignore: cast_nullable_to_non_nullable
           : loop as bool,
-      timings: timings == const $CopyWithPlaceholder() || timings == null
-          ? _value.timings
-          // ignore: cast_nullable_to_non_nullable
-          : timings as List<Timing>,
       createdDate:
           createdDate == const $CopyWithPlaceholder() || createdDate == null
               ? _value.createdDate
@@ -257,10 +246,6 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
           ? Duration.zero
           : durationfromJson(json['duration'] as int),
       loop: json['loop'] as bool? ?? false,
-      timings: (json['timings'] as List<dynamic>?)
-              ?.map((e) => Timing.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <Timing>[],
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
       summarize: json['summarize'] as String? ?? '',
       intro: json['intro'] as String? ?? '',
@@ -283,7 +268,6 @@ const _$EvoFieldMap = <String, String>{
   'tag': 'tag',
   'duration': 'duration',
   'loop': 'loop',
-  'timings': 'timings',
   'createdDate': 'createdDate',
   'summarize': 'summarize',
   'intro': 'intro',
@@ -304,7 +288,6 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'tag': instance.tag,
       'duration': durationtoJson(instance.duration),
       'loop': instance.loop,
-      'timings': instance.timings.map((e) => e.toJson()).toList(),
       'createdDate': dateTimetoJson(instance.createdDate),
       'summarize': instance.summarize,
       'intro': instance.intro,

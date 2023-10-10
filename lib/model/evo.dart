@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/model/timing.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'utils.dart';
@@ -10,7 +9,6 @@ part 'evo.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Evo {
-  // TODO: Make fields final
   String id;
   String gsUrl;
   String name;
@@ -19,7 +17,6 @@ class Evo {
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration duration;
   bool loop;
-  List<Timing> timings;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
   String summarize;
@@ -40,7 +37,6 @@ class Evo {
     this.tag = '',
     this.duration = Duration.zero,
     this.loop = false,
-    this.timings = const <Timing>[],
     required this.createdDate,
     this.summarize = '',
     this.intro = '',
@@ -56,7 +52,6 @@ class Evo {
   String get filename => gsUrl.split('/').last;
   bool get isVideo => gsUrl.endsWith(".mp4");
   bool get isAudio => gsUrl.endsWith(".mp3");
-  bool get hasTimming => timings.isNotEmpty;
 
   bool get isVertical => form == "vertical";
   bool get isFocus => form == "focus";
