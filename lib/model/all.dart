@@ -1,6 +1,5 @@
 export 'course.dart';
 export 'evo.dart';
-export 'history.dart';
 export 'playlist.dart';
 export 'user.dart';
 export 'reco.dart';
@@ -15,3 +14,4 @@ export 'background.dart';
 export 'tool.dart';
 export 'oracle_generated.dart';
 export 'subscription.dart';
+export 'message.dart';
