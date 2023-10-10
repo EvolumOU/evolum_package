@@ -1079,7 +1079,8 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       hide: json['hide'] as bool? ?? false,
       duration: json['duration'] == null
           ? Duration.zero
-          : Duration(microseconds: json['duration'] as int),
+          : const FirestoreDurationConverter()
+              .fromJson(json['duration'] as int),
       chapters:
           (json['chapters'] as List<dynamic>?)?.map((e) => e as int).toList() ??
               const <int>[0],
@@ -1099,6 +1100,6 @@ Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'name': instance.name,
       'type': instance.type,
       'hide': instance.hide,
-      'duration': instance.duration.inMicroseconds,
+      'duration': const FirestoreDurationConverter().toJson(instance.duration),
       'chapters': instance.chapters,
     };

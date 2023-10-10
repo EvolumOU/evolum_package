@@ -4,15 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-List<DateTime> listDateTimefromJson(List<dynamic> lists) => lists.map((e) {
-      if (e is Timestamp)
-        return DateTime.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch);
-      return DateTime.fromMillisecondsSinceEpoch(0);
-    }).toList();
-
-List<Timestamp> listDateTimetoJson(List<DateTime> listDate) => listDate
-    .map((e) => Timestamp.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch))
-    .toList();
+import 'jsonconverter.dart';
 
 DateTime dateTimefromJson(Timestamp? date) =>
     DateTime.fromMillisecondsSinceEpoch(
@@ -52,7 +44,22 @@ String getRandomGeneratedId() {
 }
 
 const firestoreSerializable = JsonSerializable(
-  converters: firestoreJsonConverters,
+  converters: [
+    ...firestoreJsonConverters,
+    FirestoreDateTimeWithNullConverter(),
+    FirestoreListDateTimeConverter(),
+    FirestoreDurationConverter(),
+  ],
   explicitToJson: true,
   createFieldMap: true,
 );
+
+List<DateTime> listDateTimefromJson(List<dynamic> lists) => lists.map((e) {
+      if (e is Timestamp)
+        return DateTime.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch);
+      return DateTime.fromMillisecondsSinceEpoch(0);
+    }).toList();
+
+List<Timestamp> listDateTimetoJson(List<DateTime> listDate) => listDate
+    .map((e) => Timestamp.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch))
+    .toList();
