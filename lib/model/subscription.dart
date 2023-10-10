@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -7,7 +8,7 @@ import 'utils.dart';
 part 'subscription.g.dart';
 
 @CopyWith()
-@JsonSerializable(explicitToJson: true)
+@firestoreSerializable
 class Subscription {
   final String id;
   final String email;
@@ -37,3 +38,6 @@ class Subscription {
   @override
   String toString() => toJson().toString();
 }
+
+@Collection<Subscription>('subscription')
+final subscriptionRef = SubscriptionCollectionReference();
