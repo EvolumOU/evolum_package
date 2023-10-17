@@ -10,10 +10,17 @@ class Tool {
   final String name;
   final String descr;
   final List<String> tags;
-  double progress = 0.0;
-  double max = 100;
+  final double progress;
+  final double max;
 
-  Tool(this.id, this.name, this.descr, this.tags);
+  const Tool(
+    this.id,
+    this.name,
+    this.descr,
+    this.tags,
+    this.progress,
+    this.max,
+  );
 
   factory Tool.fromJson(Map<String, dynamic> data) => _$ToolFromJson(data);
 
