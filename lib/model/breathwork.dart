@@ -1,12 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 
 part 'breathwork.g.dart';
 
 @CopyWith()
-@JsonSerializable(explicitToJson: true)
+@firestoreSerializable
 class BreathWork {
+  @Id()
   String? id;
   int nbCycles;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
@@ -43,3 +46,6 @@ class BreathWork {
   @override
   String toString() => toJson().toString();
 }
+
+@Collection<BreathWork>('breathwork')
+final breathworkRef = BreathWorkCollectionReference();
