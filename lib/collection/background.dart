@@ -21,7 +21,7 @@ class Background {
   });
 
   factory Background.fromJson(Map<String, dynamic> data) =>
-      _$BackgroundFromJson({...data});
+      _$BackgroundFromJson(data);
 
   Map<String, dynamic> toJson() => _$BackgroundToJson(this);
 

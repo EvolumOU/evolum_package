@@ -30,14 +30,14 @@ abstract class AmbianceCollectionReference
     DocumentSnapshot<Map<String, Object?>> snapshot,
     SnapshotOptions? options,
   ) {
-    return _$AmbianceFromJson({'id': snapshot.id, ...?snapshot.data()});
+    return Ambiance.fromJson({'id': snapshot.id, ...?snapshot.data()});
   }
 
   static Map<String, Object?> toFirestore(
     Ambiance value,
     SetOptions? options,
   ) {
-    return {..._$AmbianceToJson(value)}..remove('id');
+    return {...value.toJson()}..remove('id');
   }
 
   @override

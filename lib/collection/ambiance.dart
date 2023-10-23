@@ -22,6 +22,11 @@ class Ambiance {
     this.duration = Duration.zero,
     this.chapters = const <int>[0],
   });
+
+  factory Ambiance.fromJson(Map<String, dynamic> data) =>
+      _$AmbianceFromJson(data);
+
+  Map<String, dynamic> toJson() => _$AmbianceToJson(this);
 }
 
 @Collection<Ambiance>('ambiance')
