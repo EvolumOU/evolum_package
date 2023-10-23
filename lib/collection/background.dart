@@ -4,7 +4,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 
 import '../jsonconverter.dart';
 
-part '../model/background.g.dart';
+part 'background.g.dart';
 
 @CopyWith()
 @firestoreSerializable

@@ -1,6 +1,81 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../collection/ambiance.dart';
+part of 'background.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+abstract class _$BackgroundCWProxy {
+  Background id(String id);
+
+  Background hide(bool hide);
+
+  Background type(String type);
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Background(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Background(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Background call({
+    String? id,
+    bool? hide,
+    String? type,
+  });
+}
+
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfBackground.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfBackground.copyWith.fieldName(...)`
+class _$BackgroundCWProxyImpl implements _$BackgroundCWProxy {
+  const _$BackgroundCWProxyImpl(this._value);
+
+  final Background _value;
+
+  @override
+  Background id(String id) => this(id: id);
+
+  @override
+  Background hide(bool hide) => this(hide: hide);
+
+  @override
+  Background type(String type) => this(type: type);
+
+  @override
+
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Background(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  ///
+  /// Usage
+  /// ```dart
+  /// Background(...).copyWith(id: 12, name: "My name")
+  /// ````
+  Background call({
+    Object? id = const $CopyWithPlaceholder(),
+    Object? hide = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
+  }) {
+    return Background(
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
+      hide: hide == const $CopyWithPlaceholder() || hide == null
+          ? _value.hide
+          // ignore: cast_nullable_to_non_nullable
+          : hide as bool,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as String,
+    );
+  }
+}
+
+extension $BackgroundCopyWith on Background {
+  /// Returns a callable class that can be used as follows: `instanceOfBackground.copyWith(...)` or like so:`instanceOfBackground.copyWith.fieldName(...)`.
+  // ignore: library_private_types_in_public_api
+  _$BackgroundCWProxy get copyWith => _$BackgroundCWProxyImpl(this);
+}
 
 // **************************************************************************
 // CollectionGenerator
@@ -18,81 +93,81 @@ const _sentinel = _Sentinel();
 /// A collection reference object can be used for adding documents,
 /// getting document references, and querying for documents
 /// (using the methods inherited from Query).
-abstract class AmbianceCollectionReference
+abstract class BackgroundCollectionReference
     implements
-        AmbianceQuery,
-        FirestoreCollectionReference<Ambiance, AmbianceQuerySnapshot> {
-  factory AmbianceCollectionReference([
+        BackgroundQuery,
+        FirestoreCollectionReference<Background, BackgroundQuerySnapshot> {
+  factory BackgroundCollectionReference([
     FirebaseFirestore? firestore,
-  ]) = _$AmbianceCollectionReference;
+  ]) = _$BackgroundCollectionReference;
 
-  static Ambiance fromFirestore(
+  static Background fromFirestore(
     DocumentSnapshot<Map<String, Object?>> snapshot,
     SnapshotOptions? options,
   ) {
-    return _$AmbianceFromJson({'id': snapshot.id, ...?snapshot.data()});
+    return Background.fromJson({'id': snapshot.id, ...?snapshot.data()});
   }
 
   static Map<String, Object?> toFirestore(
-    Ambiance value,
+    Background value,
     SetOptions? options,
   ) {
-    return {..._$AmbianceToJson(value)}..remove('id');
+    return {...value.toJson()}..remove('id');
   }
 
   @override
-  CollectionReference<Ambiance> get reference;
+  CollectionReference<Background> get reference;
 
   @override
-  AmbianceDocumentReference doc([String? id]);
+  BackgroundDocumentReference doc([String? id]);
 
   /// Add a new document to this collection with the specified data,
   /// assigning it a document ID automatically.
-  Future<AmbianceDocumentReference> add(Ambiance value);
+  Future<BackgroundDocumentReference> add(Background value);
 }
 
-class _$AmbianceCollectionReference extends _$AmbianceQuery
-    implements AmbianceCollectionReference {
-  factory _$AmbianceCollectionReference([FirebaseFirestore? firestore]) {
+class _$BackgroundCollectionReference extends _$BackgroundQuery
+    implements BackgroundCollectionReference {
+  factory _$BackgroundCollectionReference([FirebaseFirestore? firestore]) {
     firestore ??= FirebaseFirestore.instance;
 
-    return _$AmbianceCollectionReference._(
-      firestore.collection('ambiance').withConverter(
-            fromFirestore: AmbianceCollectionReference.fromFirestore,
-            toFirestore: AmbianceCollectionReference.toFirestore,
+    return _$BackgroundCollectionReference._(
+      firestore.collection('background').withConverter(
+            fromFirestore: BackgroundCollectionReference.fromFirestore,
+            toFirestore: BackgroundCollectionReference.toFirestore,
           ),
     );
   }
 
-  _$AmbianceCollectionReference._(
-    CollectionReference<Ambiance> reference,
+  _$BackgroundCollectionReference._(
+    CollectionReference<Background> reference,
   ) : super(reference, $referenceWithoutCursor: reference);
 
   String get path => reference.path;
 
   @override
-  CollectionReference<Ambiance> get reference =>
-      super.reference as CollectionReference<Ambiance>;
+  CollectionReference<Background> get reference =>
+      super.reference as CollectionReference<Background>;
 
   @override
-  AmbianceDocumentReference doc([String? id]) {
+  BackgroundDocumentReference doc([String? id]) {
     assert(
       id == null || id.split('/').length == 1,
       'The document ID cannot be from a different collection',
     );
-    return AmbianceDocumentReference(
+    return BackgroundDocumentReference(
       reference.doc(id),
     );
   }
 
   @override
-  Future<AmbianceDocumentReference> add(Ambiance value) {
-    return reference.add(value).then((ref) => AmbianceDocumentReference(ref));
+  Future<BackgroundDocumentReference> add(Background value) {
+    return reference.add(value).then((ref) => BackgroundDocumentReference(ref));
   }
 
   @override
   bool operator ==(Object other) {
-    return other is _$AmbianceCollectionReference &&
+    return other is _$BackgroundCollectionReference &&
         other.runtimeType == runtimeType &&
         other.reference == reference;
   }
@@ -101,23 +176,23 @@ class _$AmbianceCollectionReference extends _$AmbianceQuery
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
-abstract class AmbianceDocumentReference
-    extends FirestoreDocumentReference<Ambiance, AmbianceDocumentSnapshot> {
-  factory AmbianceDocumentReference(DocumentReference<Ambiance> reference) =
-      _$AmbianceDocumentReference;
+abstract class BackgroundDocumentReference
+    extends FirestoreDocumentReference<Background, BackgroundDocumentSnapshot> {
+  factory BackgroundDocumentReference(DocumentReference<Background> reference) =
+      _$BackgroundDocumentReference;
 
-  DocumentReference<Ambiance> get reference;
+  DocumentReference<Background> get reference;
 
-  /// A reference to the [AmbianceCollectionReference] containing this document.
-  AmbianceCollectionReference get parent {
-    return _$AmbianceCollectionReference(reference.firestore);
+  /// A reference to the [BackgroundCollectionReference] containing this document.
+  BackgroundCollectionReference get parent {
+    return _$BackgroundCollectionReference(reference.firestore);
   }
 
   @override
-  Stream<AmbianceDocumentSnapshot> snapshots();
+  Stream<BackgroundDocumentSnapshot> snapshots();
 
   @override
-  Future<AmbianceDocumentSnapshot> get([GetOptions? options]);
+  Future<BackgroundDocumentSnapshot> get([GetOptions? options]);
 
   @override
   Future<void> delete();
@@ -127,12 +202,10 @@ abstract class AmbianceDocumentReference
   ///
   /// If no document exists yet, the update will fail.
   Future<void> update({
-    String name,
-    FieldValue nameFieldValue,
-    String type,
-    FieldValue typeFieldValue,
     bool hide,
     FieldValue hideFieldValue,
+    String type,
+    FieldValue typeFieldValue,
   });
 
   /// Updates fields in the current document using the transaction API.
@@ -140,70 +213,60 @@ abstract class AmbianceDocumentReference
   /// The update will fail if applied to a document that does not exist.
   void transactionUpdate(
     Transaction transaction, {
-    String name,
-    FieldValue nameFieldValue,
-    String type,
-    FieldValue typeFieldValue,
     bool hide,
     FieldValue hideFieldValue,
+    String type,
+    FieldValue typeFieldValue,
   });
 }
 
-class _$AmbianceDocumentReference
-    extends FirestoreDocumentReference<Ambiance, AmbianceDocumentSnapshot>
-    implements AmbianceDocumentReference {
-  _$AmbianceDocumentReference(this.reference);
+class _$BackgroundDocumentReference
+    extends FirestoreDocumentReference<Background, BackgroundDocumentSnapshot>
+    implements BackgroundDocumentReference {
+  _$BackgroundDocumentReference(this.reference);
 
   @override
-  final DocumentReference<Ambiance> reference;
+  final DocumentReference<Background> reference;
 
-  /// A reference to the [AmbianceCollectionReference] containing this document.
-  AmbianceCollectionReference get parent {
-    return _$AmbianceCollectionReference(reference.firestore);
+  /// A reference to the [BackgroundCollectionReference] containing this document.
+  BackgroundCollectionReference get parent {
+    return _$BackgroundCollectionReference(reference.firestore);
   }
 
   @override
-  Stream<AmbianceDocumentSnapshot> snapshots() {
-    return reference.snapshots().map(AmbianceDocumentSnapshot._);
+  Stream<BackgroundDocumentSnapshot> snapshots() {
+    return reference.snapshots().map(BackgroundDocumentSnapshot._);
   }
 
   @override
-  Future<AmbianceDocumentSnapshot> get([GetOptions? options]) {
-    return reference.get(options).then(AmbianceDocumentSnapshot._);
+  Future<BackgroundDocumentSnapshot> get([GetOptions? options]) {
+    return reference.get(options).then(BackgroundDocumentSnapshot._);
   }
 
   @override
-  Future<AmbianceDocumentSnapshot> transactionGet(Transaction transaction) {
-    return transaction.get(reference).then(AmbianceDocumentSnapshot._);
+  Future<BackgroundDocumentSnapshot> transactionGet(Transaction transaction) {
+    return transaction.get(reference).then(BackgroundDocumentSnapshot._);
   }
 
   Future<void> update({
-    Object? name = _sentinel,
-    FieldValue? nameFieldValue,
-    Object? type = _sentinel,
-    FieldValue? typeFieldValue,
     Object? hide = _sentinel,
     FieldValue? hideFieldValue,
+    Object? type = _sentinel,
+    FieldValue? typeFieldValue,
   }) async {
     assert(
-      name == _sentinel || nameFieldValue == null,
-      "Cannot specify both name and nameFieldValue",
+      hide == _sentinel || hideFieldValue == null,
+      "Cannot specify both hide and hideFieldValue",
     );
     assert(
       type == _sentinel || typeFieldValue == null,
       "Cannot specify both type and typeFieldValue",
     );
-    assert(
-      hide == _sentinel || hideFieldValue == null,
-      "Cannot specify both hide and hideFieldValue",
-    );
     final json = {
-      if (name != _sentinel) _$AmbianceFieldMap['name']!: name as String,
-      if (nameFieldValue != null) _$AmbianceFieldMap['name']!: nameFieldValue,
-      if (type != _sentinel) _$AmbianceFieldMap['type']!: type as String,
-      if (typeFieldValue != null) _$AmbianceFieldMap['type']!: typeFieldValue,
-      if (hide != _sentinel) _$AmbianceFieldMap['hide']!: hide as bool,
-      if (hideFieldValue != null) _$AmbianceFieldMap['hide']!: hideFieldValue,
+      if (hide != _sentinel) _$BackgroundFieldMap['hide']!: hide as bool,
+      if (hideFieldValue != null) _$BackgroundFieldMap['hide']!: hideFieldValue,
+      if (type != _sentinel) _$BackgroundFieldMap['type']!: type as String,
+      if (typeFieldValue != null) _$BackgroundFieldMap['type']!: typeFieldValue,
     };
 
     return reference.update(json);
@@ -211,32 +274,24 @@ class _$AmbianceDocumentReference
 
   void transactionUpdate(
     Transaction transaction, {
-    Object? name = _sentinel,
-    FieldValue? nameFieldValue,
-    Object? type = _sentinel,
-    FieldValue? typeFieldValue,
     Object? hide = _sentinel,
     FieldValue? hideFieldValue,
+    Object? type = _sentinel,
+    FieldValue? typeFieldValue,
   }) {
     assert(
-      name == _sentinel || nameFieldValue == null,
-      "Cannot specify both name and nameFieldValue",
+      hide == _sentinel || hideFieldValue == null,
+      "Cannot specify both hide and hideFieldValue",
     );
     assert(
       type == _sentinel || typeFieldValue == null,
       "Cannot specify both type and typeFieldValue",
     );
-    assert(
-      hide == _sentinel || hideFieldValue == null,
-      "Cannot specify both hide and hideFieldValue",
-    );
     final json = {
-      if (name != _sentinel) _$AmbianceFieldMap['name']!: name as String,
-      if (nameFieldValue != null) _$AmbianceFieldMap['name']!: nameFieldValue,
-      if (type != _sentinel) _$AmbianceFieldMap['type']!: type as String,
-      if (typeFieldValue != null) _$AmbianceFieldMap['type']!: typeFieldValue,
-      if (hide != _sentinel) _$AmbianceFieldMap['hide']!: hide as bool,
-      if (hideFieldValue != null) _$AmbianceFieldMap['hide']!: hideFieldValue,
+      if (hide != _sentinel) _$BackgroundFieldMap['hide']!: hide as bool,
+      if (hideFieldValue != null) _$BackgroundFieldMap['hide']!: hideFieldValue,
+      if (type != _sentinel) _$BackgroundFieldMap['type']!: type as String,
+      if (typeFieldValue != null) _$BackgroundFieldMap['type']!: typeFieldValue,
     };
 
     transaction.update(reference, json);
@@ -244,7 +299,7 @@ class _$AmbianceDocumentReference
 
   @override
   bool operator ==(Object other) {
-    return other is AmbianceDocumentReference &&
+    return other is BackgroundDocumentReference &&
         other.runtimeType == runtimeType &&
         other.parent == parent &&
         other.id == id;
@@ -254,13 +309,13 @@ class _$AmbianceDocumentReference
   int get hashCode => Object.hash(runtimeType, parent, id);
 }
 
-abstract class AmbianceQuery
-    implements QueryReference<Ambiance, AmbianceQuerySnapshot> {
+abstract class BackgroundQuery
+    implements QueryReference<Background, BackgroundQuerySnapshot> {
   @override
-  AmbianceQuery limit(int limit);
+  BackgroundQuery limit(int limit);
 
   @override
-  AmbianceQuery limitToLast(int limit);
+  BackgroundQuery limitToLast(int limit);
 
   /// Perform an order query based on a [FieldPath].
   ///
@@ -282,17 +337,17 @@ abstract class AmbianceQuery
   /// ```dart
   /// collection.orderByTitle(startAt: 'title');
   /// ```
-  AmbianceQuery orderByFieldPath(
+  BackgroundQuery orderByFieldPath(
     FieldPath fieldPath, {
     bool descending = false,
     Object? startAt,
     Object? startAfter,
     Object? endAt,
     Object? endBefore,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   });
 
   /// Perform a where query based on a [FieldPath].
@@ -312,7 +367,7 @@ abstract class AmbianceQuery
   /// ```dart
   /// collection.whereTitle(isEqualTo: 'title');
   /// ```
-  AmbianceQuery whereFieldPath(
+  BackgroundQuery whereFieldPath(
     FieldPath fieldPath, {
     Object? isEqualTo,
     Object? isNotEqualTo,
@@ -327,7 +382,7 @@ abstract class AmbianceQuery
     bool? isNull,
   });
 
-  AmbianceQuery whereDocumentId({
+  BackgroundQuery whereDocumentId({
     String? isEqualTo,
     String? isNotEqualTo,
     String? isLessThan,
@@ -338,29 +393,7 @@ abstract class AmbianceQuery
     List<String>? whereIn,
     List<String>? whereNotIn,
   });
-  AmbianceQuery whereName({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  AmbianceQuery whereType({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  });
-  AmbianceQuery whereHide({
+  BackgroundQuery whereHide({
     bool? isEqualTo,
     bool? isNotEqualTo,
     bool? isLessThan,
@@ -371,61 +404,61 @@ abstract class AmbianceQuery
     List<bool>? whereIn,
     List<bool>? whereNotIn,
   });
+  BackgroundQuery whereType({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+  });
 
-  AmbianceQuery orderByDocumentId({
+  BackgroundQuery orderByDocumentId({
     bool descending = false,
     String startAt,
     String startAfter,
     String endAt,
     String endBefore,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   });
 
-  AmbianceQuery orderByName({
-    bool descending = false,
-    String startAt,
-    String startAfter,
-    String endAt,
-    String endBefore,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
-  });
-
-  AmbianceQuery orderByType({
-    bool descending = false,
-    String startAt,
-    String startAfter,
-    String endAt,
-    String endBefore,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
-  });
-
-  AmbianceQuery orderByHide({
+  BackgroundQuery orderByHide({
     bool descending = false,
     bool startAt,
     bool startAfter,
     bool endAt,
     bool endBefore,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
+  });
+
+  BackgroundQuery orderByType({
+    bool descending = false,
+    String startAt,
+    String startAfter,
+    String endAt,
+    String endBefore,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   });
 }
 
-class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
-    implements AmbianceQuery {
-  _$AmbianceQuery(
+class _$BackgroundQuery
+    extends QueryReference<Background, BackgroundQuerySnapshot>
+    implements BackgroundQuery {
+  _$BackgroundQuery(
     this._collection, {
-    required Query<Ambiance> $referenceWithoutCursor,
+    required Query<Background> $referenceWithoutCursor,
     $QueryCursor $queryCursor = const $QueryCursor(),
   }) : super(
           $referenceWithoutCursor: $referenceWithoutCursor,
@@ -435,20 +468,22 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
   final CollectionReference<Object?> _collection;
 
   @override
-  Stream<AmbianceQuerySnapshot> snapshots([SnapshotOptions? options]) {
-    return reference.snapshots().map(AmbianceQuerySnapshot._fromQuerySnapshot);
+  Stream<BackgroundQuerySnapshot> snapshots([SnapshotOptions? options]) {
+    return reference
+        .snapshots()
+        .map(BackgroundQuerySnapshot._fromQuerySnapshot);
   }
 
   @override
-  Future<AmbianceQuerySnapshot> get([GetOptions? options]) {
+  Future<BackgroundQuerySnapshot> get([GetOptions? options]) {
     return reference
         .get(options)
-        .then(AmbianceQuerySnapshot._fromQuerySnapshot);
+        .then(BackgroundQuerySnapshot._fromQuerySnapshot);
   }
 
   @override
-  AmbianceQuery limit(int limit) {
-    return _$AmbianceQuery(
+  BackgroundQuery limit(int limit) {
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: $referenceWithoutCursor.limit(limit),
       $queryCursor: $queryCursor,
@@ -456,25 +491,25 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
   }
 
   @override
-  AmbianceQuery limitToLast(int limit) {
-    return _$AmbianceQuery(
+  BackgroundQuery limitToLast(int limit) {
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: $referenceWithoutCursor.limitToLast(limit),
       $queryCursor: $queryCursor,
     );
   }
 
-  AmbianceQuery orderByFieldPath(
+  BackgroundQuery orderByFieldPath(
     FieldPath fieldPath, {
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   }) {
     final query =
         $referenceWithoutCursor.orderBy(fieldPath, descending: descending);
@@ -529,14 +564,14 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
         endBeforeDocumentSnapshot: null,
       );
     }
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: query,
       $queryCursor: queryCursor,
     );
   }
 
-  AmbianceQuery whereFieldPath(
+  BackgroundQuery whereFieldPath(
     FieldPath fieldPath, {
     Object? isEqualTo,
     Object? isNotEqualTo,
@@ -550,7 +585,7 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
     List<Object?>? whereNotIn,
     bool? isNull,
   }) {
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: $referenceWithoutCursor.where(
         fieldPath,
@@ -570,7 +605,7 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
     );
   }
 
-  AmbianceQuery whereDocumentId({
+  BackgroundQuery whereDocumentId({
     String? isEqualTo,
     String? isNotEqualTo,
     String? isLessThan,
@@ -581,7 +616,7 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
     List<String>? whereIn,
     List<String>? whereNotIn,
   }) {
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: $referenceWithoutCursor.where(
         FieldPath.documentId,
@@ -599,65 +634,7 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
     );
   }
 
-  AmbianceQuery whereName({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$AmbianceQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AmbianceFieldMap['name']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AmbianceQuery whereType({
-    String? isEqualTo,
-    String? isNotEqualTo,
-    String? isLessThan,
-    String? isLessThanOrEqualTo,
-    String? isGreaterThan,
-    String? isGreaterThanOrEqualTo,
-    bool? isNull,
-    List<String>? whereIn,
-    List<String>? whereNotIn,
-  }) {
-    return _$AmbianceQuery(
-      _collection,
-      $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AmbianceFieldMap['type']!,
-        isEqualTo: isEqualTo,
-        isNotEqualTo: isNotEqualTo,
-        isLessThan: isLessThan,
-        isLessThanOrEqualTo: isLessThanOrEqualTo,
-        isGreaterThan: isGreaterThan,
-        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
-        isNull: isNull,
-        whereIn: whereIn,
-        whereNotIn: whereNotIn,
-      ),
-      $queryCursor: $queryCursor,
-    );
-  }
-
-  AmbianceQuery whereHide({
+  BackgroundQuery whereHide({
     bool? isEqualTo,
     bool? isNotEqualTo,
     bool? isLessThan,
@@ -668,10 +645,10 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
     List<bool>? whereIn,
     List<bool>? whereNotIn,
   }) {
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: $referenceWithoutCursor.where(
-        _$AmbianceFieldMap['hide']!,
+        _$BackgroundFieldMap['hide']!,
         isEqualTo: isEqualTo,
         isNotEqualTo: isNotEqualTo,
         isLessThan: isLessThan,
@@ -686,16 +663,45 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
     );
   }
 
-  AmbianceQuery orderByDocumentId({
+  BackgroundQuery whereType({
+    String? isEqualTo,
+    String? isNotEqualTo,
+    String? isLessThan,
+    String? isLessThanOrEqualTo,
+    String? isGreaterThan,
+    String? isGreaterThanOrEqualTo,
+    bool? isNull,
+    List<String>? whereIn,
+    List<String>? whereNotIn,
+  }) {
+    return _$BackgroundQuery(
+      _collection,
+      $referenceWithoutCursor: $referenceWithoutCursor.where(
+        _$BackgroundFieldMap['type']!,
+        isEqualTo: isEqualTo,
+        isNotEqualTo: isNotEqualTo,
+        isLessThan: isLessThan,
+        isLessThanOrEqualTo: isLessThanOrEqualTo,
+        isGreaterThan: isGreaterThan,
+        isGreaterThanOrEqualTo: isGreaterThanOrEqualTo,
+        isNull: isNull,
+        whereIn: whereIn,
+        whereNotIn: whereNotIn,
+      ),
+      $queryCursor: $queryCursor,
+    );
+  }
+
+  BackgroundQuery orderByDocumentId({
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   }) {
     final query = $referenceWithoutCursor.orderBy(FieldPath.documentId,
         descending: descending);
@@ -751,25 +757,25 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
       );
     }
 
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: query,
       $queryCursor: queryCursor,
     );
   }
 
-  AmbianceQuery orderByName({
+  BackgroundQuery orderByHide({
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   }) {
-    final query = $referenceWithoutCursor.orderBy(_$AmbianceFieldMap['name']!,
+    final query = $referenceWithoutCursor.orderBy(_$BackgroundFieldMap['hide']!,
         descending: descending);
     var queryCursor = $queryCursor;
 
@@ -823,25 +829,25 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
       );
     }
 
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: query,
       $queryCursor: queryCursor,
     );
   }
 
-  AmbianceQuery orderByType({
+  BackgroundQuery orderByType({
     bool descending = false,
     Object? startAt = _sentinel,
     Object? startAfter = _sentinel,
     Object? endAt = _sentinel,
     Object? endBefore = _sentinel,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
+    BackgroundDocumentSnapshot? startAtDocument,
+    BackgroundDocumentSnapshot? endAtDocument,
+    BackgroundDocumentSnapshot? endBeforeDocument,
+    BackgroundDocumentSnapshot? startAfterDocument,
   }) {
-    final query = $referenceWithoutCursor.orderBy(_$AmbianceFieldMap['type']!,
+    final query = $referenceWithoutCursor.orderBy(_$BackgroundFieldMap['type']!,
         descending: descending);
     var queryCursor = $queryCursor;
 
@@ -895,79 +901,7 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
       );
     }
 
-    return _$AmbianceQuery(
-      _collection,
-      $referenceWithoutCursor: query,
-      $queryCursor: queryCursor,
-    );
-  }
-
-  AmbianceQuery orderByHide({
-    bool descending = false,
-    Object? startAt = _sentinel,
-    Object? startAfter = _sentinel,
-    Object? endAt = _sentinel,
-    Object? endBefore = _sentinel,
-    AmbianceDocumentSnapshot? startAtDocument,
-    AmbianceDocumentSnapshot? endAtDocument,
-    AmbianceDocumentSnapshot? endBeforeDocument,
-    AmbianceDocumentSnapshot? startAfterDocument,
-  }) {
-    final query = $referenceWithoutCursor.orderBy(_$AmbianceFieldMap['hide']!,
-        descending: descending);
-    var queryCursor = $queryCursor;
-
-    if (startAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAt: const [],
-        startAtDocumentSnapshot: startAtDocument.snapshot,
-      );
-    }
-    if (startAfterDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: const [],
-        startAfterDocumentSnapshot: startAfterDocument.snapshot,
-      );
-    }
-    if (endAtDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endAt: const [],
-        endAtDocumentSnapshot: endAtDocument.snapshot,
-      );
-    }
-    if (endBeforeDocument != null) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: const [],
-        endBeforeDocumentSnapshot: endBeforeDocument.snapshot,
-      );
-    }
-
-    if (startAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAt: [...queryCursor.startAt, startAt],
-        startAtDocumentSnapshot: null,
-      );
-    }
-    if (startAfter != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        startAfter: [...queryCursor.startAfter, startAfter],
-        startAfterDocumentSnapshot: null,
-      );
-    }
-    if (endAt != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endAt: [...queryCursor.endAt, endAt],
-        endAtDocumentSnapshot: null,
-      );
-    }
-    if (endBefore != _sentinel) {
-      queryCursor = queryCursor.copyWith(
-        endBefore: [...queryCursor.endBefore, endBefore],
-        endBeforeDocumentSnapshot: null,
-      );
-    }
-
-    return _$AmbianceQuery(
+    return _$BackgroundQuery(
       _collection,
       $referenceWithoutCursor: query,
       $queryCursor: queryCursor,
@@ -976,7 +910,7 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
 
   @override
   bool operator ==(Object other) {
-    return other is _$AmbianceQuery &&
+    return other is _$BackgroundQuery &&
         other.runtimeType == runtimeType &&
         other.reference == reference;
   }
@@ -985,56 +919,56 @@ class _$AmbianceQuery extends QueryReference<Ambiance, AmbianceQuerySnapshot>
   int get hashCode => Object.hash(runtimeType, reference);
 }
 
-class AmbianceDocumentSnapshot extends FirestoreDocumentSnapshot<Ambiance> {
-  AmbianceDocumentSnapshot._(this.snapshot) : data = snapshot.data();
+class BackgroundDocumentSnapshot extends FirestoreDocumentSnapshot<Background> {
+  BackgroundDocumentSnapshot._(this.snapshot) : data = snapshot.data();
 
   @override
-  final DocumentSnapshot<Ambiance> snapshot;
+  final DocumentSnapshot<Background> snapshot;
 
   @override
-  AmbianceDocumentReference get reference {
-    return AmbianceDocumentReference(
+  BackgroundDocumentReference get reference {
+    return BackgroundDocumentReference(
       snapshot.reference,
     );
   }
 
   @override
-  final Ambiance? data;
+  final Background? data;
 }
 
-class AmbianceQuerySnapshot
-    extends FirestoreQuerySnapshot<Ambiance, AmbianceQueryDocumentSnapshot> {
-  AmbianceQuerySnapshot._(
+class BackgroundQuerySnapshot extends FirestoreQuerySnapshot<Background,
+    BackgroundQueryDocumentSnapshot> {
+  BackgroundQuerySnapshot._(
     this.snapshot,
     this.docs,
     this.docChanges,
   );
 
-  factory AmbianceQuerySnapshot._fromQuerySnapshot(
-    QuerySnapshot<Ambiance> snapshot,
+  factory BackgroundQuerySnapshot._fromQuerySnapshot(
+    QuerySnapshot<Background> snapshot,
   ) {
-    final docs = snapshot.docs.map(AmbianceQueryDocumentSnapshot._).toList();
+    final docs = snapshot.docs.map(BackgroundQueryDocumentSnapshot._).toList();
 
     final docChanges = snapshot.docChanges.map((change) {
       return _decodeDocumentChange(
         change,
-        AmbianceDocumentSnapshot._,
+        BackgroundDocumentSnapshot._,
       );
     }).toList();
 
-    return AmbianceQuerySnapshot._(
+    return BackgroundQuerySnapshot._(
       snapshot,
       docs,
       docChanges,
     );
   }
 
-  static FirestoreDocumentChange<AmbianceDocumentSnapshot>
+  static FirestoreDocumentChange<BackgroundDocumentSnapshot>
       _decodeDocumentChange<T>(
     DocumentChange<T> docChange,
-    AmbianceDocumentSnapshot Function(DocumentSnapshot<T> doc) decodeDoc,
+    BackgroundDocumentSnapshot Function(DocumentSnapshot<T> doc) decodeDoc,
   ) {
-    return FirestoreDocumentChange<AmbianceDocumentSnapshot>(
+    return FirestoreDocumentChange<BackgroundDocumentSnapshot>(
       type: docChange.type,
       oldIndex: docChange.oldIndex,
       newIndex: docChange.newIndex,
@@ -1042,29 +976,29 @@ class AmbianceQuerySnapshot
     );
   }
 
-  final QuerySnapshot<Ambiance> snapshot;
+  final QuerySnapshot<Background> snapshot;
 
   @override
-  final List<AmbianceQueryDocumentSnapshot> docs;
+  final List<BackgroundQueryDocumentSnapshot> docs;
 
   @override
-  final List<FirestoreDocumentChange<AmbianceDocumentSnapshot>> docChanges;
+  final List<FirestoreDocumentChange<BackgroundDocumentSnapshot>> docChanges;
 }
 
-class AmbianceQueryDocumentSnapshot
-    extends FirestoreQueryDocumentSnapshot<Ambiance>
-    implements AmbianceDocumentSnapshot {
-  AmbianceQueryDocumentSnapshot._(this.snapshot) : data = snapshot.data();
+class BackgroundQueryDocumentSnapshot
+    extends FirestoreQueryDocumentSnapshot<Background>
+    implements BackgroundDocumentSnapshot {
+  BackgroundQueryDocumentSnapshot._(this.snapshot) : data = snapshot.data();
 
   @override
-  final QueryDocumentSnapshot<Ambiance> snapshot;
+  final QueryDocumentSnapshot<Background> snapshot;
 
   @override
-  final Ambiance data;
+  final Background data;
 
   @override
-  AmbianceDocumentReference get reference {
-    return AmbianceDocumentReference(snapshot.reference);
+  BackgroundDocumentReference get reference {
+    return BackgroundDocumentReference(snapshot.reference);
   }
 }
 
@@ -1072,34 +1006,21 @@ class AmbianceQueryDocumentSnapshot
 // JsonSerializableGenerator
 // **************************************************************************
 
-Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
+Background _$BackgroundFromJson(Map<String, dynamic> json) => Background(
       id: json['id'] as String,
-      name: json['name'] as String? ?? "",
-      type: json['type'] as String? ?? "matin",
-      hide: json['hide'] as bool? ?? false,
-      duration: json['duration'] == null
-          ? Duration.zero
-          : const FirestoreDurationConverter()
-              .fromJson(json['duration'] as int),
-      chapters:
-          (json['chapters'] as List<dynamic>?)?.map((e) => e as int).toList() ??
-              const <int>[0],
+      hide: json['hide'] as bool? ?? true,
+      type: json['type'] as String? ?? 'matin',
     );
 
-const _$AmbianceFieldMap = <String, String>{
+const _$BackgroundFieldMap = <String, String>{
   'id': 'id',
-  'name': 'name',
-  'type': 'type',
   'hide': 'hide',
-  'duration': 'duration',
-  'chapters': 'chapters',
+  'type': 'type',
 };
 
-Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
+Map<String, dynamic> _$BackgroundToJson(Background instance) =>
+    <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
-      'type': instance.type,
       'hide': instance.hide,
-      'duration': const FirestoreDurationConverter().toJson(instance.duration),
-      'chapters': instance.chapters,
+      'type': instance.type,
     };
