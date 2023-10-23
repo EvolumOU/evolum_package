@@ -161,14 +161,14 @@ abstract class FeedBackCollectionReference
     DocumentSnapshot<Map<String, Object?>> snapshot,
     SnapshotOptions? options,
   ) {
-    return _$FeedBackFromJson({'id': snapshot.id, ...?snapshot.data()});
+    return FeedBack.fromJson({'id': snapshot.id, ...?snapshot.data()});
   }
 
   static Map<String, Object?> toFirestore(
     FeedBack value,
     SetOptions? options,
   ) {
-    return {..._$FeedBackToJson(value)}..remove('id');
+    return {...value.toJson()}..remove('id');
   }
 
   @override

@@ -29,6 +29,11 @@ class FeedBack {
     this.text,
     this.uid,
   });
+
+  factory FeedBack.fromJson(Map<String, dynamic> data) =>
+      _$FeedBackFromJson(data);
+
+  Map<String, dynamic> toJson() => _$FeedBackToJson(this);
 }
 
 @Collection<FeedBack>('feedback')
