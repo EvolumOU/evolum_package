@@ -4757,7 +4757,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       strikes: json['strikes'] == null
           ? const <DateTime>[]
           : const FirestoreListDateTimeConverter()
-              .fromJson(json['strikes'] as List<Timestamp>),
+              .fromJson(json['strikes'] as List),
       goals:
           (json['goals'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const <String>[],

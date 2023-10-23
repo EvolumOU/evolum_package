@@ -27,13 +27,11 @@ class FirestoreDateTimeWithNullConverter
 }
 
 class FirestoreListDateTimeConverter
-    extends JsonConverter<List<DateTime>, List<Timestamp>> {
+    extends JsonConverter<List<DateTime>, List<dynamic>> {
   const FirestoreListDateTimeConverter();
   @override
   List<DateTime> fromJson(List<dynamic> json) => json.map((e) {
-        if (e is Timestamp)
-          return DateTime.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch);
-        return DateTime.fromMillisecondsSinceEpoch(0);
+        return DateTime.fromMillisecondsSinceEpoch(e.millisecondsSinceEpoch);
       }).toList();
 
   @override
