@@ -13,6 +13,13 @@ import 'model/oracle_generated.dart';
 //     : Duration(microseconds: duration);
 // int durationtoJson(Duration duration) => duration.inMicroseconds;
 
+DateTime dateTimefromJson(Timestamp? date) =>
+    DateTime.fromMillisecondsSinceEpoch(
+        date != null ? date.millisecondsSinceEpoch : 0);
+
+Timestamp dateTimetoJson(DateTime date) =>
+    Timestamp.fromMillisecondsSinceEpoch(date.millisecondsSinceEpoch);
+
 dynamic parseHistoryItemType(
   String? itemType,
   Map<String, dynamic> itemData,
