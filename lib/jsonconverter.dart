@@ -1,5 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+const firestoreSerializable = JsonSerializable(
+  converters: [
+    ...firestoreJsonConverters,
+    FirestoreListDateTimeConverter(),
+    FirestoreDurationConverter(),
+  ],
+  explicitToJson: true,
+  createFieldMap: true,
+);
 
 class FirestoreDateTimeWithNullConverter
     extends JsonConverter<DateTime?, Timestamp?> {

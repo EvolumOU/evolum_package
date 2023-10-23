@@ -1806,8 +1806,10 @@ Subscription _$SubscriptionFromJson(Map<String, dynamic> json) => Subscription(
       planId: json['planId'] as String,
       status: json['status'] as String,
       offerBy: json['offerBy'] as String? ?? "",
-      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-      updateDate: dateTimefromJsonWithNull(json['updateDate'] as Timestamp?),
+      createdDate: const FirestoreDateTimeConverter()
+          .fromJson(json['createdDate'] as Timestamp),
+      updateDate: _$JsonConverterFromJson<Timestamp, DateTime>(
+          json['updateDate'], const FirestoreDateTimeConverter().fromJson),
     );
 
 const _$SubscriptionFieldMap = <String, String>{
@@ -1827,6 +1829,20 @@ Map<String, dynamic> _$SubscriptionToJson(Subscription instance) =>
       'planId': instance.planId,
       'status': instance.status,
       'offerBy': instance.offerBy,
-      'createdDate': dateTimetoJson(instance.createdDate),
-      'updateDate': dateTimetoJsonWithNull(instance.updateDate),
+      'createdDate':
+          const FirestoreDateTimeConverter().toJson(instance.createdDate),
+      'updateDate': _$JsonConverterToJson<Timestamp, DateTime>(
+          instance.updateDate, const FirestoreDateTimeConverter().toJson),
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

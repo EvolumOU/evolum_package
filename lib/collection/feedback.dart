@@ -1,7 +1,8 @@
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/model/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../jsonconverter.dart';
 
 part 'feedback.g.dart';
 

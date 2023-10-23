@@ -3,7 +3,7 @@ import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:evolum_package/model/shipping.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 
-import 'utils.dart';
+import '../jsonconverter.dart';
 
 part 'box.g.dart';
 

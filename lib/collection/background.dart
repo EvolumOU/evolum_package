@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
 
-import 'utils.dart';
+import '../jsonconverter.dart';
 
-part 'background.g.dart';
+part '../model/background.g.dart';
 
 @CopyWith()
 @firestoreSerializable

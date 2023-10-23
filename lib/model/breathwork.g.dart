@@ -913,16 +913,20 @@ BreathWork _$BreathWorkFromJson(Map<String, dynamic> json) => BreathWork(
       nbCycles: json['nbCycles'] as int? ?? 1,
       inhaleDuration: json['inhaleDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['inhaleDuration'] as int),
+          : const FirestoreDurationConverter()
+              .fromJson(json['inhaleDuration'] as int),
       pauseTopDuration: json['pauseTopDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['pauseTopDuration'] as int),
+          : const FirestoreDurationConverter()
+              .fromJson(json['pauseTopDuration'] as int),
       exhaleDuration: json['exhaleDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['exhaleDuration'] as int),
+          : const FirestoreDurationConverter()
+              .fromJson(json['exhaleDuration'] as int),
       pauseBottomDuration: json['pauseBottomDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['pauseBottomDuration'] as int),
+          : const FirestoreDurationConverter()
+              .fromJson(json['pauseBottomDuration'] as int),
     );
 
 const _$BreathWorkFieldMap = <String, String>{
@@ -938,8 +942,12 @@ Map<String, dynamic> _$BreathWorkToJson(BreathWork instance) =>
     <String, dynamic>{
       'id': instance.id,
       'nbCycles': instance.nbCycles,
-      'inhaleDuration': durationtoJson(instance.inhaleDuration),
-      'pauseTopDuration': durationtoJson(instance.pauseTopDuration),
-      'exhaleDuration': durationtoJson(instance.exhaleDuration),
-      'pauseBottomDuration': durationtoJson(instance.pauseBottomDuration),
+      'inhaleDuration':
+          const FirestoreDurationConverter().toJson(instance.inhaleDuration),
+      'pauseTopDuration':
+          const FirestoreDurationConverter().toJson(instance.pauseTopDuration),
+      'exhaleDuration':
+          const FirestoreDurationConverter().toJson(instance.exhaleDuration),
+      'pauseBottomDuration': const FirestoreDurationConverter()
+          .toJson(instance.pauseBottomDuration),
     };

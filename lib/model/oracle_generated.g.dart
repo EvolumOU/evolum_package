@@ -160,7 +160,8 @@ OracleGenerated _$OracleGeneratedFromJson(Map<String, dynamic> json) =>
     OracleGenerated(
       id: json['id'] as String,
       imgUrl: json['imgUrl'] as String? ?? "",
-      date: dateTimefromJson(json['date'] as Timestamp?),
+      date: const FirestoreDateTimeConverter()
+          .fromJson(json['date'] as Timestamp),
       userInput: json['userInput'] as String? ?? "",
       name: json['name'] as String? ?? "",
       visualDescription: json['visualDescription'] as String? ?? "",
@@ -186,7 +187,7 @@ Map<String, dynamic> _$OracleGeneratedToJson(OracleGenerated instance) =>
       'id': instance.id,
       'name': instance.name,
       'imgUrl': instance.imgUrl,
-      'date': dateTimetoJson(instance.date),
+      'date': const FirestoreDateTimeConverter().toJson(instance.date),
       'visualDescription': instance.visualDescription,
       'titleOfTheCard': instance.titleOfTheCard,
       'userInput': instance.userInput,

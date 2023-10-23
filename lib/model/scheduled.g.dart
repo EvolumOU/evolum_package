@@ -93,7 +93,8 @@ extension $ScheduledCopyWith on Scheduled {
 // **************************************************************************
 
 Scheduled _$ScheduledFromJson(Map<String, dynamic> json) => Scheduled(
-      date: dateTimefromJson(json['date'] as Timestamp?),
+      date: const FirestoreDateTimeConverter()
+          .fromJson(json['date'] as Timestamp),
       type: json['type'] as String?,
       nbOfday: json['nbOfday'] as int? ?? 1,
       evoId: json['evoId'] as String?,
@@ -107,7 +108,7 @@ const _$ScheduledFieldMap = <String, String>{
 };
 
 Map<String, dynamic> _$ScheduledToJson(Scheduled instance) => <String, dynamic>{
-      'date': dateTimetoJson(instance.date),
+      'date': const FirestoreDateTimeConverter().toJson(instance.date),
       'type': instance.type,
       'evoId': instance.evoId,
       'nbOfday': instance.nbOfday,

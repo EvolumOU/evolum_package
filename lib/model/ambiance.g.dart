@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ambiance.dart';
+part of '../collection/ambiance.dart';
 
 // **************************************************************************
 // CollectionGenerator

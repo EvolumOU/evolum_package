@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
-import 'package:evolum_package/model/jsonconverter.dart';
+import 'package:evolum_package/jsonconverter.dart';
 
-import 'utils.dart';
-
-part 'ambiance.g.dart';
+part '../model/ambiance.g.dart';
 
 @firestoreSerializable
 class Ambiance {

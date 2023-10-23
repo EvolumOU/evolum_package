@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/model/utils.dart';
+import 'package:evolum_package/jsonconverter.dart';
+import 'package:evolum_package/utils.dart';
 import 'package:cloud_firestore_odm/cloud_firestore_odm.dart';
-
-import 'all.dart';
 
 part 'user.g.dart';
 
@@ -107,28 +106,8 @@ class History {
       "checked": data["checked"] ?? false,
       "review": data["review"] ?? "",
       "type": data["type"] ?? (data["tag"] != null ? "evo" : "ritual"),
-      "item": _parseItem(data["type"], itemData),
+      "item": parseHistoryItemType(data["type"], itemData),
     });
-  }
-
-  static dynamic _parseItem(
-    String? itemType,
-    Map<String, dynamic> itemData,
-  ) {
-    switch (itemType) {
-      case 'oracle':
-        return OracleGenerated.fromJson(itemData);
-      case 'evo':
-        return Evo.fromJson(itemData);
-      case 'message':
-        return Message.fromJson(itemData);
-      case 'ritual':
-        return Ritual.fromJson(itemData);
-      default:
-        return itemType == null && itemData["tag"] != null
-            ? Evo.fromJson(itemData)
-            : Ritual.fromJson(itemData);
-    }
   }
 
   bool get isEvo => type == "evo";
