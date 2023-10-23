@@ -15,6 +15,10 @@ abstract class _$ToolCWProxy {
 
   Tool tags(List<String> tags);
 
+  Tool progress(double progress);
+
+  Tool max(double max);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Tool(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -26,6 +30,8 @@ abstract class _$ToolCWProxy {
     String? name,
     String? descr,
     List<String>? tags,
+    double? progress,
+    double? max,
   });
 }
 
@@ -48,6 +54,12 @@ class _$ToolCWProxyImpl implements _$ToolCWProxy {
   Tool tags(List<String> tags) => this(tags: tags);
 
   @override
+  Tool progress(double progress) => this(progress: progress);
+
+  @override
+  Tool max(double max) => this(max: max);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Tool(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -60,6 +72,8 @@ class _$ToolCWProxyImpl implements _$ToolCWProxy {
     Object? name = const $CopyWithPlaceholder(),
     Object? descr = const $CopyWithPlaceholder(),
     Object? tags = const $CopyWithPlaceholder(),
+    Object? progress = const $CopyWithPlaceholder(),
+    Object? max = const $CopyWithPlaceholder(),
   }) {
     return Tool(
       id == const $CopyWithPlaceholder() || id == null
@@ -78,6 +92,14 @@ class _$ToolCWProxyImpl implements _$ToolCWProxy {
           ? _value.tags
           // ignore: cast_nullable_to_non_nullable
           : tags as List<String>,
+      progress == const $CopyWithPlaceholder() || progress == null
+          ? _value.progress
+          // ignore: cast_nullable_to_non_nullable
+          : progress as double,
+      max == const $CopyWithPlaceholder() || max == null
+          ? _value.max
+          // ignore: cast_nullable_to_non_nullable
+          : max as double,
     );
   }
 }
@@ -97,9 +119,9 @@ Tool _$ToolFromJson(Map<String, dynamic> json) => Tool(
       json['name'] as String,
       json['descr'] as String,
       (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-    )
-      ..progress = (json['progress'] as num).toDouble()
-      ..max = (json['max'] as num).toDouble();
+      (json['progress'] as num).toDouble(),
+      (json['max'] as num).toDouble(),
+    );
 
 const _$ToolFieldMap = <String, String>{
   'id': 'id',
