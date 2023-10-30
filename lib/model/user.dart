@@ -69,7 +69,10 @@ class User {
   bool get isInvited => role == 'invited';
 
   factory User.fromJson(Map<String, dynamic> data, String uid) =>
-      _$UserFromJson(data);
+      _$UserFromJson({
+        ...data,
+        "goals": data["goals"] ?? const <String>[],
+      });
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
