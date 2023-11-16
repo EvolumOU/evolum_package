@@ -15,6 +15,8 @@ abstract class _$EvoCWProxy {
 
   Evo type(String type);
 
+  Evo description(String description);
+
   Evo tag(String tag);
 
   Evo duration(Duration duration);
@@ -54,6 +56,7 @@ abstract class _$EvoCWProxy {
     String? gsUrl,
     String? name,
     String? type,
+    String? description,
     String? tag,
     Duration? duration,
     bool? loop,
@@ -88,6 +91,9 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
 
   @override
   Evo type(String type) => this(type: type);
+
+  @override
+  Evo description(String description) => this(description: description);
 
   @override
   Evo tag(String tag) => this(tag: tag);
@@ -144,6 +150,7 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
     Object? gsUrl = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
+    Object? description = const $CopyWithPlaceholder(),
     Object? tag = const $CopyWithPlaceholder(),
     Object? duration = const $CopyWithPlaceholder(),
     Object? loop = const $CopyWithPlaceholder(),
@@ -176,6 +183,11 @@ class _$EvoCWProxyImpl implements _$EvoCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String,
+      description:
+          description == const $CopyWithPlaceholder() || description == null
+              ? _value.description
+              // ignore: cast_nullable_to_non_nullable
+              : description as String,
       tag: tag == const $CopyWithPlaceholder() || tag == null
           ? _value.tag
           // ignore: cast_nullable_to_non_nullable
@@ -252,6 +264,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       gsUrl: json['gsUrl'] as String? ?? '',
       name: json['name'] as String? ?? '',
       type: json['type'] as String? ?? '',
+      description: json['description'] as String? ?? '',
       tag: json['tag'] as String? ?? '',
       duration: json['duration'] == null
           ? Duration.zero
@@ -280,6 +293,7 @@ Map<String, dynamic> _$EvoToJson(Evo instance) => <String, dynamic>{
       'gsUrl': instance.gsUrl,
       'name': instance.name,
       'type': instance.type,
+      'description': instance.description,
       'tag': instance.tag,
       'duration': durationtoJson(instance.duration),
       'loop': instance.loop,

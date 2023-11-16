@@ -15,6 +15,7 @@ class Evo {
   String gsUrl;
   String name;
   String type;
+  String description;
   String tag;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
   Duration duration;
@@ -37,6 +38,7 @@ class Evo {
     this.gsUrl = '',
     this.name = '',
     this.type = '',
+    this.description = '',
     this.tag = '',
     this.duration = Duration.zero,
     this.loop = false,
