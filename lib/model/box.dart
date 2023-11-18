@@ -29,10 +29,15 @@ class Box {
     this.boxName = "box in app",
   });
 
-  factory Box.fromJson(Map<String, dynamic> data) => _$BoxFromJson({
+  factory Box.fromJson(
+    Map<String, dynamic> data,
+    String docId,
+  ) =>
+      _$BoxFromJson({
         ...data,
         "status": data["status"] ?? "nouveau",
         "boxName": data["boxName"] ?? "Box App",
+        "id": data["id"] ?? docId,
       });
 
   Map<String, dynamic> toJson() => _$BoxToJson(this);
