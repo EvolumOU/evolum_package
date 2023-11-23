@@ -23,6 +23,14 @@ class Session {
     this.duration = const Duration(days: 7),
     required this.evos,
   });
+
+  factory Session.fromJson(Map<String, dynamic> data) =>
+      _$SessionFromJson(data);
+
+  Map<String, dynamic> toJson() => _$SessionToJson(this);
+
+  @override
+  String toString() => toJson().toString();
 }
 
 // user List<String> goalsessions where user goals container evos goals 
