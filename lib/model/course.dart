@@ -62,6 +62,7 @@ class Course {
     });
   }
 
+  bool get isGoal => type == 'goal';
   bool get isAdventure => type == 'adventure' || type == 'aventure';
   bool get isMood => type == 'mood';
   bool get isCategorized => type == 'mood';

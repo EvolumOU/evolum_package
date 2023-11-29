@@ -55,11 +55,11 @@ class History {
       case 'message':
         return Message.fromJson(itemData);
       case 'ritual':
-        return Ritual.fromJson(itemData);
+        return Ritual.fromJson(itemData, itemData["id"]);
       default:
         return itemType == null && itemData["tag"] != null
             ? Evo.fromJson(itemData)
-            : Ritual.fromJson(itemData);
+            : Ritual.fromJson(itemData, itemData["id"]);
     }
   }
 
