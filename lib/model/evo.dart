@@ -47,7 +47,7 @@ class Evo {
     this.summarize = '',
     this.intro = '',
     this.feedback = false,
-    this.hide = true,
+    this.hide = false,
     this.mode = 'vertical',
     this.form = 'focus',
     this.size = 0.0,
