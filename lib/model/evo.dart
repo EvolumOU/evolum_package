@@ -37,7 +37,7 @@ class Evo {
     this.id = '',
     this.gsUrl = '',
     this.name = '',
-    this.type = '',
+    this.type = 'méditation',
     this.description = '',
     this.tag = '',
     this.duration = Duration.zero,
