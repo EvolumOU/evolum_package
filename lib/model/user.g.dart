@@ -45,6 +45,8 @@ abstract class _$UserCWProxy {
 
   User goalsessions(List<String> goalsessions);
 
+  User lastUpdate(DateTime? lastUpdate);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -71,6 +73,7 @@ abstract class _$UserCWProxy {
     List<DateTime>? strikes,
     List<String>? goals,
     List<String>? goalsessions,
+    DateTime? lastUpdate,
   });
 }
 
@@ -141,6 +144,9 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
       this(goalsessions: goalsessions);
 
   @override
+  User lastUpdate(DateTime? lastUpdate) => this(lastUpdate: lastUpdate);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -168,6 +174,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? strikes = const $CopyWithPlaceholder(),
     Object? goals = const $CopyWithPlaceholder(),
     Object? goalsessions = const $CopyWithPlaceholder(),
+    Object? lastUpdate = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -249,6 +256,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
               ? _value.goalsessions
               // ignore: cast_nullable_to_non_nullable
               : goalsessions as List<String>,
+      lastUpdate: lastUpdate == const $CopyWithPlaceholder()
+          ? _value.lastUpdate
+          // ignore: cast_nullable_to_non_nullable
+          : lastUpdate as DateTime?,
     );
   }
 }
@@ -293,6 +304,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
+      lastUpdate: dateTimefromJsonWithNull(json['lastUpdate'] as Timestamp?),
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -308,6 +320,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'noReview': instance.noReview,
       'leadDate': dateTimetoJsonWithNull(instance.leadDate),
       'createdDate': dateTimetoJson(instance.createdDate),
+      'lastUpdate': dateTimetoJsonWithNull(instance.lastUpdate),
       'unlocked': instance.unlocked,
       'subId': instance.subId,
       'token': instance.token,

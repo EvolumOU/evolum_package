@@ -22,6 +22,8 @@ class User {
   DateTime? leadDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
+  DateTime? lastUpdate;
   List<String> unlocked;
   String? subId;
   String? token;
@@ -51,6 +53,7 @@ class User {
     this.strikes = const <DateTime>[],
     this.goals = const <String>[],
     this.goalsessions = const <String>[],
+    this.lastUpdate,
   });
 
   bool get isBlock =>
