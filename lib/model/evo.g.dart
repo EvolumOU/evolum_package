@@ -263,7 +263,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       id: json['id'] as String? ?? '',
       gsUrl: json['gsUrl'] as String? ?? '',
       name: json['name'] as String? ?? '',
-      type: json['type'] as String? ?? '',
+      type: json['type'] as String? ?? 'méditation',
       description: json['description'] as String? ?? '',
       tag: json['tag'] as String? ?? '',
       duration: json['duration'] == null
@@ -278,7 +278,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       summarize: json['summarize'] as String? ?? '',
       intro: json['intro'] as String? ?? '',
       feedback: json['feedback'] as bool? ?? false,
-      hide: json['hide'] as bool? ?? true,
+      hide: json['hide'] as bool? ?? false,
       mode: json['mode'] as String? ?? 'vertical',
       form: json['form'] as String? ?? 'focus',
       size: (json['size'] as num?)?.toDouble() ?? 0.0,

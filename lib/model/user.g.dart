@@ -43,6 +43,8 @@ abstract class _$UserCWProxy {
 
   User goals(List<String> goals);
 
+  User goalsessions(List<String> goalsessions);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -68,6 +70,7 @@ abstract class _$UserCWProxy {
     String? role,
     List<DateTime>? strikes,
     List<String>? goals,
+    List<String>? goalsessions,
   });
 }
 
@@ -134,6 +137,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User goals(List<String> goals) => this(goals: goals);
 
   @override
+  User goalsessions(List<String> goalsessions) =>
+      this(goalsessions: goalsessions);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -160,6 +167,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? role = const $CopyWithPlaceholder(),
     Object? strikes = const $CopyWithPlaceholder(),
     Object? goals = const $CopyWithPlaceholder(),
+    Object? goalsessions = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -236,6 +244,11 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.goals
           // ignore: cast_nullable_to_non_nullable
           : goals as List<String>,
+      goalsessions:
+          goalsessions == const $CopyWithPlaceholder() || goalsessions == null
+              ? _value.goalsessions
+              // ignore: cast_nullable_to_non_nullable
+              : goalsessions as List<String>,
     );
   }
 }
@@ -276,6 +289,10 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       goals:
           (json['goals'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const <String>[],
+      goalsessions: (json['goalsessions'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -297,4 +314,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'role': instance.role,
       'strikes': listDateTimetoJson(instance.strikes),
       'goals': instance.goals,
+      'goalsessions': instance.goalsessions,
     };

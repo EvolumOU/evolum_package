@@ -29,6 +29,7 @@ class User {
   @JsonKey(toJson: listDateTimetoJson, fromJson: listDateTimefromJson)
   List<DateTime> strikes;
   List<String> goals;
+  List<String> goalsessions;
 
   User({
     required this.uid,
@@ -49,6 +50,7 @@ class User {
     this.role = "user",
     this.strikes = const <DateTime>[],
     this.goals = const <String>[],
+    this.goalsessions = const <String>[],
   });
 
   bool get isBlock =>
@@ -71,6 +73,7 @@ class User {
   factory User.fromJson(Map<String, dynamic> data, String uid) =>
       _$UserFromJson({
         ...data,
+        "goalsessions": data["goalsessions"] ?? const <String>[],
         "goals": data["goals"] ?? const <String>[],
       });
 
