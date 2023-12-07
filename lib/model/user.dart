@@ -22,8 +22,8 @@ class User {
   DateTime? leadDate;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime createdDate;
-  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
-  DateTime? lastUpdate;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  DateTime lastUpdate;
   List<String> unlocked;
   String? subId;
   String? token;
@@ -53,7 +53,7 @@ class User {
     this.strikes = const <DateTime>[],
     this.goals = const <String>[],
     this.goalsessions = const <String>[],
-    this.lastUpdate,
+    required this.lastUpdate,
   });
 
   bool get isBlock =>
@@ -73,10 +73,18 @@ class User {
   bool get isCaster => role == 'caster';
   bool get isInvited => role == 'invited';
 
+  static User get defaultUser => User(
+      uid: "",
+      email: "",
+      name: "",
+      createdDate: DateTime.now(),
+      lastUpdate: DateTime.now());
+
   factory User.fromJson(Map<String, dynamic> data, String uid) =>
       _$UserFromJson({
         ...data,
         "goalsessions": data["goalsessions"] ?? const <String>[],
+        "lastUpdate": data["lastUpdate"] ?? dateTimetoJson(DateTime.now()),
         "goals": data["goals"] ?? const <String>[],
       });
 

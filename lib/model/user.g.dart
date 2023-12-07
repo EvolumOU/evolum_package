@@ -45,7 +45,7 @@ abstract class _$UserCWProxy {
 
   User goalsessions(List<String> goalsessions);
 
-  User lastUpdate(DateTime? lastUpdate);
+  User lastUpdate(DateTime lastUpdate);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -144,7 +144,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
       this(goalsessions: goalsessions);
 
   @override
-  User lastUpdate(DateTime? lastUpdate) => this(lastUpdate: lastUpdate);
+  User lastUpdate(DateTime lastUpdate) => this(lastUpdate: lastUpdate);
 
   @override
 
@@ -256,10 +256,11 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
               ? _value.goalsessions
               // ignore: cast_nullable_to_non_nullable
               : goalsessions as List<String>,
-      lastUpdate: lastUpdate == const $CopyWithPlaceholder()
-          ? _value.lastUpdate
-          // ignore: cast_nullable_to_non_nullable
-          : lastUpdate as DateTime?,
+      lastUpdate:
+          lastUpdate == const $CopyWithPlaceholder() || lastUpdate == null
+              ? _value.lastUpdate
+              // ignore: cast_nullable_to_non_nullable
+              : lastUpdate as DateTime,
     );
   }
 }
@@ -304,7 +305,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
-      lastUpdate: dateTimefromJsonWithNull(json['lastUpdate'] as Timestamp?),
+      lastUpdate: dateTimefromJson(json['lastUpdate'] as Timestamp?),
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -320,7 +321,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'noReview': instance.noReview,
       'leadDate': dateTimetoJsonWithNull(instance.leadDate),
       'createdDate': dateTimetoJson(instance.createdDate),
-      'lastUpdate': dateTimetoJsonWithNull(instance.lastUpdate),
+      'lastUpdate': dateTimetoJson(instance.lastUpdate),
       'unlocked': instance.unlocked,
       'subId': instance.subId,
       'token': instance.token,
