@@ -63,6 +63,8 @@ class Evo {
   bool get isVertical => form == "vertical";
   bool get isFocus => form == "focus";
   bool get isSmall => form == "small";
+  bool get isGoal =>
+      tag == "mind" || tag == "body" || tag == "soul" || tag == "love";
 
   bool get isNew =>
       DateTime.now().isBefore(createdDate.add(Duration(days: 20)));
