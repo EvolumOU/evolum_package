@@ -66,7 +66,11 @@ class User {
   // Full Acces
   bool get isFull => status == 'full' || status == 'premium' || status == 'abo';
   bool get isPremium => status == 'premium';
-  bool get isFreemium => status == 'freemium';
+  bool get isFreemium =>
+      status == 'freemium' ||
+      status == 'free' ||
+      status == 'abo' ||
+      status == 'lead';
 
   bool get isAdmin => role == 'admin';
   bool get isUser => role == 'user';
