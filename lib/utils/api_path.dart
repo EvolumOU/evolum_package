@@ -47,6 +47,7 @@ class APIPath {
   static String allSurprise() => 'surprise/';
   static String allPayment() => 'payment/';
   static String allSession() => 'session/';
+  static String allJournaling() => 'journaling/';
   static String allElixirCategories() => 'elixirCategories/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
