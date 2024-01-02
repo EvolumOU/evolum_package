@@ -9,8 +9,6 @@ part of 'journaling.dart';
 abstract class _$JournalingCWProxy {
   Journaling id(String id);
 
-  Journaling imageUrl(String imageUrl);
-
   Journaling title(String title);
 
   Journaling description(String description);
@@ -27,7 +25,6 @@ abstract class _$JournalingCWProxy {
   /// ````
   Journaling call({
     String? id,
-    String? imageUrl,
     String? title,
     String? description,
     String? prompt,
@@ -43,9 +40,6 @@ class _$JournalingCWProxyImpl implements _$JournalingCWProxy {
 
   @override
   Journaling id(String id) => this(id: id);
-
-  @override
-  Journaling imageUrl(String imageUrl) => this(imageUrl: imageUrl);
 
   @override
   Journaling title(String title) => this(title: title);
@@ -69,7 +63,6 @@ class _$JournalingCWProxyImpl implements _$JournalingCWProxy {
   /// ````
   Journaling call({
     Object? id = const $CopyWithPlaceholder(),
-    Object? imageUrl = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? prompt = const $CopyWithPlaceholder(),
@@ -80,10 +73,6 @@ class _$JournalingCWProxyImpl implements _$JournalingCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      imageUrl: imageUrl == const $CopyWithPlaceholder() || imageUrl == null
-          ? _value.imageUrl
-          // ignore: cast_nullable_to_non_nullable
-          : imageUrl as String,
       title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -118,7 +107,6 @@ extension $JournalingCopyWith on Journaling {
 
 Journaling _$JournalingFromJson(Map<String, dynamic> json) => Journaling(
       id: json['id'] as String,
-      imageUrl: json['imageUrl'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
       prompt: json['prompt'] as String,
@@ -128,7 +116,6 @@ Journaling _$JournalingFromJson(Map<String, dynamic> json) => Journaling(
 Map<String, dynamic> _$JournalingToJson(Journaling instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'imageUrl': instance.imageUrl,
       'title': instance.title,
       'description': instance.description,
       'prompt': instance.prompt,

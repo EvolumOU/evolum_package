@@ -8,7 +8,6 @@ part 'journaling.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Journaling {
   final String id;
-  final String imageUrl;
   final String title;
   final String description;
   final String prompt;
@@ -16,7 +15,6 @@ class Journaling {
 
   Journaling({
     required this.id,
-    required this.imageUrl,
     required this.title,
     required this.description,
     required this.prompt,
@@ -26,7 +24,6 @@ class Journaling {
   factory Journaling.fromJson(Map<String, dynamic> data) {
     return Journaling(
       id: data['id'],
-      imageUrl: data['imageUrl'],
       title: data['title'],
       description: data['description'],
       prompt: data['prompt'],
@@ -37,7 +34,6 @@ class Journaling {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'imageUrl': imageUrl,
       'title': title,
       'description': description,
       'prompt': prompt,
