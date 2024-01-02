@@ -7,6 +7,8 @@ part of 'journaling.dart';
 // **************************************************************************
 
 abstract class _$JournalingCWProxy {
+  Journaling id(String id);
+
   Journaling imageUrl(String imageUrl);
 
   Journaling title(String title);
@@ -24,6 +26,7 @@ abstract class _$JournalingCWProxy {
   /// Journaling(...).copyWith(id: 12, name: "My name")
   /// ````
   Journaling call({
+    String? id,
     String? imageUrl,
     String? title,
     String? description,
@@ -37,6 +40,9 @@ class _$JournalingCWProxyImpl implements _$JournalingCWProxy {
   const _$JournalingCWProxyImpl(this._value);
 
   final Journaling _value;
+
+  @override
+  Journaling id(String id) => this(id: id);
 
   @override
   Journaling imageUrl(String imageUrl) => this(imageUrl: imageUrl);
@@ -62,6 +68,7 @@ class _$JournalingCWProxyImpl implements _$JournalingCWProxy {
   /// Journaling(...).copyWith(id: 12, name: "My name")
   /// ````
   Journaling call({
+    Object? id = const $CopyWithPlaceholder(),
     Object? imageUrl = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
@@ -69,6 +76,10 @@ class _$JournalingCWProxyImpl implements _$JournalingCWProxy {
     Object? initialText = const $CopyWithPlaceholder(),
   }) {
     return Journaling(
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
       imageUrl: imageUrl == const $CopyWithPlaceholder() || imageUrl == null
           ? _value.imageUrl
           // ignore: cast_nullable_to_non_nullable
@@ -106,6 +117,7 @@ extension $JournalingCopyWith on Journaling {
 // **************************************************************************
 
 Journaling _$JournalingFromJson(Map<String, dynamic> json) => Journaling(
+      id: json['id'] as String,
       imageUrl: json['imageUrl'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
@@ -115,6 +127,7 @@ Journaling _$JournalingFromJson(Map<String, dynamic> json) => Journaling(
 
 Map<String, dynamic> _$JournalingToJson(Journaling instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'imageUrl': instance.imageUrl,
       'title': instance.title,
       'description': instance.description,
