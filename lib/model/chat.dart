@@ -13,8 +13,7 @@ class Chat {
   final String title;
   final String description;
   final String prompt;
-  final String initialText;
-  final List<Map<String, dynamic>> messages; // type (user ou ia), text, date
+  final List<Map<String, dynamic>> messages; // isUser, text, date
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
 
@@ -24,7 +23,6 @@ class Chat {
     required this.title,
     required this.description,
     required this.prompt,
-    required this.initialText,
     required this.messages,
     required this.createdDate,
   });

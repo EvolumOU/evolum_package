@@ -17,8 +17,6 @@ abstract class _$ChatCWProxy {
 
   Chat prompt(String prompt);
 
-  Chat initialText(String initialText);
-
   Chat messages(List<Map<String, dynamic>> messages);
 
   Chat createdDate(DateTime createdDate);
@@ -35,7 +33,6 @@ abstract class _$ChatCWProxy {
     String? title,
     String? description,
     String? prompt,
-    String? initialText,
     List<Map<String, dynamic>>? messages,
     DateTime? createdDate,
   });
@@ -63,9 +60,6 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
   Chat prompt(String prompt) => this(prompt: prompt);
 
   @override
-  Chat initialText(String initialText) => this(initialText: initialText);
-
-  @override
   Chat messages(List<Map<String, dynamic>> messages) =>
       this(messages: messages);
 
@@ -86,7 +80,6 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
     Object? title = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? prompt = const $CopyWithPlaceholder(),
-    Object? initialText = const $CopyWithPlaceholder(),
     Object? messages = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
   }) {
@@ -112,11 +105,6 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
           ? _value.prompt
           // ignore: cast_nullable_to_non_nullable
           : prompt as String,
-      initialText:
-          initialText == const $CopyWithPlaceholder() || initialText == null
-              ? _value.initialText
-              // ignore: cast_nullable_to_non_nullable
-              : initialText as String,
       messages: messages == const $CopyWithPlaceholder() || messages == null
           ? _value.messages
           // ignore: cast_nullable_to_non_nullable
@@ -146,7 +134,6 @@ Chat _$ChatFromJson(Map<String, dynamic> json) => Chat(
       title: json['title'] as String,
       description: json['description'] as String,
       prompt: json['prompt'] as String,
-      initialText: json['initialText'] as String,
       messages: (json['messages'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -159,7 +146,6 @@ Map<String, dynamic> _$ChatToJson(Chat instance) => <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
       'prompt': instance.prompt,
-      'initialText': instance.initialText,
       'messages': instance.messages,
       'createdDate': dateTimetoJson(instance.createdDate),
     };
