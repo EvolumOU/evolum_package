@@ -19,6 +19,7 @@ class APIPath {
   static String elixirCategory(String id) => 'elixirCategories/$id';
   static String elixir(String categoryId, String elixirId) =>
       'elixirCategories/$categoryId/elixirs/$elixirId';
+  static String userChat(String uid, String id) => 'user/$uid/chat/$id';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
@@ -47,7 +48,7 @@ class APIPath {
   static String allSurprise() => 'surprise/';
   static String allPayment() => 'payment/';
   static String allSession() => 'session/';
-  static String allJournaling() => 'journaling/';
+  static String allUserChat(String uid) => 'user/$uid/chat/';
   static String allElixirCategories() => 'elixirCategories/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
 }
