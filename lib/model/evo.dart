@@ -32,6 +32,7 @@ class Evo {
   double size;
   List<String> tools;
   bool reco;
+  String prompt;
 
   Evo({
     this.id = '',
@@ -53,13 +54,14 @@ class Evo {
     this.size = 0.0,
     this.tools = const <String>[],
     this.reco = false,
+    this.prompt = '',
   });
 
   String get filename => gsUrl.split('/').last;
   bool get isVideo => gsUrl.endsWith(".mp4");
   bool get isAudio => gsUrl.endsWith(".mp3");
+  bool get isChat => prompt.isNotEmpty;
   bool get hasTimming => timings.isNotEmpty;
-
   bool get isVertical => form == "vertical";
   bool get isFocus => form == "focus";
   bool get isSmall => form == "small";
