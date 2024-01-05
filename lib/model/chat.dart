@@ -9,7 +9,6 @@ part 'chat.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Chat {
   final String id;
-  final String sourceId;
   final String title;
   final String description;
   final String prompt;
@@ -19,7 +18,6 @@ class Chat {
 
   Chat({
     required this.id,
-    required this.sourceId,
     required this.title,
     required this.description,
     required this.prompt,

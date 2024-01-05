@@ -9,8 +9,6 @@ part of 'chat.dart';
 abstract class _$ChatCWProxy {
   Chat id(String id);
 
-  Chat sourceId(String sourceId);
-
   Chat title(String title);
 
   Chat description(String description);
@@ -29,7 +27,6 @@ abstract class _$ChatCWProxy {
   /// ````
   Chat call({
     String? id,
-    String? sourceId,
     String? title,
     String? description,
     String? prompt,
@@ -46,9 +43,6 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
 
   @override
   Chat id(String id) => this(id: id);
-
-  @override
-  Chat sourceId(String sourceId) => this(sourceId: sourceId);
 
   @override
   Chat title(String title) => this(title: title);
@@ -76,7 +70,6 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
   /// ````
   Chat call({
     Object? id = const $CopyWithPlaceholder(),
-    Object? sourceId = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? prompt = const $CopyWithPlaceholder(),
@@ -88,10 +81,6 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      sourceId: sourceId == const $CopyWithPlaceholder() || sourceId == null
-          ? _value.sourceId
-          // ignore: cast_nullable_to_non_nullable
-          : sourceId as String,
       title: title == const $CopyWithPlaceholder() || title == null
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
@@ -130,7 +119,6 @@ extension $ChatCopyWith on Chat {
 
 Chat _$ChatFromJson(Map<String, dynamic> json) => Chat(
       id: json['id'] as String,
-      sourceId: json['sourceId'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
       prompt: json['prompt'] as String,
@@ -142,7 +130,6 @@ Chat _$ChatFromJson(Map<String, dynamic> json) => Chat(
 
 Map<String, dynamic> _$ChatToJson(Chat instance) => <String, dynamic>{
       'id': instance.id,
-      'sourceId': instance.sourceId,
       'title': instance.title,
       'description': instance.description,
       'prompt': instance.prompt,
