@@ -32,6 +32,7 @@ class User {
   List<DateTime> strikes;
   List<String> goals;
   List<String> goalsessions;
+  int frequency;
 
   User({
     required this.uid,
@@ -54,6 +55,7 @@ class User {
     this.goals = const <String>[],
     this.goalsessions = const <String>[],
     required this.lastUpdate,
+    this.frequency = 5,
   });
 
   bool get isBlock =>
@@ -90,6 +92,7 @@ class User {
         "goalsessions": data["goalsessions"] ?? const <String>[],
         "lastUpdate": data["lastUpdate"] ?? dateTimetoJson(DateTime.now()),
         "goals": data["goals"] ?? const <String>[],
+        "frequency": data["frequency"] ?? 5,
       });
 
   Map<String, dynamic> toJson() => _$UserToJson(this);

@@ -47,6 +47,8 @@ abstract class _$UserCWProxy {
 
   User lastUpdate(DateTime lastUpdate);
 
+  User frequency(int frequency);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -74,6 +76,7 @@ abstract class _$UserCWProxy {
     List<String>? goals,
     List<String>? goalsessions,
     DateTime? lastUpdate,
+    int? frequency,
   });
 }
 
@@ -147,6 +150,9 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User lastUpdate(DateTime lastUpdate) => this(lastUpdate: lastUpdate);
 
   @override
+  User frequency(int frequency) => this(frequency: frequency);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -175,6 +181,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? goals = const $CopyWithPlaceholder(),
     Object? goalsessions = const $CopyWithPlaceholder(),
     Object? lastUpdate = const $CopyWithPlaceholder(),
+    Object? frequency = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -261,6 +268,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
               ? _value.lastUpdate
               // ignore: cast_nullable_to_non_nullable
               : lastUpdate as DateTime,
+      frequency: frequency == const $CopyWithPlaceholder() || frequency == null
+          ? _value.frequency
+          // ignore: cast_nullable_to_non_nullable
+          : frequency as int,
     );
   }
 }
@@ -306,6 +317,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
               .toList() ??
           const <String>[],
       lastUpdate: dateTimefromJson(json['lastUpdate'] as Timestamp?),
+      frequency: json['frequency'] as int? ?? 5,
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -329,4 +341,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'strikes': listDateTimetoJson(instance.strikes),
       'goals': instance.goals,
       'goalsessions': instance.goalsessions,
+      'frequency': instance.frequency,
     };
