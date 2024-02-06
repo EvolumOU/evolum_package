@@ -77,4 +77,16 @@ class Evo {
 
   @override
   String toString() => toJson().toString();
+
+  // add operator == to be able to compare two evo by Id
+  @override
+  bool operator ==(Object other) {
+    if (other is Evo) {
+      return id == other.id;
+    }
+    return false;
+  }
+
+  @override
+  int get hashCode => super.hashCode;
 }
