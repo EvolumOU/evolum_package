@@ -15,6 +15,7 @@ class Chat {
   final List<Map<String, dynamic>> messages; // isUser, text, date
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
+  final bool type;
 
   Chat({
     required this.id,
@@ -23,6 +24,7 @@ class Chat {
     required this.prompt,
     required this.messages,
     required this.createdDate,
+    required this.type,
   });
 
   factory Chat.fromJson(Map<String, dynamic> data) => _$ChatFromJson(data);

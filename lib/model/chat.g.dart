@@ -19,6 +19,8 @@ abstract class _$ChatCWProxy {
 
   Chat createdDate(DateTime createdDate);
 
+  Chat type(bool type);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Chat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -32,6 +34,7 @@ abstract class _$ChatCWProxy {
     String? prompt,
     List<Map<String, dynamic>>? messages,
     DateTime? createdDate,
+    bool? type,
   });
 }
 
@@ -61,6 +64,9 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
   Chat createdDate(DateTime createdDate) => this(createdDate: createdDate);
 
   @override
+  Chat type(bool type) => this(type: type);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Chat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -75,6 +81,7 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
     Object? prompt = const $CopyWithPlaceholder(),
     Object? messages = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
   }) {
     return Chat(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -103,6 +110,10 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
               ? _value.createdDate
               // ignore: cast_nullable_to_non_nullable
               : createdDate as DateTime,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as bool,
     );
   }
 }
@@ -126,6 +137,7 @@ Chat _$ChatFromJson(Map<String, dynamic> json) => Chat(
           .map((e) => e as Map<String, dynamic>)
           .toList(),
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      type: json['type'] as bool,
     );
 
 Map<String, dynamic> _$ChatToJson(Chat instance) => <String, dynamic>{
@@ -135,4 +147,5 @@ Map<String, dynamic> _$ChatToJson(Chat instance) => <String, dynamic>{
       'prompt': instance.prompt,
       'messages': instance.messages,
       'createdDate': dateTimetoJson(instance.createdDate),
+      'type': instance.type,
     };
