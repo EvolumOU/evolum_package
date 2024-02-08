@@ -15,7 +15,7 @@ class Chat {
   final List<Map<String, dynamic>> messages; // isUser, text, date
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
-  final bool type;
+  final String type;
 
   Chat({
     required this.id,
@@ -24,12 +24,15 @@ class Chat {
     required this.prompt,
     required this.messages,
     required this.createdDate,
-    required this.type,
+    this.type = 'journaling',
   });
 
   factory Chat.fromJson(Map<String, dynamic> data) => _$ChatFromJson(data);
 
   Map<String, dynamic> toJson() => _$ChatToJson(this);
+
+  bool get isJournaling => type == 'journaling';
+  bool get isCoach => type == 'coach';
 
   @override
   String toString() => toJson().toString();

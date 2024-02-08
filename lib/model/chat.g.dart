@@ -19,7 +19,7 @@ abstract class _$ChatCWProxy {
 
   Chat createdDate(DateTime createdDate);
 
-  Chat type(bool type);
+  Chat type(String type);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Chat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -34,7 +34,7 @@ abstract class _$ChatCWProxy {
     String? prompt,
     List<Map<String, dynamic>>? messages,
     DateTime? createdDate,
-    bool? type,
+    String? type,
   });
 }
 
@@ -64,7 +64,7 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
   Chat createdDate(DateTime createdDate) => this(createdDate: createdDate);
 
   @override
-  Chat type(bool type) => this(type: type);
+  Chat type(String type) => this(type: type);
 
   @override
 
@@ -113,7 +113,7 @@ class _$ChatCWProxyImpl implements _$ChatCWProxy {
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
-          : type as bool,
+          : type as String,
     );
   }
 }
@@ -137,7 +137,7 @@ Chat _$ChatFromJson(Map<String, dynamic> json) => Chat(
           .map((e) => e as Map<String, dynamic>)
           .toList(),
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-      type: json['type'] as bool,
+      type: json['type'] as String? ?? 'journaling',
     );
 
 Map<String, dynamic> _$ChatToJson(Chat instance) => <String, dynamic>{
