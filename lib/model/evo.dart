@@ -47,7 +47,7 @@ class Evo {
     required this.createdDate,
     this.summarize = '',
     this.intro = '',
-    this.feedback = false,
+    this.feedback = true,
     this.hide = false,
     this.mode = 'vertical',
     this.form = 'focus',

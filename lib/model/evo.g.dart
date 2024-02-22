@@ -288,7 +288,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
       summarize: json['summarize'] as String? ?? '',
       intro: json['intro'] as String? ?? '',
-      feedback: json['feedback'] as bool? ?? false,
+      feedback: json['feedback'] as bool? ?? true,
       hide: json['hide'] as bool? ?? false,
       mode: json['mode'] as String? ?? 'vertical',
       form: json['form'] as String? ?? 'focus',
