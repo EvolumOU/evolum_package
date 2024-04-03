@@ -59,7 +59,7 @@ class User {
   });
 
   bool get isBlock =>
-      status == 'cancel' || status == 'free' || status == 'lead';
+      status == 'cancel' || status.contains('free') || status == 'lead';
 
   bool get isCancel => status == 'cancel';
   bool get isLead => status == 'lead';
