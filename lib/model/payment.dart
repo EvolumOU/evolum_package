@@ -6,12 +6,12 @@ part 'payment.g.dart';
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
 class Payment {
-  String? email;
-  String? status;
+  String email;
+  String status;
 
   Payment({
-    this.email,
-    this.status,
+    required this.email,
+    required this.status,
   });
 
   factory Payment.fromJson(Map<String, dynamic> data) =>

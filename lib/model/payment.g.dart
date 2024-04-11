@@ -51,11 +51,11 @@ class _$PaymentCWProxyImpl implements _$PaymentCWProxy {
       email: email == const $CopyWithPlaceholder()
           ? _value.email
           // ignore: cast_nullable_to_non_nullable
-          : email as String?,
+          : email as String,
       status: status == const $CopyWithPlaceholder()
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
-          : status as String?,
+          : status as String,
     );
   }
 }
@@ -71,9 +71,14 @@ extension $PaymentCopyWith on Payment {
 // **************************************************************************
 
 Payment _$PaymentFromJson(Map<String, dynamic> json) => Payment(
-      email: json['email'] as String?,
-      status: json['status'] as String?,
+      email: json['email'] as String,
+      status: json['status'] as String,
     );
+
+const _$PaymentFieldMap = <String, String>{
+  'email': 'email',
+  'status': 'status',
+};
 
 Map<String, dynamic> _$PaymentToJson(Payment instance) => <String, dynamic>{
       'email': instance.email,
