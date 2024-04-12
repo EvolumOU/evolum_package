@@ -58,22 +58,14 @@ class User {
     this.frequency = 5,
   });
 
-  bool get isBlock =>
-      status == 'cancel' || status.contains('free') || status == 'lead';
-
-  bool get isCancel => status == 'cancel';
-  bool get isLead => status == 'lead';
-  bool get isFree => status == 'free';
-
-  // Full Acces
-  bool get isFull => status == 'full' || status == 'premium' || status == 'abo';
+  // STATUS Acces
+  bool get isFull => status == 'full';
   bool get isPremium => status == 'premium';
-  bool get isFreemium =>
-      status == 'freemium' ||
-      status == 'free' ||
-      status == 'abo' ||
-      status == 'lead';
+  bool get isCancel => status == 'cancel';
+  bool get isFreemium => status.contains('free') || status == 'lead';
+  bool get isBlock => status == 'cancel' || isFreemium;
 
+  // ROLE Acces
   bool get isAdmin => role == 'admin';
   bool get isUser => role == 'user';
   bool get isCaster => role == 'caster';
