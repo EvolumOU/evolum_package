@@ -121,10 +121,11 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       hide: json['hide'] as bool? ?? false,
       duration: json['duration'] == null
           ? Duration.zero
-          : durationfromJson(json['duration'] as int),
-      chapters:
-          (json['chapters'] as List<dynamic>?)?.map((e) => e as int).toList() ??
-              const <int>[0],
+          : durationfromJson((json['duration'] as num).toInt()),
+      chapters: (json['chapters'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList() ??
+          const <int>[0],
     );
 
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{

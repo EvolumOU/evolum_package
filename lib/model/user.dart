@@ -25,7 +25,7 @@ class User {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   DateTime lastUpdate;
   List<String> unlocked;
-  String? subId;
+  String subId;
   String? token;
   String role;
   @JsonKey(toJson: listDateTimetoJson, fromJson: listDateTimefromJson)
@@ -33,6 +33,7 @@ class User {
   List<String> goals;
   List<String> goalsessions;
   int frequency;
+  String subId2;
 
   User({
     required this.uid,
@@ -48,7 +49,7 @@ class User {
     required this.createdDate,
     this.leadDate,
     this.unlocked = const <String>[],
-    this.subId,
+    this.subId = "",
     this.token,
     this.role = "user",
     this.strikes = const <DateTime>[],
@@ -56,6 +57,7 @@ class User {
     this.goalsessions = const <String>[],
     required this.lastUpdate,
     this.frequency = 5,
+    this.subId2 = "",
   });
 
   // STATUS Acces
@@ -85,6 +87,8 @@ class User {
         "lastUpdate": data["lastUpdate"] ?? dateTimetoJson(DateTime.now()),
         "goals": data["goals"] ?? const <String>[],
         "frequency": data["frequency"] ?? 5,
+        "subId": data["subId"] ?? "",
+        "subId2": data["subId2"] ?? "",
       });
 
   Map<String, dynamic> toJson() => _$UserToJson(this);

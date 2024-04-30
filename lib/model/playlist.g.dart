@@ -119,7 +119,7 @@ Playlist _$PlaylistFromJson(Map<String, dynamic> json) => Playlist(
       list:
           (json['list'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
-      position: json['position'] as int? ?? 0,
+      position: (json['position'] as num?)?.toInt() ?? 0,
       hide: json['hide'] as bool? ?? false,
       type: json['type'] as String? ?? 'seat',
       text: json['text'] as String?,

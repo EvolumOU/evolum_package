@@ -125,19 +125,19 @@ extension $BreathWorkCopyWith on BreathWork {
 
 BreathWork _$BreathWorkFromJson(Map<String, dynamic> json) => BreathWork(
       id: json['id'] as String?,
-      nbCycles: json['nbCycles'] as int? ?? 1,
+      nbCycles: (json['nbCycles'] as num?)?.toInt() ?? 1,
       inhaleDuration: json['inhaleDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['inhaleDuration'] as int),
+          : durationfromJson((json['inhaleDuration'] as num).toInt()),
       pauseTopDuration: json['pauseTopDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['pauseTopDuration'] as int),
+          : durationfromJson((json['pauseTopDuration'] as num).toInt()),
       exhaleDuration: json['exhaleDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['exhaleDuration'] as int),
+          : durationfromJson((json['exhaleDuration'] as num).toInt()),
       pauseBottomDuration: json['pauseBottomDuration'] == null
           ? Duration.zero
-          : durationfromJson(json['pauseBottomDuration'] as int),
+          : durationfromJson((json['pauseBottomDuration'] as num).toInt()),
     );
 
 Map<String, dynamic> _$BreathWorkToJson(BreathWork instance) =>

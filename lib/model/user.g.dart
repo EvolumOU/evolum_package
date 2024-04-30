@@ -33,7 +33,7 @@ abstract class _$UserCWProxy {
 
   User unlocked(List<String> unlocked);
 
-  User subId(String? subId);
+  User subId(String subId);
 
   User token(String? token);
 
@@ -48,6 +48,8 @@ abstract class _$UserCWProxy {
   User lastUpdate(DateTime lastUpdate);
 
   User frequency(int frequency);
+
+  User subId2(String subId2);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -77,6 +79,7 @@ abstract class _$UserCWProxy {
     List<String>? goalsessions,
     DateTime? lastUpdate,
     int? frequency,
+    String? subId2,
   });
 }
 
@@ -128,7 +131,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User unlocked(List<String> unlocked) => this(unlocked: unlocked);
 
   @override
-  User subId(String? subId) => this(subId: subId);
+  User subId(String subId) => this(subId: subId);
 
   @override
   User token(String? token) => this(token: token);
@@ -151,6 +154,9 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
 
   @override
   User frequency(int frequency) => this(frequency: frequency);
+
+  @override
+  User subId2(String subId2) => this(subId2: subId2);
 
   @override
 
@@ -182,6 +188,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? goalsessions = const $CopyWithPlaceholder(),
     Object? lastUpdate = const $CopyWithPlaceholder(),
     Object? frequency = const $CopyWithPlaceholder(),
+    Object? subId2 = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -238,10 +245,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.unlocked
           // ignore: cast_nullable_to_non_nullable
           : unlocked as List<String>,
-      subId: subId == const $CopyWithPlaceholder()
+      subId: subId == const $CopyWithPlaceholder() || subId == null
           ? _value.subId
           // ignore: cast_nullable_to_non_nullable
-          : subId as String?,
+          : subId as String,
       token: token == const $CopyWithPlaceholder()
           ? _value.token
           // ignore: cast_nullable_to_non_nullable
@@ -272,6 +279,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.frequency
           // ignore: cast_nullable_to_non_nullable
           : frequency as int,
+      subId2: subId2 == const $CopyWithPlaceholder() || subId2 == null
+          ? _value.subId2
+          // ignore: cast_nullable_to_non_nullable
+          : subId2 as String,
     );
   }
 }
@@ -295,15 +306,15 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       status: json['status'] as String? ?? "free",
       reminderMorning: json['reminderMorning'] as String?,
       reminderNight: json['reminderNight'] as String?,
-      nbDone: json['nbDone'] as int? ?? 0,
-      noReview: json['noReview'] as int? ?? 0,
+      nbDone: (json['nbDone'] as num?)?.toInt() ?? 0,
+      noReview: (json['noReview'] as num?)?.toInt() ?? 0,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
       leadDate: dateTimefromJsonWithNull(json['leadDate'] as Timestamp?),
       unlocked: (json['unlocked'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
-      subId: json['subId'] as String?,
+      subId: json['subId'] as String? ?? "",
       token: json['token'] as String?,
       role: json['role'] as String? ?? "user",
       strikes: json['strikes'] == null
@@ -317,7 +328,8 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
               .toList() ??
           const <String>[],
       lastUpdate: dateTimefromJson(json['lastUpdate'] as Timestamp?),
-      frequency: json['frequency'] as int? ?? 5,
+      frequency: (json['frequency'] as num?)?.toInt() ?? 5,
+      subId2: json['subId2'] as String? ?? "",
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -342,4 +354,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'goals': instance.goals,
       'goalsessions': instance.goalsessions,
       'frequency': instance.frequency,
+      'subId2': instance.subId2,
     };

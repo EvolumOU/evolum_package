@@ -119,8 +119,8 @@ Brick _$BrickFromJson(Map<String, dynamic> json) => Brick(
       name: json['name'] as String?,
       duration: json['duration'] == null
           ? Duration.zero
-          : durationfromJson(json['duration'] as int),
-      type: json['type'] as int?,
+          : durationfromJson((json['duration'] as num).toInt()),
+      type: (json['type'] as num?)?.toInt(),
       moment: json['moment'] as String?,
       filename: json['filename'] as String?,
     );

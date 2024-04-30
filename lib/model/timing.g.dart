@@ -82,8 +82,8 @@ extension $TimingCopyWith on Timing {
 // **************************************************************************
 
 Timing _$TimingFromJson(Map<String, dynamic> json) => Timing(
-      begin: json['begin'] as int? ?? 0,
-      end: json['end'] as int? ?? 0,
+      begin: (json['begin'] as num?)?.toInt() ?? 0,
+      end: (json['end'] as num?)?.toInt() ?? 0,
       text: json['text'] as String? ?? "",
     );
 

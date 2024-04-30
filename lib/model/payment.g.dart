@@ -7,9 +7,9 @@ part of 'payment.dart';
 // **************************************************************************
 
 abstract class _$PaymentCWProxy {
-  Payment email(String? email);
+  Payment email(String email);
 
-  Payment status(String? status);
+  Payment status(String status);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Payment(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -30,10 +30,10 @@ class _$PaymentCWProxyImpl implements _$PaymentCWProxy {
   final Payment _value;
 
   @override
-  Payment email(String? email) => this(email: email);
+  Payment email(String email) => this(email: email);
 
   @override
-  Payment status(String? status) => this(status: status);
+  Payment status(String status) => this(status: status);
 
   @override
 
@@ -48,11 +48,11 @@ class _$PaymentCWProxyImpl implements _$PaymentCWProxy {
     Object? status = const $CopyWithPlaceholder(),
   }) {
     return Payment(
-      email: email == const $CopyWithPlaceholder()
+      email: email == const $CopyWithPlaceholder() || email == null
           ? _value.email
           // ignore: cast_nullable_to_non_nullable
           : email as String,
-      status: status == const $CopyWithPlaceholder()
+      status: status == const $CopyWithPlaceholder() || status == null
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
           : status as String,
@@ -74,11 +74,6 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) => Payment(
       email: json['email'] as String,
       status: json['status'] as String,
     );
-
-const _$PaymentFieldMap = <String, String>{
-  'email': 'email',
-  'status': 'status',
-};
 
 Map<String, dynamic> _$PaymentToJson(Payment instance) => <String, dynamic>{
       'email': instance.email,

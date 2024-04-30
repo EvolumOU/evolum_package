@@ -97,7 +97,7 @@ Session _$SessionFromJson(Map<String, dynamic> json) => Session(
       startDate: dateTimefromJson(json['startDate'] as Timestamp?),
       duration: json['duration'] == null
           ? const Duration(days: 7)
-          : durationfromJson(json['duration'] as int),
+          : durationfromJson((json['duration'] as num).toInt()),
       evos: (json['evos'] as List<dynamic>)
           .map((e) => Evo.fromJson(e as Map<String, dynamic>))
           .toList(),

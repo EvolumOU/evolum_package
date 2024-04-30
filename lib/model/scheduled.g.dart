@@ -95,7 +95,7 @@ extension $ScheduledCopyWith on Scheduled {
 Scheduled _$ScheduledFromJson(Map<String, dynamic> json) => Scheduled(
       date: dateTimefromJson(json['date'] as Timestamp?),
       type: json['type'] as String?,
-      nbOfday: json['nbOfday'] as int? ?? 1,
+      nbOfday: (json['nbOfday'] as num?)?.toInt() ?? 1,
       evoId: json['evoId'] as String?,
     );
 

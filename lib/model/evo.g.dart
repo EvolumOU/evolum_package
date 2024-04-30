@@ -279,7 +279,7 @@ Evo _$EvoFromJson(Map<String, dynamic> json) => Evo(
       tag: json['tag'] as String? ?? '',
       duration: json['duration'] == null
           ? Duration.zero
-          : durationfromJson(json['duration'] as int),
+          : durationfromJson((json['duration'] as num).toInt()),
       loop: json['loop'] as bool? ?? false,
       timings: (json['timings'] as List<dynamic>?)
               ?.map((e) => Timing.fromJson(e as Map<String, dynamic>))

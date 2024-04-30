@@ -147,9 +147,9 @@ SubInfo _$SubInfoFromJson(Map<String, dynamic> json) => SubInfo(
       cardLast4: json['cardLast4'] as String?,
       price: (json['price'] as num?)?.toDouble() ?? 0,
       currency: json['currency'] as String? ?? "EU",
-      billingPeriod: json['billingPeriod'] as int? ?? 1,
+      billingPeriod: (json['billingPeriod'] as num?)?.toInt() ?? 1,
       billingPeriodUnit: json['billingPeriodUnit'] as String? ?? 'month',
-      nextBillingDate: json['nextBillingDate'] as int?,
+      nextBillingDate: (json['nextBillingDate'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$SubInfoToJson(SubInfo instance) => <String, dynamic>{

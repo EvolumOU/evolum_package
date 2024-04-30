@@ -255,7 +255,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
               ?.map((e) => Evo.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <Evo>[],
-      position: json['position'] as int? ?? 0,
+      position: (json['position'] as num?)?.toInt() ?? 0,
       scheduled: (json['scheduled'] as List<dynamic>?)
               ?.map((e) => Scheduled.fromJson(e as Map<String, dynamic>))
               .toList() ??
