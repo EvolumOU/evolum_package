@@ -16,25 +16,6 @@ extension StringExtension on String {
     return this.substring(0, indexOfDot);
   }
 
-  String get removeDiacritics {
-    String res = '';
-
-    for (int i = 0; i < this.length; i++) {
-      final utf8 = this.codeUnitAt(i);
-      if (utf8 < 768 || utf8 > 879) {
-        res += this[i];
-      }
-    }
-    return res;
-  }
-
-  String get convertToId {
-    String res = this.replaceAll(' ', '_');
-    res = res.prefix;
-    res = res.removeDiacritics;
-    return res;
-  }
-
   String get upperCaseFirst => this.replaceRange(0, 1, this[0].toUpperCase());
 
   bool get isError => this == "error";
