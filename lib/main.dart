@@ -30,7 +30,6 @@ part 'theme/dark.dart';
 part 'theme/light.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_gradient.dart';
-part 'animation/lottie_animated.dart';
 
 part "extension/datetime.dart";
 part "extension/duration.dart";
