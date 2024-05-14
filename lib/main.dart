@@ -29,7 +29,6 @@ part 'theme/color.dart';
 part 'theme/dark.dart';
 part 'theme/light.dart';
 part 'animation/entrance_fader.dart';
-part 'animation/loading_circle.dart';
 part 'animation/scale_inout.dart';
 part 'animation/animated_gradient.dart';
 part 'animation/lottie_animated.dart';
