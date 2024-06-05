@@ -30,6 +30,15 @@ class Course {
   DateTime updatedDate;
   bool route;
   bool hide;
+  bool paid;
+  String urlFreemium;
+  String urlFull;
+  String urlPremium;
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
+  DateTime? startDate;
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
+  DateTime? endDate;
+  String imgUrl;
 
   Course({
     this.id = '',
@@ -49,6 +58,13 @@ class Course {
     required this.updatedDate,
     this.route = false,
     this.hide = false,
+    this.paid = false,
+    this.urlFreemium = '',
+    this.urlFull = '',
+    this.urlPremium = '',
+    this.startDate,
+    this.endDate,
+    this.imgUrl = '',
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
@@ -59,8 +75,15 @@ class Course {
       "list": data["list"] ?? [],
       "route": data["route"] ?? false,
       "hide": data["hide"] ?? false,
+      "paid": data["paid"] ?? false,
     });
   }
+
+  bool get isOfferFinish =>
+      paid && endDate != null && endDate!.isBefore(DateTime.now());
+  bool get isOfferStart =>
+      paid && startDate != null && startDate!.isBefore(DateTime.now());
+  bool get isOfferProgress => paid && isOfferStart && !isOfferFinish;
 
   bool get isGoal => type == 'goal';
   bool get isAdventure => type == 'adventure' || type == 'aventure';

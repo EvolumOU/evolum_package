@@ -41,6 +41,20 @@ abstract class _$CourseCWProxy {
 
   Course hide(bool hide);
 
+  Course paid(bool paid);
+
+  Course urlFreemium(String urlFreemium);
+
+  Course urlFull(String urlFull);
+
+  Course urlPremium(String urlPremium);
+
+  Course startDate(DateTime? startDate);
+
+  Course endDate(DateTime? endDate);
+
+  Course imgUrl(String imgUrl);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Course(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -65,6 +79,13 @@ abstract class _$CourseCWProxy {
     DateTime? updatedDate,
     bool? route,
     bool? hide,
+    bool? paid,
+    String? urlFreemium,
+    String? urlFull,
+    String? urlPremium,
+    DateTime? startDate,
+    DateTime? endDate,
+    String? imgUrl,
   });
 }
 
@@ -126,6 +147,27 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
   Course hide(bool hide) => this(hide: hide);
 
   @override
+  Course paid(bool paid) => this(paid: paid);
+
+  @override
+  Course urlFreemium(String urlFreemium) => this(urlFreemium: urlFreemium);
+
+  @override
+  Course urlFull(String urlFull) => this(urlFull: urlFull);
+
+  @override
+  Course urlPremium(String urlPremium) => this(urlPremium: urlPremium);
+
+  @override
+  Course startDate(DateTime? startDate) => this(startDate: startDate);
+
+  @override
+  Course endDate(DateTime? endDate) => this(endDate: endDate);
+
+  @override
+  Course imgUrl(String imgUrl) => this(imgUrl: imgUrl);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Course(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -151,6 +193,13 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
     Object? updatedDate = const $CopyWithPlaceholder(),
     Object? route = const $CopyWithPlaceholder(),
     Object? hide = const $CopyWithPlaceholder(),
+    Object? paid = const $CopyWithPlaceholder(),
+    Object? urlFreemium = const $CopyWithPlaceholder(),
+    Object? urlFull = const $CopyWithPlaceholder(),
+    Object? urlPremium = const $CopyWithPlaceholder(),
+    Object? startDate = const $CopyWithPlaceholder(),
+    Object? endDate = const $CopyWithPlaceholder(),
+    Object? imgUrl = const $CopyWithPlaceholder(),
   }) {
     return Course(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -222,6 +271,36 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
           ? _value.hide
           // ignore: cast_nullable_to_non_nullable
           : hide as bool,
+      paid: paid == const $CopyWithPlaceholder() || paid == null
+          ? _value.paid
+          // ignore: cast_nullable_to_non_nullable
+          : paid as bool,
+      urlFreemium:
+          urlFreemium == const $CopyWithPlaceholder() || urlFreemium == null
+              ? _value.urlFreemium
+              // ignore: cast_nullable_to_non_nullable
+              : urlFreemium as String,
+      urlFull: urlFull == const $CopyWithPlaceholder() || urlFull == null
+          ? _value.urlFull
+          // ignore: cast_nullable_to_non_nullable
+          : urlFull as String,
+      urlPremium:
+          urlPremium == const $CopyWithPlaceholder() || urlPremium == null
+              ? _value.urlPremium
+              // ignore: cast_nullable_to_non_nullable
+              : urlPremium as String,
+      startDate: startDate == const $CopyWithPlaceholder()
+          ? _value.startDate
+          // ignore: cast_nullable_to_non_nullable
+          : startDate as DateTime?,
+      endDate: endDate == const $CopyWithPlaceholder()
+          ? _value.endDate
+          // ignore: cast_nullable_to_non_nullable
+          : endDate as DateTime?,
+      imgUrl: imgUrl == const $CopyWithPlaceholder() || imgUrl == null
+          ? _value.imgUrl
+          // ignore: cast_nullable_to_non_nullable
+          : imgUrl as String,
     );
   }
 }
@@ -263,6 +342,13 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       updatedDate: dateTimefromJson(json['updatedDate'] as Timestamp?),
       route: json['route'] as bool? ?? false,
       hide: json['hide'] as bool? ?? false,
+      paid: json['paid'] as bool? ?? false,
+      urlFreemium: json['urlFreemium'] as String? ?? '',
+      urlFull: json['urlFull'] as String? ?? '',
+      urlPremium: json['urlPremium'] as String? ?? '',
+      startDate: dateTimefromJsonWithNull(json['startDate'] as Timestamp?),
+      endDate: dateTimefromJsonWithNull(json['endDate'] as Timestamp?),
+      imgUrl: json['imgUrl'] as String? ?? '',
     );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
@@ -283,4 +369,11 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'updatedDate': dateTimetoJson(instance.updatedDate),
       'route': instance.route,
       'hide': instance.hide,
+      'paid': instance.paid,
+      'urlFreemium': instance.urlFreemium,
+      'urlFull': instance.urlFull,
+      'urlPremium': instance.urlPremium,
+      'startDate': dateTimetoJsonWithNull(instance.startDate),
+      'endDate': dateTimetoJsonWithNull(instance.endDate),
+      'imgUrl': instance.imgUrl,
     };
