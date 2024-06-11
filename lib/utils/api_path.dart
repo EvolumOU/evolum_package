@@ -20,6 +20,8 @@ class APIPath {
   static String elixir(String categoryId, String elixirId) =>
       'elixirCategories/$categoryId/elixirs/$elixirId';
   static String userChat(String uid, String id) => 'user/$uid/chat/$id';
+  static String userChatMessages(String uid, String id) =>
+      'user/$uid/chat/$id/messages';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
