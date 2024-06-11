@@ -18,4 +18,11 @@ class CoachChat {
     required this.description,
     required this.dateTime,
   });
+
+  factory CoachChat.fromJson(Map<String, dynamic> data) =>
+      _$CoachChatFromJson(data);
+
+  Map<String, dynamic> toJson() => _$CoachChatToJson(this);
+
+  String toString() => toJson().toString();
 }

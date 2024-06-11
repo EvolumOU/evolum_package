@@ -18,4 +18,11 @@ class ChatMessage {
     required this.text,
     required this.dateTime,
   });
+
+  factory ChatMessage.fromJson(Map<String, dynamic> data) =>
+      _$ChatMessageFromJson(data);
+
+  Map<String, dynamic> toJson() => _$ChatMessageToJson(this);
+
+  String toString() => toJson().toString();
 }
