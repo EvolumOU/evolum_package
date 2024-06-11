@@ -1,0 +1,21 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:evolum_package/model/utils.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'coach_chat.g.dart';
+
+@CopyWith()
+@JsonSerializable(explicitToJson: true)
+class CoachChat {
+  final String id;
+  final String description;
+  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
+  final DateTime dateTime;
+
+  CoachChat({
+    required this.id,
+    required this.description,
+    required this.dateTime,
+  });
+}

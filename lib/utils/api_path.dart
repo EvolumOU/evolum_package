@@ -31,6 +31,7 @@ class APIPath {
   static String userEvoDone(String uid) => 'user/$uid/info/evodone';
   static String userSurpriseDone(String uid) => 'user/$uid/info/surprisedone';
   static String userToolsDone(String uid) => 'user/$uid/info/toolsdone';
+  static String coachChat(String uid, String id) => 'user/$uid/coachChat/$id';
 
   static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
