@@ -13,6 +13,8 @@ abstract class _$CoachChatCWProxy {
 
   CoachChat dateTime(DateTime dateTime);
 
+  CoachChat messages(List<CoachChatMessage> messages);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -23,6 +25,7 @@ abstract class _$CoachChatCWProxy {
     String? id,
     String? description,
     DateTime? dateTime,
+    List<CoachChatMessage>? messages,
   });
 }
 
@@ -42,6 +45,10 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
   CoachChat dateTime(DateTime dateTime) => this(dateTime: dateTime);
 
   @override
+  CoachChat messages(List<CoachChatMessage> messages) =>
+      this(messages: messages);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -53,6 +60,7 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? dateTime = const $CopyWithPlaceholder(),
+    Object? messages = const $CopyWithPlaceholder(),
   }) {
     return CoachChat(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -68,6 +76,10 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
           ? _value.dateTime
           // ignore: cast_nullable_to_non_nullable
           : dateTime as DateTime,
+      messages: messages == const $CopyWithPlaceholder() || messages == null
+          ? _value.messages
+          // ignore: cast_nullable_to_non_nullable
+          : messages as List<CoachChatMessage>,
     );
   }
 }
@@ -86,10 +98,15 @@ CoachChat _$CoachChatFromJson(Map<String, dynamic> json) => CoachChat(
       id: json['id'] as String,
       description: json['description'] as String,
       dateTime: dateTimefromJson(json['dateTime'] as Timestamp?),
+      messages: (json['messages'] as List<dynamic>?)
+              ?.map((e) => CoachChatMessage.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <CoachChatMessage>[],
     );
 
 Map<String, dynamic> _$CoachChatToJson(CoachChat instance) => <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
       'dateTime': dateTimetoJson(instance.dateTime),
+      'messages': instance.messages.map((e) => e.toJson()).toList(),
     };

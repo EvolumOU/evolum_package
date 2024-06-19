@@ -6,55 +6,55 @@ part of 'chat_message.dart';
 // CopyWithGenerator
 // **************************************************************************
 
-abstract class _$ChatMessageCWProxy {
-  ChatMessage isUser(bool isUser);
+abstract class _$CoachChatMessageCWProxy {
+  CoachChatMessage isUser(bool isUser);
 
-  ChatMessage text(String text);
+  CoachChatMessage text(String text);
 
-  ChatMessage dateTime(DateTime dateTime);
+  CoachChatMessage dateTime(DateTime dateTime);
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ChatMessage(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChatMessage(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
-  /// ChatMessage(...).copyWith(id: 12, name: "My name")
+  /// CoachChatMessage(...).copyWith(id: 12, name: "My name")
   /// ````
-  ChatMessage call({
+  CoachChatMessage call({
     bool? isUser,
     String? text,
     DateTime? dateTime,
   });
 }
 
-/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfChatMessage.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfChatMessage.copyWith.fieldName(...)`
-class _$ChatMessageCWProxyImpl implements _$ChatMessageCWProxy {
-  const _$ChatMessageCWProxyImpl(this._value);
+/// Proxy class for `copyWith` functionality. This is a callable class and can be used as follows: `instanceOfCoachChatMessage.copyWith(...)`. Additionally contains functions for specific fields e.g. `instanceOfCoachChatMessage.copyWith.fieldName(...)`
+class _$CoachChatMessageCWProxyImpl implements _$CoachChatMessageCWProxy {
+  const _$CoachChatMessageCWProxyImpl(this._value);
 
-  final ChatMessage _value;
-
-  @override
-  ChatMessage isUser(bool isUser) => this(isUser: isUser);
+  final CoachChatMessage _value;
 
   @override
-  ChatMessage text(String text) => this(text: text);
+  CoachChatMessage isUser(bool isUser) => this(isUser: isUser);
 
   @override
-  ChatMessage dateTime(DateTime dateTime) => this(dateTime: dateTime);
+  CoachChatMessage text(String text) => this(text: text);
+
+  @override
+  CoachChatMessage dateTime(DateTime dateTime) => this(dateTime: dateTime);
 
   @override
 
-  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `ChatMessage(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
+  /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChatMessage(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
   /// ```dart
-  /// ChatMessage(...).copyWith(id: 12, name: "My name")
+  /// CoachChatMessage(...).copyWith(id: 12, name: "My name")
   /// ````
-  ChatMessage call({
+  CoachChatMessage call({
     Object? isUser = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
     Object? dateTime = const $CopyWithPlaceholder(),
   }) {
-    return ChatMessage(
+    return CoachChatMessage(
       isUser: isUser == const $CopyWithPlaceholder() || isUser == null
           ? _value.isUser
           // ignore: cast_nullable_to_non_nullable
@@ -71,23 +71,24 @@ class _$ChatMessageCWProxyImpl implements _$ChatMessageCWProxy {
   }
 }
 
-extension $ChatMessageCopyWith on ChatMessage {
-  /// Returns a callable class that can be used as follows: `instanceOfChatMessage.copyWith(...)` or like so:`instanceOfChatMessage.copyWith.fieldName(...)`.
+extension $CoachChatMessageCopyWith on CoachChatMessage {
+  /// Returns a callable class that can be used as follows: `instanceOfCoachChatMessage.copyWith(...)` or like so:`instanceOfCoachChatMessage.copyWith.fieldName(...)`.
   // ignore: library_private_types_in_public_api
-  _$ChatMessageCWProxy get copyWith => _$ChatMessageCWProxyImpl(this);
+  _$CoachChatMessageCWProxy get copyWith => _$CoachChatMessageCWProxyImpl(this);
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ChatMessage _$ChatMessageFromJson(Map<String, dynamic> json) => ChatMessage(
+CoachChatMessage _$CoachChatMessageFromJson(Map<String, dynamic> json) =>
+    CoachChatMessage(
       isUser: json['isUser'] as bool,
       text: json['text'] as String,
       dateTime: dateTimefromJson(json['dateTime'] as Timestamp?),
     );
 
-Map<String, dynamic> _$ChatMessageToJson(ChatMessage instance) =>
+Map<String, dynamic> _$CoachChatMessageToJson(CoachChatMessage instance) =>
     <String, dynamic>{
       'isUser': instance.isUser,
       'text': instance.text,

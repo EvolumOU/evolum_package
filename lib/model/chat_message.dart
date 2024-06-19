@@ -7,22 +7,22 @@ part 'chat_message.g.dart';
 
 @CopyWith()
 @JsonSerializable(explicitToJson: true)
-class ChatMessage {
+class CoachChatMessage {
   final bool isUser;
   final String text;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime dateTime;
 
-  ChatMessage({
+  CoachChatMessage({
     required this.isUser,
     required this.text,
     required this.dateTime,
   });
 
-  factory ChatMessage.fromJson(Map<String, dynamic> data) =>
-      _$ChatMessageFromJson(data);
+  factory CoachChatMessage.fromJson(Map<String, dynamic> data) =>
+      _$CoachChatMessageFromJson(data);
 
-  Map<String, dynamic> toJson() => _$ChatMessageToJson(this);
+  Map<String, dynamic> toJson() => _$CoachChatMessageToJson(this);
 
   String toString() => toJson().toString();
 }
