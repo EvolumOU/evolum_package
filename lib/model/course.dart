@@ -95,8 +95,7 @@ class Course {
   Duration get durationLeft {
     if (!paid || endDate == null) return Duration.zero;
 
-    final DateTime limit =
-        endDate!.add(Duration(days: 1)).subtract(Duration(seconds: 1));
+    final DateTime limit = endDate!.copyWith(hour: 23, minute: 59, second: 59);
 
     Duration difference = limit.difference(DateTime.now());
 
