@@ -92,18 +92,17 @@ class Course {
   bool get isEvent =>
       type == 'event' || type == 'programmé' || type == 'évenement';
 
-  int get daysLeft {
-    if (!paid || endDate == null) return 0;
+  Duration get durationLeft {
+    if (!paid || endDate == null) return Duration.zero;
 
-    int differenceInHours = endDate!.difference(DateTime.now()).inHours;
+    final DateTime limit =
+        endDate!.add(Duration(days: 1)).subtract(Duration(seconds: 1));
 
-    print("\ndiff in hours: $differenceInHours");
-    if (differenceInHours < -24) return 0;
-    if (differenceInHours < 0) return 1;
+    Duration difference = limit.difference(DateTime.now());
 
-    int differenceInDays = (differenceInHours / 24).floor();
+    if (difference.inHours < 0) return Duration.zero;
 
-    return differenceInDays + 2;
+    return difference;
   }
 
   bool get isNew =>
