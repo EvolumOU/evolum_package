@@ -92,6 +92,16 @@ class Course {
   bool get isEvent =>
       type == 'event' || type == 'programmé' || type == 'évenement';
 
+  int get daysLeft {
+    if (!paid || endDate == null) return 0;
+
+    DateTime nextDay = endDate!.add(const Duration(days: 1));
+    int differenceInHours = DateTime.now().difference(nextDay).inHours;
+    int differenceInDays = (differenceInHours / 24).abs().round();
+
+    return differenceInDays + 1;
+  }
+
   bool get isNew =>
       DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));
 
