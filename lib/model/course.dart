@@ -95,11 +95,15 @@ class Course {
   int get daysLeft {
     if (!paid || endDate == null) return 0;
 
-    DateTime nextDay = endDate!.add(const Duration(days: 1));
-    int differenceInHours = DateTime.now().difference(nextDay).inHours;
-    int differenceInDays = (differenceInHours / 24).abs().round();
+    int differenceInHours = endDate!.difference(DateTime.now()).inHours;
 
-    return differenceInDays + 1;
+    print("\ndiff in hours: $differenceInHours");
+    if (differenceInHours < -24) return 0;
+    if (differenceInHours < 0) return 1;
+
+    int differenceInDays = (differenceInHours / 24).floor();
+
+    return differenceInDays + 2;
   }
 
   bool get isNew =>
