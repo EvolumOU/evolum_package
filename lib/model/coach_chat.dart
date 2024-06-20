@@ -10,14 +10,12 @@ part 'coach_chat.g.dart';
 @JsonSerializable(explicitToJson: true)
 class CoachChat {
   final String id;
-  final String description;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime dateTime;
   final List<CoachChatMessage> messages;
 
   CoachChat({
     required this.id,
-    required this.description,
     required this.dateTime,
     this.messages = const <CoachChatMessage>[],
   });

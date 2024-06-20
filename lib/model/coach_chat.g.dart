@@ -9,8 +9,6 @@ part of 'coach_chat.dart';
 abstract class _$CoachChatCWProxy {
   CoachChat id(String id);
 
-  CoachChat description(String description);
-
   CoachChat dateTime(DateTime dateTime);
 
   CoachChat messages(List<CoachChatMessage> messages);
@@ -23,7 +21,6 @@ abstract class _$CoachChatCWProxy {
   /// ````
   CoachChat call({
     String? id,
-    String? description,
     DateTime? dateTime,
     List<CoachChatMessage>? messages,
   });
@@ -37,9 +34,6 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
 
   @override
   CoachChat id(String id) => this(id: id);
-
-  @override
-  CoachChat description(String description) => this(description: description);
 
   @override
   CoachChat dateTime(DateTime dateTime) => this(dateTime: dateTime);
@@ -58,7 +52,6 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
   /// ````
   CoachChat call({
     Object? id = const $CopyWithPlaceholder(),
-    Object? description = const $CopyWithPlaceholder(),
     Object? dateTime = const $CopyWithPlaceholder(),
     Object? messages = const $CopyWithPlaceholder(),
   }) {
@@ -67,11 +60,6 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
           ? _value.id
           // ignore: cast_nullable_to_non_nullable
           : id as String,
-      description:
-          description == const $CopyWithPlaceholder() || description == null
-              ? _value.description
-              // ignore: cast_nullable_to_non_nullable
-              : description as String,
       dateTime: dateTime == const $CopyWithPlaceholder() || dateTime == null
           ? _value.dateTime
           // ignore: cast_nullable_to_non_nullable
@@ -96,7 +84,6 @@ extension $CoachChatCopyWith on CoachChat {
 
 CoachChat _$CoachChatFromJson(Map<String, dynamic> json) => CoachChat(
       id: json['id'] as String,
-      description: json['description'] as String,
       dateTime: dateTimefromJson(json['dateTime'] as Timestamp?),
       messages: (json['messages'] as List<dynamic>?)
               ?.map((e) => CoachChatMessage.fromJson(e as Map<String, dynamic>))
@@ -106,7 +93,6 @@ CoachChat _$CoachChatFromJson(Map<String, dynamic> json) => CoachChat(
 
 Map<String, dynamic> _$CoachChatToJson(CoachChat instance) => <String, dynamic>{
       'id': instance.id,
-      'description': instance.description,
       'dateTime': dateTimetoJson(instance.dateTime),
       'messages': instance.messages.map((e) => e.toJson()).toList(),
     };
