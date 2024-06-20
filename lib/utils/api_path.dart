@@ -55,4 +55,6 @@ class APIPath {
   static String allElixirCategories() => 'elixirCategories/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
   static String allCoaches(String uid) => 'user/$uid/coach/';
+  static String allCoachMessages(String uid, String coachId) =>
+      'user/$uid/coach/$coachId/messages/';
 }
