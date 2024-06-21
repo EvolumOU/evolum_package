@@ -1,12 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'chat_message.dart';
+part of 'coach_chat_message.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
 abstract class _$CoachChatMessageCWProxy {
+  CoachChatMessage id(String id);
+
   CoachChatMessage isUser(bool isUser);
 
   CoachChatMessage text(String text);
@@ -20,6 +22,7 @@ abstract class _$CoachChatMessageCWProxy {
   /// CoachChatMessage(...).copyWith(id: 12, name: "My name")
   /// ````
   CoachChatMessage call({
+    String? id,
     bool? isUser,
     String? text,
     DateTime? dateTime,
@@ -31,6 +34,9 @@ class _$CoachChatMessageCWProxyImpl implements _$CoachChatMessageCWProxy {
   const _$CoachChatMessageCWProxyImpl(this._value);
 
   final CoachChatMessage _value;
+
+  @override
+  CoachChatMessage id(String id) => this(id: id);
 
   @override
   CoachChatMessage isUser(bool isUser) => this(isUser: isUser);
@@ -50,11 +56,16 @@ class _$CoachChatMessageCWProxyImpl implements _$CoachChatMessageCWProxy {
   /// CoachChatMessage(...).copyWith(id: 12, name: "My name")
   /// ````
   CoachChatMessage call({
+    Object? id = const $CopyWithPlaceholder(),
     Object? isUser = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
     Object? dateTime = const $CopyWithPlaceholder(),
   }) {
     return CoachChatMessage(
+      id: id == const $CopyWithPlaceholder() || id == null
+          ? _value.id
+          // ignore: cast_nullable_to_non_nullable
+          : id as String,
       isUser: isUser == const $CopyWithPlaceholder() || isUser == null
           ? _value.isUser
           // ignore: cast_nullable_to_non_nullable
@@ -83,6 +94,7 @@ extension $CoachChatMessageCopyWith on CoachChatMessage {
 
 CoachChatMessage _$CoachChatMessageFromJson(Map<String, dynamic> json) =>
     CoachChatMessage(
+      id: json['id'] as String,
       isUser: json['isUser'] as bool,
       text: json['text'] as String,
       dateTime: dateTimefromJson(json['dateTime'] as Timestamp?),
@@ -90,6 +102,7 @@ CoachChatMessage _$CoachChatMessageFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$CoachChatMessageToJson(CoachChatMessage instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'isUser': instance.isUser,
       'text': instance.text,
       'dateTime': dateTimetoJson(instance.dateTime),
