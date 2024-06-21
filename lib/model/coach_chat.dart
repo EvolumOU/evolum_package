@@ -12,12 +12,10 @@ class CoachChat {
   final String id;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime dateTime;
-  final List<CoachChatMessage> messages;
 
   CoachChat({
     required this.id,
     required this.dateTime,
-    this.messages = const <CoachChatMessage>[],
   });
 
   factory CoachChat.fromJson(Map<String, dynamic> data) =>
