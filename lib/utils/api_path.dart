@@ -37,6 +37,7 @@ class APIPath {
   static String coachChatMessage(
           String uid, String coachId, String messageId) =>
       'user/$uid/coach-chat/$coachId/message/$messageId';
+  static String genEvo(String id) => 'genevo/$id';
 
   static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
@@ -60,4 +61,5 @@ class APIPath {
   static String allCoaches(String uid) => 'user/$uid/coach-chat/';
   static String allCoachMessages(String uid, String coachId) =>
       'user/$uid/coach-chat/$coachId/message/';
+  static String allGenEvos() => 'genevo/';
 }
