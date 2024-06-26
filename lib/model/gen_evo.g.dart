@@ -117,11 +117,11 @@ extension $GenEvoCopyWith on GenEvo {
 
 GenEvo _$GenEvoFromJson(Map<String, dynamic> json) => GenEvo(
       id: json['id'] as String,
-      name: json['name'] as String,
-      prompt: json['prompt'] as String,
-      type: json['type'] as String,
-      audioUrl: json['audioUrl'] as String,
-      bgAudioUrl: json['bgAudioUrl'] as String,
+      name: json['name'] as String? ?? '',
+      prompt: json['prompt'] as String? ?? '',
+      type: json['type'] as String? ?? '',
+      audioUrl: json['audioUrl'] as String? ?? '',
+      bgAudioUrl: json['bgAudioUrl'] as String? ?? '',
     );
 
 Map<String, dynamic> _$GenEvoToJson(GenEvo instance) => <String, dynamic>{

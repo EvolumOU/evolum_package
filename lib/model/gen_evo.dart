@@ -15,11 +15,11 @@ class GenEvo {
 
   GenEvo({
     required this.id,
-    required this.name,
-    required this.prompt,
-    required this.type,
-    required this.audioUrl,
-    required this.bgAudioUrl,
+    this.name = '',
+    this.prompt = '',
+    this.type = '',
+    this.audioUrl = '',
+    this.bgAudioUrl = '',
   });
 
   factory GenEvo.fromJson(Map<String, dynamic> data) {
