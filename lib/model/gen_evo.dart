@@ -10,16 +10,12 @@ class GenEvo {
   final String name;
   final String prompt;
   final String type;
-  final String audioUrl;
-  final String bgAudioUrl;
 
   GenEvo({
     required this.id,
     this.name = '',
     this.prompt = '',
     this.type = '',
-    this.audioUrl = '',
-    this.bgAudioUrl = '',
   });
 
   factory GenEvo.fromJson(Map<String, dynamic> data) {
@@ -28,8 +24,6 @@ class GenEvo {
       name: data['name'] ?? '',
       prompt: data['prompt'] ?? '',
       type: data['type'] ?? '',
-      audioUrl: data['audioUrl'] ?? '',
-      bgAudioUrl: data['bgAudioUrl'] ?? '',
     );
   }
 

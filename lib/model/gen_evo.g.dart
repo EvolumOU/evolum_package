@@ -15,10 +15,6 @@ abstract class _$GenEvoCWProxy {
 
   GenEvo type(String type);
 
-  GenEvo audioUrl(String audioUrl);
-
-  GenEvo bgAudioUrl(String bgAudioUrl);
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `GenEvo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -30,8 +26,6 @@ abstract class _$GenEvoCWProxy {
     String? name,
     String? prompt,
     String? type,
-    String? audioUrl,
-    String? bgAudioUrl,
   });
 }
 
@@ -54,12 +48,6 @@ class _$GenEvoCWProxyImpl implements _$GenEvoCWProxy {
   GenEvo type(String type) => this(type: type);
 
   @override
-  GenEvo audioUrl(String audioUrl) => this(audioUrl: audioUrl);
-
-  @override
-  GenEvo bgAudioUrl(String bgAudioUrl) => this(bgAudioUrl: bgAudioUrl);
-
-  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `GenEvo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -72,8 +60,6 @@ class _$GenEvoCWProxyImpl implements _$GenEvoCWProxy {
     Object? name = const $CopyWithPlaceholder(),
     Object? prompt = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
-    Object? audioUrl = const $CopyWithPlaceholder(),
-    Object? bgAudioUrl = const $CopyWithPlaceholder(),
   }) {
     return GenEvo(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -92,15 +78,6 @@ class _$GenEvoCWProxyImpl implements _$GenEvoCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String,
-      audioUrl: audioUrl == const $CopyWithPlaceholder() || audioUrl == null
-          ? _value.audioUrl
-          // ignore: cast_nullable_to_non_nullable
-          : audioUrl as String,
-      bgAudioUrl:
-          bgAudioUrl == const $CopyWithPlaceholder() || bgAudioUrl == null
-              ? _value.bgAudioUrl
-              // ignore: cast_nullable_to_non_nullable
-              : bgAudioUrl as String,
     );
   }
 }
@@ -120,8 +97,6 @@ GenEvo _$GenEvoFromJson(Map<String, dynamic> json) => GenEvo(
       name: json['name'] as String? ?? '',
       prompt: json['prompt'] as String? ?? '',
       type: json['type'] as String? ?? '',
-      audioUrl: json['audioUrl'] as String? ?? '',
-      bgAudioUrl: json['bgAudioUrl'] as String? ?? '',
     );
 
 Map<String, dynamic> _$GenEvoToJson(GenEvo instance) => <String, dynamic>{
@@ -129,6 +104,4 @@ Map<String, dynamic> _$GenEvoToJson(GenEvo instance) => <String, dynamic>{
       'name': instance.name,
       'prompt': instance.prompt,
       'type': instance.type,
-      'audioUrl': instance.audioUrl,
-      'bgAudioUrl': instance.bgAudioUrl,
     };
