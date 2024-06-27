@@ -24,12 +24,12 @@ class GenEvo {
 
   factory GenEvo.fromJson(Map<String, dynamic> data) {
     return GenEvo(
-      id: data['id'],
-      name: data['name'],
-      prompt: data['prompt'],
-      type: data['type'],
-      audioUrl: data['audioUrl'],
-      bgAudioUrl: data['bgAudioUrl'],
+      id: data['id'] ?? '',
+      name: data['name'] ?? '',
+      prompt: data['prompt'] ?? '',
+      type: data['type'] ?? '',
+      audioUrl: data['audioUrl'] ?? '',
+      bgAudioUrl: data['bgAudioUrl'] ?? '',
     );
   }
 
