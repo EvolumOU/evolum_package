@@ -18,7 +18,7 @@ dependencies:
   intl: ^0.18.0
   copy_with_extension: ^5.0.2
   json_annotation: ^4.8.0
-  http: ^0.13.4
+  http: ^1.2.1
 
   # UI/UX
   simple_animations: ^3.0.3
