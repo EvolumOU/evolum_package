@@ -92,6 +92,18 @@ class Course {
   bool get isEvent =>
       type == 'event' || type == 'programmé' || type == 'évenement';
 
+  Duration get durationLeft {
+    if (!paid || endDate == null) return Duration.zero;
+
+    final DateTime limit = endDate!.copyWith(hour: 23, minute: 59, second: 59);
+
+    Duration difference = limit.difference(DateTime.now());
+
+    if (difference.inHours < 0) return Duration.zero;
+
+    return difference;
+  }
+
   bool get isNew =>
       DateTime.now().isBefore(updatedDate.add(Duration(days: 30)));
 

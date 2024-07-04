@@ -20,6 +20,8 @@ class APIPath {
   static String elixir(String categoryId, String elixirId) =>
       'elixirCategories/$categoryId/elixirs/$elixirId';
   static String userChat(String uid, String id) => 'user/$uid/chat/$id';
+  static String userChatMessages(String uid, String id) =>
+      'user/$uid/chat/$id/message';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
@@ -31,6 +33,11 @@ class APIPath {
   static String userEvoDone(String uid) => 'user/$uid/info/evodone';
   static String userSurpriseDone(String uid) => 'user/$uid/info/surprisedone';
   static String userToolsDone(String uid) => 'user/$uid/info/toolsdone';
+  static String coachChat(String uid, String id) => 'user/$uid/coach-chat/$id';
+  static String coachChatMessage(
+          String uid, String coachId, String messageId) =>
+      'user/$uid/coach-chat/$coachId/message/$messageId';
+  static String genEvo(String id) => 'genevo/$id';
 
   static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
@@ -51,4 +58,8 @@ class APIPath {
   static String allUserChat(String uid) => 'user/$uid/chat/';
   static String allElixirCategories() => 'elixirCategories/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
+  static String allCoaches(String uid) => 'user/$uid/coach-chat/';
+  static String allCoachMessages(String uid, String coachId) =>
+      'user/$uid/coach-chat/$coachId/message/';
+  static String allGenEvos() => 'genevo/';
 }
