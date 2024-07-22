@@ -13,9 +13,9 @@ abstract class _$CoachCWProxy {
 
   Coach name(String name);
 
-  Coach instructions(String instructions);
-
   Coach conversationStarters(List<String> conversationStarters);
+
+  Coach type(String type);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Coach(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -27,8 +27,8 @@ abstract class _$CoachCWProxy {
     String? id,
     String? description,
     String? name,
-    String? instructions,
     List<String>? conversationStarters,
+    String? type,
   });
 }
 
@@ -48,11 +48,11 @@ class _$CoachCWProxyImpl implements _$CoachCWProxy {
   Coach name(String name) => this(name: name);
 
   @override
-  Coach instructions(String instructions) => this(instructions: instructions);
-
-  @override
   Coach conversationStarters(List<String> conversationStarters) =>
       this(conversationStarters: conversationStarters);
+
+  @override
+  Coach type(String type) => this(type: type);
 
   @override
 
@@ -66,8 +66,8 @@ class _$CoachCWProxyImpl implements _$CoachCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? description = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
-    Object? instructions = const $CopyWithPlaceholder(),
     Object? conversationStarters = const $CopyWithPlaceholder(),
+    Object? type = const $CopyWithPlaceholder(),
   }) {
     return Coach(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -83,17 +83,16 @@ class _$CoachCWProxyImpl implements _$CoachCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
-      instructions:
-          instructions == const $CopyWithPlaceholder() || instructions == null
-              ? _value.instructions
-              // ignore: cast_nullable_to_non_nullable
-              : instructions as String,
       conversationStarters:
           conversationStarters == const $CopyWithPlaceholder() ||
                   conversationStarters == null
               ? _value.conversationStarters
               // ignore: cast_nullable_to_non_nullable
               : conversationStarters as List<String>,
+      type: type == const $CopyWithPlaceholder() || type == null
+          ? _value.type
+          // ignore: cast_nullable_to_non_nullable
+          : type as String,
     );
   }
 }
@@ -112,16 +111,16 @@ Coach _$CoachFromJson(Map<String, dynamic> json) => Coach(
       id: json['id'] as String,
       description: json['description'] as String,
       name: json['name'] as String,
-      instructions: json['instructions'] as String,
       conversationStarters: (json['conversationStarters'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      type: json['type'] as String,
     );
 
 Map<String, dynamic> _$CoachToJson(Coach instance) => <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
       'name': instance.name,
-      'instructions': instance.instructions,
       'conversationStarters': instance.conversationStarters,
+      'type': instance.type,
     };
