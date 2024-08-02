@@ -34,4 +34,17 @@ class Checkemo {
 
   @override
   String toString() => toJson().toString();
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is Checkemo &&
+        other.id == id &&
+        other.date == date &&
+        other.input == input &&
+        other.quote == quote &&
+        other.title == title &&
+        other.description == description &&
+        other.imageUrl == imageUrl;
+  }
 }
