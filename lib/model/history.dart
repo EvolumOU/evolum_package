@@ -67,6 +67,7 @@ class History {
   bool get isRitual => type == "ritual";
   bool get isOracle => type == "oracle";
   bool get isMessage => type == "message";
+  bool get isCheckemo => type == "checkemo";
 
   Map<String, dynamic> toJson() => {
         ..._$HistoryToJson(this),
