@@ -34,6 +34,7 @@ class User {
   List<String> goalsessions;
   int frequency;
   String subId2;
+  List<String> lifeBook;
 
   User({
     required this.uid,
@@ -58,11 +59,14 @@ class User {
     required this.lastUpdate,
     this.frequency = 5,
     this.subId2 = "",
+    this.lifeBook = const <String>[],
   });
 
   // STATUS Acces
   bool get isFull => status == 'full';
   bool get isPremium => status == 'premium';
+  bool get isRevelation => status == 'revelation';
+
   bool get isCancel => status == 'cancel';
   bool get isFreemium => status.contains('free') || status == 'lead';
   bool get isBlock => status == 'cancel' || isFreemium;
@@ -72,6 +76,14 @@ class User {
   bool get isUser => role == 'user';
   bool get isCaster => role == 'caster';
   bool get isInvited => role == 'invited';
+
+  String get fullLifeBook => List.generate(lifeBookQuestionList.length, (i) {
+        final question = lifeBookQuestionList[i];
+        final answer = i < lifeBook.length ? lifeBook[i] : '';
+        return '$question: $answer';
+      }).join('\n');
+
+  bool get isLifeBookCompleted => lifeBook.isNotEmpty;
 
   static User get defaultUser => User(
       uid: "",
@@ -96,3 +108,15 @@ class User {
   @override
   String toString() => toJson().toString();
 }
+
+const lifeBookQuestionList = [
+  "Réalité Idéale à 5 ans",
+  "Relations amoureuses",
+  "Finances",
+  "Énergie & Corps",
+  "Vie sociale",
+  "Style de vie",
+  "Spiritualité",
+  "Traits de caractère",
+  "Plus grandes peurs",
+];
