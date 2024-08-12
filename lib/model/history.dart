@@ -67,6 +67,7 @@ class History {
   bool get isRitual => type == "ritual";
   bool get isOracle => type == "oracle";
   bool get isMessage => type == "message";
+  bool get isCheckemo => type == "checkemo";
 
   Map<String, dynamic> toJson() => {
         ..._$HistoryToJson(this),
@@ -75,4 +76,18 @@ class History {
 
   @override
   String toString() => toJson().toString();
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is History &&
+        other.id == id &&
+        other.date == date &&
+        other.type == type &&
+        other.item == item &&
+        other.review == review &&
+        other.emotion == emotion &&
+        other.gratitude == gratitude &&
+        other.checked == checked;
+  }
 }
