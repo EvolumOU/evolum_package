@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:evolum_package/main.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -77,8 +78,8 @@ class User {
   bool get isCaster => role == 'caster';
   bool get isInvited => role == 'invited';
 
-  String get fullLifeBook => List.generate(lifeBookQuestionList.length, (i) {
-        final question = lifeBookQuestionList[i];
+  String get fullLifeBook => List.generate(kLifeBookList.length, (i) {
+        final question = kLifeBookList[i];
         final answer = i < lifeBook.length ? lifeBook[i] : '';
         return '$question: $answer';
       }).join('\n');
@@ -108,15 +109,3 @@ class User {
   @override
   String toString() => toJson().toString();
 }
-
-const lifeBookQuestionList = [
-  "Réalité Idéale à 5 ans",
-  "Relations amoureuses",
-  "Finances",
-  "Énergie & Corps",
-  "Vie sociale",
-  "Style de vie",
-  "Spiritualité",
-  "Traits de caractère",
-  "Plus grandes peurs",
-];
