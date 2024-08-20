@@ -51,6 +51,8 @@ abstract class _$UserCWProxy {
 
   User subId2(String subId2);
 
+  User lifeBook(List<String> lifeBook);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -80,6 +82,7 @@ abstract class _$UserCWProxy {
     DateTime? lastUpdate,
     int? frequency,
     String? subId2,
+    List<String>? lifeBook,
   });
 }
 
@@ -159,6 +162,9 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User subId2(String subId2) => this(subId2: subId2);
 
   @override
+  User lifeBook(List<String> lifeBook) => this(lifeBook: lifeBook);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -189,6 +195,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? lastUpdate = const $CopyWithPlaceholder(),
     Object? frequency = const $CopyWithPlaceholder(),
     Object? subId2 = const $CopyWithPlaceholder(),
+    Object? lifeBook = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -283,6 +290,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.subId2
           // ignore: cast_nullable_to_non_nullable
           : subId2 as String,
+      lifeBook: lifeBook == const $CopyWithPlaceholder() || lifeBook == null
+          ? _value.lifeBook
+          // ignore: cast_nullable_to_non_nullable
+          : lifeBook as List<String>,
     );
   }
 }
@@ -330,6 +341,10 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       lastUpdate: dateTimefromJson(json['lastUpdate'] as Timestamp?),
       frequency: (json['frequency'] as num?)?.toInt() ?? 5,
       subId2: json['subId2'] as String? ?? "",
+      lifeBook: (json['lifeBook'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -355,4 +370,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'goalsessions': instance.goalsessions,
       'frequency': instance.frequency,
       'subId2': instance.subId2,
+      'lifeBook': instance.lifeBook,
     };
