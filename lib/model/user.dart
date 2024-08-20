@@ -65,7 +65,7 @@ class User {
 
   // STATUS Acces
   bool get isFull => status == 'full';
-  bool get isPremium => status == 'premium';
+  bool get isPremium => status == 'premium' || isRevelation;
   bool get isRevelation => status == 'revelation';
 
   bool get isCancel => status == 'cancel';
