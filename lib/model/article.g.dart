@@ -74,6 +74,7 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
     Object? markdown = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
     Object? openDate = const $CopyWithPlaceholder(),
+    Object? title = const $CopyWithPlaceholder(),
   }) {
     return Article(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -101,6 +102,10 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
           ? _value.openDate
           // ignore: cast_nullable_to_non_nullable
           : openDate as DateTime,
+      title: title == const $CopyWithPlaceholder() || title == null
+          ? _value.title
+          // ignore: cast_nullable_to_non_nullable
+          : title as String,
     );
   }
 }
@@ -116,12 +121,13 @@ extension $ArticleCopyWith on Article {
 // **************************************************************************
 
 Article _$ArticleFromJson(Map<String, dynamic> json) => Article(
+      title: json['title'] as String,
       id: json['id'] as String,
       uid: json['uid'] as String,
       status: json['status'] as String,
       markdown: json['markdown'] as String,
-      createdDate: DateTime.parse(json['createdDate'] as String),
-      openDate: DateTime.parse(json['openDate'] as String),
+      createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      openDate: dateTimefromJson(json['openDate'] as Timestamp?),
     );
 
 Map<String, dynamic> _$ArticleToJson(Article instance) => <String, dynamic>{
@@ -129,6 +135,6 @@ Map<String, dynamic> _$ArticleToJson(Article instance) => <String, dynamic>{
       'uid': instance.uid,
       'status': instance.status,
       'markdown': instance.markdown,
-      'createdDate': instance.createdDate.toIso8601String(),
-      'openDate': instance.openDate.toIso8601String(),
+      'createdDate': dateTimetoJson(instance.createdDate),
+      'openDate': dateTimetoJson(instance.openDate),
     };

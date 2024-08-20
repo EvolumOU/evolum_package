@@ -11,6 +11,7 @@ part 'article.g.dart';
 class Article {
   final String id;
   final String uid;
+  final String title;
   final String status;
   final String markdown;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
@@ -22,6 +23,7 @@ class Article {
   Article({
     required this.id,
     required this.uid,
+    required this.title,
     required this.status,
     required this.markdown,
     required this.createdDate,
