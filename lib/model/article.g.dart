@@ -11,6 +11,8 @@ abstract class _$ArticleCWProxy {
 
   Article uid(String uid);
 
+  Article title(String title);
+
   Article status(String status);
 
   Article markdown(String markdown);
@@ -28,6 +30,7 @@ abstract class _$ArticleCWProxy {
   Article call({
     String? id,
     String? uid,
+    String? title,
     String? status,
     String? markdown,
     DateTime? createdDate,
@@ -46,6 +49,9 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
 
   @override
   Article uid(String uid) => this(uid: uid);
+
+  @override
+  Article title(String title) => this(title: title);
 
   @override
   Article status(String status) => this(status: status);
@@ -70,11 +76,11 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
   Article call({
     Object? id = const $CopyWithPlaceholder(),
     Object? uid = const $CopyWithPlaceholder(),
+    Object? title = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
     Object? markdown = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
     Object? openDate = const $CopyWithPlaceholder(),
-    Object? title = const $CopyWithPlaceholder(),
   }) {
     return Article(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -85,6 +91,10 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
           ? _value.uid
           // ignore: cast_nullable_to_non_nullable
           : uid as String,
+      title: title == const $CopyWithPlaceholder() || title == null
+          ? _value.title
+          // ignore: cast_nullable_to_non_nullable
+          : title as String,
       status: status == const $CopyWithPlaceholder() || status == null
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
@@ -102,10 +112,6 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
           ? _value.openDate
           // ignore: cast_nullable_to_non_nullable
           : openDate as DateTime,
-      title: title == const $CopyWithPlaceholder() || title == null
-          ? _value.title
-          // ignore: cast_nullable_to_non_nullable
-          : title as String,
     );
   }
 }
@@ -121,9 +127,9 @@ extension $ArticleCopyWith on Article {
 // **************************************************************************
 
 Article _$ArticleFromJson(Map<String, dynamic> json) => Article(
-      title: json['title'] as String,
       id: json['id'] as String,
       uid: json['uid'] as String,
+      title: json['title'] as String,
       status: json['status'] as String,
       markdown: json['markdown'] as String,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
@@ -133,6 +139,7 @@ Article _$ArticleFromJson(Map<String, dynamic> json) => Article(
 Map<String, dynamic> _$ArticleToJson(Article instance) => <String, dynamic>{
       'id': instance.id,
       'uid': instance.uid,
+      'title': instance.title,
       'status': instance.status,
       'markdown': instance.markdown,
       'createdDate': dateTimetoJson(instance.createdDate),
