@@ -16,8 +16,8 @@ class Article {
   final String markdown;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
-  @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
-  final DateTime openDate;
+  @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
+  final DateTime? openDate;
 
   // Constructor
   Article({
@@ -27,7 +27,7 @@ class Article {
     required this.status,
     required this.markdown,
     required this.createdDate,
-    required this.openDate,
+    this.openDate,
   });
 
   factory Article.fromJson(Map<String, dynamic> data) =>

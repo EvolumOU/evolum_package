@@ -19,7 +19,7 @@ abstract class _$ArticleCWProxy {
 
   Article createdDate(DateTime createdDate);
 
-  Article openDate(DateTime openDate);
+  Article openDate(DateTime? openDate);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Article(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -63,7 +63,7 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
   Article createdDate(DateTime createdDate) => this(createdDate: createdDate);
 
   @override
-  Article openDate(DateTime openDate) => this(openDate: openDate);
+  Article openDate(DateTime? openDate) => this(openDate: openDate);
 
   @override
 
@@ -108,10 +108,10 @@ class _$ArticleCWProxyImpl implements _$ArticleCWProxy {
               ? _value.createdDate
               // ignore: cast_nullable_to_non_nullable
               : createdDate as DateTime,
-      openDate: openDate == const $CopyWithPlaceholder() || openDate == null
+      openDate: openDate == const $CopyWithPlaceholder()
           ? _value.openDate
           // ignore: cast_nullable_to_non_nullable
-          : openDate as DateTime,
+          : openDate as DateTime?,
     );
   }
 }
@@ -133,7 +133,7 @@ Article _$ArticleFromJson(Map<String, dynamic> json) => Article(
       status: json['status'] as String,
       markdown: json['markdown'] as String,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
-      openDate: dateTimefromJson(json['openDate'] as Timestamp?),
+      openDate: dateTimefromJsonWithNull(json['openDate'] as Timestamp?),
     );
 
 Map<String, dynamic> _$ArticleToJson(Article instance) => <String, dynamic>{
@@ -143,5 +143,5 @@ Map<String, dynamic> _$ArticleToJson(Article instance) => <String, dynamic>{
       'status': instance.status,
       'markdown': instance.markdown,
       'createdDate': dateTimetoJson(instance.createdDate),
-      'openDate': dateTimetoJson(instance.openDate),
+      'openDate': dateTimetoJsonWithNull(instance.openDate),
     };
