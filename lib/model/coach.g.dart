@@ -17,6 +17,8 @@ abstract class _$CoachCWProxy {
 
   Coach type(String type);
 
+  Coach instructions(String instructions);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Coach(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -29,6 +31,7 @@ abstract class _$CoachCWProxy {
     String? name,
     List<String>? conversationStarters,
     String? type,
+    String? instructions,
   });
 }
 
@@ -55,6 +58,9 @@ class _$CoachCWProxyImpl implements _$CoachCWProxy {
   Coach type(String type) => this(type: type);
 
   @override
+  Coach instructions(String instructions) => this(instructions: instructions);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Coach(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -68,6 +74,7 @@ class _$CoachCWProxyImpl implements _$CoachCWProxy {
     Object? name = const $CopyWithPlaceholder(),
     Object? conversationStarters = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
+    Object? instructions = const $CopyWithPlaceholder(),
   }) {
     return Coach(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -93,6 +100,11 @@ class _$CoachCWProxyImpl implements _$CoachCWProxy {
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
           : type as String,
+      instructions:
+          instructions == const $CopyWithPlaceholder() || instructions == null
+              ? _value.instructions
+              // ignore: cast_nullable_to_non_nullable
+              : instructions as String,
     );
   }
 }
@@ -115,6 +127,7 @@ Coach _$CoachFromJson(Map<String, dynamic> json) => Coach(
           .map((e) => e as String)
           .toList(),
       type: json['type'] as String,
+      instructions: json['instructions'] as String,
     );
 
 Map<String, dynamic> _$CoachToJson(Coach instance) => <String, dynamic>{
@@ -123,4 +136,5 @@ Map<String, dynamic> _$CoachToJson(Coach instance) => <String, dynamic>{
       'name': instance.name,
       'conversationStarters': instance.conversationStarters,
       'type': instance.type,
+      'instructions': instance.instructions,
     };

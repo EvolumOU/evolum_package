@@ -11,6 +11,7 @@ class Coach {
   final String name;
   final List<String> conversationStarters;
   final String type;
+  final String instructions;
 
   Coach({
     required this.id,
@@ -18,6 +19,7 @@ class Coach {
     required this.name,
     required this.conversationStarters,
     required this.type,
+    required this.instructions,
   });
 
   factory Coach.fromJson(Map<String, dynamic> data) => _$CoachFromJson(data);
