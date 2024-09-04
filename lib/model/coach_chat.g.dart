@@ -11,6 +11,8 @@ abstract class _$CoachChatCWProxy {
 
   CoachChat dateTime(DateTime dateTime);
 
+  CoachChat instructions(String instructions);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -20,6 +22,7 @@ abstract class _$CoachChatCWProxy {
   CoachChat call({
     String? id,
     DateTime? dateTime,
+    String? instructions,
   });
 }
 
@@ -36,6 +39,10 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
   CoachChat dateTime(DateTime dateTime) => this(dateTime: dateTime);
 
   @override
+  CoachChat instructions(String instructions) =>
+      this(instructions: instructions);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChat(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -46,6 +53,7 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
   CoachChat call({
     Object? id = const $CopyWithPlaceholder(),
     Object? dateTime = const $CopyWithPlaceholder(),
+    Object? instructions = const $CopyWithPlaceholder(),
   }) {
     return CoachChat(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -56,6 +64,11 @@ class _$CoachChatCWProxyImpl implements _$CoachChatCWProxy {
           ? _value.dateTime
           // ignore: cast_nullable_to_non_nullable
           : dateTime as DateTime,
+      instructions:
+          instructions == const $CopyWithPlaceholder() || instructions == null
+              ? _value.instructions
+              // ignore: cast_nullable_to_non_nullable
+              : instructions as String,
     );
   }
 }
@@ -73,9 +86,11 @@ extension $CoachChatCopyWith on CoachChat {
 CoachChat _$CoachChatFromJson(Map<String, dynamic> json) => CoachChat(
       id: json['id'] as String,
       dateTime: dateTimefromJson(json['dateTime'] as Timestamp?),
+      instructions: json['instructions'] as String,
     );
 
 Map<String, dynamic> _$CoachChatToJson(CoachChat instance) => <String, dynamic>{
       'id': instance.id,
       'dateTime': dateTimetoJson(instance.dateTime),
+      'instructions': instance.instructions,
     };
