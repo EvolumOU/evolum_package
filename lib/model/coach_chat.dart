@@ -12,11 +12,13 @@ class CoachChat {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime dateTime;
   final String instructions;
+  final String coachId;
 
   CoachChat({
     required this.id,
     required this.dateTime,
     required this.instructions,
+    required this.coachId,
   });
 
   factory CoachChat.fromJson(Map<String, dynamic> data) =>

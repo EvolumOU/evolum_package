@@ -12,7 +12,7 @@ class Affirmation {
   final String id;
   final String uid;
   final List<String> texts;
-  final String status; // processing, success, error, finished,
+  final String status; // processing, started, finished
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
 
