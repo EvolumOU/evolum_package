@@ -15,8 +15,6 @@ abstract class _$GuidanceCWProxy {
 
   Guidance status(String status);
 
-  Guidance gsUrl(String gsUrl);
-
   Guidance createdDate(DateTime createdDate);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Guidance(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
@@ -30,7 +28,6 @@ abstract class _$GuidanceCWProxy {
     String? uid,
     String? input,
     String? status,
-    String? gsUrl,
     DateTime? createdDate,
   });
 }
@@ -54,9 +51,6 @@ class _$GuidanceCWProxyImpl implements _$GuidanceCWProxy {
   Guidance status(String status) => this(status: status);
 
   @override
-  Guidance gsUrl(String gsUrl) => this(gsUrl: gsUrl);
-
-  @override
   Guidance createdDate(DateTime createdDate) => this(createdDate: createdDate);
 
   @override
@@ -72,7 +66,6 @@ class _$GuidanceCWProxyImpl implements _$GuidanceCWProxy {
     Object? uid = const $CopyWithPlaceholder(),
     Object? input = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
-    Object? gsUrl = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
   }) {
     return Guidance(
@@ -92,10 +85,6 @@ class _$GuidanceCWProxyImpl implements _$GuidanceCWProxy {
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
           : status as String,
-      gsUrl: gsUrl == const $CopyWithPlaceholder() || gsUrl == null
-          ? _value.gsUrl
-          // ignore: cast_nullable_to_non_nullable
-          : gsUrl as String,
       createdDate:
           createdDate == const $CopyWithPlaceholder() || createdDate == null
               ? _value.createdDate
@@ -120,7 +109,6 @@ Guidance _$GuidanceFromJson(Map<String, dynamic> json) => Guidance(
       uid: json['uid'] as String,
       input: json['input'] as String,
       status: json['status'] as String? ?? "loading",
-      gsUrl: json['gsUrl'] as String,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
     );
 
@@ -129,6 +117,5 @@ Map<String, dynamic> _$GuidanceToJson(Guidance instance) => <String, dynamic>{
       'uid': instance.uid,
       'input': instance.input,
       'status': instance.status,
-      'gsUrl': instance.gsUrl,
       'createdDate': dateTimetoJson(instance.createdDate),
     };

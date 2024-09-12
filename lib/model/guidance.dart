@@ -13,7 +13,6 @@ class Guidance {
   final String uid;
   final String input;
   final String status;
-  final String gsUrl;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
 
@@ -23,7 +22,6 @@ class Guidance {
     required this.uid,
     required this.input,
     this.status = "loading",
-    required this.gsUrl,
     required this.createdDate,
   });
 
