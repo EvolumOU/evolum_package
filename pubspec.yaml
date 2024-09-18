@@ -10,8 +10,8 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  cloud_firestore: ^4.8.0
-  cloud_firestore_web: ^3.6.0
+  cloud_firestore: ^5.4.2
+  cloud_firestore_web: ^4.3.1
 
   # Utils
   json_serializable: ^6.6.1
