@@ -13,6 +13,8 @@ abstract class _$VisualisationCWProxy {
 
   Visualisation createdDate(DateTime createdDate);
 
+  Visualisation title(String title);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Visualisation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -23,6 +25,7 @@ abstract class _$VisualisationCWProxy {
     String? id,
     String? status,
     DateTime? createdDate,
+    String? title,
   });
 }
 
@@ -43,6 +46,9 @@ class _$VisualisationCWProxyImpl implements _$VisualisationCWProxy {
       this(createdDate: createdDate);
 
   @override
+  Visualisation title(String title) => this(title: title);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Visualisation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -54,6 +60,7 @@ class _$VisualisationCWProxyImpl implements _$VisualisationCWProxy {
     Object? id = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
+    Object? title = const $CopyWithPlaceholder(),
   }) {
     return Visualisation(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -69,6 +76,10 @@ class _$VisualisationCWProxyImpl implements _$VisualisationCWProxy {
               ? _value.createdDate
               // ignore: cast_nullable_to_non_nullable
               : createdDate as DateTime,
+      title: title == const $CopyWithPlaceholder() || title == null
+          ? _value.title
+          // ignore: cast_nullable_to_non_nullable
+          : title as String,
     );
   }
 }
@@ -88,6 +99,7 @@ Visualisation _$VisualisationFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       status: json['status'] as String,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
+      title: json['title'] as String,
     );
 
 Map<String, dynamic> _$VisualisationToJson(Visualisation instance) =>
@@ -95,4 +107,5 @@ Map<String, dynamic> _$VisualisationToJson(Visualisation instance) =>
       'id': instance.id,
       'status': instance.status,
       'createdDate': dateTimetoJson(instance.createdDate),
+      'title': instance.title,
     };

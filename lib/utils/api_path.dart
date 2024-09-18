@@ -43,6 +43,7 @@ class APIPath {
   static String userGuidance(String uid, String id) => 'user/$uid/guidance/$id';
   static String userAffirmation(String uid, String id) =>
       'user/$uid/affirmation/$id';
+  static String visualisation(String id) => 'visualisation/$id';
 
   static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
@@ -71,4 +72,5 @@ class APIPath {
       'user/$uid/coach-chat/$coachId/message/';
   static String allGenEvos() => 'genevo/';
   static String allCheckemo() => 'checkemo/';
+  static String allVisualisation() => 'visualisation/';
 }

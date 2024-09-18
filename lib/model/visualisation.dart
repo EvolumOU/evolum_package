@@ -13,12 +13,14 @@ class Visualisation {
   final String status; // processing, completed, failed
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
+  final String title;
 
   // Constructor
   Visualisation({
     required this.id,
     required this.status,
     required this.createdDate,
+    required this.title,
   });
 
   factory Visualisation.fromJson(Map<String, dynamic> data) =>
