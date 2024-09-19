@@ -14,6 +14,7 @@ class Visualisation {
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime createdDate;
   final String title;
+  final String generatorId;
 
   // Constructor
   Visualisation({
@@ -21,6 +22,7 @@ class Visualisation {
     required this.status,
     required this.createdDate,
     required this.title,
+    required this.generatorId,
   });
 
   factory Visualisation.fromJson(Map<String, dynamic> data) =>
