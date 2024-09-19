@@ -41,6 +41,8 @@ class APIPath {
   static String genEvo(String id) => 'genevo/$id';
   static String article(String uid, String id) => 'user/$uid/article/$id';
   static String userGuidance(String uid, String id) => 'user/$uid/guidance/$id';
+  static String userVisualisation(String uid, String id) =>
+      'user/$uid/visualisation/$id';
   static String userAffirmation(String uid, String id) =>
       'user/$uid/affirmation/$id';
   static String visualisation(String id) => 'visualisation/$id';
@@ -65,6 +67,7 @@ class APIPath {
   static String allUserChat(String uid) => 'user/$uid/chat/';
   static String allUserGuidance(String uid) => 'user/$uid/guidance/';
   static String allUserAffirmation(String uid) => 'user/$uid/affirmation/';
+  static String allUserVisualisation(String uid) => 'user/$uid/visualisation/';
   static String allElixirCategories() => 'elixirCategories/';
   static String allUserHistory(String uid) => 'user/$uid/history/';
   static String allCoaches(String uid) => 'user/$uid/coach-chat/';
