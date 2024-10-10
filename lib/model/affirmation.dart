@@ -25,6 +25,9 @@ class Affirmation {
     required this.createdDate,
   });
 
+  bool get isProcessing => status == "processing";
+  bool get isStarted => status == "started";
+
   factory Affirmation.fromJson(Map<String, dynamic> data) =>
       _$AffirmationFromJson(data);
 

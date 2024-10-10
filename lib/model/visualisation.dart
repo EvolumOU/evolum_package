@@ -25,6 +25,9 @@ class Visualisation {
     required this.generatorId,
   });
 
+  bool get isProcessing => status == "processing";
+  bool get isStarted => status == "started";
+
   factory Visualisation.fromJson(Map<String, dynamic> data) =>
       _$VisualisationFromJson(data);
 
