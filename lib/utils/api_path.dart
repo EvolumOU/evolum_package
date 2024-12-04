@@ -23,6 +23,8 @@ class APIPath {
   static String userChatMessages(String uid, String id) =>
       'user/$uid/chat/$id/message';
   static String checkemo(String id) => 'checkemo/$id';
+  static String translation(int version, String language) =>
+      'translations/$version/languages/$language';
 
   static String user(String uid) => 'user/$uid';
   static String userFomo(String uid) => 'user/$uid/info/fomo';
@@ -76,4 +78,5 @@ class APIPath {
   static String allGenEvos() => 'genevo/';
   static String allCheckemo() => 'checkemo/';
   static String allVisualisation() => 'visualisation/';
+  static String allTranslation() => 'translations/';
 }
