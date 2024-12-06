@@ -15,8 +15,6 @@ abstract class _$VisualisationCWProxy {
 
   Visualisation title(String title);
 
-  Visualisation generatorId(String generatorId);
-
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Visualisation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -28,7 +26,6 @@ abstract class _$VisualisationCWProxy {
     String? status,
     DateTime? createdDate,
     String? title,
-    String? generatorId,
   });
 }
 
@@ -52,10 +49,6 @@ class _$VisualisationCWProxyImpl implements _$VisualisationCWProxy {
   Visualisation title(String title) => this(title: title);
 
   @override
-  Visualisation generatorId(String generatorId) =>
-      this(generatorId: generatorId);
-
-  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Visualisation(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -68,7 +61,6 @@ class _$VisualisationCWProxyImpl implements _$VisualisationCWProxy {
     Object? status = const $CopyWithPlaceholder(),
     Object? createdDate = const $CopyWithPlaceholder(),
     Object? title = const $CopyWithPlaceholder(),
-    Object? generatorId = const $CopyWithPlaceholder(),
   }) {
     return Visualisation(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -88,11 +80,6 @@ class _$VisualisationCWProxyImpl implements _$VisualisationCWProxy {
           ? _value.title
           // ignore: cast_nullable_to_non_nullable
           : title as String,
-      generatorId:
-          generatorId == const $CopyWithPlaceholder() || generatorId == null
-              ? _value.generatorId
-              // ignore: cast_nullable_to_non_nullable
-              : generatorId as String,
     );
   }
 }
@@ -113,7 +100,6 @@ Visualisation _$VisualisationFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String,
       createdDate: dateTimefromJson(json['createdDate'] as Timestamp?),
       title: json['title'] as String,
-      generatorId: json['generatorId'] as String,
     );
 
 Map<String, dynamic> _$VisualisationToJson(Visualisation instance) =>
@@ -122,5 +108,4 @@ Map<String, dynamic> _$VisualisationToJson(Visualisation instance) =>
       'status': instance.status,
       'createdDate': dateTimetoJson(instance.createdDate),
       'title': instance.title,
-      'generatorId': instance.generatorId,
     };
