@@ -53,6 +53,10 @@ abstract class _$UserCWProxy {
 
   User lifeBook(List<String> lifeBook);
 
+  User language(String language);
+
+  User currency(String currency);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -83,6 +87,8 @@ abstract class _$UserCWProxy {
     int? frequency,
     String? subId2,
     List<String>? lifeBook,
+    String? language,
+    String? currency,
   });
 }
 
@@ -165,6 +171,12 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User lifeBook(List<String> lifeBook) => this(lifeBook: lifeBook);
 
   @override
+  User language(String language) => this(language: language);
+
+  @override
+  User currency(String currency) => this(currency: currency);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -196,6 +208,8 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? frequency = const $CopyWithPlaceholder(),
     Object? subId2 = const $CopyWithPlaceholder(),
     Object? lifeBook = const $CopyWithPlaceholder(),
+    Object? language = const $CopyWithPlaceholder(),
+    Object? currency = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -294,6 +308,14 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.lifeBook
           // ignore: cast_nullable_to_non_nullable
           : lifeBook as List<String>,
+      language: language == const $CopyWithPlaceholder() || language == null
+          ? _value.language
+          // ignore: cast_nullable_to_non_nullable
+          : language as String,
+      currency: currency == const $CopyWithPlaceholder() || currency == null
+          ? _value.currency
+          // ignore: cast_nullable_to_non_nullable
+          : currency as String,
     );
   }
 }
@@ -345,6 +367,8 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
+      language: json['language'] as String? ?? "fr",
+      currency: json['currency'] as String? ?? "EUR",
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -371,4 +395,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'frequency': instance.frequency,
       'subId2': instance.subId2,
       'lifeBook': instance.lifeBook,
+      'language': instance.language,
+      'currency': instance.currency,
     };

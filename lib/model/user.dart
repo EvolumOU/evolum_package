@@ -36,6 +36,8 @@ class User {
   int frequency;
   String subId2;
   List<String> lifeBook;
+  String language;
+  String currency;
 
   User({
     required this.uid,
@@ -61,6 +63,8 @@ class User {
     this.frequency = 5,
     this.subId2 = "",
     this.lifeBook = const <String>[],
+    this.language = "fr",
+    this.currency = "EUR",
   });
 
   // STATUS Acces
@@ -87,11 +91,12 @@ class User {
   bool get isLifeBookCompleted => lifeBook.isNotEmpty;
 
   static User get defaultUser => User(
-      uid: "",
-      email: "",
-      name: "",
-      createdDate: DateTime.now(),
-      lastUpdate: DateTime.now());
+        uid: "",
+        email: "",
+        name: "",
+        createdDate: DateTime.now(),
+        lastUpdate: DateTime.now(),
+      );
 
   factory User.fromJson(Map<String, dynamic> data, String uid) =>
       _$UserFromJson({
