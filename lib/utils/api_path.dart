@@ -3,10 +3,14 @@ part of evolum_package;
 class APIPath {
   static String evo(String id) => 'evo/$id';
   static String course(String id) => 'course/$id';
+  static String courseFor(String language, String id) =>
+      'content/$language/course/$id';
   static String cancellation(String id) => 'cancellation/$id';
   static String feedback(String id) => 'feedback/$id';
   static String brick(String id) => 'brick/$id';
   static String ritual(String id) => 'ritual/$id';
+  static String ritualFor(String language, String id) =>
+      'content/$language/ritual/$id';
   static String oracle(String id) => 'oracle/$id';
   static String coupon(String id) => 'coupon/$id';
   static String box(String id) => 'box/$id';
@@ -51,6 +55,7 @@ class APIPath {
 
   static String allCancellation() => 'cancellation/';
   static String allCourse() => 'course/';
+  static String allCourseFor(String language) => 'course/$language/course';
   static String allUser() => 'user/';
   static String allEvo() => 'evo/';
   static String allSub() => 'subscription/';
@@ -61,6 +66,7 @@ class APIPath {
   static String allBox() => 'box/';
   static String allBrick() => 'brick/';
   static String allRitual() => 'ritual/';
+  static String allRitualFor(String language) => 'course/$language/ritual';
   static String allBackground() => 'background/';
   static String allSurprise() => 'surprise/';
   static String allPayment() => 'payment/';
