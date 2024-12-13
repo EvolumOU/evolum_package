@@ -107,6 +107,8 @@ class User {
         "frequency": data["frequency"] ?? 5,
         "subId": data["subId"] ?? "",
         "subId2": data["subId2"] ?? "",
+        "language": data["language"] ?? "fr",
+        "currency": data["currency"] ?? "EUR",
       });
 
   Map<String, dynamic> toJson() => _$UserToJson(this);

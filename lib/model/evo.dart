@@ -57,6 +57,13 @@ class Evo {
     this.prompt = '',
   });
 
+  String get typeKey => switch (type) {
+        'méditation' => 'meditation',
+        'musique' => 'music',
+        'vidéo' => 'video',
+        _ => type,
+      };
+
   String get filename => gsUrl.split('/').last;
   bool get isVideo => gsUrl.endsWith(".mp4");
   bool get isAudio => gsUrl.endsWith(".mp3");
