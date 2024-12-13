@@ -13,12 +13,14 @@ class CoachChatMessage {
   final String text;
   @JsonKey(toJson: dateTimetoJson, fromJson: dateTimefromJson)
   final DateTime dateTime;
+  final String language;
 
   CoachChatMessage({
     required this.id,
     required this.isUser,
     required this.text,
     required this.dateTime,
+    this.language = 'fr',
   });
 
   factory CoachChatMessage.fromJson(Map<String, dynamic> data) =>
