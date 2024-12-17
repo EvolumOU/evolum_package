@@ -18,7 +18,8 @@ extension DateTimeExtention on DateTime {
       .replaceAll(RegExp(r'h00'), 'h');
 
   /// Jour de la semaine. Ex: jeudi
-  String get formatToDayOfWeek => DateFormat('EEEE', "fr_FR").format(this);
+  String formatToDayOfWeek({String locale = "fr_FR"}) =>
+      DateFormat('EEEE', locale).format(this);
 
   /// Temps restant.
   /// Ex: 2h et 3min
@@ -38,8 +39,8 @@ extension DateTimeExtention on DateTime {
   }
 
   /// Jour du mois + mois. Ex: 28 octobre
-  String get formatToDayMonth {
-    return DateFormat('d MMMM', 'fr_FR').format(this);
+  String formatToDayMonth({String locale = 'fr_FR'}) {
+    return DateFormat('d MMMM', locale).format(this);
   }
 
   bool isSameDate(DateTime other) =>
