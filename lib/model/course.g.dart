@@ -55,7 +55,7 @@ abstract class _$CourseCWProxy {
 
   Course imgUrl(String imgUrl);
 
-  Course paidUrl(String paidUrl);
+  Course urlSales(String urlSales);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `Course(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -88,7 +88,7 @@ abstract class _$CourseCWProxy {
     DateTime? startDate,
     DateTime? endDate,
     String? imgUrl,
-    String? paidUrl,
+    String? urlSales,
   });
 }
 
@@ -171,7 +171,7 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
   Course imgUrl(String imgUrl) => this(imgUrl: imgUrl);
 
   @override
-  Course paidUrl(String paidUrl) => this(paidUrl: paidUrl);
+  Course urlSales(String urlSales) => this(urlSales: urlSales);
 
   @override
 
@@ -206,7 +206,7 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
     Object? startDate = const $CopyWithPlaceholder(),
     Object? endDate = const $CopyWithPlaceholder(),
     Object? imgUrl = const $CopyWithPlaceholder(),
-    Object? paidUrl = const $CopyWithPlaceholder(),
+    Object? urlSales = const $CopyWithPlaceholder(),
   }) {
     return Course(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -308,10 +308,10 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
           ? _value.imgUrl
           // ignore: cast_nullable_to_non_nullable
           : imgUrl as String,
-      paidUrl: paidUrl == const $CopyWithPlaceholder()
-          ? _value.paidUrl
+      urlSales: urlSales == const $CopyWithPlaceholder()
+          ? _value.urlSales
           // ignore: cast_nullable_to_non_nullable
-          : paidUrl as String,
+          : urlSales as String,
     );
   }
 }
@@ -360,7 +360,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       startDate: dateTimefromJsonWithNull(json['startDate'] as Timestamp?),
       endDate: dateTimefromJsonWithNull(json['endDate'] as Timestamp?),
       imgUrl: json['imgUrl'] as String? ?? '',
-      paidUrl: json['paidUrl'] as String? ?? '',
+      urlSales: json['urlSales'] as String? ?? '',
     );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
@@ -388,5 +388,5 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'startDate': dateTimetoJsonWithNull(instance.startDate),
       'endDate': dateTimetoJsonWithNull(instance.endDate),
       'imgUrl': instance.imgUrl,
-      'paidUrl': instance.paidUrl,
+      'urlSales': instance.urlSales,
     };

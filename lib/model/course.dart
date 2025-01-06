@@ -39,7 +39,7 @@ class Course {
   @JsonKey(toJson: dateTimetoJsonWithNull, fromJson: dateTimefromJsonWithNull)
   DateTime? endDate;
   String imgUrl;
-  String paidUrl;
+  String urlSales;
 
   Course({
     this.id = '',
@@ -66,7 +66,7 @@ class Course {
     this.startDate,
     this.endDate,
     this.imgUrl = '',
-    this.paidUrl = '',
+    this.urlSales = '',
   });
 
   factory Course.fromMap(Map<String, dynamic> data) {
@@ -78,7 +78,7 @@ class Course {
       "route": data["route"] ?? false,
       "hide": data["hide"] ?? false,
       "paid": data["paid"] ?? false,
-      "paidUrl": data["paidUrl"] ?? '',
+      "urlSales": data["urlSales"] ?? '',
     });
   }
 
