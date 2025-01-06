@@ -11,6 +11,8 @@ abstract class _$AmbianceCWProxy {
 
   Ambiance name(String name);
 
+  Ambiance nameEn(String nameEn);
+
   Ambiance type(String type);
 
   Ambiance hide(bool hide);
@@ -28,6 +30,7 @@ abstract class _$AmbianceCWProxy {
   Ambiance call({
     String? id,
     String? name,
+    String? nameEn,
     String? type,
     bool? hide,
     Duration? duration,
@@ -46,6 +49,9 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
 
   @override
   Ambiance name(String name) => this(name: name);
+
+  @override
+  Ambiance nameEn(String nameEn) => this(nameEn: nameEn);
 
   @override
   Ambiance type(String type) => this(type: type);
@@ -70,6 +76,7 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
   Ambiance call({
     Object? id = const $CopyWithPlaceholder(),
     Object? name = const $CopyWithPlaceholder(),
+    Object? nameEn = const $CopyWithPlaceholder(),
     Object? type = const $CopyWithPlaceholder(),
     Object? hide = const $CopyWithPlaceholder(),
     Object? duration = const $CopyWithPlaceholder(),
@@ -84,6 +91,10 @@ class _$AmbianceCWProxyImpl implements _$AmbianceCWProxy {
           ? _value.name
           // ignore: cast_nullable_to_non_nullable
           : name as String,
+      nameEn: nameEn == const $CopyWithPlaceholder() || nameEn == null
+          ? _value.nameEn
+          // ignore: cast_nullable_to_non_nullable
+          : nameEn as String,
       type: type == const $CopyWithPlaceholder() || type == null
           ? _value.type
           // ignore: cast_nullable_to_non_nullable
@@ -117,6 +128,7 @@ extension $AmbianceCopyWith on Ambiance {
 Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
       id: json['id'] as String,
       name: json['name'] as String? ?? "",
+      nameEn: json['nameEn'] as String? ?? "",
       type: json['type'] as String? ?? "matin",
       hide: json['hide'] as bool? ?? false,
       duration: json['duration'] == null
@@ -131,6 +143,7 @@ Ambiance _$AmbianceFromJson(Map<String, dynamic> json) => Ambiance(
 Map<String, dynamic> _$AmbianceToJson(Ambiance instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'nameEn': instance.nameEn,
       'type': instance.type,
       'hide': instance.hide,
       'duration': durationtoJson(instance.duration),

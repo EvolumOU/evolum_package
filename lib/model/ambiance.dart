@@ -9,6 +9,7 @@ part 'ambiance.g.dart';
 class Ambiance {
   String id;
   String name;
+  String nameEn;
   String type;
   bool hide;
   @JsonKey(toJson: durationtoJson, fromJson: durationfromJson)
@@ -18,6 +19,7 @@ class Ambiance {
   Ambiance({
     required this.id,
     this.name = "",
+    this.nameEn = "",
     this.type = "matin",
     this.hide = false,
     this.duration = Duration.zero,

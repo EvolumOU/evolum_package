@@ -15,6 +15,8 @@ abstract class _$CoachChatMessageCWProxy {
 
   CoachChatMessage dateTime(DateTime dateTime);
 
+  CoachChatMessage language(String language);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChatMessage(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -26,6 +28,7 @@ abstract class _$CoachChatMessageCWProxy {
     bool? isUser,
     String? text,
     DateTime? dateTime,
+    String? language,
   });
 }
 
@@ -48,6 +51,9 @@ class _$CoachChatMessageCWProxyImpl implements _$CoachChatMessageCWProxy {
   CoachChatMessage dateTime(DateTime dateTime) => this(dateTime: dateTime);
 
   @override
+  CoachChatMessage language(String language) => this(language: language);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `CoachChatMessage(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -60,6 +66,7 @@ class _$CoachChatMessageCWProxyImpl implements _$CoachChatMessageCWProxy {
     Object? isUser = const $CopyWithPlaceholder(),
     Object? text = const $CopyWithPlaceholder(),
     Object? dateTime = const $CopyWithPlaceholder(),
+    Object? language = const $CopyWithPlaceholder(),
   }) {
     return CoachChatMessage(
       id: id == const $CopyWithPlaceholder() || id == null
@@ -78,6 +85,10 @@ class _$CoachChatMessageCWProxyImpl implements _$CoachChatMessageCWProxy {
           ? _value.dateTime
           // ignore: cast_nullable_to_non_nullable
           : dateTime as DateTime,
+      language: language == const $CopyWithPlaceholder() || language == null
+          ? _value.language
+          // ignore: cast_nullable_to_non_nullable
+          : language as String,
     );
   }
 }
@@ -98,6 +109,7 @@ CoachChatMessage _$CoachChatMessageFromJson(Map<String, dynamic> json) =>
       isUser: json['isUser'] as bool,
       text: json['text'] as String,
       dateTime: dateTimefromJson(json['dateTime'] as Timestamp?),
+      language: json['language'] as String? ?? 'fr',
     );
 
 Map<String, dynamic> _$CoachChatMessageToJson(CoachChatMessage instance) =>
@@ -106,4 +118,5 @@ Map<String, dynamic> _$CoachChatMessageToJson(CoachChatMessage instance) =>
       'isUser': instance.isUser,
       'text': instance.text,
       'dateTime': dateTimetoJson(instance.dateTime),
+      'language': instance.language,
     };
