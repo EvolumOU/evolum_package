@@ -67,10 +67,12 @@ class User {
     this.currency = "EUR",
   });
 
-  // STATUS Acces
-  bool get isFull => status == 'full';
-  bool get isPremium => status == 'premium' || isRevelation;
-  bool get isRevelation => status == 'revelation';
+  bool get isRituel =>
+      status == 'full' || status == "rituel" || isTransformation;
+  bool get isTransformation =>
+      status == 'premium' ||
+      status == 'transformation' ||
+      status == 'revelation';
 
   bool get isCancel => status == 'cancel';
   bool get isFreemium => status.contains('free') || status == 'lead';
