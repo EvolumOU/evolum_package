@@ -79,7 +79,7 @@ class User {
   bool get isCaster => role == 'caster';
   bool get isInvited => role == 'invited';
 
-  String fullLifeBook(List<String> lifeBookList) =>
+  String getFullLifeBook(List<String> lifeBookList) =>
       List.generate(lifeBookList.length, (i) {
         final question = lifeBookList[i];
         final answer = i < lifeBook.length ? lifeBook[i] : '';
