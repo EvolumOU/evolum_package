@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:evolum_package/main.dart';
 import 'package:evolum_package/model/utils.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -67,12 +66,8 @@ class User {
     this.currency = "EUR",
   });
 
-  bool get isRituel =>
-      status == 'full' || status == "rituel" || isTransformation;
-  bool get isTransformation =>
-      status == 'premium' ||
-      status == 'transformation' ||
-      status == 'revelation';
+  bool get isRituel => status == 'full' || isTransformation;
+  bool get isTransformation => status == 'premium' || status == 'revelation';
 
   bool get isCancel => status == 'cancel';
   bool get isFreemium => status.contains('free') || status == 'lead';
@@ -84,8 +79,9 @@ class User {
   bool get isCaster => role == 'caster';
   bool get isInvited => role == 'invited';
 
-  String get fullLifeBook => List.generate(kLifeBookList.length, (i) {
-        final question = kLifeBookList[i];
+  String fullLifeBook(List<String> lifeBookList) =>
+      List.generate(lifeBookList.length, (i) {
+        final question = lifeBookList[i];
         final answer = i < lifeBook.length ? lifeBook[i] : '';
         return '$question: $answer';
       }).join('\n');
