@@ -308,7 +308,7 @@ class _$CourseCWProxyImpl implements _$CourseCWProxy {
           ? _value.imgUrl
           // ignore: cast_nullable_to_non_nullable
           : imgUrl as String,
-      urlSales: urlSales == const $CopyWithPlaceholder()
+      urlSales: urlSales == const $CopyWithPlaceholder() || urlSales == null
           ? _value.urlSales
           // ignore: cast_nullable_to_non_nullable
           : urlSales as String,

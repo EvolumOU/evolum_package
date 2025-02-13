@@ -57,6 +57,8 @@ abstract class _$UserCWProxy {
 
   User currency(String currency);
 
+  User country(String country);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -89,6 +91,7 @@ abstract class _$UserCWProxy {
     List<String>? lifeBook,
     String? language,
     String? currency,
+    String? country,
   });
 }
 
@@ -177,6 +180,9 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
   User currency(String currency) => this(currency: currency);
 
   @override
+  User country(String country) => this(country: country);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `User(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -210,6 +216,7 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
     Object? lifeBook = const $CopyWithPlaceholder(),
     Object? language = const $CopyWithPlaceholder(),
     Object? currency = const $CopyWithPlaceholder(),
+    Object? country = const $CopyWithPlaceholder(),
   }) {
     return User(
       uid: uid == const $CopyWithPlaceholder() || uid == null
@@ -316,6 +323,10 @@ class _$UserCWProxyImpl implements _$UserCWProxy {
           ? _value.currency
           // ignore: cast_nullable_to_non_nullable
           : currency as String,
+      country: country == const $CopyWithPlaceholder() || country == null
+          ? _value.country
+          // ignore: cast_nullable_to_non_nullable
+          : country as String,
     );
   }
 }
@@ -369,6 +380,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
           const <String>[],
       language: json['language'] as String? ?? "fr",
       currency: json['currency'] as String? ?? "EUR",
+      country: json['country'] as String? ?? "FR",
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -397,4 +409,5 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'lifeBook': instance.lifeBook,
       'language': instance.language,
       'currency': instance.currency,
+      'country': instance.country,
     };

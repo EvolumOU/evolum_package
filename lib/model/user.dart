@@ -37,7 +37,7 @@ class User {
   List<String> lifeBook;
   String language;
   String currency;
-
+  String country;
   User({
     required this.uid,
     required this.email,
@@ -64,6 +64,7 @@ class User {
     this.lifeBook = const <String>[],
     this.language = "fr",
     this.currency = "EUR",
+    this.country = "FR",
   });
 
   bool get isRituel => status == 'full' || isTransformation;
@@ -107,6 +108,7 @@ class User {
         "subId2": data["subId2"] ?? "",
         "language": data["language"] ?? "fr",
         "currency": data["currency"] ?? "EUR",
+        "country": data["country"] ?? "FR",
       });
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
