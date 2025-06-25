@@ -28,11 +28,6 @@ final ThemeData darkTheme = ThemeData(
   unselectedWidgetColor: kevoWhite,
   textSelectionTheme: TextSelectionThemeData(cursorColor: kevoWhite),
   fontFamily: 'AirbnbCereal',
-  cardTheme: CardTheme(
-    margin: const EdgeInsets.all(10),
-    color: kevoLightBlack,
-    elevation: 0,
-  ),
   appBarTheme: AppBarTheme(
     elevation: 0,
     color: Colors.transparent,
